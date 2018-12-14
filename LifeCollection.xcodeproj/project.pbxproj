@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5357B40A21C38B73009D9333 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B40921C38B73009D9333 /* AppDelegate.m */; };
-		5357B40D21C38B73009D9333 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B40C21C38B73009D9333 /* ViewController.m */; };
+		5357B40D21C38B73009D9333 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B40C21C38B73009D9333 /* HomeViewController.m */; };
 		5357B41021C38B73009D9333 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5357B40E21C38B73009D9333 /* Main.storyboard */; };
 		5357B41321C38B73009D9333 /* LifeCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5357B41121C38B73009D9333 /* LifeCollection.xcdatamodeld */; };
 		5357B41521C38B74009D9333 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5357B41421C38B74009D9333 /* Assets.xcassets */; };
 		5357B41821C38B74009D9333 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5357B41621C38B74009D9333 /* LaunchScreen.storyboard */; };
 		5357B41B21C38B74009D9333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B41A21C38B74009D9333 /* main.m */; };
+		5357B42921C3911B009D9333 /* LCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B42821C3911B009D9333 /* LCColor.m */; };
 		855A42587625B7BB03CD4F6E /* Pods_LifeCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E969EF071FF62323FD55A93A /* Pods_LifeCollection.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,14 +22,17 @@
 		5357B40521C38B73009D9333 /* LifeCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5357B40821C38B73009D9333 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5357B40921C38B73009D9333 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5357B40B21C38B73009D9333 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5357B40C21C38B73009D9333 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5357B40B21C38B73009D9333 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		5357B40C21C38B73009D9333 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		5357B40F21C38B73009D9333 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5357B41221C38B73009D9333 /* LifeCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LifeCollection.xcdatamodel; sourceTree = "<group>"; };
 		5357B41421C38B74009D9333 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5357B41721C38B74009D9333 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5357B41921C38B74009D9333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5357B41A21C38B74009D9333 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5357B42621C390C0009D9333 /* LifeCollectionHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeCollectionHeader.pch; sourceTree = "<group>"; };
+		5357B42721C3911B009D9333 /* LCColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCColor.h; sourceTree = "<group>"; };
+		5357B42821C3911B009D9333 /* LCColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCColor.m; sourceTree = "<group>"; };
 		A46CB81A40A90EFAE12EAFA2 /* Pods-LifeCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LifeCollection/Pods-LifeCollection.debug.xcconfig"; sourceTree = "<group>"; };
 		DAB28567032FA38DDC677DEE /* Pods-LifeCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeCollection.release.xcconfig"; path = "Pods/Target Support Files/Pods-LifeCollection/Pods-LifeCollection.release.xcconfig"; sourceTree = "<group>"; };
 		E969EF071FF62323FD55A93A /* Pods_LifeCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LifeCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,21 +80,22 @@
 		5357B40721C38B73009D9333 /* LifeCollection */ = {
 			isa = PBXGroup;
 			children = (
-				5357B42521C3903B009D9333 /* Util */,
-				5357B42421C3901F009D9333 /* Library */,
-				5357B42321C38CBC009D9333 /* Model */,
-				5357B42221C38CB5009D9333 /* View */,
-				5357B42121C38CAD009D9333 /* Controller */,
 				5357B40821C38B73009D9333 /* AppDelegate.h */,
 				5357B40921C38B73009D9333 /* AppDelegate.m */,
-				5357B40B21C38B73009D9333 /* ViewController.h */,
-				5357B40C21C38B73009D9333 /* ViewController.m */,
+				5357B40B21C38B73009D9333 /* HomeViewController.h */,
+				5357B40C21C38B73009D9333 /* HomeViewController.m */,
+				5357B42621C390C0009D9333 /* LifeCollectionHeader.pch */,
 				5357B40E21C38B73009D9333 /* Main.storyboard */,
 				5357B41421C38B74009D9333 /* Assets.xcassets */,
 				5357B41621C38B74009D9333 /* LaunchScreen.storyboard */,
 				5357B41921C38B74009D9333 /* Info.plist */,
 				5357B41A21C38B74009D9333 /* main.m */,
 				5357B41121C38B73009D9333 /* LifeCollection.xcdatamodeld */,
+				5357B42321C38CBC009D9333 /* Model */,
+				5357B42221C38CB5009D9333 /* View */,
+				5357B42121C38CAD009D9333 /* Controller */,
+				5357B42421C3901F009D9333 /* Library */,
+				5357B42521C3903B009D9333 /* Util */,
 			);
 			path = LifeCollection;
 			sourceTree = "<group>";
@@ -126,6 +131,8 @@
 		5357B42521C3903B009D9333 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				5357B42721C3911B009D9333 /* LCColor.h */,
+				5357B42821C3911B009D9333 /* LCColor.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -249,8 +256,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5357B40D21C38B73009D9333 /* ViewController.m in Sources */,
+				5357B40D21C38B73009D9333 /* HomeViewController.m in Sources */,
 				5357B41321C38B73009D9333 /* LifeCollection.xcdatamodeld in Sources */,
+				5357B42921C3911B009D9333 /* LCColor.m in Sources */,
 				5357B41B21C38B74009D9333 /* main.m in Sources */,
 				5357B40A21C38B73009D9333 /* AppDelegate.m in Sources */,
 			);

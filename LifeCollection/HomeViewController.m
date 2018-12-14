@@ -1,22 +1,22 @@
 //
-//  ViewController.m
+//  HomeViewController.m
 //  LifeCollection
 //
 //  Created by gozap on 2018/12/14.
 //  Copyright © 2018 com.longdai. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "HomeViewController.h"
 
-@interface ViewController ()
+@interface HomeViewController ()
 
 @end
 
-@implementation ViewController
+@implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor orangeColor];
 }
 
 
