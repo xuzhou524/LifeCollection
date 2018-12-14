@@ -76,6 +76,9 @@
 		5357B40721C38B73009D9333 /* LifeCollection */ = {
 			isa = PBXGroup;
 			children = (
+				5357B42321C38CBC009D9333 /* Model */,
+				5357B42221C38CB5009D9333 /* View */,
+				5357B42121C38CAD009D9333 /* Controller */,
 				5357B40821C38B73009D9333 /* AppDelegate.h */,
 				5357B40921C38B73009D9333 /* AppDelegate.m */,
 				5357B40B21C38B73009D9333 /* ViewController.h */,
@@ -88,6 +91,27 @@
 				5357B41121C38B73009D9333 /* LifeCollection.xcdatamodeld */,
 			);
 			path = LifeCollection;
+			sourceTree = "<group>";
+		};
+		5357B42121C38CAD009D9333 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5357B42221C38CB5009D9333 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5357B42321C38CBC009D9333 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		DD5677F4BB641C2F91264A51 /* Frameworks */ = {
@@ -358,7 +382,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = LifeCollection/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.longdai.LifeCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -373,7 +400,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = LifeCollection/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.longdai.LifeCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
