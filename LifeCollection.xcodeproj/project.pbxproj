@@ -76,6 +76,8 @@
 		5357B40721C38B73009D9333 /* LifeCollection */ = {
 			isa = PBXGroup;
 			children = (
+				5357B42521C3903B009D9333 /* Util */,
+				5357B42421C3901F009D9333 /* Library */,
 				5357B42321C38CBC009D9333 /* Model */,
 				5357B42221C38CB5009D9333 /* View */,
 				5357B42121C38CAD009D9333 /* Controller */,
@@ -112,6 +114,20 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5357B42421C3901F009D9333 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		5357B42521C3903B009D9333 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		DD5677F4BB641C2F91264A51 /* Frameworks */ = {
