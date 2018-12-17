@@ -10,6 +10,7 @@
 #import "PreviewTableViewCell.h"
 #import "TextFieldTableViewCell.h"
 #import "TitleTableViewCell.h"
+#import "SelectColorTableViewCell.h"
 
 @interface AddViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * tableView;
@@ -34,6 +35,7 @@
     regClass(self.tableView, PreviewTableViewCell);
     regClass(self.tableView, TextFieldTableViewCell);
     regClass(self.tableView, TitleTableViewCell);
+    regClass(self.tableView, SelectColorTableViewCell);
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -41,7 +43,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return 6;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -49,6 +51,8 @@
         return 170;
     }else if (indexPath.row == 1 || indexPath.row == 2 ||indexPath.row == 3 ||indexPath.row == 4){
         return 60;
+    }else if (indexPath.row == 5){
+        return 80;
     }
     return 0;
 }
@@ -77,6 +81,10 @@
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"提醒";
+        return cell;
+    }else if (indexPath.row == 5){
+        SelectColorTableViewCell * cell = getCell(SelectColorTableViewCell);
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     return [UITableViewCell new];
