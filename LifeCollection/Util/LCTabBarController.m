@@ -27,8 +27,8 @@
     
     NSMutableArray * controllerArray = [NSMutableArray new];
     
-    [controllerArray addObject:[self addChildViewControllerWith:@"HomeViewController" title:@"" normalImage:@"tab_bar_home_icon_cu"]];
-    [controllerArray addObject:[self addChildViewControllerWith:@"UserViewController" title:@"" normalImage:@"tab_bar_user_icon_cu"]];
+    [controllerArray addObject:[self addChildViewControllerWith:@"HomeViewController" title:@"" normalImage:@"tab_bar_home"]];
+    [controllerArray addObject:[self addChildViewControllerWith:@"UserViewController" title:@"" normalImage:@"tab_bar_user"]];
     
     self.viewControllers = controllerArray;
     self.delegate = self;
@@ -42,7 +42,7 @@
     controller.title = title;
     controller.tabBarItem.image = [[UIImage imageNamed:normalImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    NSString * selectedImage = [normalImage stringByAppendingString:@"_no"];
+    NSString * selectedImage = [normalImage stringByAppendingString:@"_sel"];
     UIImage * image = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     controller.tabBarItem.selectedImage = image;
     

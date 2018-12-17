@@ -16,7 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"事件";
+    self.navigationItem.title = @"Time";
+//    if (@available(iOS 11.0, *)) {
+//        self.navigationController.navigationBar.prefersLargeTitles = YES;
+//    }
     
+    
+    
+    UIButton * rightBtn = [UIButton new];
+    [rightBtn setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
 }
 @end
