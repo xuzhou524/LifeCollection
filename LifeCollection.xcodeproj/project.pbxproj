@@ -10,10 +10,8 @@
 		5356ECF121C7463A00862FE1 /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECED21C7463A00862FE1 /* LCTabBarController.m */; };
 		5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF021C7463A00862FE1 /* LCTabBar.m */; };
 		5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF421C7466C00862FE1 /* LCNavigationViewController.m */; };
-		5356ED0321C7471200862FE1 /* d_Arrow_left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ECFF21C7471200862FE1 /* d_Arrow_left@3x.png */; };
 		5356ED0421C7471200862FE1 /* guanbi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED0021C7471200862FE1 /* guanbi@3x.png */; };
 		5356ED0521C7471200862FE1 /* guanbi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED0121C7471200862FE1 /* guanbi@2x.png */; };
-		5356ED0621C7471200862FE1 /* d_Arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED0221C7471200862FE1 /* d_Arrow_left@2x.png */; };
 		5356ED0921C7474100862FE1 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ED0821C7474100862FE1 /* UserViewController.m */; };
 		5356ED1821C7531D00862FE1 /* tab_bar_home_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED1421C7531C00862FE1 /* tab_bar_home_sel@3x.png */; };
 		5356ED1921C7531D00862FE1 /* tab_bar_home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED1521C7531C00862FE1 /* tab_bar_home@3x.png */; };
@@ -26,6 +24,7 @@
 		5356ED2A21C75D4400862FE1 /* add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED2821C75D4300862FE1 /* add@3x.png */; };
 		5356ED2B21C75D4400862FE1 /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED2921C75D4300862FE1 /* add@2x.png */; };
 		5356ED2E21C75F0A00862FE1 /* TimeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ED2D21C75F0A00862FE1 /* TimeListTableViewCell.m */; };
+		5356ED3121C7845D00862FE1 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ED3021C7845D00862FE1 /* AddViewController.m */; };
 		5357B40A21C38B73009D9333 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B40921C38B73009D9333 /* AppDelegate.m */; };
 		5357B40D21C38B73009D9333 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B40C21C38B73009D9333 /* HomeViewController.m */; };
 		5357B41021C38B73009D9333 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5357B40E21C38B73009D9333 /* Main.storyboard */; };
@@ -34,6 +33,8 @@
 		5357B41821C38B74009D9333 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5357B41621C38B74009D9333 /* LaunchScreen.storyboard */; };
 		5357B41B21C38B74009D9333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B41A21C38B74009D9333 /* main.m */; };
 		5357B42921C3911B009D9333 /* LCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B42821C3911B009D9333 /* LCColor.m */; };
+		53D3537221C785EC00AB0F70 /* d_Arrow_left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D3537021C785EC00AB0F70 /* d_Arrow_left@3x.png */; };
+		53D3537321C785EC00AB0F70 /* d_Arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D3537121C785EC00AB0F70 /* d_Arrow_left@2x.png */; };
 		855A42587625B7BB03CD4F6E /* Pods_LifeCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E969EF071FF62323FD55A93A /* Pods_LifeCollection.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,10 +45,8 @@
 		5356ECF021C7463A00862FE1 /* LCTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBar.m; sourceTree = "<group>"; };
 		5356ECF321C7466B00862FE1 /* LCNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavigationViewController.h; sourceTree = "<group>"; };
 		5356ECF421C7466C00862FE1 /* LCNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNavigationViewController.m; sourceTree = "<group>"; };
-		5356ECFF21C7471200862FE1 /* d_Arrow_left@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "d_Arrow_left@3x.png"; sourceTree = "<group>"; };
 		5356ED0021C7471200862FE1 /* guanbi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanbi@3x.png"; sourceTree = "<group>"; };
 		5356ED0121C7471200862FE1 /* guanbi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanbi@2x.png"; sourceTree = "<group>"; };
-		5356ED0221C7471200862FE1 /* d_Arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "d_Arrow_left@2x.png"; sourceTree = "<group>"; };
 		5356ED0721C7474100862FE1 /* UserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		5356ED0821C7474100862FE1 /* UserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		5356ED1221C7498100862FE1 /* LifeCollectionPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeCollectionPrefixHeader.pch; sourceTree = "<group>"; };
@@ -64,6 +63,8 @@
 		5356ED2921C75D4300862FE1 /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
 		5356ED2C21C75F0A00862FE1 /* TimeListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeListTableViewCell.h; sourceTree = "<group>"; };
 		5356ED2D21C75F0A00862FE1 /* TimeListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeListTableViewCell.m; sourceTree = "<group>"; };
+		5356ED2F21C7845D00862FE1 /* AddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		5356ED3021C7845D00862FE1 /* AddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		5357B40521C38B73009D9333 /* LifeCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5357B40821C38B73009D9333 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5357B40921C38B73009D9333 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -77,6 +78,8 @@
 		5357B41A21C38B74009D9333 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5357B42721C3911B009D9333 /* LCColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCColor.h; sourceTree = "<group>"; };
 		5357B42821C3911B009D9333 /* LCColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCColor.m; sourceTree = "<group>"; };
+		53D3537021C785EC00AB0F70 /* d_Arrow_left@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "d_Arrow_left@3x.png"; sourceTree = "<group>"; };
+		53D3537121C785EC00AB0F70 /* d_Arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "d_Arrow_left@2x.png"; sourceTree = "<group>"; };
 		A46CB81A40A90EFAE12EAFA2 /* Pods-LifeCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LifeCollection/Pods-LifeCollection.debug.xcconfig"; sourceTree = "<group>"; };
 		DAB28567032FA38DDC677DEE /* Pods-LifeCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeCollection.release.xcconfig"; path = "Pods/Target Support Files/Pods-LifeCollection/Pods-LifeCollection.release.xcconfig"; sourceTree = "<group>"; };
 		E969EF071FF62323FD55A93A /* Pods_LifeCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LifeCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,8 +119,8 @@
 				5356ED1D21C7536100862FE1 /* tab_bar_user@3x.png */,
 				5356ED2921C75D4300862FE1 /* add@2x.png */,
 				5356ED2821C75D4300862FE1 /* add@3x.png */,
-				5356ED0221C7471200862FE1 /* d_Arrow_left@2x.png */,
-				5356ECFF21C7471200862FE1 /* d_Arrow_left@3x.png */,
+				53D3537121C785EC00AB0F70 /* d_Arrow_left@2x.png */,
+				53D3537021C785EC00AB0F70 /* d_Arrow_left@3x.png */,
 				5356ED0121C7471200862FE1 /* guanbi@2x.png */,
 				5356ED0021C7471200862FE1 /* guanbi@3x.png */,
 			);
@@ -172,6 +175,8 @@
 				5357B40C21C38B73009D9333 /* HomeViewController.m */,
 				5356ED0721C7474100862FE1 /* UserViewController.h */,
 				5356ED0821C7474100862FE1 /* UserViewController.m */,
+				5356ED2F21C7845D00862FE1 /* AddViewController.h */,
+				5356ED3021C7845D00862FE1 /* AddViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,17 +286,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D3537321C785EC00AB0F70 /* d_Arrow_left@2x.png in Resources */,
 				5357B41821C38B74009D9333 /* LaunchScreen.storyboard in Resources */,
 				5356ED2A21C75D4400862FE1 /* add@3x.png in Resources */,
 				5356ED2221C7536200862FE1 /* tab_bar_user_sel@3x.png in Resources */,
 				5356ED2021C7536200862FE1 /* tab_bar_user@2x.png in Resources */,
 				5356ED0421C7471200862FE1 /* guanbi@3x.png in Resources */,
 				5356ED2121C7536200862FE1 /* tab_bar_user@3x.png in Resources */,
-				5356ED0321C7471200862FE1 /* d_Arrow_left@3x.png in Resources */,
 				5357B41521C38B74009D9333 /* Assets.xcassets in Resources */,
-				5356ED0621C7471200862FE1 /* d_Arrow_left@2x.png in Resources */,
 				5356ED0521C7471200862FE1 /* guanbi@2x.png in Resources */,
 				5356ED2321C7536200862FE1 /* tab_bar_user_sel@2x.png in Resources */,
+				53D3537221C785EC00AB0F70 /* d_Arrow_left@3x.png in Resources */,
 				5356ED2B21C75D4400862FE1 /* add@2x.png in Resources */,
 				5356ED1921C7531D00862FE1 /* tab_bar_home@3x.png in Resources */,
 				5356ED1B21C7531D00862FE1 /* tab_bar_home_sel@2x.png in Resources */,
@@ -351,6 +356,7 @@
 				5357B40D21C38B73009D9333 /* HomeViewController.m in Sources */,
 				5357B41321C38B73009D9333 /* LifeCollection.xcdatamodeld in Sources */,
 				5357B42921C3911B009D9333 /* LCColor.m in Sources */,
+				5356ED3121C7845D00862FE1 /* AddViewController.m in Sources */,
 				5356ECF121C7463A00862FE1 /* LCTabBarController.m in Sources */,
 				5357B41B21C38B74009D9333 /* main.m in Sources */,
 				5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */,

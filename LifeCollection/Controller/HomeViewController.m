@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "TimeListTableViewCell.h"
+#import "AddViewController.h"
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * tableView;
@@ -18,9 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"Time";
-//    if (@available(iOS 11.0, *)) {
-//        self.navigationController.navigationBar.prefersLargeTitles = YES;
-//    }
+
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -35,8 +34,12 @@
     
     UIButton * rightBtn = [UIButton new];
     [rightBtn setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
-    
+    [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+}
+
+-(void)rightBtnClick{
+    [self.navigationController pushViewController:[AddViewController new] animated:YES];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -53,6 +56,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TimeListTableViewCell * cell = getCell(TimeListTableViewCell);
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 

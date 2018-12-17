@@ -46,7 +46,7 @@
 -(UIBarButtonItem *)createBackButton {
     UIButton *liftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
     [liftBtn setImage:[UIImage imageNamed:@"d_Arrow_left"] forState:UIControlStateNormal];
-    liftBtn.imageEdgeInsets = UIEdgeInsetsMake( 2, 0, 2, 5);
+//    liftBtn.imageEdgeInsets = UIEdgeInsetsMake( 2, 0, 2, 5);
     [liftBtn addTarget:self action:@selector(popself) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem * liftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftBtn];
     return liftButtonItem;
