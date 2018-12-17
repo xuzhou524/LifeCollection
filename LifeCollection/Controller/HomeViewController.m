@@ -43,7 +43,8 @@
 }
 
 -(void)rightBtnClick{
-    [self.navigationController pushViewController:[AddViewController new] animated:YES];
+    AddViewController * addVC = [AddViewController new];
+    [self.navigationController pushViewController:addVC animated:YES];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

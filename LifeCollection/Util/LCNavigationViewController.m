@@ -8,7 +8,7 @@
 
 #import "LCNavigationViewController.h"
 
-@interface LCNavigationViewController ()
+@interface LCNavigationViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -25,15 +25,18 @@
                                                  NSForegroundColorAttributeName : [LCColor blackColor]
                                                  }];
     [self.navigationBar setShadowImage:[LCColor createImageWithColor:[LCColor backgroudColor]]];
+    self.interactivePopGestureRecognizer.delegate = self;
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if (self.viewControllers.count <= 1 ) {
+        return NO;
+    }
+    return YES;
 }
 
 #pragma mark 返回按钮
 -(void)popself {
-//    if (self.block) {
-//        self.block(@"");
-//    }else{
-//        [self popViewControllerAnimated:YES];
-//    }
     UIViewController *currentVC = [self.viewControllers lastObject] ;
     if ( [currentVC respondsToSelector:@selector(popself)] ) {
         [currentVC performSelector:@selector(popself)];
@@ -68,19 +71,19 @@
     self.tabBarController.tabBar.frame = frame;
 }
 
--(void)setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated{
-    // 判断子控制器的数量
-    if (viewControllers.count > 1) {
-        UIViewController * lastViewController = viewControllers.lastObject;
-        lastViewController.hidesBottomBarWhenPushed = YES;
-    }
-    [super setViewControllers:viewControllers animated:animated];
-    for (UIViewController * viewController in viewControllers) {
-        if (viewController.navigationItem.leftBarButtonItem == nil) {
-            viewController.navigationItem.leftBarButtonItem =[self createBackButton];
-        }
-    }
-}
+//-(void)setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated{
+//    // 判断子控制器的数量
+//    if (viewControllers.count > 1) {
+//        UIViewController * lastViewController = viewControllers.lastObject;
+//        lastViewController.hidesBottomBarWhenPushed = YES;
+//    }
+//    [super setViewControllers:viewControllers animated:animated];
+//    for (UIViewController * viewController in viewControllers) {
+//        if (viewController.navigationItem.leftBarButtonItem == nil) {
+//            viewController.navigationItem.leftBarButtonItem =[self createBackButton];
+//        }
+//    }
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
