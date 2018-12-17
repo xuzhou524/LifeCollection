@@ -14,4 +14,18 @@
 + (UIImage *)createImageWithColor:(UIColor *)color withSize:(CGSize)size;
 
 + (UIColor *)backgroudColor;
+
+
++ (UIColor *)LCColor_254_79_94;
+
++ (UIColor *)LCColor_192_108_132;
+
++ (UIColor *)LCColor_104_83_164;
+
++ (UIColor *)LCColor_0_111_247;
+
++ (UIColor *)LCColor_255_209_79;
+
++ (UIColor *)LCColor_255_129_0;
+
 @end

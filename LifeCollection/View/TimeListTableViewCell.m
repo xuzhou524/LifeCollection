@@ -21,11 +21,11 @@
 -(void)sebViews{
     self.contentView.backgroundColor = [LCColor backgroudColor];
     
-    UIView * bgView = [UIView new];
-    bgView.layer.cornerRadius = 8;
-    bgView.backgroundColor = [UIColor orangeColor];
-    [self.contentView addSubview:bgView];
-    [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+    _bgView = [UIView new];
+    _bgView.layer.cornerRadius = 8;
+    _bgView.backgroundColor = [UIColor orangeColor];
+    [self.contentView addSubview:_bgView];
+    [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView).offset(8);
         make.bottom.equalTo(self.contentView).offset(-8);
         make.left.equalTo(self.contentView).offset(16);

@@ -10,7 +10,9 @@
 #import "TimeListTableViewCell.h"
 #import "AddViewController.h"
 
-@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>{
+    NSArray * _iconArray;
+}
 @property(nonatomic,strong)UITableView * tableView;
 @end
 
@@ -36,6 +38,8 @@
     [rightBtn setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
     [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    
+    _iconArray = @[[LCColor LCColor_254_79_94],[LCColor LCColor_255_209_79],[LCColor LCColor_192_108_132],[LCColor LCColor_255_129_0],[LCColor LCColor_104_83_164],[LCColor LCColor_0_111_247]];
 }
 
 -(void)rightBtnClick{
@@ -57,6 +61,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TimeListTableViewCell * cell = getCell(TimeListTableViewCell);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.bgView.backgroundColor = _iconArray[indexPath.row % 6];
     return cell;
 }
 

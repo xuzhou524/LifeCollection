@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TimeListTableViewCell : UITableViewCell
-
+@property(nonatomic,strong)UIView * bgView;
 @end
