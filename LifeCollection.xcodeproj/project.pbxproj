@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5356ECF121C7463A00862FE1 /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECED21C7463A00862FE1 /* LCTabBarController.m */; };
+		5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF021C7463A00862FE1 /* LCTabBar.m */; };
+		5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF421C7466C00862FE1 /* LCNavigationViewController.m */; };
+		5356ED0321C7471200862FE1 /* d_Arrow_left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ECFF21C7471200862FE1 /* d_Arrow_left@3x.png */; };
+		5356ED0421C7471200862FE1 /* guanbi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED0021C7471200862FE1 /* guanbi@3x.png */; };
+		5356ED0521C7471200862FE1 /* guanbi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED0121C7471200862FE1 /* guanbi@2x.png */; };
+		5356ED0621C7471200862FE1 /* d_Arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED0221C7471200862FE1 /* d_Arrow_left@2x.png */; };
+		5356ED0921C7474100862FE1 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ED0821C7474100862FE1 /* UserViewController.m */; };
+		5356ED0E21C747AB00862FE1 /* tab_bar_home_icon_cu_no.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED0A21C747AA00862FE1 /* tab_bar_home_icon_cu_no.png */; };
+		5356ED0F21C747AB00862FE1 /* tab_bar_home_icon_cu.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED0B21C747AA00862FE1 /* tab_bar_home_icon_cu.png */; };
+		5356ED1021C747AB00862FE1 /* tab_bar_user_icon_cu.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED0C21C747AA00862FE1 /* tab_bar_user_icon_cu.png */; };
+		5356ED1121C747AB00862FE1 /* tab_bar_user_icon_cu_no.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED0D21C747AA00862FE1 /* tab_bar_user_icon_cu_no.png */; };
 		5357B40A21C38B73009D9333 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B40921C38B73009D9333 /* AppDelegate.m */; };
 		5357B40D21C38B73009D9333 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B40C21C38B73009D9333 /* HomeViewController.m */; };
 		5357B41021C38B73009D9333 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5357B40E21C38B73009D9333 /* Main.storyboard */; };
@@ -19,6 +31,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5356ECED21C7463A00862FE1 /* LCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarController.m; sourceTree = "<group>"; };
+		5356ECEE21C7463A00862FE1 /* LCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBar.h; sourceTree = "<group>"; };
+		5356ECEF21C7463A00862FE1 /* LCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarController.h; sourceTree = "<group>"; };
+		5356ECF021C7463A00862FE1 /* LCTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBar.m; sourceTree = "<group>"; };
+		5356ECF321C7466B00862FE1 /* LCNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavigationViewController.h; sourceTree = "<group>"; };
+		5356ECF421C7466C00862FE1 /* LCNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNavigationViewController.m; sourceTree = "<group>"; };
+		5356ECFF21C7471200862FE1 /* d_Arrow_left@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "d_Arrow_left@3x.png"; sourceTree = "<group>"; };
+		5356ED0021C7471200862FE1 /* guanbi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanbi@3x.png"; sourceTree = "<group>"; };
+		5356ED0121C7471200862FE1 /* guanbi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanbi@2x.png"; sourceTree = "<group>"; };
+		5356ED0221C7471200862FE1 /* d_Arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "d_Arrow_left@2x.png"; sourceTree = "<group>"; };
+		5356ED0721C7474100862FE1 /* UserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		5356ED0821C7474100862FE1 /* UserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		5356ED0A21C747AA00862FE1 /* tab_bar_home_icon_cu_no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_bar_home_icon_cu_no.png; sourceTree = "<group>"; };
+		5356ED0B21C747AA00862FE1 /* tab_bar_home_icon_cu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_bar_home_icon_cu.png; sourceTree = "<group>"; };
+		5356ED0C21C747AA00862FE1 /* tab_bar_user_icon_cu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_bar_user_icon_cu.png; sourceTree = "<group>"; };
+		5356ED0D21C747AA00862FE1 /* tab_bar_user_icon_cu_no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_bar_user_icon_cu_no.png; sourceTree = "<group>"; };
+		5356ED1221C7498100862FE1 /* LifeCollectionPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeCollectionPrefixHeader.pch; sourceTree = "<group>"; };
+		5356ED1321C749B800862FE1 /* LifeCollectionHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeCollectionHeader.h; sourceTree = "<group>"; };
 		5357B40521C38B73009D9333 /* LifeCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5357B40821C38B73009D9333 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5357B40921C38B73009D9333 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -30,7 +60,6 @@
 		5357B41721C38B74009D9333 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5357B41921C38B74009D9333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5357B41A21C38B74009D9333 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5357B42621C390C0009D9333 /* LifeCollectionHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeCollectionHeader.pch; sourceTree = "<group>"; };
 		5357B42721C3911B009D9333 /* LCColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCColor.h; sourceTree = "<group>"; };
 		5357B42821C3911B009D9333 /* LCColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCColor.m; sourceTree = "<group>"; };
 		A46CB81A40A90EFAE12EAFA2 /* Pods-LifeCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LifeCollection/Pods-LifeCollection.debug.xcconfig"; sourceTree = "<group>"; };
@@ -59,6 +88,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5356ECF621C7469C00862FE1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5356ED0A21C747AA00862FE1 /* tab_bar_home_icon_cu_no.png */,
+				5356ED0B21C747AA00862FE1 /* tab_bar_home_icon_cu.png */,
+				5356ED0D21C747AA00862FE1 /* tab_bar_user_icon_cu_no.png */,
+				5356ED0C21C747AA00862FE1 /* tab_bar_user_icon_cu.png */,
+				5356ED0221C7471200862FE1 /* d_Arrow_left@2x.png */,
+				5356ECFF21C7471200862FE1 /* d_Arrow_left@3x.png */,
+				5356ED0121C7471200862FE1 /* guanbi@2x.png */,
+				5356ED0021C7471200862FE1 /* guanbi@3x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		5357B3FC21C38B73009D9333 = {
 			isa = PBXGroup;
 			children = (
@@ -82,9 +126,8 @@
 			children = (
 				5357B40821C38B73009D9333 /* AppDelegate.h */,
 				5357B40921C38B73009D9333 /* AppDelegate.m */,
-				5357B40B21C38B73009D9333 /* HomeViewController.h */,
-				5357B40C21C38B73009D9333 /* HomeViewController.m */,
-				5357B42621C390C0009D9333 /* LifeCollectionHeader.pch */,
+				5356ED1221C7498100862FE1 /* LifeCollectionPrefixHeader.pch */,
+				5356ED1321C749B800862FE1 /* LifeCollectionHeader.h */,
 				5357B40E21C38B73009D9333 /* Main.storyboard */,
 				5357B41421C38B74009D9333 /* Assets.xcassets */,
 				5357B41621C38B74009D9333 /* LaunchScreen.storyboard */,
@@ -96,6 +139,7 @@
 				5357B42121C38CAD009D9333 /* Controller */,
 				5357B42421C3901F009D9333 /* Library */,
 				5357B42521C3903B009D9333 /* Util */,
+				5356ECF621C7469C00862FE1 /* Resources */,
 			);
 			path = LifeCollection;
 			sourceTree = "<group>";
@@ -103,6 +147,10 @@
 		5357B42121C38CAD009D9333 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5357B40B21C38B73009D9333 /* HomeViewController.h */,
+				5357B40C21C38B73009D9333 /* HomeViewController.m */,
+				5356ED0721C7474100862FE1 /* UserViewController.h */,
+				5356ED0821C7474100862FE1 /* UserViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -131,6 +179,12 @@
 		5357B42521C3903B009D9333 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				5356ECF321C7466B00862FE1 /* LCNavigationViewController.h */,
+				5356ECF421C7466C00862FE1 /* LCNavigationViewController.m */,
+				5356ECEF21C7463A00862FE1 /* LCTabBarController.h */,
+				5356ECED21C7463A00862FE1 /* LCTabBarController.m */,
+				5356ECEE21C7463A00862FE1 /* LCTabBar.h */,
+				5356ECF021C7463A00862FE1 /* LCTabBar.m */,
 				5357B42721C3911B009D9333 /* LCColor.h */,
 				5357B42821C3911B009D9333 /* LCColor.m */,
 			);
@@ -205,8 +259,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5357B41821C38B74009D9333 /* LaunchScreen.storyboard in Resources */,
+				5356ED0421C7471200862FE1 /* guanbi@3x.png in Resources */,
+				5356ED0321C7471200862FE1 /* d_Arrow_left@3x.png in Resources */,
 				5357B41521C38B74009D9333 /* Assets.xcassets in Resources */,
+				5356ED0E21C747AB00862FE1 /* tab_bar_home_icon_cu_no.png in Resources */,
+				5356ED1021C747AB00862FE1 /* tab_bar_user_icon_cu.png in Resources */,
+				5356ED0621C7471200862FE1 /* d_Arrow_left@2x.png in Resources */,
+				5356ED0521C7471200862FE1 /* guanbi@2x.png in Resources */,
 				5357B41021C38B73009D9333 /* Main.storyboard in Resources */,
+				5356ED0F21C747AB00862FE1 /* tab_bar_home_icon_cu.png in Resources */,
+				5356ED1121C747AB00862FE1 /* tab_bar_user_icon_cu_no.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,10 +318,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5356ED0921C7474100862FE1 /* UserViewController.m in Sources */,
 				5357B40D21C38B73009D9333 /* HomeViewController.m in Sources */,
 				5357B41321C38B73009D9333 /* LifeCollection.xcdatamodeld in Sources */,
 				5357B42921C3911B009D9333 /* LCColor.m in Sources */,
+				5356ECF121C7463A00862FE1 /* LCTabBarController.m in Sources */,
 				5357B41B21C38B74009D9333 /* main.m in Sources */,
+				5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */,
+				5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */,
 				5357B40A21C38B73009D9333 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,7 +471,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
+				GCC_PREFIX_HEADER = LifeCollection/LifeCollectionPrefixHeader.pch;
 				INFOPLIST_FILE = LifeCollection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -423,7 +491,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
+				GCC_PREFIX_HEADER = LifeCollection/LifeCollectionPrefixHeader.pch;
 				INFOPLIST_FILE = LifeCollection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
