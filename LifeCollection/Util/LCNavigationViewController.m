@@ -17,14 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //navigationBar 背景颜色（或者可以用图片
-    [self.navigationBar setBackgroundImage:[LCColor createImageWithColor:[LCColor whiteColor]]
+    [self.navigationBar setBackgroundImage:[LCColor createImageWithColor:[LCColor backgroudColor]]
                              forBarMetrics:UIBarMetricsDefault];
     //navigationBar Title 样式
     [self.navigationBar setTitleTextAttributes:@{
                                                  NSFontAttributeName : LCFont(18),
                                                  NSForegroundColorAttributeName : [LCColor blackColor]
                                                  }];
-    [self.navigationBar setShadowImage:[LCColor createImageWithColor:[LCColor whiteColor]]];
+    [self.navigationBar setShadowImage:[LCColor createImageWithColor:[LCColor backgroudColor]]];
 }
 
 #pragma mark 返回按钮

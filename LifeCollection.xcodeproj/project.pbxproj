@@ -25,6 +25,7 @@
 		5356ED2321C7536200862FE1 /* tab_bar_user_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED1F21C7536200862FE1 /* tab_bar_user_sel@2x.png */; };
 		5356ED2A21C75D4400862FE1 /* add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED2821C75D4300862FE1 /* add@3x.png */; };
 		5356ED2B21C75D4400862FE1 /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED2921C75D4300862FE1 /* add@2x.png */; };
+		5356ED2E21C75F0A00862FE1 /* TimeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ED2D21C75F0A00862FE1 /* TimeListTableViewCell.m */; };
 		5357B40A21C38B73009D9333 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B40921C38B73009D9333 /* AppDelegate.m */; };
 		5357B40D21C38B73009D9333 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B40C21C38B73009D9333 /* HomeViewController.m */; };
 		5357B41021C38B73009D9333 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5357B40E21C38B73009D9333 /* Main.storyboard */; };
@@ -61,6 +62,8 @@
 		5356ED1F21C7536200862FE1 /* tab_bar_user_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_user_sel@2x.png"; sourceTree = "<group>"; };
 		5356ED2821C75D4300862FE1 /* add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@3x.png"; sourceTree = "<group>"; };
 		5356ED2921C75D4300862FE1 /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
+		5356ED2C21C75F0A00862FE1 /* TimeListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeListTableViewCell.h; sourceTree = "<group>"; };
+		5356ED2D21C75F0A00862FE1 /* TimeListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeListTableViewCell.m; sourceTree = "<group>"; };
 		5357B40521C38B73009D9333 /* LifeCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5357B40821C38B73009D9333 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5357B40921C38B73009D9333 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -176,6 +179,8 @@
 		5357B42221C38CB5009D9333 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5356ED2C21C75F0A00862FE1 /* TimeListTableViewCell.h */,
+				5356ED2D21C75F0A00862FE1 /* TimeListTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 				5357B41B21C38B74009D9333 /* main.m in Sources */,
 				5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */,
 				5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */,
+				5356ED2E21C75F0A00862FE1 /* TimeListTableViewCell.m in Sources */,
 				5357B40A21C38B73009D9333 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

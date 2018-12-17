@@ -37,4 +37,9 @@
     return theImage;
 }
 
+
++ (UIColor *)backgroudColor {
+    return [LCColor colorWithR255:244 G255:244 B255:247 A255:255];
+}
+
 @end

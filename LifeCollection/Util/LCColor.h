@@ -13,5 +13,5 @@
 + (UIImage *)createImageWithColor:(UIColor *)color;
 + (UIImage *)createImageWithColor:(UIColor *)color withSize:(CGSize)size;
 
-
++ (UIColor *)backgroudColor;
 @end
