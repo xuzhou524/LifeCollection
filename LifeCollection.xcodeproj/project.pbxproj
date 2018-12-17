@@ -33,6 +33,8 @@
 		5357B41821C38B74009D9333 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5357B41621C38B74009D9333 /* LaunchScreen.storyboard */; };
 		5357B41B21C38B74009D9333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B41A21C38B74009D9333 /* main.m */; };
 		5357B42921C3911B009D9333 /* LCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B42821C3911B009D9333 /* LCColor.m */; };
+		539B3A5F21C7A77700431B7A /* PreviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B3A5E21C7A77700431B7A /* PreviewTableViewCell.m */; };
+		539B3A6221C7AB1500431B7A /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B3A6121C7AB1500431B7A /* TextFieldTableViewCell.m */; };
 		53D3537221C785EC00AB0F70 /* d_Arrow_left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D3537021C785EC00AB0F70 /* d_Arrow_left@3x.png */; };
 		53D3537321C785EC00AB0F70 /* d_Arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D3537121C785EC00AB0F70 /* d_Arrow_left@2x.png */; };
 		855A42587625B7BB03CD4F6E /* Pods_LifeCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E969EF071FF62323FD55A93A /* Pods_LifeCollection.framework */; };
@@ -78,6 +80,10 @@
 		5357B41A21C38B74009D9333 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5357B42721C3911B009D9333 /* LCColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCColor.h; sourceTree = "<group>"; };
 		5357B42821C3911B009D9333 /* LCColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCColor.m; sourceTree = "<group>"; };
+		539B3A5D21C7A77700431B7A /* PreviewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewTableViewCell.h; sourceTree = "<group>"; };
+		539B3A5E21C7A77700431B7A /* PreviewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewTableViewCell.m; sourceTree = "<group>"; };
+		539B3A6021C7AB1500431B7A /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
+		539B3A6121C7AB1500431B7A /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
 		53D3537021C785EC00AB0F70 /* d_Arrow_left@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "d_Arrow_left@3x.png"; sourceTree = "<group>"; };
 		53D3537121C785EC00AB0F70 /* d_Arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "d_Arrow_left@2x.png"; sourceTree = "<group>"; };
 		A46CB81A40A90EFAE12EAFA2 /* Pods-LifeCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LifeCollection/Pods-LifeCollection.debug.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +192,10 @@
 			children = (
 				5356ED2C21C75F0A00862FE1 /* TimeListTableViewCell.h */,
 				5356ED2D21C75F0A00862FE1 /* TimeListTableViewCell.m */,
+				539B3A5D21C7A77700431B7A /* PreviewTableViewCell.h */,
+				539B3A5E21C7A77700431B7A /* PreviewTableViewCell.m */,
+				539B3A6021C7AB1500431B7A /* TextFieldTableViewCell.h */,
+				539B3A6121C7AB1500431B7A /* TextFieldTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -352,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				539B3A6221C7AB1500431B7A /* TextFieldTableViewCell.m in Sources */,
 				5356ED0921C7474100862FE1 /* UserViewController.m in Sources */,
 				5357B40D21C38B73009D9333 /* HomeViewController.m in Sources */,
 				5357B41321C38B73009D9333 /* LifeCollection.xcdatamodeld in Sources */,
@@ -362,6 +373,7 @@
 				5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */,
 				5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */,
 				5356ED2E21C75F0A00862FE1 /* TimeListTableViewCell.m in Sources */,
+				539B3A5F21C7A77700431B7A /* PreviewTableViewCell.m in Sources */,
 				5357B40A21C38B73009D9333 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
