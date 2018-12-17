@@ -9,6 +9,7 @@
 #import "AddViewController.h"
 #import "PreviewTableViewCell.h"
 #import "TextFieldTableViewCell.h"
+#import "TitleTableViewCell.h"
 
 @interface AddViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * tableView;
@@ -32,6 +33,7 @@
     
     regClass(self.tableView, PreviewTableViewCell);
     regClass(self.tableView, TextFieldTableViewCell);
+    regClass(self.tableView, TitleTableViewCell);
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -62,7 +64,7 @@
         cell.titleLabel.text = @"标题";
         return cell;
     }else if (indexPath.row == 2){
-        TextFieldTableViewCell * cell = getCell(TextFieldTableViewCell);
+        TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"类型";
         return cell;
@@ -72,7 +74,7 @@
         cell.titleLabel.text = @"时间";
         return cell;
     }else if (indexPath.row == 4){
-        TextFieldTableViewCell * cell = getCell(TextFieldTableViewCell);
+        TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"提醒";
         return cell;
