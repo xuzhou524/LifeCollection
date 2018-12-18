@@ -34,7 +34,7 @@
     
     _titleLabel = [UILabel new];
     _titleLabel.text = @"还房贷⑤";
-    _titleLabel.font = LCFont(16);
+    _titleLabel.font = LCFont(17);
     _titleLabel.alpha = 0.8;
     _titleLabel.textColor = [LCColor whiteColor];
     [self.contentView addSubview:_titleLabel];

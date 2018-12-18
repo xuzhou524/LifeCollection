@@ -33,7 +33,7 @@
     
     _bgView = [UIView new];
     _bgView.layer.cornerRadius = 8;
-    _bgView.backgroundColor = [LCColor LCColor_255_209_79];
+    _bgView.backgroundColor = [LCColor LCColor_255_129_0];
     [self.contentView addSubview:_bgView];
     [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(label.mas_bottom).offset(10);
@@ -44,7 +44,7 @@
     
     _titleLabel = [UILabel new];
     _titleLabel.text = @"请输入标题";
-    _titleLabel.font = LCFont(16);
+    _titleLabel.font = LCFont(17);
     _titleLabel.alpha = 0.8;
     _titleLabel.textColor = [LCColor whiteColor];
     [self.contentView addSubview:_titleLabel];

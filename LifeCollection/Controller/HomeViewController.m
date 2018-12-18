@@ -11,7 +11,7 @@
 #import "AddViewController.h"
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>{
-    NSArray * _iconArray;
+    NSArray * _colorArray;
 }
 @property(nonatomic,strong)UITableView * tableView;
 @end
@@ -41,7 +41,7 @@
     [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
     
-    _iconArray = @[[LCColor LCColor_255_209_79],[LCColor LCColor_192_108_132],[LCColor LCColor_255_129_0],[LCColor LCColor_254_79_94],[LCColor LCColor_104_83_164],[LCColor LCColor_0_111_247]];
+    _colorArray = @[[LCColor LCColor_255_209_79],[LCColor LCColor_192_108_132],[LCColor LCColor_255_129_0],[LCColor LCColor_254_79_94],[LCColor LCColor_104_83_164],[LCColor LCColor_0_111_247]];
 }
 
 -(void)rightBtnClick{
@@ -54,7 +54,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return 6;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -64,7 +64,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TimeListTableViewCell * cell = getCell(TimeListTableViewCell);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.bgView.backgroundColor = _iconArray[indexPath.row % 6];
+    cell.bgView.backgroundColor = _colorArray[indexPath.row % 6];
     return cell;
 }
 

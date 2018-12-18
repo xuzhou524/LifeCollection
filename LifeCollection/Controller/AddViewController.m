@@ -13,7 +13,7 @@
 #import "SelectColorTableViewCell.h"
 
 @interface AddViewController ()<UITableViewDelegate,UITableViewDataSource>{
-    NSArray * _iconArray;
+    NSArray * _colorArray;
 }
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)PreviewTableViewCell * previewcell;
@@ -52,7 +52,7 @@
     [self.view addGestureRecognizer:tapGestureRecognizer]; //只需要点击非文字输入区域就会响应
     [tapGestureRecognizer setCancelsTouchesInView:NO];
     
-    _iconArray = @[[LCColor LCColor_255_209_79],[LCColor LCColor_192_108_132],[LCColor LCColor_255_129_0],[LCColor LCColor_254_79_94],[LCColor LCColor_104_83_164],[LCColor LCColor_0_111_247]];
+    _colorArray = @[[LCColor LCColor_255_129_0],[LCColor LCColor_255_209_79],[LCColor LCColor_192_108_132],[LCColor LCColor_254_79_94],[LCColor LCColor_104_83_164],[LCColor LCColor_0_111_247]];
 }
 
 - (void)backupgroupTap:(id)sender {
@@ -73,7 +73,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
-        return 170;
+        return 160;
     }else if (indexPath.row == 1 || indexPath.row == 2 ||indexPath.row == 3 ||indexPath.row == 4){
         return 60;
     }else if (indexPath.row == 5){
@@ -86,7 +86,7 @@
     if (indexPath.row == 0) {
         _previewcell = getCell(PreviewTableViewCell);
         _previewcell.selectionStyle = UITableViewCellSelectionStyleNone;
-//        _previewcell.bgView.backgroundColor = _iconArray.firstObject;
+//        _previewcell.bgView.backgroundColor = _colorArray.firstObject;
         return _previewcell;
     }else if (indexPath.row == 1){
         TextFieldTableViewCell * cell = getCell(TextFieldTableViewCell);
@@ -97,16 +97,19 @@
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"类型";
+        cell.summeryLabel.text = @"倒计日";
         return cell;
     }else if (indexPath.row == 3){
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"时间";
+        cell.summeryLabel.text = @"2018-12-18";
         return cell;
     }else if (indexPath.row == 4){
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"提醒";
+        cell.summeryLabel.text = @"无提醒";
         return cell;
     }else if (indexPath.row == 5){
         SelectColorTableViewCell * cell = getCell(SelectColorTableViewCell);
@@ -122,6 +125,6 @@
 }
 
 -(void)selectColorClick:(UITapGestureRecognizer *)tap{
-    _previewcell.bgView.backgroundColor = _iconArray[tap.view.tag - 100];
+    _previewcell.bgView.backgroundColor = _colorArray[tap.view.tag - 100];
 }
 @end
