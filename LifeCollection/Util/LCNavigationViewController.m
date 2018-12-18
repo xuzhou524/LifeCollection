@@ -50,6 +50,7 @@
     UIButton *liftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
     UIImage * arrowIamge = [[UIImage imageNamed:@"d_Arrow_left"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     liftBtn.tintColor = [LCColor LCColor_77_92_127];
+    liftBtn.imageEdgeInsets = UIEdgeInsetsMake( 0, -5, 0, 5);
     [liftBtn setImage:arrowIamge forState:UIControlStateNormal];
     [liftBtn addTarget:self action:@selector(popself) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem * liftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftBtn];

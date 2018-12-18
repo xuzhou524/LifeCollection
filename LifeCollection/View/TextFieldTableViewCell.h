@@ -10,5 +10,7 @@
 
 @interface TextFieldTableViewCell : UITableViewCell
 @property(nonatomic,strong)UILabel * titleLabel;
+
+@property(nonatomic,strong)UITextField * titleTextField;
 @end
 

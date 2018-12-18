@@ -13,7 +13,7 @@
 -(void)layoutSubviews{
     [super layoutSubviews];
     for (UITabBarItem * item in self.items) {
-        item.imageInsets = UIEdgeInsetsMake(3.0, 0, -3.0, 0);
+        item.imageInsets = UIEdgeInsetsMake(5.0, 0, -5.0, 0);
 //        item.titlePositionAdjustment = UIOffsetMake(0,-3);
     }
     for (UIControl * tabBarButton in self.subviews) {

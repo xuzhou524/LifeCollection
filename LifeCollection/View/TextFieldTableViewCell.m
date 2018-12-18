@@ -35,8 +35,32 @@
     _titleLabel.textColor = [LCColor LCColor_77_92_127];
     [bgView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(15);
+        make.left.equalTo(self.contentView).offset(16);
         make.centerY.equalTo(bgView);
+    }];
+    
+    UIImageView *iconImageView = [UIImageView new];
+    UIImage * iconIamge = [[UIImage imageNamed:@"circleright"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    iconImageView.tintColor = [LCColor LCColor_113_120_150];
+    iconImageView.image=iconIamge;
+    [self.contentView addSubview:iconImageView];
+    [iconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.contentView).offset(-15);
+        make.centerY.equalTo(bgView);
+        make.height.equalTo(@12);
+        make.width.equalTo(@8);
+    }];
+    
+    _titleTextField = [UITextField new];
+    _titleTextField.placeholder = @"请输入标题";
+    _titleTextField.textColor = [LCColor LCColor_113_120_150];
+    _titleTextField.font = LCFont(15);
+    _titleTextField.textAlignment = NSTextAlignmentRight;
+    [self.contentView addSubview:_titleTextField];
+    [_titleTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.equalTo(bgView);
+        make.right.equalTo(iconImageView.mas_left).offset(-10);
+        make.left.equalTo(self.contentView.mas_centerX).offset(-20);
     }];
 
 }
