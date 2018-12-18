@@ -43,6 +43,15 @@
 }
 
 
++ (UIColor *)LCColor_77_92_127{
+    return [LCColor colorWithR255:77 G255:92 B255:127 A255:255];
+}
+
++ (UIColor *)LCColor_113_120_150{
+    return [LCColor colorWithR255:173 G255:180 B255:200 A255:255];
+}
+
+
 
 + (UIColor *)LCColor_254_79_94{
     return [LCColor colorWithR255:254 G255:79 B255:94 A255:255];

@@ -40,7 +40,7 @@
     UIButton * rightBtn = [UIButton new];
     [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
     rightBtn.titleLabel.font = LCFont(16);
-    [rightBtn setTitleColor:[LCColor blackColor] forState:UIControlStateNormal];
+    [rightBtn setTitleColor:[LCColor LCColor_77_92_127] forState:UIControlStateNormal];
     [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
 }
@@ -63,7 +63,7 @@
     }else if (indexPath.row == 1 || indexPath.row == 2 ||indexPath.row == 3 ||indexPath.row == 4){
         return 60;
     }else if (indexPath.row == 5){
-        return 80;
+        return 70;
     }
     return 0;
 }

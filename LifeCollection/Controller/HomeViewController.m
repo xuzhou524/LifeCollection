@@ -35,7 +35,9 @@
     regClass(self.tableView, TimeListTableViewCell);
     
     UIButton * rightBtn = [UIButton new];
-    [rightBtn setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+    UIImage * addIamge = [[UIImage imageNamed:@"add"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    rightBtn.tintColor = [LCColor LCColor_77_92_127];
+    [rightBtn setImage:addIamge forState:UIControlStateNormal];
     [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
     

@@ -24,6 +24,7 @@
     UILabel * label = [UILabel new];
     label.text = @"效果预览";
     label.font = LCFont2(14);
+    label.textColor = [LCColor LCColor_77_92_127];
     [self.contentView addSubview:label];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.equalTo(self.contentView).offset(16);

@@ -22,7 +22,7 @@
     //navigationBar Title 样式
     [self.navigationBar setTitleTextAttributes:@{
                                                  NSFontAttributeName : LCFont(18),
-                                                 NSForegroundColorAttributeName : [LCColor blackColor]
+                                                 NSForegroundColorAttributeName : [LCColor LCColor_77_92_127]
                                                  }];
     [self.navigationBar setShadowImage:[LCColor createImageWithColor:[LCColor backgroudColor]]];
     self.interactivePopGestureRecognizer.delegate = self;
@@ -48,8 +48,9 @@
 #pragma mark 创建返回按钮
 -(UIBarButtonItem *)createBackButton {
     UIButton *liftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
-    [liftBtn setImage:[UIImage imageNamed:@"d_Arrow_left"] forState:UIControlStateNormal];
-//    liftBtn.imageEdgeInsets = UIEdgeInsetsMake( 2, 0, 2, 5);
+    UIImage * arrowIamge = [[UIImage imageNamed:@"d_Arrow_left"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    liftBtn.tintColor = [LCColor LCColor_77_92_127];
+    [liftBtn setImage:arrowIamge forState:UIControlStateNormal];
     [liftBtn addTarget:self action:@selector(popself) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem * liftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftBtn];
     return liftButtonItem;

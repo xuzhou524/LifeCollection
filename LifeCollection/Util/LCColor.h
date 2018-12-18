@@ -16,6 +16,11 @@
 + (UIColor *)backgroudColor;
 
 
++ (UIColor *)LCColor_77_92_127;
+
++ (UIColor *)LCColor_113_120_150;
+
+
 + (UIColor *)LCColor_254_79_94;
 
 + (UIColor *)LCColor_192_108_132;

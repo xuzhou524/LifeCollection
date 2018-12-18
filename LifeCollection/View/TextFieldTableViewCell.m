@@ -32,6 +32,7 @@
     _titleLabel = [UILabel new];
     _titleLabel.text = @"标题";
     _titleLabel.font = LCFont(15);
+    _titleLabel.textColor = [LCColor LCColor_77_92_127];
     [bgView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(15);

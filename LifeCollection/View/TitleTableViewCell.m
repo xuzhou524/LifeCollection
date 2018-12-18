@@ -32,6 +32,7 @@
     _titleLabel = [UILabel new];
     _titleLabel.text = @"标题";
     _titleLabel.font = LCFont(15);
+    _titleLabel.textColor = [LCColor LCColor_77_92_127];
     [bgView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(15);
@@ -39,7 +40,9 @@
     }];
     
     UIImageView *iconImageView = [UIImageView new];
-    iconImageView.image=[UIImage imageNamed:@"circleright"];
+    UIImage * iconIamge = [[UIImage imageNamed:@"circleright"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    iconImageView.tintColor = [LCColor LCColor_113_120_150];
+    iconImageView.image=iconIamge;
     [self.contentView addSubview:iconImageView];
     [iconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView).offset(-15);
@@ -50,10 +53,11 @@
     
     _summeryLabel = [UILabel new];
     _summeryLabel.text = @"倒计时";
-    _summeryLabel.font = LCFont2(15);
+    _summeryLabel.textColor = [LCColor LCColor_113_120_150];
+    _summeryLabel.font = LCFont(15);
     [self.contentView addSubview:_summeryLabel];
     [_summeryLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(iconImageView.mas_left).offset(-15);
+        make.right.equalTo(iconImageView.mas_left).offset(-10);
         make.centerY.equalTo(self.titleLabel);
     }];
     
