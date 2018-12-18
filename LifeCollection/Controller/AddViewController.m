@@ -12,8 +12,11 @@
 #import "TitleTableViewCell.h"
 #import "SelectColorTableViewCell.h"
 
-@interface AddViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface AddViewController ()<UITableViewDelegate,UITableViewDataSource>{
+    NSArray * _iconArray;
+}
 @property(nonatomic,strong)UITableView * tableView;
+@property(nonatomic,strong)PreviewTableViewCell * previewcell;
 @end
 
 @implementation AddViewController
@@ -48,6 +51,8 @@
     tapGestureRecognizer.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:tapGestureRecognizer]; //只需要点击非文字输入区域就会响应
     [tapGestureRecognizer setCancelsTouchesInView:NO];
+    
+    _iconArray = @[[LCColor LCColor_255_209_79],[LCColor LCColor_192_108_132],[LCColor LCColor_255_129_0],[LCColor LCColor_254_79_94],[LCColor LCColor_104_83_164],[LCColor LCColor_0_111_247]];
 }
 
 - (void)backupgroupTap:(id)sender {
@@ -79,9 +84,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
-        PreviewTableViewCell * cell = getCell(PreviewTableViewCell);
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
+        _previewcell = getCell(PreviewTableViewCell);
+        _previewcell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        _previewcell.bgView.backgroundColor = _iconArray.firstObject;
+        return _previewcell;
     }else if (indexPath.row == 1){
         TextFieldTableViewCell * cell = getCell(TextFieldTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -105,9 +111,17 @@
     }else if (indexPath.row == 5){
         SelectColorTableViewCell * cell = getCell(SelectColorTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        for (int i=0; i < cell.selectColorArray.count; i ++) {
+            UIView * tempView = cell.selectColorArray[i];
+            tempView.tag = i + 100;
+            [tempView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectColorClick:)]];
+        }
         return cell;
     }
     return [UITableViewCell new];
 }
 
+-(void)selectColorClick:(UITapGestureRecognizer *)tap{
+    _previewcell.bgView.backgroundColor = _iconArray[tap.view.tag - 100];
+}
 @end

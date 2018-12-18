@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SelectColorTableViewCell : UITableViewCell
-
+@property(nonatomic,strong)NSMutableArray *selectColorArray;
 @end
 

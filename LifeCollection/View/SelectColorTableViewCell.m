@@ -39,7 +39,8 @@
         make.left.equalTo(self.contentView).offset(15);
     }];
     
-    _colorArray = @[[LCColor LCColor_254_79_94],[LCColor LCColor_255_209_79],[LCColor LCColor_192_108_132],[LCColor LCColor_255_129_0],[LCColor LCColor_104_83_164],[LCColor LCColor_0_111_247]];
+    _colorArray = @[[LCColor LCColor_255_209_79],[LCColor LCColor_192_108_132],[LCColor LCColor_255_129_0],[LCColor LCColor_254_79_94],[LCColor LCColor_104_83_164],[LCColor LCColor_0_111_247]];
+    _selectColorArray = [NSMutableArray new];
     
     for (int i = 0; i < _colorArray.count; i ++) {
         UIView * colorBgView = [UIView new];
@@ -59,6 +60,8 @@
             make.center.equalTo(colorBgView);
             make.width.height.equalTo(@30);
         }];
+        
+        [_selectColorArray addObject:colorBgView];
     }
     
 }
