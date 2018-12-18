@@ -52,16 +52,14 @@
         }];
         
         UIView * colorView = [UIView new];
-        colorView.layer.cornerRadius = 17;
+        colorView.layer.cornerRadius = 15;
         colorView.backgroundColor = _colorArray[i];
         [colorBgView addSubview:colorView];
         [colorView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(colorBgView);
-            make.width.height.equalTo(@34);
+            make.width.height.equalTo(@30);
         }];
     }
     
 }
-
-
 @end

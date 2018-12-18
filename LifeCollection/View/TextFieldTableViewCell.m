@@ -31,11 +31,11 @@
     
     _titleLabel = [UILabel new];
     _titleLabel.text = @"标题";
-    _titleLabel.font = LCFont2(16);
-    [self.contentView addSubview:_titleLabel];
+    _titleLabel.font = LCFont(15);
+    [bgView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(15);
-        make.centerY.equalTo(self.contentView);
+        make.centerY.equalTo(bgView);
     }];
 
 }

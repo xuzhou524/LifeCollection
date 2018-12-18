@@ -36,6 +36,17 @@
     regClass(self.tableView, TextFieldTableViewCell);
     regClass(self.tableView, TitleTableViewCell);
     regClass(self.tableView, SelectColorTableViewCell);
+    
+    UIButton * rightBtn = [UIButton new];
+    [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
+    rightBtn.titleLabel.font = LCFont(16);
+    [rightBtn setTitleColor:[LCColor blackColor] forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+}
+
+-(void)rightBtnClick{
+    
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -73,7 +84,7 @@
         cell.titleLabel.text = @"类型";
         return cell;
     }else if (indexPath.row == 3){
-        TextFieldTableViewCell * cell = getCell(TextFieldTableViewCell);
+        TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"时间";
         return cell;
