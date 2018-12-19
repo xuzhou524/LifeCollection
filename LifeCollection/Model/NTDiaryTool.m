@@ -17,11 +17,11 @@ static FMDatabaseQueue *_queue;
 + (void)initialize{
     NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
     NSString *documentFolderPath = [searchPaths objectAtIndex:0];
-    NSString *path  = [documentFolderPath stringByAppendingPathComponent:@"simpleNote.sqlite"];
+    NSString *path  = [documentFolderPath stringByAppendingPathComponent:@"LifeCollection.sqlite"];
     NSFileManager *fm = [NSFileManager defaultManager];
     BOOL isExist = [fm fileExistsAtPath:path];
     if (!isExist){
-        NSString *backupDbPath = [[NSBundle mainBundle]pathForResource:@"simpleNote.sqlite" ofType:nil];
+        NSString *backupDbPath = [[NSBundle mainBundle]pathForResource:@"LifeCollection.sqlite" ofType:nil];
         [fm copyItemAtPath:backupDbPath toPath:path error:nil];
     }
     _queue = [FMDatabaseQueue databaseQueueWithPath:path];
