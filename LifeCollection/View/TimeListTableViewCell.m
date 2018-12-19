@@ -8,7 +8,9 @@
 
 #import "TimeListTableViewCell.h"
 
-@implementation TimeListTableViewCell
+@implementation TimeListTableViewCell{
+    NSArray * _colorArray;
+}
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -20,6 +22,7 @@
 
 -(void)sebViews{
     self.contentView.backgroundColor = [LCColor backgroudColor];
+    _colorArray = @[[LCColor LCColor_255_209_79],[LCColor LCColor_192_108_132],[LCColor LCColor_255_129_0],[LCColor LCColor_254_79_94],[LCColor LCColor_104_83_164],[LCColor LCColor_0_111_247]];
     
     _bgView = [UIView new];
     _bgView.layer.cornerRadius = 8;
@@ -130,6 +133,13 @@
         make.bottom.equalTo(self.dayLabel.mas_top);
     }];
     
+}
+
+-(void)bind:(EventModel *)model{
+    self.titleLabel.text = model.title;
+    self.classTypeLabel.text = model.classType;
+    self.remindTypeLabel.text = model.remindType;
+    self.bgView.backgroundColor = _colorArray[[model.colorType integerValue]];
 }
 
 @end

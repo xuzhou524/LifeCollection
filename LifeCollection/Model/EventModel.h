@@ -22,6 +22,8 @@
 
 @property (nonatomic, copy) NSString * remindType;
 
+@property (nonatomic, copy) NSString * colorType;
+
 
 -(NSMutableArray *)queryWithNote;
 

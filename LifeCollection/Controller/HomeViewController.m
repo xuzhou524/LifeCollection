@@ -9,11 +9,14 @@
 #import "HomeViewController.h"
 #import "TimeListTableViewCell.h"
 #import "AddViewController.h"
+#import "EventModel.h"
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>{
     NSArray * _colorArray;
 }
 @property(nonatomic,strong)UITableView * tableView;
+@property (nonatomic, strong) NSMutableArray * eventModelLists;
+@property (nonatomic, strong) EventModel * eventModel;
 @end
 
 @implementation HomeViewController
@@ -44,6 +47,20 @@
     _colorArray = @[[LCColor LCColor_255_209_79],[LCColor LCColor_192_108_132],[LCColor LCColor_255_129_0],[LCColor LCColor_254_79_94],[LCColor LCColor_104_83_164],[LCColor LCColor_0_111_247]];
 }
 
+-(EventModel *)eventModel{
+    if (_eventModel == nil){
+        _eventModel = [EventModel new];
+    }
+    return _eventModel;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    
+    self.eventModelLists = [self.eventModel queryWithNote];
+    [self.tableView reloadData];
+}
+
 -(void)rightBtnClick{
     AddViewController * addVC = [AddViewController new];
     [self.navigationController pushViewController:addVC animated:YES];
@@ -54,7 +71,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 6;
+    return self.eventModelLists.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -64,7 +81,8 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TimeListTableViewCell * cell = getCell(TimeListTableViewCell);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.bgView.backgroundColor = _colorArray[indexPath.row % 6];
+    EventModel * model = self.eventModelLists[indexPath.row];
+    [cell bind:model];
     return cell;
 }
 

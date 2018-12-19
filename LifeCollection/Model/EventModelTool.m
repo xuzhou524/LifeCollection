@@ -42,6 +42,7 @@ static FMDatabaseQueue *_queue;
             datanote.time = [rs stringForColumn:@"time"];
             datanote.classType = [rs stringForColumn:@"classType"];
             datanote.remindType = [rs stringForColumn:@"remindType"];
+            datanote.colorType = [rs stringForColumn:@"colorType"];
             [diaryArray addObject:datanote];
         }
     }];
@@ -56,7 +57,7 @@ static FMDatabaseQueue *_queue;
 
 +(void)insertNote:(EventModel *)diaryNote{
     [_queue inDatabase:^(FMDatabase *db){
-        [db executeUpdate:@"insert into LifeCollection(title, content, time, classType, remindType) values (?, ?, ?, ?, ?)",diaryNote.title, diaryNote.content, diaryNote.time, diaryNote.classType, diaryNote.remindType];
+        [db executeUpdate:@"insert into LifeCollection(title, content, time, classType, remindType, colorType) values (?, ?, ?, ?, ?)",diaryNote.title, diaryNote.content, diaryNote.time, diaryNote.classType, diaryNote.remindType, diaryNote.colorType];
     }];
 }
 
@@ -73,6 +74,7 @@ static FMDatabaseQueue *_queue;
             datanote.time = [rs stringForColumn:@"time"];
             datanote.classType = [rs stringForColumn:@"classType"];
             datanote.remindType = [rs stringForColumn:@"remindType"];
+            datanote.colorType = [rs stringForColumn:@"colorType"];
         }
     }];
     return datanote;
@@ -80,7 +82,7 @@ static FMDatabaseQueue *_queue;
 
 +(void)updataNote:(EventModel *)updataNote{
     [_queue inDatabase:^(FMDatabase *db){
-        [db executeUpdate:@"update LifeCollection set title = ? , content = ?, time = ?, classType = ? , remindType = ? where ids = ? ;",updataNote.title, updataNote.content, updataNote.time, updataNote.classType, updataNote.remindType, [NSNumber numberWithInt:updataNote.ids]];
+        [db executeUpdate:@"update LifeCollection set title = ? , content = ?, time = ?, classType = ? , remindType = ? , colorType = ? where ids = ? ;",updataNote.title, updataNote.content, updataNote.time, updataNote.classType, updataNote.remindType, updataNote.colorType, [NSNumber numberWithInt:updataNote.ids]];
     }];
 }
 
