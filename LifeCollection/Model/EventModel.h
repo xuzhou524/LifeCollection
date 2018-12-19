@@ -1,14 +1,14 @@
 //
-//  NTDiary.h
-//  simple
+//  EventModel.h
+//  LifeCollection
 //
-//  Created by qaaaa on 2018/12/7.
-//  Copyright (c) 2018 qaaaa. All rights reserved.
+//  Created by gozap on 2018/12/19.
+//  Copyright © 2018 com.longdai. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface NTDiary : NSObject
+@interface EventModel : NSObject
 
 @property (nonatomic, assign) int ids;
 
@@ -22,14 +22,16 @@
 
 @property (nonatomic, copy) NSString * remindType;
 
+
 -(NSMutableArray *)queryWithNote;
 
 -(void)deleteNote:(int)ids;
 
--(void)insertNote:(NTDiary *)diaryNote;
+-(void)insertNote:(EventModel *)diaryNote;
 
--(NTDiary *)queryOneNote:(int)ids;
+-(EventModel *)queryOneNote:(int)ids;
 
--(void)updataNote:(NTDiary *)updataNote;
+-(void)updataNote:(EventModel *)updataNote;
 
 @end
+
