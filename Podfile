@@ -5,6 +5,7 @@ use_frameworks!
 def pods
    pod 'Masonry'
    pod 'FMDB'
+   pod 'MBProgressHUD'
 end
 
 
