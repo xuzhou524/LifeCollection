@@ -33,7 +33,7 @@ static FMDatabaseQueue *_queue;
     [_queue inDatabase:^(FMDatabase *db){
         diaryArray = [NSMutableArray array];
         FMResultSet *rs = nil;
-        rs = [db executeQuery:@"select * from LifeCollection"];
+        rs = [db executeQuery:@"select * from LifeCollection_Tab"];
         while (rs.next){
             datanote = [[EventModel alloc]init];
             datanote.ids = [rs intForColumn:@"ids"];
@@ -51,13 +51,13 @@ static FMDatabaseQueue *_queue;
 
 +(void)deleteNote:(int)ids{
     [_queue inDatabase:^(FMDatabase *db){
-        [db executeUpdate:@"delete from LifeCollection where ids = ?", [NSNumber numberWithInt:ids]];
+        [db executeUpdate:@"delete from LifeCollection_Tab where ids = ?", [NSNumber numberWithInt:ids]];
     }];
 }
 
 +(void)insertNote:(EventModel *)diaryNote{
     [_queue inDatabase:^(FMDatabase *db){
-        [db executeUpdate:@"insert into LifeCollection(title, content, time, classType, remindType, colorType) values (?, ?, ?, ?, ?)",diaryNote.title, diaryNote.content, diaryNote.time, diaryNote.classType, diaryNote.remindType, diaryNote.colorType];
+        [db executeUpdate:@"insert into LifeCollection_Tab(title, content, time, classType, remindType, colorType) values (?, ?, ?, ?, ?)",diaryNote.title, diaryNote.content, diaryNote.time, diaryNote.classType, diaryNote.remindType, diaryNote.colorType];
     }];
 }
 
@@ -65,7 +65,7 @@ static FMDatabaseQueue *_queue;
     __block EventModel * datanote;
     [_queue inDatabase:^(FMDatabase *db){
         FMResultSet *rs = nil;
-        rs = [db executeQuery:@"select * from LifeCollection where ids = ?",[NSNumber numberWithInt:ids]];
+        rs = [db executeQuery:@"select * from LifeCollection_Tab where ids = ?",[NSNumber numberWithInt:ids]];
         while (rs.next){
             datanote = [[EventModel alloc]init];
             datanote.ids = [rs intForColumn:@"ids"];
@@ -82,7 +82,7 @@ static FMDatabaseQueue *_queue;
 
 +(void)updataNote:(EventModel *)updataNote{
     [_queue inDatabase:^(FMDatabase *db){
-        [db executeUpdate:@"update LifeCollection set title = ? , content = ?, time = ?, classType = ? , remindType = ? , colorType = ? where ids = ? ;",updataNote.title, updataNote.content, updataNote.time, updataNote.classType, updataNote.remindType, updataNote.colorType, [NSNumber numberWithInt:updataNote.ids]];
+        [db executeUpdate:@"update LifeCollection_Tab set title = ? , content = ?, time = ?, classType = ? , remindType = ? , colorType = ? where ids = ? ;",updataNote.title, updataNote.content, updataNote.time, updataNote.classType, updataNote.remindType, updataNote.colorType, [NSNumber numberWithInt:updataNote.ids]];
     }];
 }
 
