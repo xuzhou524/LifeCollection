@@ -33,7 +33,7 @@
     
     _bgView = [UIView new];
     _bgView.layer.cornerRadius = 8;
-    _bgView.backgroundColor = [LCColor LCColor_255_129_0];
+    _bgView.backgroundColor = LCEventBackgroundColor(0);
     [self.contentView addSubview:_bgView];
     [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(label.mas_bottom).offset(10);

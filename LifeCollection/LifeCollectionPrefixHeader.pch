@@ -8,8 +8,12 @@
 
 #import "LifeCollectionHeader.h"
 
+
 #define ScreenWidth      [[UIScreen mainScreen] bounds].size.width
 #define ScreenHeight     [[UIScreen mainScreen] bounds].size.height
+
+#define LCEventBackgroundColorArray     @[[LCColor LCColor_255_209_79],[LCColor LCColor_192_108_132],[LCColor LCColor_255_129_0],[LCColor LCColor_254_79_94],[LCColor LCColor_104_83_164],[LCColor LCColor_0_111_247]]
+#define LCEventBackgroundColor(index)      LCEventBackgroundColorArray[index]
 
 #define regClass( table,cell ) [table registerClass:[cell class] forCellReuseIdentifier:[NSString stringWithFormat:@"%@", [cell class]]]
 #define getCell(cell) [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"%@", [cell class]] forIndexPath:indexPath]

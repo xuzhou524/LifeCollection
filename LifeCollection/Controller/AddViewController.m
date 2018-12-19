@@ -12,9 +12,8 @@
 #import "TitleTableViewCell.h"
 #import "SelectColorTableViewCell.h"
 
-@interface AddViewController ()<UITableViewDelegate,UITableViewDataSource>{
-    NSArray * _colorArray;
-}
+@interface AddViewController ()<UITableViewDelegate,UITableViewDataSource>
+
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)PreviewTableViewCell * previewcell;
 @end
@@ -52,7 +51,6 @@
     [self.view addGestureRecognizer:tapGestureRecognizer]; //只需要点击非文字输入区域就会响应
     [tapGestureRecognizer setCancelsTouchesInView:NO];
     
-    _colorArray = @[[LCColor LCColor_255_129_0],[LCColor LCColor_255_209_79],[LCColor LCColor_192_108_132],[LCColor LCColor_254_79_94],[LCColor LCColor_104_83_164],[LCColor LCColor_0_111_247]];
 }
 
 - (void)backupgroupTap:(id)sender {
@@ -86,7 +84,6 @@
     if (indexPath.row == 0) {
         _previewcell = getCell(PreviewTableViewCell);
         _previewcell.selectionStyle = UITableViewCellSelectionStyleNone;
-//        _previewcell.bgView.backgroundColor = _colorArray.firstObject;
         return _previewcell;
     }else if (indexPath.row == 1){
         TextFieldTableViewCell * cell = getCell(TextFieldTableViewCell);
@@ -125,6 +122,6 @@
 }
 
 -(void)selectColorClick:(UITapGestureRecognizer *)tap{
-    _previewcell.bgView.backgroundColor = _colorArray[tap.view.tag - 100];
+    _previewcell.bgView.backgroundColor = LCEventBackgroundColor(tap.view.tag - 100);
 }
 @end

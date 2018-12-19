@@ -11,9 +11,8 @@
 #import "AddViewController.h"
 #import "EventModel.h"
 
-@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>{
-    NSArray * _colorArray;
-}
+@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
+
 @property(nonatomic,strong)UITableView * tableView;
 @property (nonatomic, strong) NSMutableArray * eventModelLists;
 @property (nonatomic, strong) EventModel * eventModel;
@@ -44,7 +43,6 @@
     [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
     
-    _colorArray = @[[LCColor LCColor_255_209_79],[LCColor LCColor_192_108_132],[LCColor LCColor_255_129_0],[LCColor LCColor_254_79_94],[LCColor LCColor_104_83_164],[LCColor LCColor_0_111_247]];
 }
 
 -(EventModel *)eventModel{
