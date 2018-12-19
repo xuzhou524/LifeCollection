@@ -33,15 +33,15 @@ static FMDatabaseQueue *_queue;
     [_queue inDatabase:^(FMDatabase *db){
          diaryArray = [NSMutableArray array];
          FMResultSet *rs = nil;
-         rs = [db executeQuery:@"select * from simplenote"];
+         rs = [db executeQuery:@"select * from LifeCollection"];
          while (rs.next){
              datanote = [[NTDiary alloc]init];
              datanote.ids = [rs intForColumn:@"ids"];
              datanote.title = [rs stringForColumn:@"title"];
              datanote.content = [rs stringForColumn:@"content"];
              datanote.time = [rs stringForColumn:@"time"];
-             datanote.weather = [rs stringForColumn:@"weather"];
-             datanote.mood = [rs stringForColumn:@"mood"];
+             datanote.classType = [rs stringForColumn:@"classType"];
+             datanote.remindType = [rs stringForColumn:@"remindType"];
              [diaryArray addObject:datanote];
          }
      }];
@@ -50,13 +50,13 @@ static FMDatabaseQueue *_queue;
 
 +(void)deleteNote:(int)ids{
     [_queue inDatabase:^(FMDatabase *db){
-      [db executeUpdate:@"delete from simplenote where ids = ?", [NSNumber numberWithInt:ids]];
+      [db executeUpdate:@"delete from LifeCollection where ids = ?", [NSNumber numberWithInt:ids]];
      }];
 }
 
 +(void)insertNote:(NTDiary *)diaryNote{
     [_queue inDatabase:^(FMDatabase *db){
-         [db executeUpdate:@"insert into simplenote(title, content, time, weather, mood) values (?, ?, ?, ?, ?)",diaryNote.title, diaryNote.content, diaryNote.time, diaryNote.weather, diaryNote.mood];
+         [db executeUpdate:@"insert into LifeCollection(title, content, time, classType, remindType) values (?, ?, ?, ?, ?)",diaryNote.title, diaryNote.content, diaryNote.time, diaryNote.classType, diaryNote.remindType];
      }];
 }
 
@@ -64,15 +64,15 @@ static FMDatabaseQueue *_queue;
     __block NTDiary * datanote;
     [_queue inDatabase:^(FMDatabase *db){
          FMResultSet *rs = nil;
-         rs = [db executeQuery:@"select * from simplenote where ids = ?",[NSNumber numberWithInt:ids]];
+         rs = [db executeQuery:@"select * from LifeCollection where ids = ?",[NSNumber numberWithInt:ids]];
          while (rs.next){
              datanote = [[NTDiary alloc]init];
              datanote.ids = [rs intForColumn:@"ids"];
              datanote.title = [rs stringForColumn:@"title"];
              datanote.content = [rs stringForColumn:@"content"];
              datanote.time = [rs stringForColumn:@"time"];
-             datanote.weather = [rs stringForColumn:@"weather"];
-             datanote.mood = [rs stringForColumn:@"mood"];
+             datanote.classType = [rs stringForColumn:@"classType"];
+             datanote.remindType = [rs stringForColumn:@"remindType"];
          }
      }];
     return datanote;
@@ -80,7 +80,7 @@ static FMDatabaseQueue *_queue;
 
 +(void)updataNote:(NTDiary *)updataNote{
     [_queue inDatabase:^(FMDatabase *db){
-         [db executeUpdate:@"update simplenote set title = ? , content = ?, time = ?, weather = ? , mood = ? where ids = ? ;",updataNote.title, updataNote.content, updataNote.time, updataNote.weather, updataNote.mood, [NSNumber numberWithInt:updataNote.ids]];
+         [db executeUpdate:@"update LifeCollection set title = ? , content = ?, time = ?, classType = ? , remindType = ? where ids = ? ;",updataNote.title, updataNote.content, updataNote.time, updataNote.classType, updataNote.remindType, [NSNumber numberWithInt:updataNote.ids]];
      }];
 }
 @end

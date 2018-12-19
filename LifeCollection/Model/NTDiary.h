@@ -18,9 +18,9 @@
 
 @property (nonatomic, copy) NSString * time;
 
-@property (nonatomic, copy) NSString * weather;
+@property (nonatomic, copy) NSString * classType;
 
-@property (nonatomic, copy) NSString * mood;
+@property (nonatomic, copy) NSString * remindType;
 
 -(NSMutableArray *)queryWithNote;
 
