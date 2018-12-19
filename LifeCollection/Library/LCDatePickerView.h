@@ -1,14 +1,14 @@
 //
-//  NTDatePickerView.h
-//  simple
+//  LCDatePickerView.h
+//  LifeCollection
 //
-//  Created by qaaaa on 2018/12/7.
-//  Copyright (c) 2018 qaaaa. All rights reserved.
+//  Created by gozap on 2018/12/19.
+//  Copyright © 2018 com.longdai. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@protocol NTDatePickerViewDelegate <NSObject>
+@protocol LCDatePickerViewDelegate <NSObject>
 
 @optional
 
@@ -21,16 +21,15 @@
 @end
 
 
-@interface NTDatePickerView : UIView
-
+@interface LCDatePickerView : UIView
 
 @property (nonatomic, weak) UIDatePicker * datePickers;
 
-@property (nonatomic, weak) id<NTDatePickerViewDelegate> delegate;
+@property (nonatomic, weak) id<LCDatePickerViewDelegate> delegate;
 
-+(NTDatePickerView *)initWithPicker:(CGRect )viewFrame;
++(LCDatePickerView *)initWithPicker:(CGRect )viewFrame;
 
-+(NTDatePickerView *)initWithPicker;
++(LCDatePickerView *)initWithPicker;
 
 +(NSString *)getNowDateFormat:(NSString *)date;
 
@@ -45,6 +44,6 @@
 
 -(void) datePickerWillHidden:(BOOL)hidder;
 
-
-
 @end
+
+

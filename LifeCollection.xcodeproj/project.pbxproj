@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		531AD07921C9EC4500A4B2BC /* NTDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD07821C9EC4500A4B2BC /* NTDatePickerView.m */; };
 		531AD08521CA286000A4B2BC /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD08421CA286000A4B2BC /* EventModel.m */; };
 		531AD08821CA28C700A4B2BC /* EventModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD08721CA28C700A4B2BC /* EventModelTool.m */; };
 		531AD08E21CA323800A4B2BC /* LifeCollection.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 531AD08D21CA323800A4B2BC /* LifeCollection.sqlite */; };
+		531AD09121CA388D00A4B2BC /* LCDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD09021CA388D00A4B2BC /* LCDatePickerView.m */; };
 		5356ECF121C7463A00862FE1 /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECED21C7463A00862FE1 /* LCTabBarController.m */; };
 		5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF021C7463A00862FE1 /* LCTabBar.m */; };
 		5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF421C7466C00862FE1 /* LCNavigationViewController.m */; };
@@ -49,13 +49,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		531AD07721C9EC4400A4B2BC /* NTDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTDatePickerView.h; sourceTree = "<group>"; };
-		531AD07821C9EC4500A4B2BC /* NTDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTDatePickerView.m; sourceTree = "<group>"; };
 		531AD08321CA286000A4B2BC /* EventModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
 		531AD08421CA286000A4B2BC /* EventModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
 		531AD08621CA28C700A4B2BC /* EventModelTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventModelTool.h; sourceTree = "<group>"; };
 		531AD08721CA28C700A4B2BC /* EventModelTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventModelTool.m; sourceTree = "<group>"; };
 		531AD08D21CA323800A4B2BC /* LifeCollection.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = LifeCollection.sqlite; sourceTree = "<group>"; };
+		531AD08F21CA388D00A4B2BC /* LCDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCDatePickerView.h; sourceTree = "<group>"; };
+		531AD09021CA388D00A4B2BC /* LCDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCDatePickerView.m; sourceTree = "<group>"; };
 		5356ECED21C7463A00862FE1 /* LCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarController.m; sourceTree = "<group>"; };
 		5356ECEE21C7463A00862FE1 /* LCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBar.h; sourceTree = "<group>"; };
 		5356ECEF21C7463A00862FE1 /* LCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarController.h; sourceTree = "<group>"; };
@@ -147,8 +147,8 @@
 		531AD07621C9EA8C00A4B2BC /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				531AD07721C9EC4400A4B2BC /* NTDatePickerView.h */,
-				531AD07821C9EC4500A4B2BC /* NTDatePickerView.m */,
+				531AD08F21CA388D00A4B2BC /* LCDatePickerView.h */,
+				531AD09021CA388D00A4B2BC /* LCDatePickerView.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -417,7 +417,6 @@
 				5357B40D21C38B73009D9333 /* HomeViewController.m in Sources */,
 				5357B41321C38B73009D9333 /* LifeCollection.xcdatamodeld in Sources */,
 				5357B42921C3911B009D9333 /* LCColor.m in Sources */,
-				531AD07921C9EC4500A4B2BC /* NTDatePickerView.m in Sources */,
 				5356ED3121C7845D00862FE1 /* AddViewController.m in Sources */,
 				5356ECF121C7463A00862FE1 /* LCTabBarController.m in Sources */,
 				5357B41B21C38B74009D9333 /* main.m in Sources */,
@@ -428,6 +427,7 @@
 				531AD08821CA28C700A4B2BC /* EventModelTool.m in Sources */,
 				539B3A6521C7B01300431B7A /* TitleTableViewCell.m in Sources */,
 				5357B40A21C38B73009D9333 /* AppDelegate.m in Sources */,
+				531AD09121CA388D00A4B2BC /* LCDatePickerView.m in Sources */,
 				531AD08521CA286000A4B2BC /* EventModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
