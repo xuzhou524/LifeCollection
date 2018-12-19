@@ -93,14 +93,14 @@
     }else if (indexPath.row == 2){
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @"类型";
-        cell.summeryLabel.text = @"倒计日";
+        cell.titleLabel.text = @"时间";
+        cell.summeryLabel.text = @"2018-12-18";
         return cell;
     }else if (indexPath.row == 3){
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @"时间";
-        cell.summeryLabel.text = @"2018-12-18";
+        cell.titleLabel.text = @"类型";
+        cell.summeryLabel.text = @"倒计日";
         return cell;
     }else if (indexPath.row == 4){
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
