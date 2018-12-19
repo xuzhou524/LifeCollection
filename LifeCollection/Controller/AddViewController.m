@@ -11,11 +11,18 @@
 #import "TextFieldTableViewCell.h"
 #import "TitleTableViewCell.h"
 #import "SelectColorTableViewCell.h"
+#import "LCDatePickerView.h"
+#import "EventModel.h"
 
-@interface AddViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface AddViewController ()<UITableViewDelegate,UITableViewDataSource,LCDatePickerViewDelegate>
 
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)PreviewTableViewCell * previewcell;
+@property (nonatomic, strong) LCDatePickerView * pickerView;
+
+@property (nonatomic, strong) EventModel * eventModel;
+@property (nonatomic, strong) NSString * originalDate;
+
 @end
 
 @implementation AddViewController
@@ -46,6 +53,10 @@
     [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
     
+    self.pickerView = [LCDatePickerView initWithPicker:self.view.frame];
+    self.pickerView.delegate = self;
+    [self.view addSubview:self.pickerView];
+    
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backupgroupTap:)];
     tapGestureRecognizer.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:tapGestureRecognizer]; //只需要点击非文字输入区域就会响应
@@ -55,6 +66,13 @@
 
 - (void)backupgroupTap:(id)sender {
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+}
+
+-(EventModel *)eventModel{
+    if (_eventModel == nil){
+        _eventModel = [EventModel new];
+    }
+    return _eventModel;
 }
 
 -(void)rightBtnClick{
@@ -121,7 +139,32 @@
     return [UITableViewCell new];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 2){
+        [self showPicker];
+    }
+}
+
 -(void)selectColorClick:(UITapGestureRecognizer *)tap{
     _previewcell.bgView.backgroundColor = LCEventBackgroundColor(tap.view.tag - 100);
 }
+
+
+-(void)showPicker{
+    [self.pickerView popDatePickerView];
+    [self.pickerView resetToZero];
+}
+
+-(void)didCancelSelectDate{
+    
+}
+
+-(void)didSaveDate{
+//    self.eventModel.time = [self.pickerView getNowDatePicker:@"yyyy-M-d HH:mm"];
+}
+
+-(void)didDateChangeTo{
+    
+}
+
 @end
