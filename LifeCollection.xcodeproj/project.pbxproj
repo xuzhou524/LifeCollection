@@ -176,10 +176,8 @@
 				5357B41921C38B74009D9333 /* Info.plist */,
 				5357B41A21C38B74009D9333 /* main.m */,
 				5357B41121C38B73009D9333 /* LifeCollection.xcdatamodeld */,
-				5357B42321C38CBC009D9333 /* Model */,
 				5357B42221C38CB5009D9333 /* View */,
 				5357B42121C38CAD009D9333 /* Controller */,
-				5357B42421C3901F009D9333 /* Library */,
 				5357B42521C3903B009D9333 /* Util */,
 				5356ECF621C7469C00862FE1 /* Resources */,
 			);
@@ -214,20 +212,6 @@
 				539B3A6B21C7B57800431B7A /* SelectColorTableViewCell.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		5357B42321C38CBC009D9333 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5357B42421C3901F009D9333 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Library;
 			sourceTree = "<group>";
 		};
 		5357B42521C3903B009D9333 /* Util */ = {
@@ -546,7 +530,10 @@
 				GCC_PREFIX_HEADER = LifeCollection/LifeCollectionPrefixHeader.pch;
 				INFOPLIST_FILE = LifeCollection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.longdai.LifeCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -563,7 +550,10 @@
 				GCC_PREFIX_HEADER = LifeCollection/LifeCollectionPrefixHeader.pch;
 				INFOPLIST_FILE = LifeCollection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.longdai.LifeCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
