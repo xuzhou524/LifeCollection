@@ -122,6 +122,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		531AD07521C9EA7200A4B2BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		531AD07621C9EA8C00A4B2BC /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		5356ECF621C7469C00862FE1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,7 +191,9 @@
 				5357B41A21C38B74009D9333 /* main.m */,
 				5357B41121C38B73009D9333 /* LifeCollection.xcdatamodeld */,
 				5357B42221C38CB5009D9333 /* View */,
+				531AD07521C9EA7200A4B2BC /* Model */,
 				5357B42121C38CAD009D9333 /* Controller */,
+				531AD07621C9EA8C00A4B2BC /* Library */,
 				5357B42521C3903B009D9333 /* Util */,
 				5356ECF621C7469C00862FE1 /* Resources */,
 			);
