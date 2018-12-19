@@ -4,6 +4,7 @@ use_frameworks!
 
 def pods
    pod 'Masonry'
+   pod 'FMDB'
 end
 
 
