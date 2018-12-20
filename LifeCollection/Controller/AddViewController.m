@@ -171,16 +171,6 @@
 -(void)doActionSheetShow{
     DoActionSheet *vActionSheet = [DoActionSheet new];
     
-    vActionSheet.doButtonColor = DO_RGB(52, 152, 219);
-    vActionSheet.doCancelColor = DO_RGB(231, 76, 60);
-    
-    
-    vActionSheet.doTitleFont = LCFont(15);
-    vActionSheet.doButtonFont = LCFont(15);
-    vActionSheet.doCancelFont = LCFont(15);
-    
-    vActionSheet.doButtonHeight = 45.0f;
-    
     vActionSheet.dRound = 5;
     vActionSheet.dButtonRound = 2;
     

@@ -56,21 +56,21 @@
     lb.textAlignment = NSTextAlignmentCenter;
     lb.numberOfLines = 0;
     
-    lb.font = (self.doTitleFont == nil) ? DO_AS_TITLE_FONT : self.doTitleFont;
-    lb.textColor = (self.doTitleTextColor == nil) ? DO_AS_TITLE_TEXT_COLOR : self.doTitleTextColor;
+    lb.font = DO_AS_TITLE_FONT;
+    lb.textColor = DO_AS_TITLE_TEXT_COLOR;
 }
 
 - (void)setButtonAttributes:(UIButton *)bt cancel:(BOOL)bCancel{
     bt.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 
     if (bCancel){
-        bt.backgroundColor = (self.doCancelColor == nil) ? DO_AS_CANCEL_COLOR : self.doCancelColor;
-        bt.titleLabel.font = (self.doCancelFont == nil) ? DO_AS_TITLE_FONT : self.doCancelFont;
-        [bt setTitleColor:(self.doCancelTextColor == nil) ? DO_AS_CANCEL_TEXT_COLOR : self.doCancelTextColor forState:UIControlStateNormal];
+        bt.backgroundColor = DO_AS_CANCEL_COLOR;
+        bt.titleLabel.font = DO_AS_TITLE_FONT;
+        [bt setTitleColor:DO_AS_CANCEL_TEXT_COLOR forState:UIControlStateNormal];
     }else{
-        bt.backgroundColor = (self.doButtonColor == nil) ? DO_AS_BUTTON_COLOR : self.doButtonColor;
-        bt.titleLabel.font = (self.doButtonFont == nil) ? DO_AS_BUTTON_FONT : self.doButtonFont;
-        [bt setTitleColor:(self.doButtonTextColor == nil) ? DO_AS_BUTTON_TEXT_COLOR : self.doButtonTextColor forState:UIControlStateNormal];
+        bt.backgroundColor = DO_AS_BUTTON_COLOR;
+        bt.titleLabel.font = DO_AS_BUTTON_FONT;
+        [bt setTitleColor:DO_AS_BUTTON_TEXT_COLOR forState:UIControlStateNormal];
     }
 
     if (_dButtonRound > 0){
@@ -84,11 +84,11 @@
 
 - (void)showActionSheet{
     double dHeight = 0;
-    self.backgroundColor = (self.doDimmedColor == nil) ? DO_AS_DIMMED_COLOR : self.doDimmedColor;
+    self.backgroundColor = DO_AS_DIMMED_COLOR;
 
     // make back view -----------------------------------------------------------------------------------------------
     _vActionSheet = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
-    _vActionSheet.backgroundColor = (self.doBackColor == nil) ? DO_AS_BACK_COLOR : self.doBackColor;
+    _vActionSheet.backgroundColor = DO_AS_BACK_COLOR;
     [self addSubview:_vActionSheet];
     
     // Title --------------------------------------------------------------------------------------------------------
@@ -110,7 +110,7 @@
         
         // underline
         UIView *vLine = [[UIView alloc] initWithFrame:CGRectMake(lbTitle.frame.origin.x, lbTitle.frame.origin.y + lbTitle.frame.size.height - 3, lbTitle.frame.size.width, 0.5)];
-        vLine.backgroundColor = (self.doTitleTextColor == nil) ? DO_AS_TITLE_TEXT_COLOR : self.doTitleTextColor;
+        vLine.backgroundColor = DO_AS_TITLE_TEXT_COLOR;
         vLine.alpha = 0.2;
         vLine.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         [_vActionSheet addSubview:vLine];
@@ -141,9 +141,9 @@
         
         [self setButtonAttributes:bt cancel:NO];
         bt.frame = CGRectMake(self.doButtonInset.left, dYContent,
-                              _vActionSheet.frame.size.width - (self.doButtonInset.left + self.doButtonInset.right), (self.doButtonHeight > 0) ? self.doButtonHeight : DO_AS_BUTTON_HEIGHT);
+                              _vActionSheet.frame.size.width - (self.doButtonInset.left + self.doButtonInset.right), DO_AS_BUTTON_HEIGHT);
         
-        dYContent += ((self.doButtonHeight > 0) ? self.doButtonHeight : DO_AS_BUTTON_HEIGHT) + self.doButtonInset.bottom;
+        dYContent += DO_AS_BUTTON_HEIGHT + self.doButtonInset.bottom;
         
         [sc addSubview:bt];
 
@@ -161,9 +161,9 @@
         
         [self setButtonAttributes:bt cancel:YES];
         bt.frame = CGRectMake(self.doButtonInset.left, dHeight + self.doButtonInset.top + self.doButtonInset.bottom,
-                              _vActionSheet.frame.size.width - (self.doButtonInset.left + self.doButtonInset.right), (self.doButtonHeight > 0) ? self.doButtonHeight : DO_AS_BUTTON_HEIGHT);
+                              _vActionSheet.frame.size.width - (self.doButtonInset.left + self.doButtonInset.right),DO_AS_BUTTON_HEIGHT);
         
-        dHeight += ((self.doButtonHeight > 0) ? self.doButtonHeight : DO_AS_BUTTON_HEIGHT) + (self.doButtonInset.top + self.doButtonInset.bottom) * 2;
+        dHeight += DO_AS_BUTTON_HEIGHT + (self.doButtonInset.top + self.doButtonInset.bottom) * 2;
         
         [_vActionSheet addSubview:bt];
     }else
