@@ -151,7 +151,7 @@
         _dayStrLabel.text = @"剩余天数";
         NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:model.time] timeIntervalSinceNow];
         if (timeInterval < 0) {
-            self.dayLabel.text = @"0";
+            self.dayLabel.text = @"=0";
             if ([model.remindType isEqualToString:@"月循环"]) {
                
             }else if ([model.remindType isEqualToString:@"年循环"]){
