@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		531AD08521CA286000A4B2BC /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD08421CA286000A4B2BC /* EventModel.m */; };
 		531AD08821CA28C700A4B2BC /* EventModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD08721CA28C700A4B2BC /* EventModelTool.m */; };
-		531AD08E21CA323800A4B2BC /* LifeCollection.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 531AD08D21CA323800A4B2BC /* LifeCollection.sqlite */; };
 		531AD09421CA411000A4B2BC /* LCDatePickerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD09321CA411000A4B2BC /* LCDatePickerWindow.m */; };
 		531AD09E21CB414C00A4B2BC /* DoActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD09D21CB414C00A4B2BC /* DoActionSheet.m */; };
+		531AD0A221CB7BA600A4B2BC /* LifeCollection.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 531AD0A121CB7BA600A4B2BC /* LifeCollection.sqlite */; };
 		5356ECF121C7463A00862FE1 /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECED21C7463A00862FE1 /* LCTabBarController.m */; };
 		5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF021C7463A00862FE1 /* LCTabBar.m */; };
 		5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF421C7466C00862FE1 /* LCNavigationViewController.m */; };
@@ -54,11 +54,11 @@
 		531AD08421CA286000A4B2BC /* EventModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
 		531AD08621CA28C700A4B2BC /* EventModelTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventModelTool.h; sourceTree = "<group>"; };
 		531AD08721CA28C700A4B2BC /* EventModelTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventModelTool.m; sourceTree = "<group>"; };
-		531AD08D21CA323800A4B2BC /* LifeCollection.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = LifeCollection.sqlite; sourceTree = "<group>"; };
 		531AD09221CA411000A4B2BC /* LCDatePickerWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCDatePickerWindow.h; sourceTree = "<group>"; };
 		531AD09321CA411000A4B2BC /* LCDatePickerWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCDatePickerWindow.m; sourceTree = "<group>"; };
 		531AD09C21CB414C00A4B2BC /* DoActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoActionSheet.h; sourceTree = "<group>"; };
 		531AD09D21CB414C00A4B2BC /* DoActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoActionSheet.m; sourceTree = "<group>"; };
+		531AD0A121CB7BA600A4B2BC /* LifeCollection.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = LifeCollection.sqlite; sourceTree = "<group>"; };
 		5356ECED21C7463A00862FE1 /* LCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarController.m; sourceTree = "<group>"; };
 		5356ECEE21C7463A00862FE1 /* LCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBar.h; sourceTree = "<group>"; };
 		5356ECEF21C7463A00862FE1 /* LCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarController.h; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 		531AD08021C9F09500A4B2BC /* SQLfile */ = {
 			isa = PBXGroup;
 			children = (
-				531AD08D21CA323800A4B2BC /* LifeCollection.sqlite */,
+				531AD0A121CB7BA600A4B2BC /* LifeCollection.sqlite */,
 			);
 			path = SQLfile;
 			sourceTree = "<group>";
@@ -352,7 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5357B41821C38B74009D9333 /* LaunchScreen.storyboard in Resources */,
-				531AD08E21CA323800A4B2BC /* LifeCollection.sqlite in Resources */,
+				531AD0A221CB7BA600A4B2BC /* LifeCollection.sqlite in Resources */,
 				539B3A8621C8A48C00431B7A /* add@3x.png in Resources */,
 				5356ED2221C7536200862FE1 /* tab_bar_user_sel@3x.png in Resources */,
 				5356ED2021C7536200862FE1 /* tab_bar_user@2x.png in Resources */,

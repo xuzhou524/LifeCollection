@@ -20,14 +20,14 @@
 
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)PreviewTableViewCell * previewcell;
+@property(nonatomic,strong)TextFieldTableViewCell * textFieldCell;
 
 @property (nonatomic, strong) LCDatePickerWindow * pickerWindow;
 
 @property (nonatomic, strong) EventModel * eventModel;
 @property (nonatomic, strong) NSString * originalDate;
 
-@property (nonatomic, strong) NSString * selectRemindTypeStr;
-@property (nonatomic, strong) NSString * selectClassTypeStr;
+@property (nonatomic, strong) NSString * selectColorTypeStr;
 
 @end
 
@@ -38,8 +38,10 @@
     self.navigationItem.title = @"添加";
     self.view.backgroundColor = [LCColor backgroudColor];
     
-    _selectClassTypeStr = @"倒计日";
-    _selectRemindTypeStr = @"无提醒";
+    //初始化默认值
+    self.eventModel.classType = @"倒计日";
+    self.eventModel.remindType = @"无提醒";
+    self.eventModel.colorType = @"0";
     
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
@@ -92,7 +94,16 @@
 }
 
 -(void)rightBtnClick{
+
+    if (_textFieldCell.titleTextField.text.length <= 0) {
+        return;
+    }
+    self.eventModel.title = _textFieldCell.titleTextField.text;
+    self.eventModel.time = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
     
+    [self.eventModel insertNote:self.eventModel];
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 -(void)cancelClick{
@@ -126,12 +137,13 @@
     if (indexPath.row == 0) {
         _previewcell = getCell(PreviewTableViewCell);
         _previewcell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _previewcell.bgView.backgroundColor = LCEventBackgroundColor([self.eventModel.colorType integerValue]);
         return _previewcell;
     }else if (indexPath.row == 1){
-        TextFieldTableViewCell * cell = getCell(TextFieldTableViewCell);
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @"标题";
-        return cell;
+        _textFieldCell = getCell(TextFieldTableViewCell);
+        _textFieldCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _textFieldCell.titleLabel.text = @"标题";
+        return _textFieldCell;
     }else if (indexPath.row == 2){
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -142,13 +154,13 @@
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"类型";
-        cell.summeryLabel.text = self.selectClassTypeStr;
+        cell.summeryLabel.text = self.eventModel.classType;
         return cell;
     }else if (indexPath.row == 4){
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"提醒";
-        cell.summeryLabel.text = self.selectRemindTypeStr;
+        cell.summeryLabel.text = self.eventModel.remindType;
 
         return cell;
     }else if (indexPath.row == 5){
@@ -176,6 +188,7 @@
 
 -(void)selectColorClick:(UITapGestureRecognizer *)tap{
     _previewcell.bgView.backgroundColor = LCEventBackgroundColor(tap.view.tag - 100);
+    self.eventModel.colorType = [NSString stringWithFormat:@"%ld",tap.view.tag - 100];
 }
 
 -(void)remindDoActionSheetShow{
@@ -186,7 +199,7 @@
                 buttons:LCRemindTypeArray
                  result:^(int nResult) {
                      if (nResult < LCRemindTypeArray.count) {
-                         weakSelf.selectRemindTypeStr = LCRemindType(nResult);
+                         weakSelf.eventModel.remindType = LCRemindType(nResult);
                          [weakSelf.tableView reloadData];
                      }
                  }
@@ -201,7 +214,7 @@
                 buttons:LCClassTypeArray
                  result:^(int nResult) {
                      if (nResult < LCClassTypeArray.count) {
-                         weakSelf.selectClassTypeStr = LCClassType(nResult);
+                         weakSelf.eventModel.classType = LCClassType(nResult);
                          [weakSelf.tableView reloadData];
                      }
                  }

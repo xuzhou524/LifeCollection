@@ -57,7 +57,7 @@ static FMDatabaseQueue *_queue;
 
 +(void)insertNote:(EventModel *)diaryNote{
     [_queue inDatabase:^(FMDatabase *db){
-        [db executeUpdate:@"insert into LifeCollection_Tab(title, content, time, classType, remindType, colorType) values (?, ?, ?, ?, ?)",diaryNote.title, diaryNote.content, diaryNote.time, diaryNote.classType, diaryNote.remindType, diaryNote.colorType];
+        [db executeUpdate:@"insert into LifeCollection_Tab(title, content, time, classType, remindType, colorType) values (?, ?, ?, ?, ?, ?)",diaryNote.title, diaryNote.content, diaryNote.time, diaryNote.classType, diaryNote.remindType, diaryNote.colorType];
     }];
 }
 
