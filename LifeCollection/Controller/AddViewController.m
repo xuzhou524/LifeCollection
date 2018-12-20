@@ -160,7 +160,9 @@
     if (indexPath.row == 2){
         [self.pickerWindow show];
     }else if (indexPath.row == 3){
-        [self doActionSheetShow];
+        [self classTypeDoActionSheetShow];
+    }else if (indexPath.row == 4){
+        [self remindDoActionSheetShow];
     }
 }
 
@@ -168,20 +170,27 @@
     _previewcell.bgView.backgroundColor = LCEventBackgroundColor(tap.view.tag - 100);
 }
 
--(void)doActionSheetShow{
+-(void)remindDoActionSheetShow{
     DoActionSheet *vActionSheet = [DoActionSheet new];
-    
-    vActionSheet.dRound = 5;
-    vActionSheet.dButtonRound = 2;
-    
-    [vActionSheet showC:@"提醒循环"
+    [vActionSheet showC:@"提醒"
                  cancel:@"取消"
                 buttons:@[@"无提醒", @"按月循环", @"按年循环"]
                  result:^(int nResult) {
                      NSLog(@"---------------> result : %d", nResult);
                  }
      ];
+}
 
+-(void)classTypeDoActionSheetShow{
+    DoActionSheet *vActionSheet = [DoActionSheet new];
+    [vActionSheet showC:@"类型"
+                 cancel:@"取消"
+                buttons:@[@"倒计日", @"累计日"]
+                 result:^(int nResult) {
+                     NSLog(@"---------------> result : %d", nResult);
+                 }
+     ];
+    
 }
 
 @end

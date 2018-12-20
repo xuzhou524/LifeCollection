@@ -43,6 +43,12 @@
 }
 
 
+
+
++ (UIColor *)LCColor_232_229_222{
+    return [LCColor colorWithR255:234 G255:234 B255:242 A255:255];
+}
+
 + (UIColor *)LCColor_77_92_127{
     return [LCColor colorWithR255:77 G255:92 B255:127 A255:255];
 }
@@ -52,7 +58,7 @@
 }
 
 
-
+//列表背景色
 + (UIColor *)LCColor_254_79_94{
     return [LCColor colorWithR255:254 G255:79 B255:94 A255:255];
 }

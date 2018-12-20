@@ -40,9 +40,8 @@
     }];
     
     self.backgroundMaskView=[UIView new];
-    self.backgroundMaskView.backgroundColor=[UIColor colorWithWhite:0 alpha:0.6];
+    self.backgroundMaskView.backgroundColor=[UIColor colorWithWhite:0 alpha:0.7];
     [self.backgroundMaskView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hide)]];
-    self.backgroundMaskView.alpha=0;
     [self.backgroundView addSubview:self.backgroundMaskView];
     [self.backgroundMaskView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.bottom.equalTo(self.backgroundView);
@@ -50,7 +49,7 @@
     
     self.contentView=[UIView new];
     self.contentView.clipsToBounds=YES;
-    self.contentView.backgroundColor=[LCColor whiteColor];
+    self.contentView.backgroundColor=[LCColor backgroudColor];
     [self.backgroundView addSubview:self.contentView];
     [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.backgroundView);
@@ -73,7 +72,7 @@
     }];
     
     UIView * sepView = [UIView new];
-    sepView.backgroundColor = [LCColor backgroudColor];
+    sepView.backgroundColor = [LCColor LCColor_232_229_222];
     [self.contentView addSubview:sepView];
     [sepView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.contentView);

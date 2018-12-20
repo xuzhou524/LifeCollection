@@ -72,13 +72,9 @@
         bt.titleLabel.font = DO_AS_BUTTON_FONT;
         [bt setTitleColor:DO_AS_BUTTON_TEXT_COLOR forState:UIControlStateNormal];
     }
-
-    if (_dButtonRound > 0){
-        CALayer *layer = [bt layer];
-        [layer setMasksToBounds:YES];
-        [layer setCornerRadius:_dButtonRound];
-    }
-
+    CALayer *layer = [bt layer];
+    [layer setMasksToBounds:YES];
+    [layer setCornerRadius:3];
     [bt addTarget:self action:@selector(buttonTarget:) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -92,8 +88,7 @@
     [self addSubview:_vActionSheet];
     
     // Title --------------------------------------------------------------------------------------------------------
-    if (_strTitle != nil && _strTitle.length > 0)
-    {
+    if (_strTitle != nil && _strTitle.length > 0){
         if (self.doTitleInset.top == 0 && self.doTitleInset.left == 0 && self.doTitleInset.bottom == 0 && self.doTitleInset.right == 0) {
             self.doTitleInset = DO_AS_TITLE_INSET;
         }
@@ -107,13 +102,7 @@
         [_vActionSheet addSubview:lbTitle];
         
         dHeight = lbTitle.frame.size.height + self.doTitleInset.bottom;
-        
-        // underline
-        UIView *vLine = [[UIView alloc] initWithFrame:CGRectMake(lbTitle.frame.origin.x, lbTitle.frame.origin.y + lbTitle.frame.size.height - 3, lbTitle.frame.size.width, 0.5)];
-        vLine.backgroundColor = DO_AS_TITLE_TEXT_COLOR;
-        vLine.alpha = 0.2;
-        vLine.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-        [_vActionSheet addSubview:vLine];
+    
     }else
         dHeight += self.doTitleInset.bottom;
 
@@ -186,13 +175,9 @@
         _vActionSheet.center = window.center;
     }
     [_actionWindow makeKeyAndVisible];
-    
-    if (_dRound > 0){
-        CALayer *layer = [_vActionSheet layer];
-        [layer setMasksToBounds:YES];
-        [layer setCornerRadius:_dRound];
-    }
-
+    CALayer *layer = [_vActionSheet layer];
+    [layer setMasksToBounds:YES];
+    [layer setCornerRadius:3];
     [self showAnimation];
 }
 
@@ -218,7 +203,7 @@
 - (void)showAnimation{
     self.alpha = 0.0;
     _vActionSheet.frame = CGRectMake(0, self.bounds.size.height,
-                                             self.bounds.size.width, _vActionSheet.frame.size.height + _dRound + 5);
+                                             self.bounds.size.width, _vActionSheet.frame.size.height + 3 + 5);
     [UIView animateWithDuration:0.2 animations:^(void) {
         self.alpha = 1.0;
         [UIView setAnimationDelay:0.1];

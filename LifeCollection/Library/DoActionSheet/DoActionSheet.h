@@ -12,14 +12,14 @@
 #define DO_RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 
 // color set 3 -----------------------------------------------------------------------------
-#define DO_AS_BACK_COLOR               DO_RGB(232, 229, 222)
+#define DO_AS_BACK_COLOR               DO_RGB(244, 244, 247)
 
 // button background color
 #define DO_AS_BUTTON_COLOR             DO_RGB(52, 152, 219)
 #define DO_AS_CANCEL_COLOR             DO_RGB(231, 76, 60)
 
 // button text color
-#define DO_AS_TITLE_TEXT_COLOR         DO_RGB(95, 74, 50)
+#define DO_AS_TITLE_TEXT_COLOR         DO_RGB(113, 120, 150)
 #define DO_AS_BUTTON_TEXT_COLOR        DO_RGB(255, 255, 255)
 #define DO_AS_CANCEL_TEXT_COLOR        DO_RGB(255, 255, 255)
 
@@ -28,8 +28,8 @@
 #define DO_AS_TITLE_FONT           LCFont(15)
 #define DO_AS_BUTTON_FONT          LCFont(15)
 
-#define DO_AS_TITLE_INSET          UIEdgeInsetsMake(10, 20, 10, 20)
-#define DO_AS_BUTTON_INSET         UIEdgeInsetsMake(5, 20, 5, 20)
+#define DO_AS_TITLE_INSET          UIEdgeInsetsMake(15, 20, 15, 20)
+#define DO_AS_BUTTON_INSET         UIEdgeInsetsMake(10, 20, 10, 20)
 
 #define DO_AS_BUTTON_HEIGHT        45
 
@@ -46,9 +46,6 @@ typedef void(^DoActionSheetHandler)(int nResult);
     UIView                  *_vActionSheet;
     DoActionSheetHandler    _result;
 }
-
-@property (readwrite)   double      dRound;
-@property (readwrite)   double      dButtonRound;
 
 @property (strong, nonatomic)   NSArray         *aButtons;
 
