@@ -106,7 +106,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
-        return 160;
+        return 165;
     }else if (indexPath.row == 1 || indexPath.row == 2 ||indexPath.row == 3 ||indexPath.row == 4){
         return 60;
     }else if (indexPath.row == 5){
@@ -171,8 +171,8 @@
 }
 
 -(void)remindDoActionSheetShow{
-    DoActionSheet *vActionSheet = [DoActionSheet new];
-    [vActionSheet showC:@"提醒"
+    DoActionSheet *remindActionSheet = [DoActionSheet new];
+    [remindActionSheet showC:@"提醒"
                  cancel:@"取消"
                 buttons:@[@"无提醒", @"按月循环", @"按年循环"]
                  result:^(int nResult) {
@@ -182,8 +182,8 @@
 }
 
 -(void)classTypeDoActionSheetShow{
-    DoActionSheet *vActionSheet = [DoActionSheet new];
-    [vActionSheet showC:@"类型"
+    DoActionSheet *classTypeActionSheet = [DoActionSheet new];
+    [classTypeActionSheet showC:@"类型"
                  cancel:@"取消"
                 buttons:@[@"倒计日", @"累计日"]
                  result:^(int nResult) {
