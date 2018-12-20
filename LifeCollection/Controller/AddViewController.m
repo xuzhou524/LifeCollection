@@ -169,7 +169,7 @@
 }
 
 -(void)doActionSheetShow{
-    DoActionSheet *vActionSheet = [[DoActionSheet alloc] init];
+    DoActionSheet *vActionSheet = [DoActionSheet new];
     
     vActionSheet.doButtonColor = DO_RGB(52, 152, 219);
     vActionSheet.doCancelColor = DO_RGB(231, 76, 60);

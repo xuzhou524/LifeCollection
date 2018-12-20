@@ -19,43 +19,19 @@
 
 #pragma mark - View life cycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     self.view = _actionSheet;
 }
-
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return [UIApplication sharedApplication].statusBarStyle;
-}
-
-- (BOOL)prefersStatusBarHidden
-{
-    return [UIApplication sharedApplication].statusBarHidden;
-}
-
 @end
 
 @implementation DoActionSheet
-
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
-        
-        _nDestructiveIndex = -1;
-    }
-    return self;
-}
 
 // with cancel button and other buttons
 - (void)showC:(NSString *)strTitle
        cancel:(NSString *)strCancel
       buttons:(NSArray *)aButtons
-       result:(DoActionSheetHandler)result
-{
+       result:(DoActionSheetHandler)result{
     _strTitle   = strTitle;
     _strCancel  = strCancel;
     _aButtons   = aButtons;
@@ -64,34 +40,18 @@
     [self showActionSheet];
 }
 
-- (double)getTextHeight:(UILabel *)lbText
-{
+- (double)getTextHeight:(UILabel *)lbText{
     double dHeight = 0.0;
-    
-    if ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 7.0)
-    {
-        NSDictionary *attributes = @{NSFontAttributeName:lbText.font};
-        CGRect rect = [lbText.text boundingRectWithSize:CGSizeMake(lbText.frame.size.width, MAXFLOAT)
+    NSDictionary *attributes = @{NSFontAttributeName:lbText.font};
+    CGRect rect = [lbText.text boundingRectWithSize:CGSizeMake(lbText.frame.size.width, MAXFLOAT)
                                          options:NSStringDrawingUsesLineFragmentOrigin
                                       attributes:attributes
                                          context:nil];
-        
-        dHeight = ceil(rect.size.height);
-    }
-    else
-    {
-        CGSize size = [lbText.text sizeWithFont:lbText.font
-                              constrainedToSize:CGSizeMake(lbText.frame.size.width, MAXFLOAT)
-                                  lineBreakMode:NSLineBreakByWordWrapping];
-        
-        dHeight = ceil(size.height);
-    }
-    
+    dHeight = ceil(rect.size.height);
     return dHeight;
 }
 
-- (void)setLabelAttributes:(UILabel *)lb
-{
+- (void)setLabelAttributes:(UILabel *)lb{
     lb.backgroundColor = [UIColor clearColor];
     lb.textAlignment = NSTextAlignmentCenter;
     lb.numberOfLines = 0;
@@ -100,25 +60,20 @@
     lb.textColor = (self.doTitleTextColor == nil) ? DO_AS_TITLE_TEXT_COLOR : self.doTitleTextColor;
 }
 
-- (void)setButtonAttributes:(UIButton *)bt cancel:(BOOL)bCancel
-{
+- (void)setButtonAttributes:(UIButton *)bt cancel:(BOOL)bCancel{
     bt.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 
-    if (bCancel)
-    {
+    if (bCancel){
         bt.backgroundColor = (self.doCancelColor == nil) ? DO_AS_CANCEL_COLOR : self.doCancelColor;
         bt.titleLabel.font = (self.doCancelFont == nil) ? DO_AS_TITLE_FONT : self.doCancelFont;
         [bt setTitleColor:(self.doCancelTextColor == nil) ? DO_AS_CANCEL_TEXT_COLOR : self.doCancelTextColor forState:UIControlStateNormal];
-    }
-    else
-    {
+    }else{
         bt.backgroundColor = (self.doButtonColor == nil) ? DO_AS_BUTTON_COLOR : self.doButtonColor;
         bt.titleLabel.font = (self.doButtonFont == nil) ? DO_AS_BUTTON_FONT : self.doButtonFont;
         [bt setTitleColor:(self.doButtonTextColor == nil) ? DO_AS_BUTTON_TEXT_COLOR : self.doButtonTextColor forState:UIControlStateNormal];
     }
 
-    if (_dButtonRound > 0)
-    {
+    if (_dButtonRound > 0){
         CALayer *layer = [bt layer];
         [layer setMasksToBounds:YES];
         [layer setCornerRadius:_dButtonRound];
@@ -127,8 +82,7 @@
     [bt addTarget:self action:@selector(buttonTarget:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)showActionSheet
-{
+- (void)showActionSheet{
     double dHeight = 0;
     self.backgroundColor = (self.doDimmedColor == nil) ? DO_AS_DIMMED_COLOR : self.doDimmedColor;
 
@@ -160,8 +114,7 @@
         vLine.alpha = 0.2;
         vLine.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         [_vActionSheet addSubview:vLine];
-    }
-    else
+    }else
         dHeight += self.doTitleInset.bottom;
 
     if (self.doButtonInset.top == 0 && self.doButtonInset.left == 0 && self.doButtonInset.bottom == 0 && self.doButtonInset.right == 0) {
@@ -181,8 +134,7 @@
 
     // add buttons
     int nTagIndex = 0;
-    for (NSString *str in _aButtons)
-    {
+    for (NSString *str in _aButtons){
         UIButton *bt = [UIButton buttonWithType:UIButtonTypeCustom];
         bt.tag = nTagIndex;
         [bt setTitle:str forState:UIControlStateNormal];
@@ -194,12 +146,6 @@
         dYContent += ((self.doButtonHeight > 0) ? self.doButtonHeight : DO_AS_BUTTON_HEIGHT) + self.doButtonInset.bottom;
         
         [sc addSubview:bt];
-        
-        if (nTagIndex == _nDestructiveIndex)
-        {
-            bt.backgroundColor = (self.doDestructiveColor == nil) ? DO_AS_DESTRUCTIVE_COLOR : self.doDestructiveColor;
-            [bt setTitleColor:(self.doDestructiveTextColor == nil) ? DO_AS_DESTRUCTIVE_TEXT_COLOR : self.doDestructiveTextColor forState:UIControlStateNormal];
-        }
 
         nTagIndex += 1;
    }
@@ -208,8 +154,7 @@
     dHeight += self.doButtonInset.bottom + MIN(dYContent, sc.frame.size.height);
     
     // add Cancel button
-    if (_strCancel != nil && _strCancel.length > 0)
-    {
+    if (_strCancel != nil && _strCancel.length > 0){
         UIButton *bt = [UIButton buttonWithType:UIButtonTypeCustom];
         bt.tag = DO_AS_CANCEL_TAG;
         [bt setTitle:_strCancel forState:UIControlStateNormal];
@@ -221,8 +166,7 @@
         dHeight += ((self.doButtonHeight > 0) ? self.doButtonHeight : DO_AS_BUTTON_HEIGHT) + (self.doButtonInset.top + self.doButtonInset.bottom) * 2;
         
         [_vActionSheet addSubview:bt];
-    }
-    else
+    }else
         dHeight += self.doButtonInset.bottom;
     
     _vActionSheet.frame = CGRectMake(0, 0, _vActionSheet.frame.size.width, dHeight + 10);
@@ -230,8 +174,7 @@
     DoActionSheetController *viewController = [[DoActionSheetController alloc] initWithNibName:nil bundle:nil];
     viewController.actionSheet = self;
     
-    if (!_actionWindow)
-    {
+    if (!_actionWindow){
         UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         window.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         window.opaque = NO;
@@ -244,8 +187,7 @@
     }
     [_actionWindow makeKeyAndVisible];
     
-    if (_dRound > 0)
-    {
+    if (_dRound > 0){
         CALayer *layer = [_vActionSheet layer];
         [layer setMasksToBounds:YES];
         [layer setCornerRadius:_dRound];
@@ -254,208 +196,67 @@
     [self showAnimation];
 }
 
-- (void)buttonTarget:(id)sender
-{
+- (void)buttonTarget:(id)sender{
     _result([sender tag]);
     [self hideAnimation];
 }
 
-- (double)addContent:(UIScrollView *)sc
-{
+- (double)addContent:(UIScrollView *)sc{
     double dContentOffset = 0;
-    
     if (self.doButtonInset.top == 0 && self.doButtonInset.left == 0 && self.doButtonInset.bottom == 0 && self.doButtonInset.right == 0) {
         self.doButtonInset = DO_AS_BUTTON_INSET;
     }
-    switch (_nContentMode) {
-        case DoASContentMap:
-        {
-            if (_dLocation == nil)
-            {
-                dContentOffset = 0;
-                break;
-            }
-            
-            MKMapView *vMap = [[MKMapView alloc] initWithFrame:CGRectMake(self.doButtonInset.left, self.doButtonInset.top,
-                                                                          240, 180)];
-            vMap.center = CGPointMake(sc.center.x, vMap.center.y);
-            
-            vMap.delegate = self;
-            vMap.centerCoordinate = CLLocationCoordinate2DMake([_dLocation[@"latitude"] doubleValue], [_dLocation[@"longitude"] doubleValue]);
-            vMap.camera.altitude = [_dLocation[@"altitude"] doubleValue];
-            vMap.camera.pitch = 70;
-            vMap.showsBuildings = YES;
-            vMap.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-
-            [sc addSubview:vMap];
-            dContentOffset = 180 + self.doButtonInset.bottom;
-            
-            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-            annotation.coordinate = vMap.centerCoordinate;
-            annotation.title = @"Here~";
-            [vMap addAnnotation:annotation];
-        }
-            break;
-            
-        default:
-            break;
-    }
-    
     return dContentOffset;
 }
 
-- (void)hideActionSheet
-{
+- (void)hideActionSheet{
     [self removeFromSuperview];
     [_actionWindow removeFromSuperview];
     _actionWindow = nil;
 }
 
-- (void)showAnimation
-{
+- (void)showAnimation{
     self.alpha = 0.0;
-
-    switch (_nAnimationType) {
-        case DoASTransitionStyleNormal:
-        case DoASTransitionStylePop:
-            _vActionSheet.frame = CGRectMake(0, self.bounds.size.height,
+    _vActionSheet.frame = CGRectMake(0, self.bounds.size.height,
                                              self.bounds.size.width, _vActionSheet.frame.size.height + _dRound + 5);
-            break;
-
-        case DoASTransitionStyleFade:
-            _vActionSheet.alpha = 0.0;
-            _vActionSheet.frame = CGRectMake(0, self.bounds.size.height - _vActionSheet.frame.size.height + 5,
-                                             self.bounds.size.width, _vActionSheet.frame.size.height + _dRound + 5);
-            break;
-
-        default:
-            break;
-    }
-    
     [UIView animateWithDuration:0.2 animations:^(void) {
         self.alpha = 1.0;
-
         [UIView setAnimationDelay:0.1];
-
-        switch (_nAnimationType) {
-            case DoASTransitionStyleNormal:
-                _vActionSheet.frame = CGRectMake(0, self.bounds.size.height - _vActionSheet.frame.size.height + 15,
+        _vActionSheet.frame = CGRectMake(0, self.bounds.size.height - _vActionSheet.frame.size.height + 15,
                                                  self.bounds.size.width, _vActionSheet.frame.size.height);
-                
-                break;
-                
-            case DoASTransitionStyleFade:
-                _vActionSheet.alpha = 1.0;
-                break;
-                
-            case DoASTransitionStylePop:
-                _vActionSheet.frame = CGRectMake(0, self.bounds.size.height - _vActionSheet.frame.size.height + 10,
-                                                 self.bounds.size.width, _vActionSheet.frame.size.height);
-                
-                break;
-                
-            default:
-                break;
-        }
-    } completion:^(BOOL finished) {
-
-        if (_nAnimationType == DoASTransitionStylePop)
-        {
-            [UIView animateWithDuration:0.1 animations:^(void) {
-
-                _vActionSheet.frame = CGRectMake(0, self.bounds.size.height - _vActionSheet.frame.size.height + 18,
-                                                 self.bounds.size.width, _vActionSheet.frame.size.height);
-
-            } completion:^(BOOL finished) {
-
-                [UIView animateWithDuration:0.1 animations:^(void) {
-                    _vActionSheet.frame = CGRectMake(0, self.bounds.size.height - _vActionSheet.frame.size.height + 15,
-                                                     self.bounds.size.width, _vActionSheet.frame.size.height);
-                    
-                }];
-            }];
-        }
-    }];
+    } completion:nil];
 }
 
-- (void)hideAnimation
-{
+- (void)hideAnimation{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
 
     [UIView animateWithDuration:0.2 animations:^(void) {
 
-        switch (_nAnimationType) {
-            case DoASTransitionStyleNormal:
-                _vActionSheet.frame = CGRectMake(0, self.bounds.size.height,
+        _vActionSheet.frame = CGRectMake(0, self.bounds.size.height,
                                                  self.bounds.size.width, _vActionSheet.frame.size.height);
-                break;
-
-            case DoASTransitionStyleFade:
-                _vActionSheet.alpha = 0.0;
-                break;
-                
-            case DoASTransitionStylePop:
-                _vActionSheet.frame = CGRectMake(0, self.bounds.size.height - _vActionSheet.frame.size.height + 10,
-                                                 self.bounds.size.width, _vActionSheet.frame.size.height);
-
-                break;
-        }
-
         [UIView setAnimationDelay:0.1];
-        if (_nAnimationType != DoASTransitionStylePop)
-        {
-            _vActionSheet.alpha = 0.0;
-            self.alpha = 0.0;
-        }
-        
+        _vActionSheet.alpha = 0.0;
+        self.alpha = 0.0;
     } completion:^(BOOL finished) {
-        
-        if (_nAnimationType == DoASTransitionStylePop)
-        {
+        [UIView animateWithDuration:0.1 animations:^(void) {
+            [UIView setAnimationDelay:0.1];
+            _vActionSheet.frame = CGRectMake(0, self.bounds.size.height,
+                                             self.bounds.size.width, _vActionSheet.frame.size.height);
+        } completion:^(BOOL finished) {
             [UIView animateWithDuration:0.1 animations:^(void) {
-                
                 [UIView setAnimationDelay:0.1];
-                _vActionSheet.frame = CGRectMake(0, self.bounds.size.height,
-                                                 self.bounds.size.width, _vActionSheet.frame.size.height);
-                
+                self.alpha = 0.0;
             } completion:^(BOOL finished) {
-
-                [UIView animateWithDuration:0.1 animations:^(void) {
-                    
-                    [UIView setAnimationDelay:0.1];
-                    self.alpha = 0.0;
-
-                } completion:^(BOOL finished) {
-
-                    [self hideActionSheet];
-                
-                }];
+                [self hideActionSheet];
             }];
-        }
-        else
-        {
-            [self hideActionSheet];
-        }
+        }];
     }];
 }
 
--(void)receivedRotate: (NSNotification *)notification
-{
-	dispatch_async(dispatch_get_main_queue(), ^(void) {
-        
-        [UIView animateWithDuration:0.2 animations:^(void) {
-            _vActionSheet.frame = CGRectMake(0, self.bounds.size.height - _vActionSheet.frame.size.height + 15,
-                                             self.bounds.size.width, _vActionSheet.frame.size.height);
-        }];
-    });
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     CGPoint pt = [[touches anyObject] locationInView:self];
     if (CGRectContainsPoint(_vActionSheet.frame, pt))
         return;
-
     _result(DO_AS_CANCEL_TAG);
     [self hideAnimation];
 }

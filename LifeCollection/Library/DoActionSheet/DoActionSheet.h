@@ -46,12 +46,6 @@ typedef NS_ENUM(int, DoAlertViewTransitionStyle) {
     DoASTransitionStylePop,
 };
 
-typedef NS_ENUM(int, DoAlertViewContentType) {
-    DoASContentNone = 0,
-    DoASContentImage,
-    DoASContentMap,
-};
-
 @class DoActionSheet;
 typedef void(^DoActionSheetHandler)(int nResult);
 
@@ -82,10 +76,6 @@ typedef void(^DoActionSheetHandler)(int nResult);
 @property (strong, nonatomic)   NSArray         *aButtons;
 
 // add content
-// for UIImageView
-@property (nonatomic, strong)   UIImage         *iImage;
-// for Map view
-@property (nonatomic, strong)   NSDictionary    *dLocation; // latitude, longitude
 
 // button background color
 @property (strong, nonatomic)   UIColor         *doBackColor;
