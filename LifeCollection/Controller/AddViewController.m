@@ -42,6 +42,7 @@
     self.eventModel.classType = @"倒计日";
     self.eventModel.remindType = @"无提醒";
     self.eventModel.colorType = @"0";
+    self.eventModel.time = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
     
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
@@ -87,31 +88,26 @@
 - (LCDatePickerWindow *)pickerWindow {
     if (!_pickerWindow) {
         _pickerWindow = [LCDatePickerWindow new];
-        [_pickerWindow.cancelButton addTarget:self action:@selector(cancelClick) forControlEvents:UIControlEventTouchUpInside];
         [_pickerWindow.enterButton addTarget:self action:@selector(enterClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _pickerWindow;
 }
 
 -(void)rightBtnClick{
-
     if (_textFieldCell.titleTextField.text.length <= 0) {
         return;
     }
     self.eventModel.title = _textFieldCell.titleTextField.text;
-    self.eventModel.time = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
     
     [self.eventModel insertNote:self.eventModel];
     [self.navigationController popViewControllerAnimated:YES];
 
 }
 
--(void)cancelClick{
-    
-}
-
 -(void)enterClick{
-    
+    self.eventModel.time = [NSString stringWithFormat:@"%ld", (long)[_pickerWindow.datePicker.date timeIntervalSince1970]];
+    [self.tableView reloadData];
+    [_pickerWindow hide];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -148,7 +144,7 @@
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"时间";
-        cell.summeryLabel.text = @"2018-12-18";
+        cell.summeryLabel.text = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:self.eventModel.time]];
         return cell;
     }else if (indexPath.row == 3){
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
@@ -161,7 +157,6 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"提醒";
         cell.summeryLabel.text = self.eventModel.remindType;
-
         return cell;
     }else if (indexPath.row == 5){
         SelectColorTableViewCell * cell = getCell(SelectColorTableViewCell);

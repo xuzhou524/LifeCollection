@@ -136,6 +136,7 @@
     self.titleLabel.text = model.title;
     self.classTypeLabel.text = model.classType;
     self.remindTypeLabel.text = model.remindType;
+    self.timeLabel.text = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:model.time]];
     self.bgView.backgroundColor = LCEventBackgroundColor([model.colorType integerValue]);
 }
 

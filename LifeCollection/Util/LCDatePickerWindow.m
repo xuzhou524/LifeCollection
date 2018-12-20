@@ -111,6 +111,8 @@
         make.centerY.equalTo(topView);
         make.width.height.equalTo(@40);
     }];
+    
+    [_cancelButton addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)show{
