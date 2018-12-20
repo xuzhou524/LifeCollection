@@ -40,7 +40,7 @@
     }];
     
     self.backgroundMaskView=[UIView new];
-    self.backgroundMaskView.backgroundColor=[UIColor colorWithWhite:0 alpha:0.7];
+    self.backgroundMaskView.backgroundColor=[UIColor colorWithWhite:0 alpha:0.6];
     [self.backgroundMaskView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hide)]];
     [self.backgroundView addSubview:self.backgroundMaskView];
     [self.backgroundMaskView mas_makeConstraints:^(MASConstraintMaker *make) {

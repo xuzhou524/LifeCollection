@@ -23,15 +23,15 @@
 #define DO_AS_BUTTON_TEXT_COLOR        DO_RGB(255, 255, 255)
 #define DO_AS_CANCEL_TEXT_COLOR        DO_RGB(255, 255, 255)
 
-#define DO_AS_DIMMED_COLOR         DO_RGBA(0, 0, 0, 0.7)
+#define DO_AS_DIMMED_COLOR         DO_RGBA(0, 0, 0, 0.6)
 
-#define DO_AS_TITLE_FONT           LCFont(15)
-#define DO_AS_BUTTON_FONT          LCFont(15)
+#define DO_AS_TITLE_FONT           LCFont(16)
+#define DO_AS_BUTTON_FONT          LCFont(16)
 
 #define DO_AS_TITLE_INSET          UIEdgeInsetsMake(15, 20, 15, 20)
 #define DO_AS_BUTTON_INSET         UIEdgeInsetsMake(10, 20, 10, 20)
 
-#define DO_AS_BUTTON_HEIGHT        45
+#define DO_AS_BUTTON_HEIGHT        50
 
 #define DO_AS_CANCEL_TAG           -100
 

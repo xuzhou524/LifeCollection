@@ -26,6 +26,9 @@
 @property (nonatomic, strong) EventModel * eventModel;
 @property (nonatomic, strong) NSString * originalDate;
 
+@property (nonatomic, strong) NSString * selectRemindTypeStr;
+@property (nonatomic, strong) NSString * selectClassTypeStr;
+
 @end
 
 @implementation AddViewController
@@ -34,6 +37,10 @@
     [super viewDidLoad];
     self.navigationItem.title = @"添加";
     self.view.backgroundColor = [LCColor backgroudColor];
+    
+    _selectClassTypeStr = @"倒计日";
+    _selectRemindTypeStr = @"无提醒";
+    
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -135,13 +142,14 @@
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"类型";
-        cell.summeryLabel.text = @"倒计日";
+        cell.summeryLabel.text = self.selectClassTypeStr;
         return cell;
     }else if (indexPath.row == 4){
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"提醒";
-        cell.summeryLabel.text = @"无提醒";
+        cell.summeryLabel.text = self.selectRemindTypeStr;
+
         return cell;
     }else if (indexPath.row == 5){
         SelectColorTableViewCell * cell = getCell(SelectColorTableViewCell);
@@ -171,23 +179,31 @@
 }
 
 -(void)remindDoActionSheetShow{
+    kWeakSelf;
     DoActionSheet *remindActionSheet = [DoActionSheet new];
     [remindActionSheet showC:@"提醒"
                  cancel:@"取消"
-                buttons:@[@"无提醒", @"按月循环", @"按年循环"]
+                buttons:LCRemindTypeArray
                  result:^(int nResult) {
-                     NSLog(@"---------------> result : %d", nResult);
+                     if (nResult < LCRemindTypeArray.count) {
+                         weakSelf.selectRemindTypeStr = LCRemindType(nResult);
+                         [weakSelf.tableView reloadData];
+                     }
                  }
      ];
 }
 
 -(void)classTypeDoActionSheetShow{
+    kWeakSelf;
     DoActionSheet *classTypeActionSheet = [DoActionSheet new];
     [classTypeActionSheet showC:@"类型"
                  cancel:@"取消"
-                buttons:@[@"倒计日", @"累计日"]
+                buttons:LCClassTypeArray
                  result:^(int nResult) {
-                     NSLog(@"---------------> result : %d", nResult);
+                     if (nResult < LCClassTypeArray.count) {
+                         weakSelf.selectClassTypeStr = LCClassType(nResult);
+                         [weakSelf.tableView reloadData];
+                     }
                  }
      ];
     
