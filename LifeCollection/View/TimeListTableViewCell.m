@@ -137,7 +137,6 @@
         make.right.equalTo(self.dayLabel);
         make.bottom.equalTo(self.dayLabel.mas_top);
     }];
-    
 }
 
 -(void)bind:(EventModel *)model{
