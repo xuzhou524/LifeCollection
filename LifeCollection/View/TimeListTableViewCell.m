@@ -149,6 +149,25 @@
     if ([model.classType isEqualToString:@"倒计日"]) {
         _timeStrLabel.text = @"目标日:";
         _dayStrLabel.text = @"剩余天数";
+        NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:model.time] timeIntervalSinceNow];
+        if (timeInterval < 0) {
+            self.dayLabel.text = @"0";
+            if ([model.remindType isEqualToString:@"月循环"]) {
+               
+            }else if ([model.remindType isEqualToString:@"年循环"]){
+               
+            }
+        }else{
+            long temp = 0;
+            NSString *result;
+            temp = fabs(timeInterval)/60;
+            if((temp = temp/60) <24){
+                result= [NSString stringWithFormat:@"0"];
+            }else if((temp = temp/24) <10000){
+                result = [NSString stringWithFormat:@"%ld",temp];
+            }
+            self.dayLabel.text = result;
+        }
     }else if ([model.classType isEqualToString:@"累计日"]){
         _timeStrLabel.text = @"起始日:";
         _dayStrLabel.text = @"已过天数";
