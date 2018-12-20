@@ -118,7 +118,7 @@
     }];
     
     _dayLabel = [UILabel new];
-    _dayLabel.text = @"524";
+    _dayLabel.text = @"626";
     _dayLabel.font = LCFont2(30);
     _dayLabel.alpha = 0.8;
     _dayLabel.textColor = [LCColor whiteColor];

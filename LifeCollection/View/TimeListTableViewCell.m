@@ -8,6 +8,14 @@
 
 #import "TimeListTableViewCell.h"
 
+@interface TimeListTableViewCell()
+
+@property(nonatomic,strong)UILabel * timeStrLabel;
+@property(nonatomic,strong)UILabel * dayStrLabel;
+
+@end
+
+
 @implementation TimeListTableViewCell
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -86,13 +94,13 @@
         make.right.equalTo(self.remindTypeLabel).offset(4);
     }];
     
-    UILabel * timeStrLabel = [UILabel new];
-    timeStrLabel.text = @"目标日:";
-    timeStrLabel.alpha = 0.5;
-    timeStrLabel.font = LCFont2(13);
-    timeStrLabel.textColor = [LCColor whiteColor];
-    [self.contentView addSubview:timeStrLabel];
-    [timeStrLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    _timeStrLabel = [UILabel new];
+    _timeStrLabel.text = @"目标日:";
+    _timeStrLabel.alpha = 0.5;
+    _timeStrLabel.font = LCFont2(13);
+    _timeStrLabel.textColor = [LCColor whiteColor];
+    [self.contentView addSubview:_timeStrLabel];
+    [_timeStrLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.titleLabel);
         make.bottom.equalTo(self.bgView).offset(-20);
     }];
@@ -104,12 +112,12 @@
     _timeLabel.textColor = [LCColor whiteColor];
     [self.contentView addSubview:_timeLabel];
     [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(timeStrLabel.mas_right).offset(5);
-        make.centerY.equalTo(timeStrLabel);
+        make.left.equalTo(self.timeStrLabel.mas_right).offset(5);
+        make.centerY.equalTo(self.timeStrLabel);
     }];
     
     _dayLabel = [UILabel new];
-    _dayLabel.text = @"365";
+    _dayLabel.text = @"626";
     _dayLabel.font = LCFont2(30);
     _dayLabel.alpha = 0.8;
     _dayLabel.textColor = [LCColor whiteColor];
@@ -119,13 +127,13 @@
         make.bottom.equalTo(self.bgView).offset(-20);
     }];
     
-    UILabel * dayStrLabel = [UILabel new];
-    dayStrLabel.text = @"剩余天数";
-    dayStrLabel.alpha = 0.5;
-    dayStrLabel.font = LCFont2(10);
-    dayStrLabel.textColor = [LCColor whiteColor];
-    [self.contentView addSubview:dayStrLabel];
-    [dayStrLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    _dayStrLabel = [UILabel new];
+    _dayStrLabel.text = @"剩余天数";
+    _dayStrLabel.alpha = 0.5;
+    _dayStrLabel.font = LCFont2(10);
+    _dayStrLabel.textColor = [LCColor whiteColor];
+    [self.contentView addSubview:_dayStrLabel];
+    [_dayStrLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.dayLabel);
         make.bottom.equalTo(self.dayLabel.mas_top);
     }];
@@ -138,6 +146,30 @@
     self.remindTypeLabel.text = model.remindType;
     self.timeLabel.text = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:model.time]];
     self.bgView.backgroundColor = LCEventBackgroundColor([model.colorType integerValue]);
+    
+    
+    if ([model.classType isEqualToString:@"倒计日"]) {
+        _timeStrLabel.text = @"目标日:";
+        _dayStrLabel.text = @"剩余天数";
+    }else if ([model.classType isEqualToString:@"累计日"]){
+        _timeStrLabel.text = @"起始日:";
+        _dayStrLabel.text = @"已过天数";
+        
+        NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:model.time] timeIntervalSinceNow];
+        if (timeInterval < 0) {
+            long temp = 0;
+            NSString *result;
+            temp = fabs(timeInterval)/60;
+            if((temp = temp/60) <24){
+                result= [NSString stringWithFormat:@"0"];
+            }else if((temp = temp/24) <10000){
+                result = [NSString stringWithFormat:@"%ld",temp];
+            }
+            self.dayLabel.text = result;
+        }else{
+            self.dayLabel.text = @"0";
+        }
+    }
 }
 
 @end
