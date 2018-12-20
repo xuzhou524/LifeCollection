@@ -147,14 +147,12 @@
     self.timeLabel.text = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:model.time]];
     self.bgView.backgroundColor = LCEventBackgroundColor([model.colorType integerValue]);
     
-    
     if ([model.classType isEqualToString:@"倒计日"]) {
         _timeStrLabel.text = @"目标日:";
         _dayStrLabel.text = @"剩余天数";
     }else if ([model.classType isEqualToString:@"累计日"]){
         _timeStrLabel.text = @"起始日:";
         _dayStrLabel.text = @"已过天数";
-        
         NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:model.time] timeIntervalSinceNow];
         if (timeInterval < 0) {
             long temp = 0;
