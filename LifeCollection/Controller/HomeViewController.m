@@ -33,7 +33,7 @@
     _tableView.backgroundColor = [LCColor backgroudColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    
+
     regClass(self.tableView, TimeListTableViewCell);
     
     UIButton * rightBtn = [UIButton new];
@@ -82,6 +82,23 @@
     EventModel * model = self.eventModelLists[indexPath.row];
     [cell bind:model];
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        EventModel * tempModel = self.eventModelLists[indexPath.row];
+        [tempModel deleteNote:tempModel.ids];
+        [self.eventModelLists removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    }
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
 }
 
 @end
