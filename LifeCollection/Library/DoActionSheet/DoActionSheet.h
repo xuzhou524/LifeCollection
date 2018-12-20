@@ -6,7 +6,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
 
 #define DO_RGB(r, g, b)     [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 #define DO_RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
@@ -38,7 +37,7 @@
 @class DoActionSheet;
 typedef void(^DoActionSheetHandler)(int nResult);
 
-@interface DoActionSheet : UIView <MKMapViewDelegate>{
+@interface DoActionSheet : UIView {
 @private
     NSString                *_strTitle;
     NSString                *_strCancel;
