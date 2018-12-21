@@ -30,7 +30,7 @@
     }];
     
     _iconImageView = [UIImageView new];
-    _iconImageView.image = [UIImage imageNamed:@"title"];
+    _iconImageView.image = [UIImage imageNamed:@"edit_title"];
     [bgView addSubview:_iconImageView];
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(16);
