@@ -9,6 +9,7 @@
 #import "UserViewController.h"
 #import "UserViewTableViewCell.h"
 #import "TitleTableViewCell.h"
+#import "LCWebViewViewController.h"
 
 @interface UserViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -44,37 +45,54 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return 2;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 6;
+    if (section == 0) {
+        return 2;
+    }
+    return 4;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        return 220;
-    }else if (indexPath.row == 1){
-        return 105;
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            return 220;
+        }else{
+            return 105;
+        }
     }
     return 65;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        UserViewTableViewCell * cell = getCell(UserViewTableViewCell);
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
-    }else if (indexPath.row == 1){
-        UserHeadViewTableViewCell * cell = getCell(UserHeadViewTableViewCell);
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            UserViewTableViewCell * cell = getCell(UserViewTableViewCell);
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        }else{
+            UserHeadViewTableViewCell * cell = getCell(UserHeadViewTableViewCell);
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        }
     }
+
     TitleTableViewCell * cell = getCell(TitleTableViewCell);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.titleLabel.text = @[@"分享给朋友",@"隐私政策",@"关于开发者",@"咘咕app"][indexPath.row - 2];
+    cell.titleLabel.text = @[@"分享给朋友",@"服务条款",@"关于开发者",@"咘咕app"][indexPath.row];
     cell.summeryLabel.text = @"";
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            LCWebViewViewController * webViewVC =[LCWebViewViewController new];
+            [self.navigationController pushViewController:webViewVC animated:YES];
+        }
+    }
 }
 
 @end
