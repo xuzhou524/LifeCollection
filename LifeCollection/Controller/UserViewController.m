@@ -58,12 +58,12 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            return 220;
+            return 200;
         }else{
             return 105;
         }
     }
-    return 65;
+    return 60;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -77,18 +77,23 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
         }
+    }else{
+        TitleTableViewCell * cell = getCell(TitleTableViewCell);
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.titleLabel.text = @[@"分享给朋友",@"服务条款",@"关于开发者",@"咘咕版本"][indexPath.row];
+        if (indexPath.row == 3) {
+            cell.summeryLabel.text = [NSString stringWithFormat:@"v%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+        }else{
+            cell.summeryLabel.text = @"";
+        }
+        
+        return cell;
     }
-
-    TitleTableViewCell * cell = getCell(TitleTableViewCell);
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.titleLabel.text = @[@"分享给朋友",@"服务条款",@"关于开发者",@"咘咕app"][indexPath.row];
-    cell.summeryLabel.text = @"";
-    return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
-        if (indexPath.row == 0) {
+        if (indexPath.row == 1) {
             LCWebViewViewController * webViewVC =[LCWebViewViewController new];
             [self.navigationController pushViewController:webViewVC animated:YES];
         }

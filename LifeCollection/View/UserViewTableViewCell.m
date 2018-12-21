@@ -27,7 +27,7 @@
     _iconImageView.layer.masksToBounds = YES;
     [self.contentView addSubview:_iconImageView];
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(40);
+        make.top.equalTo(self.contentView).offset(30);
         make.centerX.equalTo(self.contentView);
         make.width.height.equalTo(@100);
     }];
