@@ -16,3 +16,14 @@
 
 @end
 
+
+@interface UserHeadViewTableViewCell : UITableViewCell
+
+@property(nonatomic,strong)UIImageView * zanImageView;
+@property(nonatomic,strong)UILabel * zanLabel;
+
+@property(nonatomic,strong)UIImageView * tuImageView;
+@property(nonatomic,strong)UILabel * tuLabel;
+
+@end
+

@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface TitleTableViewCell : UITableViewCell
+@property(nonatomic,strong)UILabel * titleLabel;
+@property(nonatomic,strong)UILabel * summeryLabel;
+@end
+
+@interface TitleAndImageTableViewCell : UITableViewCell
 @property(nonatomic,strong)UIImageView * iconImageView;
 @property(nonatomic,strong)UILabel * titleLabel;
 @property(nonatomic,strong)UILabel * summeryLabel;

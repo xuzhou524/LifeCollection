@@ -8,6 +8,7 @@
 
 #import "UserViewController.h"
 #import "UserViewTableViewCell.h"
+#import "TitleTableViewCell.h"
 
 @interface UserViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -36,6 +37,8 @@
     _tableView.dataSource = self;
     
     regClass(self.tableView, UserViewTableViewCell);
+    regClass(self.tableView, TitleTableViewCell);
+    regClass(self.tableView, UserHeadViewTableViewCell);
     
 }
 
@@ -44,17 +47,32 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return 6;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 130;
+    if (indexPath.row == 0) {
+        return 220;
+    }else if (indexPath.row == 1){
+        return 105;
+    }
+    return 65;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UserViewTableViewCell * cell = getCell(UserViewTableViewCell);
+    if (indexPath.row == 0) {
+        UserViewTableViewCell * cell = getCell(UserViewTableViewCell);
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    }else if (indexPath.row == 1){
+        UserHeadViewTableViewCell * cell = getCell(UserHeadViewTableViewCell);
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    }
+    TitleTableViewCell * cell = getCell(TitleTableViewCell);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
+    cell.titleLabel.text = @[@"分享给朋友",@"隐私政策",@"关于开发者",@"咘咕app"][indexPath.row - 2];
+    cell.summeryLabel.text = @"";
     return cell;
 }
 
