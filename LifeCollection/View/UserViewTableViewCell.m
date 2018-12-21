@@ -41,6 +41,16 @@
         make.top.equalTo(self.iconImageView.mas_bottom).offset(20);
         make.centerX.equalTo(self.contentView);
     }];
+    
+//    UIImageView * summeryImageView = [UIImageView new];
+//    summeryImageView.image = [UIImage imageNamed:@"summery"];
+//    [self.contentView addSubview:summeryImageView];
+//    [summeryImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.equalTo(self.contentView);
+//        make.top.equalTo(self.iconImageView.mas_bottom).offset(10);
+//        make.width.equalTo(@154);
+//        make.height.equalTo(@34);
+//    }];
 
 }
 
