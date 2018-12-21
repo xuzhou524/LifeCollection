@@ -22,7 +22,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"Time";
+//    self.navigationItem.title = @"Time";
+    self.view.backgroundColor = [LCColor backgroudColor];
+    UILabel * sumeryLabel = [UILabel new];
+    sumeryLabel.text = @"让生活更精彩";
+    sumeryLabel.font = LCFont(13);
+    sumeryLabel.textColor = [LCColor LCColor_77_92_127];
+    [self.view addSubview:sumeryLabel];
+    [sumeryLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.view).offset(10);
+    }];
 
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
@@ -30,19 +40,24 @@
         make.left.top.right.bottom.equalTo(self.view);
     }];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.backgroundColor = [LCColor backgroudColor];
+    _tableView.backgroundColor = [LCColor clearColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
 
     regClass(self.tableView, TimeListTableViewCell);
     
+    UILabel * liftLabel = [UILabel new];
+    liftLabel.text = @"Time";
+    liftLabel.font = LCFont(30);
+    liftLabel.textColor = [LCColor LCColor_77_92_127];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
+
     UIButton * rightBtn = [UIButton new];
     UIImage * addIamge = [[UIImage imageNamed:@"add"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     rightBtn.tintColor = [LCColor LCColor_77_92_127];
     [rightBtn setImage:addIamge forState:UIControlStateNormal];
     [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
-    
 }
 
 -(EventModel *)eventModel{

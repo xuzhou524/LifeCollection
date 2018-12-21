@@ -20,13 +20,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"我的";
-//    if (@available(iOS 11.0, *)) {
-//        self.navigationController.navigationBar.prefersLargeTitles = YES;
-//    }
+    
+    UILabel * liftLabel = [UILabel new];
+    liftLabel.text = @"我的";
+    liftLabel.font = LCFont(25);
+    liftLabel.textColor = [LCColor LCColor_77_92_127];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
     
     _tableView = [UITableView new];
-    
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.bottom.equalTo(self.view);
