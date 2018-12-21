@@ -17,6 +17,7 @@
 		531AD0B121CCB27F00A4B2BC /* tixing.png in Resources */ = {isa = PBXBuildFile; fileRef = 531AD0B021CCB27F00A4B2BC /* tixing.png */; };
 		531AD0B321CCB36200A4B2BC /* shijian.png in Resources */ = {isa = PBXBuildFile; fileRef = 531AD0B221CCB36200A4B2BC /* shijian.png */; };
 		531AD0B721CCB93900A4B2BC /* edit_title.png in Resources */ = {isa = PBXBuildFile; fileRef = 531AD0B621CCB93900A4B2BC /* edit_title.png */; };
+		531AD0BA21CCBF1900A4B2BC /* UserViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD0B921CCBF1900A4B2BC /* UserViewTableViewCell.m */; };
 		5356ECF121C7463A00862FE1 /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECED21C7463A00862FE1 /* LCTabBarController.m */; };
 		5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF021C7463A00862FE1 /* LCTabBar.m */; };
 		5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF421C7466C00862FE1 /* LCNavigationViewController.m */; };
@@ -70,6 +71,8 @@
 		531AD0B021CCB27F00A4B2BC /* tixing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tixing.png; sourceTree = "<group>"; };
 		531AD0B221CCB36200A4B2BC /* shijian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shijian.png; sourceTree = "<group>"; };
 		531AD0B621CCB93900A4B2BC /* edit_title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_title.png; sourceTree = "<group>"; };
+		531AD0B821CCBF1900A4B2BC /* UserViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewTableViewCell.h; sourceTree = "<group>"; };
+		531AD0B921CCBF1900A4B2BC /* UserViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewTableViewCell.m; sourceTree = "<group>"; };
 		5356ECED21C7463A00862FE1 /* LCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarController.m; sourceTree = "<group>"; };
 		5356ECEE21C7463A00862FE1 /* LCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBar.h; sourceTree = "<group>"; };
 		5356ECEF21C7463A00862FE1 /* LCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarController.h; sourceTree = "<group>"; };
@@ -256,10 +259,10 @@
 			children = (
 				5357B40B21C38B73009D9333 /* HomeViewController.h */,
 				5357B40C21C38B73009D9333 /* HomeViewController.m */,
-				5356ED0721C7474100862FE1 /* UserViewController.h */,
-				5356ED0821C7474100862FE1 /* UserViewController.m */,
 				5356ED2F21C7845D00862FE1 /* AddViewController.h */,
 				5356ED3021C7845D00862FE1 /* AddViewController.m */,
+				5356ED0721C7474100862FE1 /* UserViewController.h */,
+				5356ED0821C7474100862FE1 /* UserViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -277,6 +280,8 @@
 				539B3A6421C7B01300431B7A /* TitleTableViewCell.m */,
 				539B3A6A21C7B57800431B7A /* SelectColorTableViewCell.h */,
 				539B3A6B21C7B57800431B7A /* SelectColorTableViewCell.m */,
+				531AD0B821CCBF1900A4B2BC /* UserViewTableViewCell.h */,
+				531AD0B921CCBF1900A4B2BC /* UserViewTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 				5357B41B21C38B74009D9333 /* main.m in Sources */,
 				5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */,
 				5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */,
+				531AD0BA21CCBF1900A4B2BC /* UserViewTableViewCell.m in Sources */,
 				5356ED2E21C75F0A00862FE1 /* TimeListTableViewCell.m in Sources */,
 				531AD0A521CB7DAC00A4B2BC /* DateFormatter.m in Sources */,
 				539B3A5F21C7A77700431B7A /* PreviewTableViewCell.m in Sources */,
