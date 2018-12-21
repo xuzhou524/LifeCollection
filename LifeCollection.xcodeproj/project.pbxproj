@@ -23,6 +23,8 @@
 		531AD0C221CCCBAB00A4B2BC /* about_criticism.png in Resources */ = {isa = PBXBuildFile; fileRef = 531AD0C021CCCBAA00A4B2BC /* about_criticism.png */; };
 		531AD0C621CCD57F00A4B2BC /* summery.png in Resources */ = {isa = PBXBuildFile; fileRef = 531AD0C521CCD57F00A4B2BC /* summery.png */; };
 		531AD0C921CCE12300A4B2BC /* LCWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD0C821CCE12300A4B2BC /* LCWebViewViewController.m */; };
+		531AD0CC21CCE9A200A4B2BC /* AboutDeveloperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD0CB21CCE9A200A4B2BC /* AboutDeveloperViewController.m */; };
+		531AD0CF21CCF0EF00A4B2BC /* AppListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD0CE21CCF0EF00A4B2BC /* AppListViewController.m */; };
 		5356ECF121C7463A00862FE1 /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECED21C7463A00862FE1 /* LCTabBarController.m */; };
 		5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF021C7463A00862FE1 /* LCTabBar.m */; };
 		5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF421C7466C00862FE1 /* LCNavigationViewController.m */; };
@@ -84,6 +86,10 @@
 		531AD0C521CCD57F00A4B2BC /* summery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = summery.png; sourceTree = "<group>"; };
 		531AD0C721CCE12300A4B2BC /* LCWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCWebViewViewController.h; sourceTree = "<group>"; };
 		531AD0C821CCE12300A4B2BC /* LCWebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCWebViewViewController.m; sourceTree = "<group>"; };
+		531AD0CA21CCE9A200A4B2BC /* AboutDeveloperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutDeveloperViewController.h; sourceTree = "<group>"; };
+		531AD0CB21CCE9A200A4B2BC /* AboutDeveloperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutDeveloperViewController.m; sourceTree = "<group>"; };
+		531AD0CD21CCF0EF00A4B2BC /* AppListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppListViewController.h; sourceTree = "<group>"; };
+		531AD0CE21CCF0EF00A4B2BC /* AppListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppListViewController.m; sourceTree = "<group>"; };
 		5356ECED21C7463A00862FE1 /* LCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarController.m; sourceTree = "<group>"; };
 		5356ECEE21C7463A00862FE1 /* LCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBar.h; sourceTree = "<group>"; };
 		5356ECEF21C7463A00862FE1 /* LCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarController.h; sourceTree = "<group>"; };
@@ -278,6 +284,10 @@
 				5356ED3021C7845D00862FE1 /* AddViewController.m */,
 				5356ED0721C7474100862FE1 /* UserViewController.h */,
 				5356ED0821C7474100862FE1 /* UserViewController.m */,
+				531AD0CA21CCE9A200A4B2BC /* AboutDeveloperViewController.h */,
+				531AD0CB21CCE9A200A4B2BC /* AboutDeveloperViewController.m */,
+				531AD0CD21CCF0EF00A4B2BC /* AppListViewController.h */,
+				531AD0CE21CCF0EF00A4B2BC /* AppListViewController.m */,
 				531AD0C721CCE12300A4B2BC /* LCWebViewViewController.h */,
 				531AD0C821CCE12300A4B2BC /* LCWebViewViewController.m */,
 			);
@@ -485,7 +495,9 @@
 				531AD0BA21CCBF1900A4B2BC /* UserViewTableViewCell.m in Sources */,
 				5356ED2E21C75F0A00862FE1 /* TimeListTableViewCell.m in Sources */,
 				531AD0A521CB7DAC00A4B2BC /* DateFormatter.m in Sources */,
+				531AD0CF21CCF0EF00A4B2BC /* AppListViewController.m in Sources */,
 				539B3A5F21C7A77700431B7A /* PreviewTableViewCell.m in Sources */,
+				531AD0CC21CCE9A200A4B2BC /* AboutDeveloperViewController.m in Sources */,
 				531AD09E21CB414C00A4B2BC /* DoActionSheet.m in Sources */,
 				531AD08821CA28C700A4B2BC /* EventModelTool.m in Sources */,
 				531AD0C921CCE12300A4B2BC /* LCWebViewViewController.m in Sources */,

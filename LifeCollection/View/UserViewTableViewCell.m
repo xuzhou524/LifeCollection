@@ -75,7 +75,7 @@
     [oneView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.bottom.equalTo(self.contentView);
         make.bottom.equalTo(self.contentView).offset(-15);
-        make.right.equalTo(self.contentView.mas_centerX).offset(-0.5);
+        make.right.equalTo(self.contentView.mas_centerX).offset(-0);
     }];
     
     _zanImageView = [UIImageView new];
@@ -105,7 +105,7 @@
     [twoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.top.bottom.equalTo(self.contentView);
         make.bottom.equalTo(self.contentView).offset(-15);
-        make.left.equalTo(self.contentView.mas_centerX).offset(0.5);
+        make.left.equalTo(self.contentView.mas_centerX).offset(0);
     }];
     
     _tuImageView = [UIImageView new];

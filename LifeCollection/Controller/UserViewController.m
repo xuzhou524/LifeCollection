@@ -10,6 +10,7 @@
 #import "UserViewTableViewCell.h"
 #import "TitleTableViewCell.h"
 #import "LCWebViewViewController.h"
+#import "AboutDeveloperViewController.h"
 
 @interface UserViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -59,12 +60,12 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            return 200;
+            return 190;
         }else{
             return 105;
         }
     }
-    return 60;
+    return 70;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -98,7 +99,12 @@
     if (indexPath.section == 1) {
         if (indexPath.row == 1) {
             LCWebViewViewController * webViewVC =[LCWebViewViewController new];
+            webViewVC.titleStr = @"服务条款";
+            webViewVC.urlStr = @"http://img.gozap.com/group19/M01/80/08/wKgCN1wcrJ6WDKlrAAHm_9rYe-c967.pdf";
             [self.navigationController pushViewController:webViewVC animated:YES];
+        }else if (indexPath.row == 2){
+            AboutDeveloperViewController * aboutDeveloperVC =[AboutDeveloperViewController new];
+            [self.navigationController pushViewController:aboutDeveloperVC animated:YES];
         }
     }
 }

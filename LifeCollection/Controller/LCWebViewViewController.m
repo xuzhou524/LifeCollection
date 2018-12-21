@@ -16,18 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //http://img.gozap.com/group19/M02/7F/FD/wKgCN1wcqNTh4ENTAAHnW6-B0xc350.pdf;
-    
-    self.navigationItem.title = @"服务条款";
+    self.navigationItem.title = _titleStr;
     
     UIWebView * webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth,ScreenHeight)];
-    NSString * url = @"http://img.gozap.com/group19/M01/80/08/wKgCN1wcrJ6WDKlrAAHm_9rYe-c967.pdf";
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_urlStr]]];
     [self.view addSubview:webView];
 
-    
-    
 }
 
 @end

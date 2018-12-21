@@ -26,7 +26,7 @@
     [self.contentView addSubview:bgView];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.equalTo(self.contentView);
-        make.top.equalTo(self.contentView).offset(1);
+        make.top.equalTo(self.contentView).offset(0);
     }];
     
     _titleLabel = [UILabel new];
@@ -143,7 +143,7 @@
     [self.contentView addSubview:bgView];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.equalTo(self.contentView);
-        make.top.equalTo(self.contentView).offset(1);
+        make.top.equalTo(self.contentView).offset(0);
     }];
     
     _titleLabel = [UILabel new];
