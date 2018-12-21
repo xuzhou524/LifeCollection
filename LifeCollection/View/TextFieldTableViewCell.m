@@ -29,13 +29,22 @@
         make.top.equalTo(self.contentView).offset(10);
     }];
     
+    _iconImageView = [UIImageView new];
+    _iconImageView.image = [UIImage imageNamed:@"title"];
+    [bgView addSubview:_iconImageView];
+    [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView).offset(16);
+        make.centerY.equalTo(bgView);
+        make.width.height.equalTo(@20);
+    }];
+    
     _titleLabel = [UILabel new];
     _titleLabel.text = @"标题";
     _titleLabel.font = LCFont(15);
     _titleLabel.textColor = [LCColor LCColor_77_92_127];
     [bgView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(16);
+        make.left.equalTo(self.iconImageView.mas_right).offset(10);
         make.centerY.equalTo(bgView);
     }];
     

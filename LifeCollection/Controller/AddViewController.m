@@ -163,18 +163,21 @@
     }else if (indexPath.row == 3){
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.iconImageView.image = [UIImage imageNamed:@"shijian"];
         cell.titleLabel.text = @"时间";
         cell.summeryLabel.text = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:self.eventModel.time]];
         return cell;
     }else if (indexPath.row == 4){
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.iconImageView.image = [UIImage imageNamed:@"leixing"];
         cell.titleLabel.text = @"类型";
         cell.summeryLabel.text = self.eventModel.classType;
         return cell;
     }else if (indexPath.row == 5){
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.iconImageView.image = [UIImage imageNamed:@"tixing"];
         cell.titleLabel.text = @"提醒";
         cell.summeryLabel.text = self.eventModel.remindType;
         return cell;
