@@ -73,15 +73,20 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 135;
+    return 130;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TimeListTableViewCell * cell = getCell(TimeListTableViewCell);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    EventModel * model = self.eventModelLists[indexPath.row];
-    [cell bind:model];
+    [cell bind:self.eventModelLists[indexPath.row]];
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    AddViewController * addVC = [AddViewController new];
+    addVC.eventModel = self.eventModelLists[indexPath.row];
+    [self.navigationController pushViewController:addVC animated:YES];
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {

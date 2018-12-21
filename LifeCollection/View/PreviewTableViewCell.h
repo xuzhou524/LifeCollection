@@ -9,13 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PreviewTableViewCell : UITableViewCell
-@property(nonatomic,strong)UIView * bgView;
 
-@property(nonatomic,strong)UILabel * titleLabel;
-@property(nonatomic,strong)UILabel * timeLabel;
-@property(nonatomic,strong)UILabel * dayLabel;
-
-@property(nonatomic,strong)UILabel * classTypeLabel;
-@property(nonatomic,strong)UILabel * remindTypeLabel;
 @end
 

@@ -140,22 +140,81 @@
 }
 
 -(void)bind:(EventModel *)model{
-    self.titleLabel.text = model.title;
+    if (model.title) {
+        self.titleLabel.text = model.title;
+    }else{
+        self.titleLabel.text = @"请输入标题";
+    }
     self.classTypeLabel.text = model.classType;
     self.remindTypeLabel.text = model.remindType;
-    self.timeLabel.text = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:model.time]];
     self.bgView.backgroundColor = LCEventBackgroundColor([model.colorType integerValue]);
     
+    NSString * targetDateStr = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:model.time]];
     if ([model.classType isEqualToString:@"倒计日"]) {
         _timeStrLabel.text = @"目标日:";
         _dayStrLabel.text = @"剩余天数";
         NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:model.time] timeIntervalSinceNow];
+        timeInterval = timeInterval - 8 * 60 * 60;
         if (timeInterval < 0) {
-            self.dayLabel.text = @"=0";
-            if ([model.remindType isEqualToString:@"月循环"]) {
-               
-            }else if ([model.remindType isEqualToString:@"年循环"]){
-               
+            NSCalendar *gregorian = [[ NSCalendar alloc ] initWithCalendarIdentifier : NSCalendarIdentifierGregorian];
+            unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+            //格式化时间
+            NSDate *createDate = [DateFormatter dateFromTimeStampString:model.time];
+            NSDateComponents* components = [gregorian components:unitFlags fromDate:createDate];
+            [components setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
+            //格式化现在时间
+            NSDateComponents* newDateComponent = [gregorian components:unitFlags fromDate:[NSDate date]];
+            [newDateComponent setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
+            
+            if ([model.remindType isEqualToString:@"无提醒"]){
+                self.dayLabel.text = @"0";
+            }else{
+                if ([model.remindType isEqualToString:@"月循环"]) {
+                    if (components.day <= newDateComponent.day) {
+                        targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",newDateComponent.year,newDateComponent.month + 1,components.day];
+                        if (newDateComponent.month == 12) {//当前月为12  显示下一年的01月
+                            targetDateStr = [NSString stringWithFormat:@"%ld-%@-%ld",newDateComponent.year + 1,@"01",components.day];
+                        }else{
+                            targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",newDateComponent.year,newDateComponent.month + 1,components.day];
+                            if (newDateComponent.month == 1 && (components.day == 29 || components.day == 30 || components.day == 31)) {
+                                //当前月为01月  下月是2月   假如日为29、30、31 统一显示 28
+                                targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%@",newDateComponent.year,newDateComponent.month + 1,@"28"];
+                            }else if (components.day == 31 && (newDateComponent.month + 1 == 4 || newDateComponent.month + 1 == 6 || newDateComponent.month + 1 == 9 || newDateComponent.month + 1 == 11)){
+                                //目标日期为四月，六月，九月，十一月  假如日是31  统一显示 30
+                                targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%@",newDateComponent.year,newDateComponent.month + 1,@"30"];
+                            }
+                        }
+                    }else{
+                        targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",newDateComponent.year,newDateComponent.month,components.day];
+                    }
+                }else if ([model.remindType isEqualToString:@"年循环"]){
+                    if (components.day <= newDateComponent.day) {
+                        targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",newDateComponent.year + 1,components.month,components.day];
+                    }else{
+                        targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",newDateComponent.year,components.month,components.day];
+                    }
+                }
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                [formatter setDateStyle:NSDateFormatterMediumStyle];
+                [formatter setTimeStyle:NSDateFormatterShortStyle];
+                [formatter setDateFormat:@"YYYY-MM-dd"];
+                NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
+                [formatter setTimeZone:timeZone];
+                
+                NSDate* date = [formatter dateFromString:targetDateStr];
+                
+                NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
+                NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:timeSp] timeIntervalSinceNow];
+                timeInterval = timeInterval - 8 * 60 * 60;
+                long temp = 0;
+                NSString *result;
+                temp = fabs(timeInterval)/60;
+                if((temp = temp/60) <24){
+                    result= [NSString stringWithFormat:@"0"];
+                }else if((temp = temp/24) <10000){
+                    result = [NSString stringWithFormat:@"%ld",temp];
+                }
+                self.dayLabel.text = result;
             }
         }else{
             long temp = 0;
@@ -171,7 +230,9 @@
     }else if ([model.classType isEqualToString:@"累计日"]){
         _timeStrLabel.text = @"起始日:";
         _dayStrLabel.text = @"已过天数";
+        
         NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:model.time] timeIntervalSinceNow];
+        timeInterval = timeInterval - 8 * 60 * 60;
         if (timeInterval < 0) {
             long temp = 0;
             NSString *result;
@@ -186,6 +247,7 @@
             self.dayLabel.text = @"0";
         }
     }
+    self.timeLabel.text = targetDateStr;
 }
 
 @end

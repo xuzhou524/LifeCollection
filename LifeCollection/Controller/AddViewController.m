@@ -11,20 +11,20 @@
 #import "TextFieldTableViewCell.h"
 #import "TitleTableViewCell.h"
 #import "SelectColorTableViewCell.h"
-#import "EventModel.h"
+#import "TimeListTableViewCell.h"
 
 #import "LCDatePickerWindow.h"
 #import "DoActionSheet.h"
 
-@interface AddViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface AddViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
 @property(nonatomic,strong)UITableView * tableView;
-@property(nonatomic,strong)PreviewTableViewCell * previewcell;
+@property(nonatomic,strong)TimeListTableViewCell * timeCell ;
 @property(nonatomic,strong)TextFieldTableViewCell * textFieldCell;
 
 @property (nonatomic, strong) LCDatePickerWindow * pickerWindow;
 
-@property (nonatomic, strong) EventModel * eventModel;
+
 @property (nonatomic, strong) NSString * originalDate;
 
 @property (nonatomic, strong) NSString * selectColorTypeStr;
@@ -37,13 +37,18 @@
     [super viewDidLoad];
     self.navigationItem.title = @"添加";
     self.view.backgroundColor = [LCColor backgroudColor];
+    if (_eventModel) {
+        self.navigationItem.title = @"编辑";
+    }
     
     //初始化默认值
-    self.eventModel.classType = @"倒计日";
-    self.eventModel.remindType = @"无提醒";
-    self.eventModel.colorType = @"0";
-    self.eventModel.time = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
-    
+    if (!_eventModel) {
+        self.eventModel.classType = @"倒计日";
+        self.eventModel.remindType = @"无提醒";
+        self.eventModel.colorType = @"0";
+        self.eventModel.time = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
+    }
+
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -58,9 +63,11 @@
     regClass(self.tableView, TextFieldTableViewCell);
     regClass(self.tableView, TitleTableViewCell);
     regClass(self.tableView, SelectColorTableViewCell);
+    regClass(self.tableView, TimeListTableViewCell);
     
     UIButton * rightBtn = [UIButton new];
     [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
+    
     rightBtn.titleLabel.font = LCFont(16);
     [rightBtn setTitleColor:[LCColor LCColor_77_92_127] forState:UIControlStateNormal];
     [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -98,8 +105,13 @@
         return;
     }
     self.eventModel.title = _textFieldCell.titleTextField.text;
+    if (self.eventModel.ids > 0) {
+        //编辑状态  更新数据
+        [self.eventModel updataNote:self.eventModel];
+    }else{
+        [self.eventModel insertNote:self.eventModel];
+    }
     
-    [self.eventModel insertNote:self.eventModel];
     [self.navigationController popViewControllerAnimated:YES];
 
 }
@@ -115,15 +127,17 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 6;
+    return 7;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
-        return 165;
-    }else if (indexPath.row == 1 || indexPath.row == 2 ||indexPath.row == 3 ||indexPath.row == 4){
+        return 35;
+    }else if (indexPath.row == 1){
+        return 130;
+    }else if (indexPath.row == 2 || indexPath.row == 3 ||indexPath.row == 4 ||indexPath.row == 5){
         return 60;
-    }else if (indexPath.row == 5){
+    }else if (indexPath.row == 6){
         return 70;
     }
     return 0;
@@ -131,34 +145,40 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
-        _previewcell = getCell(PreviewTableViewCell);
-        _previewcell.selectionStyle = UITableViewCellSelectionStyleNone;
-        _previewcell.bgView.backgroundColor = LCEventBackgroundColor([self.eventModel.colorType integerValue]);
-        return _previewcell;
+        PreviewTableViewCell * previewCell = getCell(PreviewTableViewCell);
+        previewCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return previewCell;
     }else if (indexPath.row == 1){
+        _timeCell = getCell(TimeListTableViewCell);
+        _timeCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [_timeCell bind:self.eventModel];
+        return _timeCell;
+    }else if (indexPath.row == 2){
         _textFieldCell = getCell(TextFieldTableViewCell);
         _textFieldCell.selectionStyle = UITableViewCellSelectionStyleNone;
         _textFieldCell.titleLabel.text = @"标题";
+        _textFieldCell.titleTextField.delegate = self;
+        _textFieldCell.titleTextField.text = self.eventModel.title;
         return _textFieldCell;
-    }else if (indexPath.row == 2){
+    }else if (indexPath.row == 3){
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"时间";
         cell.summeryLabel.text = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:self.eventModel.time]];
         return cell;
-    }else if (indexPath.row == 3){
+    }else if (indexPath.row == 4){
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"类型";
         cell.summeryLabel.text = self.eventModel.classType;
         return cell;
-    }else if (indexPath.row == 4){
+    }else if (indexPath.row == 5){
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"提醒";
         cell.summeryLabel.text = self.eventModel.remindType;
         return cell;
-    }else if (indexPath.row == 5){
+    }else if (indexPath.row == 6){
         SelectColorTableViewCell * cell = getCell(SelectColorTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         for (int i=0; i < cell.selectColorArray.count; i ++) {
@@ -172,17 +192,22 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 2){
+    if (indexPath.row == 3){
         [self.pickerWindow show];
-    }else if (indexPath.row == 3){
-        [self classTypeDoActionSheetShow];
     }else if (indexPath.row == 4){
+        [self classTypeDoActionSheetShow];
+    }else if (indexPath.row == 5){
         [self remindDoActionSheetShow];
     }
 }
 
+- ( void )textFieldDidEndEditing:( UITextField *)textField{
+    _timeCell.titleLabel.text = textField.text;
+    self.eventModel.title = textField.text;
+}
+
 -(void)selectColorClick:(UITapGestureRecognizer *)tap{
-    _previewcell.bgView.backgroundColor = LCEventBackgroundColor(tap.view.tag - 100);
+    _timeCell.bgView.backgroundColor = LCEventBackgroundColor(tap.view.tag - 100);
     self.eventModel.colorType = [NSString stringWithFormat:@"%ld",tap.view.tag - 100];
 }
 

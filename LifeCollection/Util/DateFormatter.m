@@ -17,7 +17,7 @@
     }else{
         time=[timeStamp doubleValue]/1000;
     }
-    NSDate *destDate= [NSDate dateWithTimeIntervalSince1970:time];;
+    NSDate *destDate= [NSDate dateWithTimeIntervalSince1970:time];
     return destDate;
 }
 

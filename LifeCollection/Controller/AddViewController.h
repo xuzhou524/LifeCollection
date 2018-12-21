@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "EventModel.h"
 
 @interface AddViewController : UIViewController
-
+@property (nonatomic, strong) EventModel * eventModel;
 @end
