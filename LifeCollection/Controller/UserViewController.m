@@ -41,6 +41,7 @@
     regClass(self.tableView, UserViewTableViewCell);
     regClass(self.tableView, TitleTableViewCell);
     regClass(self.tableView, UserHeadViewTableViewCell);
+    regClass(self.tableView, TitleNoRightImageTableViewCell);
     
 }
 
@@ -78,15 +79,17 @@
             return cell;
         }
     }else{
+        if (indexPath.row == 3) {
+            TitleNoRightImageTableViewCell * cell = getCell(TitleNoRightImageTableViewCell);
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.titleLabel.text = @"咘咕版本";
+            cell.summeryLabel.text = [NSString stringWithFormat:@"v%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+            return cell;
+        }
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @[@"分享给朋友",@"服务条款",@"关于开发者",@"咘咕版本"][indexPath.row];
-        if (indexPath.row == 3) {
-            cell.summeryLabel.text = [NSString stringWithFormat:@"v%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
-        }else{
-            cell.summeryLabel.text = @"";
-        }
-        
+        cell.titleLabel.text = @[@"分享给朋友",@"服务条款",@"关于开发者"][indexPath.row];
+        cell.summeryLabel.text = @"";
         return cell;
     }
 }

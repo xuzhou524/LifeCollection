@@ -19,3 +19,9 @@
 @property(nonatomic,strong)UILabel * summeryLabel;
 @end
 
+
+@interface TitleNoRightImageTableViewCell : UITableViewCell
+@property(nonatomic,strong)UILabel * titleLabel;
+@property(nonatomic,strong)UILabel * summeryLabel;
+@end
+
