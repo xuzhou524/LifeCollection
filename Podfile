@@ -8,6 +8,7 @@ def pods
    pod 'MBProgressHUD'
    pod 'AFNetworking'
    pod 'SDWebImage'
+   pod 'YYModel'
 end
 
 
