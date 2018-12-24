@@ -9,6 +9,7 @@ def pods
    pod 'AFNetworking'
    pod 'SDWebImage'
    pod 'YYModel'
+   pod 'MJRefresh'
 end
 
 
