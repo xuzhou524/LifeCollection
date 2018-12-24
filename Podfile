@@ -7,6 +7,7 @@ def pods
    pod 'FMDB'
    pod 'MBProgressHUD'
    pod 'AFNetworking'
+   pod 'SDWebImage'
 end
 
 
