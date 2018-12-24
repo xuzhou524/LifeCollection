@@ -79,7 +79,7 @@
 
 -(void)bind:(FoundListModel *)model{
     self.titleLabel.text = model.title;
-    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:model.cover]];
+    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:model.url]];
 }
 
 @end
