@@ -9,6 +9,7 @@
 #import "FoundViewController.h"
 #import "FoundTableViewCell.h"
 #import "FoundListModel.h"
+#import "LCWebViewViewController.h"
 
 @interface FoundViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * tableView;
@@ -44,10 +45,10 @@
 
 -(void)requestData{
     kWeakSelf;
-    NSString * url = @"https://gank.io/api/xiandu/data/id/ifanr/count/10/page/1";
+    NSString * url = @"https://gank.io/api/xiandu/data/id/ifanr/count/20/page/1";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        weakSelf.foundListArray = [NSArray yy_modelArrayWithClass:[FoundListModel class] json:responseObject[@"results"]];
+        weakSelf.foundListArray = [NSMutableArray arrayWithArray:[NSArray yy_modelArrayWithClass:[FoundListModel class] json:responseObject[@"results"]]];
         [weakSelf.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
@@ -74,6 +75,14 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell bind:self.foundListArray[indexPath.row]];
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    LCWebViewViewController * webViewVC =[LCWebViewViewController new];
+    FoundListModel * mdeol = self.foundListArray[indexPath.row];
+    webViewVC.titleStr = mdeol.title;
+    webViewVC.urlStr = mdeol.url;
+    [self.navigationController pushViewController:webViewVC animated:YES];
 }
 
 @end
