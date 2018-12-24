@@ -6,6 +6,7 @@ def pods
    pod 'Masonry'
    pod 'FMDB'
    pod 'MBProgressHUD'
+   pod 'AFNetworking'
 end
 
 
