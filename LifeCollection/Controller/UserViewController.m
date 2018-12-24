@@ -54,7 +54,7 @@
     if (section == 0) {
         return 2;
     }
-    return 4;
+    return 3;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -82,7 +82,7 @@
             return cell;
         }
     }else{
-        if (indexPath.row == 3) {
+        if (indexPath.row == 2) {
             TitleNoRightImageTableViewCell * cell = getCell(TitleNoRightImageTableViewCell);
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.titleLabel.text = @"咘咕版本";
@@ -91,7 +91,7 @@
         }
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @[@"分享给朋友",@"服务条款",@"关于开发者"][indexPath.row];
+        cell.titleLabel.text = @[@"服务条款",@"关于开发者"][indexPath.row];
         cell.summeryLabel.text = @"";
         return cell;
     }
@@ -99,12 +99,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
-        if (indexPath.row == 1) {
+        if (indexPath.row == 0) {
             LCWebViewViewController * webViewVC =[LCWebViewViewController new];
             webViewVC.titleStr = @"服务条款";
             webViewVC.urlStr = @"http://img.gozap.com/group19/M01/80/08/wKgCN1wcrJ6WDKlrAAHm_9rYe-c967.pdf";
             [self.navigationController pushViewController:webViewVC animated:YES];
-        }else if (indexPath.row == 2){
+        }else if (indexPath.row == 1){
             AboutDeveloperViewController * aboutDeveloperVC =[AboutDeveloperViewController new];
             [self.navigationController pushViewController:aboutDeveloperVC animated:YES];
         }
