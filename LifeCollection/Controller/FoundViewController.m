@@ -8,9 +8,11 @@
 
 #import "FoundViewController.h"
 #import "FoundTableViewCell.h"
+#import "FoundListModel.h"
 
 @interface FoundViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * tableView;
+@property(nonatomic,strong)NSMutableArray * foundListArray;
 @end
 
 @implementation FoundViewController
@@ -37,6 +39,20 @@
     
     regClass(self.tableView, FoundTableViewCell);
     
+    [self requestData];
+}
+
+-(void)requestData{
+    kWeakSelf;
+    NSString * url = @"https://gank.io/api/xiandu/data/id/ifanr/count/10/page/1";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        weakSelf.foundListArray = [NSArray yy_modelArrayWithClass:[FoundListModel class] json:responseObject[@"results"]];
+        [weakSelf.tableView reloadData];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        
+    }];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -45,7 +61,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 4;
+    return self.foundListArray.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -56,6 +72,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     FoundTableViewCell * cell = getCell(FoundTableViewCell);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell bind:self.foundListArray[indexPath.row]];
     return cell;
 }
 

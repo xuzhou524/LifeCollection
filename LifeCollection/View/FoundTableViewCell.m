@@ -30,17 +30,20 @@
         make.top.equalTo(self.contentView).offset(15);
         make.bottom.equalTo(self.contentView).offset(-15);
         make.right.equalTo(self.contentView).offset(-15);
-        make.width.equalTo(@180);
+        make.width.equalTo(@175);
     }];
     
     _titleLabel = [UILabel new];
     _titleLabel.text = @"让生活更精彩";
-    _titleLabel.font = LCFont(16);
+    _titleLabel.textAlignment = NSTextAlignmentLeft;
+    _titleLabel.numberOfLines = 3;
+    _titleLabel.font = LCFont(15);
     _titleLabel.textColor = [LCColor LCColor_77_92_127];
     [self.contentView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.iconImageView).offset(5);
         make.left.equalTo(self.contentView).offset(15);
+        make.right.equalTo(self.iconImageView.mas_left).offset(-20);
     }];
     
     _typeLabel = [UILabel new];
@@ -72,6 +75,11 @@
         make.bottom.equalTo(self.contentView);
         make.height.equalTo(@0.6);
     }];
+}
+
+-(void)bind:(FoundListModel *)model{
+    self.titleLabel.text = model.title;
+    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:model.cover]];
 }
 
 @end

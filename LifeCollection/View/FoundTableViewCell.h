@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FoundListModel.h"
 
 @interface FoundTableViewCell : UITableViewCell
 
@@ -15,5 +16,8 @@
 
 @property(nonatomic,strong)UILabel * typeLabel;
 @property(nonatomic,strong)UILabel * timeLabel;
+
+-(void)bind:(FoundListModel *)model;
+
 @end
 
