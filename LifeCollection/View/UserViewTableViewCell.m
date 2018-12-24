@@ -81,6 +81,7 @@
     _zanImageView = [UIImageView new];
     _zanImageView.image = [UIImage imageNamed:@"about_praise"];
     _zanImageView.layer.cornerRadius = 20;
+    _zanImageView.userInteractionEnabled = YES;
     _zanImageView.layer.masksToBounds = YES;
     [self.contentView addSubview:_zanImageView];
     [_zanImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -110,6 +111,7 @@
     
     _tuImageView = [UIImageView new];
     _tuImageView.image = [UIImage imageNamed:@"about_criticism"];
+    _tuImageView.userInteractionEnabled = YES;
     _tuImageView.layer.cornerRadius = 20;
     _tuImageView.layer.masksToBounds = YES;
     [self.contentView addSubview:_tuImageView];

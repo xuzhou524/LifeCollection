@@ -77,6 +77,8 @@
         }else{
             UserHeadViewTableViewCell * cell = getCell(UserHeadViewTableViewCell);
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            [cell.zanImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(zanImageViewTap)]];
+            [cell.tuImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tuImageView)]];
             return cell;
         }
     }else{
@@ -107,6 +109,15 @@
             [self.navigationController pushViewController:aboutDeveloperVC animated:YES];
         }
     }
+}
+
+-(void)zanImageViewTap{
+    
+}
+
+-(void)tuImageView{
+    NSString *str = @"mqq://im/chat?chat_type=wpa&uin=1043037904&version=1&src_type=web";
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
 @end

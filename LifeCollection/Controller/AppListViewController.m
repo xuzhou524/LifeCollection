@@ -86,37 +86,31 @@
     if (indexPath.section == 0) {
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @[@"用易房贷",@"随时笔记",@"OnePai",@"蓝牙",@"用易天气"][indexPath.row];
+        cell.titleLabel.text = @[@"用易房贷",@"随时笔记",@"OnePai",@"蓝牙通",@"用易天气"][indexPath.row];
         return cell;
     }else{
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @[@"V2EX",@"Bark",@"龙贷",@"抽屉新热榜",@"秘峰"][indexPath.row];
+        cell.titleLabel.text = @[@"V2EX",@"龙贷",@"抽屉新热榜",@"秘峰"][indexPath.row];
         return cell;
     }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *str;
     if (indexPath.section == 0) {
-        if (indexPath.row == 0) {
-            LCWebViewViewController * webViewVC =[LCWebViewViewController new];
-            webViewVC.titleStr = @"简介";
-            webViewVC.urlStr = @"http://www.xzzai.com";
-            [self.navigationController pushViewController:webViewVC animated:YES];
-        }else if (indexPath.row == 1){
-            LCWebViewViewController * webViewVC =[LCWebViewViewController new];
-            webViewVC.titleStr = @"gitHub";
-            webViewVC.urlStr = @"https://github.com/xuzhou524";
-            [self.navigationController pushViewController:webViewVC animated:YES];
-        }
+        str = @[@"https://itunes.apple.com/cn/app/id1272033544",
+                @"https://itunes.apple.com/cn/app/id1330908170",
+                @"https://itunes.apple.com/cn/app/id1239242152",
+                @"https://itunes.apple.com/cn/app/id1116575370",
+                @"https://itunes.apple.com/cn/app/id1107521185"][indexPath.row];
     }else{
-        if (indexPath.row == 0) {
-            LCWebViewViewController * webViewVC =[LCWebViewViewController new];
-            webViewVC.titleStr = @"ShareHub";
-            webViewVC.urlStr = @"https://www.gezhipu.com";
-            [self.navigationController pushViewController:webViewVC animated:YES];
-        }
+        str = @[@"https://itunes.apple.com/cn/app/id1078157349",
+                @"https://itunes.apple.com/cn/app/id900365369",
+                @"https://itunes.apple.com/cn/app/id513228984",
+                @"https://itunes.apple.com/cn/app/id1330536377"][indexPath.row];
     }
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
 @end
