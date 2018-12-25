@@ -25,9 +25,10 @@
     liftLabel.textColor = [LCColor LCColor_77_92_127];
     self.navigationItem.titleView = liftLabel;
     
-    _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, -45, ScreenWidth,ScreenHeight)];
+    _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth,ScreenHeight)];
     _webView.backgroundColor = [LCColor backgroudColor];
     if (_bg_color) {
+        _webView.frame = CGRectMake(0, -45, ScreenWidth,ScreenHeight);
         _webView.backgroundColor = [LCColor colorWithHexString:_bg_color];
     }
     [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_urlStr]]];
