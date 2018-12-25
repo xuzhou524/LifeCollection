@@ -30,6 +30,12 @@
     liftLabel.textColor = [LCColor LCColor_77_92_127];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
     
+    UILabel * rightLabel = [UILabel new];
+    rightLabel.text = [self getCurrentDate];
+    rightLabel.font = LCFont(15);
+    rightLabel.textColor = [LCColor LCColor_77_92_127];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightLabel];
+    
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -146,5 +152,14 @@
     }];
 }
 
+-(NSString *)getCurrentDate{
+    NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    NSDateComponents *dateComponent = [[NSCalendar currentCalendar] components:unitFlags fromDate:[NSDate date]];
+    NSInteger year = [dateComponent year];
+    NSInteger month = [dateComponent month];
+    NSInteger day = [dateComponent day];
+    NSString * currentDate = [NSString stringWithFormat:@"%ld年%.2ld月%.2ld日",year,month,day];
+    return currentDate;
+}
 @end
 
