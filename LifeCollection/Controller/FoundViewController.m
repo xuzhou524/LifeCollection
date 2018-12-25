@@ -11,7 +11,9 @@
 #import "FoundListModel.h"
 #import "LCWebViewViewController.h"
 
-@interface FoundViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface FoundViewController ()<UITableViewDelegate,UITableViewDataSource>{
+    NSString * _last_id;
+}
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray * foundListArray;
 @end
@@ -31,28 +33,73 @@
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.bottom.equalTo(self.view);
+        make.left.top.right.equalTo(self.view);
+        make.bottom.equalTo(self.view).with.offset(-(Height_TabBar));
     }];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.backgroundColor = [LCColor backgroudColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.tableView.estimatedRowHeight = 0;
+        self.tableView.estimatedSectionFooterHeight = 0;
+        self.tableView.estimatedSectionHeaderHeight = 0;
+    }
     
     regClass(self.tableView, FoundTableViewCell);
+    kWeakSelf;
+    self.tableView.mj_header = [LCRefresh lcRefreshHeader:^{
+        [weakSelf refreshRequestData];
+    }];
     
+    self.tableView.mj_footer = [LCRefresh lcRefreshFooter:^{
+        [weakSelf lastRequestData];
+    }];
+    
+    [self refreshRequestData];
+}
+
+-(void)refreshRequestData{
+    _last_id = @"0";
     [self requestData];
+}
+
+-(void)lastRequestData{
+    if (self.foundListArray.count <= 0) {
+        [self refreshRequestData];
+        return;
+    }
+    FoundListModel * model = self.foundListArray.lastObject;
+    _last_id = model.id;
+    kWeakSelf;
+    NSString * url = [NSString stringWithFormat:@"http://v3.wufazhuce.com:8000/api/banner/list/4?last_id=%@",_last_id];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [weakSelf.foundListArray addObjectsFromArray:[NSArray yy_modelArrayWithClass:[FoundListModel class] json:responseObject[@"data"]]];
+        
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
+        [weakSelf.tableView reloadData];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
+        
+    }];
 }
 
 -(void)requestData{
     kWeakSelf;
-    //https://api.tuchong.com/discover/tag_id/热门
-    NSString * url = @"http://v3.wufazhuce.com:8000/api/banner/list/4?last_id=0&platform=ios&sign=c16b8933f84b87033705764be157a257&user_id=&uuid=037A90C5-EDF0-4554-A854-6704032E3BCD&version=v4.6.1";
+    NSString * url = [NSString stringWithFormat:@"http://v3.wufazhuce.com:8000/api/banner/list/4?last_id=%@",_last_id];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         weakSelf.foundListArray = [NSMutableArray arrayWithArray:[NSArray yy_modelArrayWithClass:[FoundListModel class] json:responseObject[@"data"]]];
         [weakSelf.tableView reloadData];
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
         
     }];
 }
