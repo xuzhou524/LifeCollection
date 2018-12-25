@@ -128,8 +128,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     LCWebViewViewController * webViewVC =[LCWebViewViewController new];
     FoundListModel * mdeol = self.foundListArray[indexPath.row];
-    webViewVC.titleStr = mdeol.title;
-    webViewVC.urlStr = mdeol.cover;
+    webViewVC.titleStr = @"专题";
 
     kWeakSelf;
     NSString * url = [NSString stringWithFormat:@"http://v3.wufazhuce.com:8000/api/topic/htmlcontent/%@?source_id=%@",mdeol.content_id,mdeol.id];
@@ -138,6 +137,7 @@
         NSMutableDictionary * dic = responseObject[@"data"];
         webViewVC.urlStr = dic[@"web_url"];
         webViewVC.htmlStr = dic[@"html_content"];
+        webViewVC.bg_color = dic[@"bg_color"];
         [weakSelf.navigationController pushViewController:webViewVC animated:YES];
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

@@ -13,6 +13,9 @@
 + (UIImage *)createImageWithColor:(UIColor *)color;
 + (UIImage *)createImageWithColor:(UIColor *)color withSize:(CGSize)size;
 
++ (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha;
++ (UIColor *) colorWithHexString:(NSString *)color;
+
 + (UIColor *)backgroudColor;
 + (UIColor *)LCColor_235_235_235;
 + (UIColor *)LCColor_232_229_222;

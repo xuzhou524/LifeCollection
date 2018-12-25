@@ -12,4 +12,6 @@
 @property(nonatomic,strong)NSString * htmlStr;
 @property(nonatomic,strong)NSString * urlStr;
 @property(nonatomic,strong)NSString * titleStr;
+
+@property(nonatomic,strong)NSString * bg_color;
 @end
