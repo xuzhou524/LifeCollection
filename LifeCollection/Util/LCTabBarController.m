@@ -47,9 +47,6 @@
     NSString * selectedImage = [normalImage stringByAppendingString:@"_sel"];
     UIImage * image = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     controller.tabBarItem.selectedImage = image;
-    
-//    [controller.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:LCCoror(130, 130, 130),NSFontAttributeName:NTFont(12)} forState:UIControlStateNormal];
-//    [controller.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:LCCoror(221, 168, 100),NSFontAttributeName:NTFont(12)} forState:UIControlStateSelected];
 
     LCNavigationViewController * ldNav = [[LCNavigationViewController alloc] initWithRootViewController:controller];
     return ldNav;
