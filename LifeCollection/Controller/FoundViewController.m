@@ -46,10 +46,10 @@
 -(void)requestData{
     kWeakSelf;
     //https://api.tuchong.com/discover/tag_id/热门
-    NSString * url = @"https://api.tuchong.com/feed-app?os_api=22&device_type=MI&device_platform=android&ssmix=a&manifest_version_code=232&dpi=400&abflag=0&uuid=651384659521356&version_code=232&app_name=tuchong&version_name=2.3.2&openudid=65143269dafd1f3a5&resolution=1280*1000&os_version=5.8.1&ac=wifi&aid=0&page=1&type=refresh";
+    NSString * url = @"http://v3.wufazhuce.com:8000/api/banner/list/4?last_id=0&platform=ios&sign=c16b8933f84b87033705764be157a257&user_id=&uuid=037A90C5-EDF0-4554-A854-6704032E3BCD&version=v4.6.1";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        weakSelf.foundListArray = [NSMutableArray arrayWithArray:[NSArray yy_modelArrayWithClass:[FoundListModel class] json:responseObject[@"feedList"]]];
+        weakSelf.foundListArray = [NSMutableArray arrayWithArray:[NSArray yy_modelArrayWithClass:[FoundListModel class] json:responseObject[@"data"]]];
         [weakSelf.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
@@ -68,7 +68,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 135;
+    return (ScreenWidth - 20 - 20) / 1.67 + 5 + 20 + 20 + 20 + 20;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -82,7 +82,7 @@
     LCWebViewViewController * webViewVC =[LCWebViewViewController new];
     FoundListModel * mdeol = self.foundListArray[indexPath.row];
     webViewVC.titleStr = mdeol.title;
-    webViewVC.urlStr = mdeol.url;
+    webViewVC.urlStr = mdeol.cover;
     [self.navigationController pushViewController:webViewVC animated:YES];
 }
 
