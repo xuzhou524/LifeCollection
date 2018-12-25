@@ -68,7 +68,7 @@
 		53AC8E0921D0D02700DD0079 /* FoundListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AC8E0821D0D02700DD0079 /* FoundListModel.m */; };
 		53AC8E0C21D1DC9D00DD0079 /* LCRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AC8E0B21D1DC9D00DD0079 /* LCRefresh.m */; };
 		53AC8E1121D2271C00DD0079 /* AppreciatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AC8E1021D2271C00DD0079 /* AppreciatesViewController.m */; };
-		53AC8E1B21D22C6200DD0079 /* WechatIMG16.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 53AC8E1A21D22C6200DD0079 /* WechatIMG16.jpeg */; };
+		53AC8E1F21D2310700DD0079 /* WechatIMG1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 53AC8E1E21D2310600DD0079 /* WechatIMG1.jpeg */; };
 		855A42587625B7BB03CD4F6E /* Pods_LifeCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E969EF071FF62323FD55A93A /* Pods_LifeCollection.framework */; };
 /* End PBXBuildFile section */
 
@@ -165,7 +165,7 @@
 		53AC8E0B21D1DC9D00DD0079 /* LCRefresh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCRefresh.m; sourceTree = "<group>"; };
 		53AC8E0F21D2271C00DD0079 /* AppreciatesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppreciatesViewController.h; sourceTree = "<group>"; };
 		53AC8E1021D2271C00DD0079 /* AppreciatesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppreciatesViewController.m; sourceTree = "<group>"; };
-		53AC8E1A21D22C6200DD0079 /* WechatIMG16.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG16.jpeg; sourceTree = "<group>"; };
+		53AC8E1E21D2310600DD0079 /* WechatIMG1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG1.jpeg; sourceTree = "<group>"; };
 		A46CB81A40A90EFAE12EAFA2 /* Pods-LifeCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LifeCollection/Pods-LifeCollection.debug.xcconfig"; sourceTree = "<group>"; };
 		DAB28567032FA38DDC677DEE /* Pods-LifeCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeCollection.release.xcconfig"; path = "Pods/Target Support Files/Pods-LifeCollection/Pods-LifeCollection.release.xcconfig"; sourceTree = "<group>"; };
 		E969EF071FF62323FD55A93A /* Pods_LifeCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LifeCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,7 +233,7 @@
 		5356ECF621C7469C00862FE1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				53AC8E1A21D22C6200DD0079 /* WechatIMG16.jpeg */,
+				53AC8E1E21D2310600DD0079 /* WechatIMG1.jpeg */,
 				531AD0C521CCD57F00A4B2BC /* summery.png */,
 				531AD0C021CCCBAA00A4B2BC /* about_criticism.png */,
 				531AD0BF21CCCBAA00A4B2BC /* about_praise.png */,
@@ -460,11 +460,11 @@
 				531AD0C121CCCBAB00A4B2BC /* about_praise.png in Resources */,
 				5356ED1B21C7531D00862FE1 /* tab_bar_home_sel@2x.png in Resources */,
 				531AD0BE21CCC89300A4B2BC /* logo.png in Resources */,
-				53AC8E1B21D22C6200DD0079 /* WechatIMG16.jpeg in Resources */,
 				531AD0B721CCB93900A4B2BC /* edit_title.png in Resources */,
 				5357B41021C38B73009D9333 /* Main.storyboard in Resources */,
 				5325DF8121D08C0C00743052 /* tab_bar_found@3x.png in Resources */,
 				5325DF8221D08C0C00743052 /* tab_bar_found@2x.png in Resources */,
+				53AC8E1F21D2310700DD0079 /* WechatIMG1.jpeg in Resources */,
 				539B3A8421C8A48C00431B7A /* add@2x.png in Resources */,
 				531AD0C221CCCBAB00A4B2BC /* about_criticism.png in Resources */,
 				5356ED1A21C7531D00862FE1 /* tab_bar_home@2x.png in Resources */,
