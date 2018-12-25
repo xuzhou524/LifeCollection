@@ -19,7 +19,12 @@
     self.navigationItem.title = _titleStr;
     
     UIWebView * webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth,ScreenHeight)];
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_urlStr]]];
+    if (_htmlStr) {
+       [webView loadHTMLString:_htmlStr baseURL:nil];
+    }else{
+       [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_urlStr]]];
+    }
+    
     [self.view addSubview:webView];
 
 }

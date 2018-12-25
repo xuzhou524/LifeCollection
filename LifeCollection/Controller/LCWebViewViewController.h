@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LCWebViewViewController : UIViewController
+@property(nonatomic,strong)NSString * htmlStr;
 @property(nonatomic,strong)NSString * urlStr;
 @property(nonatomic,strong)NSString * titleStr;
 @end

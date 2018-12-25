@@ -130,7 +130,20 @@
     FoundListModel * mdeol = self.foundListArray[indexPath.row];
     webViewVC.titleStr = mdeol.title;
     webViewVC.urlStr = mdeol.cover;
-    [self.navigationController pushViewController:webViewVC animated:YES];
+
+    kWeakSelf;
+    NSString * url = [NSString stringWithFormat:@"http://v3.wufazhuce.com:8000/api/topic/htmlcontent/%@?source_id=%@",mdeol.content_id,mdeol.id];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSMutableDictionary * dic = responseObject[@"data"];
+        webViewVC.urlStr = dic[@"web_url"];
+        webViewVC.htmlStr = dic[@"html_content"];
+        [weakSelf.navigationController pushViewController:webViewVC animated:YES];
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        
+    }];
 }
 
 @end
