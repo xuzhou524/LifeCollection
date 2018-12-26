@@ -24,6 +24,10 @@
 #define Height_NavBar  ((LDiPhoneX==YES)?88.0f: 64.0f)
 #define Height_TabBar  ((LDiPhoneX==YES)?83.0f: 49.0f)
 
+//布局缩放系数
+#define AutoScale /375.*ScreenWidth
+#define AS AutoScale
+
 #define LCClassTypeArray     @[@"倒计日", @"累计日"]
 #define LCClassType(index)    LCClassTypeArray[index]
 
