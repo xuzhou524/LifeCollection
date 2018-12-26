@@ -210,7 +210,8 @@
 }
 
 -(void)selectColorClick:(UITapGestureRecognizer *)tap{
-    _timeCell.bgView.backgroundColor = LCEventBackgroundColor(tap.view.tag - 100);
+    NSString * imageStr = LCEventBackgroundImage(tap.view.tag - 100);;
+    _timeCell.bgView.image = [UIImage imageNamed:imageStr];
     self.eventModel.colorType = [NSString stringWithFormat:@"%ld",tap.view.tag - 100];
 }
 

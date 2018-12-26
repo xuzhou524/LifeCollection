@@ -10,7 +10,7 @@
 #import "EventModel.h"
 
 @interface TimeListTableViewCell : UITableViewCell
-@property(nonatomic,strong)UIView * bgView;
+@property(nonatomic,strong)UIImageView * bgView;
 
 @property(nonatomic,strong)UILabel * titleLabel;
 @property(nonatomic,strong)UILabel * timeLabel;

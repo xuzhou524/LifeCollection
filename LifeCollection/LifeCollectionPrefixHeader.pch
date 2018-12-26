@@ -14,8 +14,8 @@
 #define ScreenWidth      [[UIScreen mainScreen] bounds].size.width
 #define ScreenHeight     [[UIScreen mainScreen] bounds].size.height
 
-#define LCEventBackgroundColorArray     @[[LCColor LCColor_255_129_0],[LCColor LCColor_255_209_79],[LCColor LCColor_192_108_132],[LCColor LCColor_254_79_94],[LCColor LCColor_104_83_164],[LCColor LCColor_0_111_247]]
-#define LCEventBackgroundColor(index)      LCEventBackgroundColorArray[index]
+#define LCEventBackgroundImageArray     @[@"01",@"07",@"02",@"48",@"38",@"28",@"55"]
+#define LCEventBackgroundImage(index)   LCEventBackgroundImageArray[index]
 
 #define LDiPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO) || ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) : NO) || ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) : NO)
 

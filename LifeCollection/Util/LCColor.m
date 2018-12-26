@@ -109,30 +109,4 @@
     return [LCColor colorWithR255:173 G255:180 B255:200 A255:255];
 }
 
-
-//列表背景色
-+ (UIColor *)LCColor_254_79_94{
-    return [LCColor colorWithR255:254 G255:79 B255:94 A255:255];
-}
-
-+ (UIColor *)LCColor_192_108_132{
-    return [LCColor colorWithR255:192 G255:108 B255:132 A255:255];
-}
-
-+ (UIColor *)LCColor_104_83_164{
-    return [LCColor colorWithR255:104 G255:83 B255:164 A255:255];
-}
-
-+ (UIColor *)LCColor_0_111_247{
-    return [LCColor colorWithR255:0 G255:111 B255:247 A255:255];
-}
-
-+ (UIColor *)LCColor_255_209_79{
-    return [LCColor colorWithR255:255 G255:209 B255:79 A255:255];
-}
-
-+ (UIColor *)LCColor_255_129_0{
-    return [LCColor colorWithR255:255 G255:129 B255:0 A255:255];
-}
-
 @end

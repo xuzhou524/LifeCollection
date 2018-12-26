@@ -29,9 +29,11 @@
 -(void)sebViews{
     self.contentView.backgroundColor = [LCColor backgroudColor];
     
-    _bgView = [UIView new];
+    _bgView = [UIImageView new];
     _bgView.layer.cornerRadius = 8;
-    _bgView.backgroundColor = [UIColor orangeColor];
+    _bgView.layer.masksToBounds = YES;
+    _bgView.userInteractionEnabled = YES;
+    _bgView.contentMode = UIViewContentModeScaleToFill;
     [self.contentView addSubview:_bgView];
     [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView).offset(8);
@@ -147,7 +149,10 @@
     }
     self.classTypeLabel.text = model.classType;
     self.remindTypeLabel.text = model.remindType;
-    self.bgView.backgroundColor = LCEventBackgroundColor([model.colorType integerValue]);
+    NSString * imageStr = LCEventBackgroundImage([model.colorType integerValue]);
+    self.bgView.image = [UIImage imageNamed:imageStr];
+    
+//    self.bgView.backgroundColor = LCEventBackgroundColor([model.colorType integerValue]);
     
     NSString * targetDateStr = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:model.time]];
     if ([model.classType isEqualToString:@"倒计日"]) {

@@ -39,19 +39,22 @@
     
     _selectColorArray = [NSMutableArray new];
     
-    for (int i = 0; i < LCEventBackgroundColorArray.count; i ++) {
+    for (int i = 0; i < LCEventBackgroundImageArray.count; i ++) {
         UIView * colorBgView = [UIView new];
         [selectbgView addSubview:colorBgView];
         [colorBgView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(selectbgView).offset(((ScreenWidth - 30) / 6.00) * i);
+            make.left.equalTo(selectbgView).offset(((ScreenWidth - 30) * 1.00 / LCEventBackgroundImageArray.count) * i);
             make.centerY.equalTo(selectbgView);
             make.height.equalTo(@60);
-            make.width.equalTo(@((ScreenWidth - 30) / 6.00));
+            make.width.equalTo(@((ScreenWidth - 30) * 1.00 / LCEventBackgroundImageArray.count));
         }];
         
-        UIView * colorView = [UIView new];
+        UIImageView * colorView = [UIImageView new];
         colorView.layer.cornerRadius = 15;
-        colorView.backgroundColor = LCEventBackgroundColor(i);
+        colorView.layer.masksToBounds = YES;
+        colorView.userInteractionEnabled = YES;
+        NSString * imageStr = LCEventBackgroundImage(i);
+        colorView.image = [UIImage imageNamed:imageStr];
         [colorBgView addSubview:colorView];
         [colorView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(colorBgView);

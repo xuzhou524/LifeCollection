@@ -103,7 +103,7 @@
         imageAdconfiguration.imageNameOrURLString = model.content;
     }else{
         //广告停留时间
-        imageAdconfiguration.duration = 5;
+        imageAdconfiguration.duration = 3;
         //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
         imageAdconfiguration.imageNameOrURLString = @"image12.gif";
     }
@@ -121,7 +121,7 @@
     //广告显示完成动画时间
     imageAdconfiguration.showFinishAnimateTime = 0.8;
     //跳过按钮类型
-    imageAdconfiguration.skipButtonType = SkipTypeTimeText;
+    imageAdconfiguration.skipButtonType = SkipTypeRoundProgressText;
     //后台返回时,是否显示广告
     imageAdconfiguration.showEnterForeground = NO;
 
