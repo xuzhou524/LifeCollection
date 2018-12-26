@@ -10,6 +10,7 @@ def pods
    pod 'SDWebImage'
    pod 'YYModel'
    pod 'MJRefresh'
+   pod 'XHLaunchAd'
 end
 
 

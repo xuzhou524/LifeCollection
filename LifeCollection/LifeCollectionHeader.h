@@ -15,3 +15,4 @@
 #import "MJRefresh.h"
 #import "LCRefresh.h"
 #import "UIImageView+WebCache.h"
+#import "XHLaunchAd.h"
