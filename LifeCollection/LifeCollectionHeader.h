@@ -16,3 +16,4 @@
 #import "LCRefresh.h"
 #import "UIImageView+WebCache.h"
 #import "XHLaunchAd.h"
+#import "LCSettings.h"

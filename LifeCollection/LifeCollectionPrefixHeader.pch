@@ -36,3 +36,6 @@
 #define LCFont(x) [UIFont fontWithName:@"Helvetica-Bold" size:(x)]
 #define LCFont2(x) [UIFont fontWithName:@"Helvetica" size:(x)]
 
+//启动图
+#define kLaunchScreenModel     @"launchScreenModel"
+

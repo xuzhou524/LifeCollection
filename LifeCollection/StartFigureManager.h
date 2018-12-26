@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@interface LaunchAdModel : NSObject
+
+@property (nonatomic, strong) NSString *content;
+@property (nonatomic, strong) NSString *openUrl;
+@property (nonatomic, strong) NSString *contentSize;
+@property (nonatomic, strong) NSString *duration;
+
+@end
+
 @interface StartFigureManager : NSObject
 
 @end
