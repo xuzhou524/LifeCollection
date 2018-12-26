@@ -205,8 +205,10 @@
 }
 
 - ( void )textFieldDidEndEditing:( UITextField *)textField{
-    _timeCell.titleLabel.text = textField.text;
-    self.eventModel.title = textField.text;
+    if (textField.text.length > 0) {
+        _timeCell.titleLabel.text = textField.text;
+        self.eventModel.title = textField.text;
+    }
 }
 
 -(void)selectColorClick:(UITapGestureRecognizer *)tap{
