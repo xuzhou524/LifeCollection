@@ -129,7 +129,7 @@
     //广告frame
     imageAdconfiguration.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height * 0.8);
     //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
-    imageAdconfiguration.imageNameOrURLString = @"image2.jpg";
+    imageAdconfiguration.imageNameOrURLString = @"image12.gif";
     //设置GIF动图是否只循环播放一次(仅对动图设置有效)
     imageAdconfiguration.GIFImageCycleOnce = NO;
     //图片填充模式
