@@ -171,7 +171,7 @@
             NSDateComponents* newDateComponent = [gregorian components:unitFlags fromDate:[NSDate date]];
             [newDateComponent setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
             
-            if ([model.remindType isEqualToString:@"无提醒"]){
+            if ([model.remindType isEqualToString:@"无循环"]){
                 self.dayLabel.text = @"0";
             }else{
                 if ([model.remindType isEqualToString:@"月循环"]) {

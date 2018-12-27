@@ -31,7 +31,7 @@
 #define LCClassTypeArray     @[@"倒计日", @"累计日"]
 #define LCClassType(index)    LCClassTypeArray[index]
 
-#define LCRemindTypeArray     @[@"无提醒", @"月循环", @"年循环"]
+#define LCRemindTypeArray     @[@"无循环", @"月循环", @"年循环"]
 #define LCRemindType(index)    LCRemindTypeArray[index]
 
 #define regClass( table,cell ) [table registerClass:[cell class] forCellReuseIdentifier:[NSString stringWithFormat:@"%@", [cell class]]]

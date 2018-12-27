@@ -44,7 +44,7 @@
     //初始化默认值
     if (!_eventModel) {
         self.eventModel.classType = @"倒计日";
-        self.eventModel.remindType = @"无提醒";
+        self.eventModel.remindType = @"无循环";
         self.eventModel.colorType = @"0";
         self.eventModel.time = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
     }
@@ -178,7 +178,7 @@
         TitleAndImageTableViewCell * cell = getCell(TitleAndImageTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.iconImageView.image = [UIImage imageNamed:@"tixing"];
-        cell.titleLabel.text = @"提醒";
+        cell.titleLabel.text = @"循环";
         cell.summeryLabel.text = self.eventModel.remindType;
         return cell;
     }else if (indexPath.row == 6){
@@ -220,7 +220,7 @@
 -(void)remindDoActionSheetShow{
     kWeakSelf;
     DoActionSheet *remindActionSheet = [DoActionSheet new];
-    [remindActionSheet showC:@"提醒"
+    [remindActionSheet showC:@"循环"
                  cancel:@"取消"
                 buttons:LCRemindTypeArray
                  result:^(int nResult) {
