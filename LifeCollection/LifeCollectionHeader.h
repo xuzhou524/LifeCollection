@@ -17,3 +17,5 @@
 #import "UIImageView+WebCache.h"
 #import "XHLaunchAd.h"
 #import "LCSettings.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>

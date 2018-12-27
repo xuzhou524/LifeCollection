@@ -21,6 +21,11 @@
     self.window.rootViewController = [LCTabBarController new];
     [self.window makeKeyAndVisible];
     self.window.backgroundColor = [UIColor whiteColor];
+#ifdef DEBUG
+#else
+    [Fabric with:@[[Crashlytics class]]];
+#endif
+    
     return YES;
 }
 
