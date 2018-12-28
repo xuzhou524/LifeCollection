@@ -127,22 +127,6 @@
     [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
 }
 
-#pragma mark - subViews
--(NSArray<UIView *> *)launchAdSubViews_alreadyView{
-    
-    CGFloat y = XH_FULLSCREEN ? 46:22;
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-140, y, 60, 30)];
-    label.text  = @"已预载";
-    label.font = [UIFont systemFontOfSize:12];
-    label.textColor = [UIColor whiteColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.layer.cornerRadius = 5.0;
-    label.layer.masksToBounds = YES;
-    label.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-    return [NSArray arrayWithObject:label];
-    
-}
-
 #pragma mark - XHLaunchAd delegate - 其他
 /**
  广告点击事件回调
