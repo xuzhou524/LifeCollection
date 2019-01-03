@@ -135,7 +135,8 @@
     LCWebViewViewController * webViewVC =[LCWebViewViewController new];
     FoundListModel * mdeol = self.foundListArray[indexPath.row];
     webViewVC.titleStr = @"专题";
-
+//http://v3.wufazhuce.com:8000/api/channel/one/0/0?platform=ios&sign=98f5fb5f92c35e49cf6a93fed22c4885&user_id=&uuid=B1A45930-C3D8-453A-81C9-9782150CA634&version=v4.6.1
+    //2019-01-01
     kWeakSelf;
     NSString * url = [NSString stringWithFormat:@"http://v3.wufazhuce.com:8000/api/topic/htmlcontent/%@?source_id=%@",mdeol.content_id,mdeol.id];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
