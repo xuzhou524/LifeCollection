@@ -36,7 +36,8 @@ If you have questions about any aspect of this project, please feel free to cont
 <br/>
 
 ## Appreciates
-## 乞求赞赏 微信扫一扫
+
+乞求赞赏 微信扫一扫
 
 ![](http://img.gozap.com/group19/M02/AF/EB/wKgCN1wt5Amjl_jrAAB7KOl2bps60.jpeg)
 
