@@ -2,8 +2,12 @@
 This is a simple, concise, and fool the weather.All individual work is available, may not be used as it USES.
 
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/xuzhou524/LifeCollection/master/LICENSE)
-[![](https://img.shields.io/badge/done-50%-green.svg?style=flat)](https://github.com/xuzhou524/LifeCollection)
+
 <br/>
+## Download
+<a target='_blank' href='https://itunes.apple.com/cn/app/id1447845919'>
+<img src='http://ww2.sinaimg.cn/large/0060lm7Tgw1f1hgrs1ebwj308102q0sp.jpg' width='144' height='49' />
+</a>
 
 ##How to build
 1)  Clone the repository
