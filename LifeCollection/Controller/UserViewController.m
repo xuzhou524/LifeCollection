@@ -112,7 +112,15 @@
 }
 
 -(void)zanImageViewTap{
-    
+#ifdef DEBUG
+#else
+    if([SKStoreReviewController respondsToSelector:@selector(requestReview)]){
+        [SKStoreReviewController requestReview];
+    }else{
+        NSString  * nsStringToOpen = [NSString  stringWithFormat: @"itms-apps://itunes.apple.com/app/id%@?action=write-review",@"1447845919"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:nsStringToOpen]];
+    }
+#endif
 }
 
 -(void)tuImageView{
