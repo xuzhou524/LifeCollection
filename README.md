@@ -8,7 +8,7 @@ This is a simple, concise, and fool the weather.All individual work is available
 <img src='http://ww2.sinaimg.cn/large/0060lm7Tgw1f1hgrs1ebwj308102q0sp.jpg' width='144' height='49' />
 </a>
 
-##How to build
+## How to build
 1)  Clone the repository
 ```
 $ git clone https://github.com/xuzhou524/LifeCollection.git
@@ -19,7 +19,7 @@ $ open "LifeCollection.xcworkspace"
 ```
 3) Compile and run the app in your simulator or iOS device
 
-##Requirements
+## Requirements
 * Xcode 9.0+
 * iOS 9+
 
