@@ -49,8 +49,15 @@
     controller.tabBarItem.selectedImage = image;
 
     LCNavigationViewController * lcNav = [[LCNavigationViewController alloc] initWithRootViewController:controller];
-    [LCClient sharedInstance].lcCenterNav = lcNav;
+    //初始化默认第一个
+    if ([className isEqualToString:@"HomeViewController"]) {
+        [LCClient sharedInstance].lcCenterNav = lcNav;
+    }
     return lcNav;
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    [LCClient sharedInstance].lcCenterNav = (LCNavigationViewController *)viewController;
 }
 
 - (void)didReceiveMemoryWarning {
