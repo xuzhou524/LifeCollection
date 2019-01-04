@@ -50,7 +50,6 @@
         NSString * image = @"http://img.gozap.com/group19/M01/B4/0F/wKgCOFwvGqnXXzibAACN7VDmKvQ248.png";
         NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:image]];
         UIImage *imageToShare = [UIImage imageWithData:data];
-        
         NSString *textToShare = [NSString stringWithFormat:@"%@ %@",title,url];
         NSURL *urlToShare = [NSURL URLWithString:url];
         
@@ -58,7 +57,6 @@
         UIActivity *bookActivity = [UIActivity new];
         NSArray *applicationActivities = @[bookActivity];
         UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems
-                                                
                                                                                 applicationActivities: applicationActivities];
         [[LCClient sharedInstance].lcCenterNav presentViewController:activityVC animated:TRUE completion:nil];
     }
