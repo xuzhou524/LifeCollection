@@ -55,6 +55,7 @@
 		5357B41821C38B74009D9333 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5357B41621C38B74009D9333 /* LaunchScreen.storyboard */; };
 		5357B41B21C38B74009D9333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B41A21C38B74009D9333 /* main.m */; };
 		5357B42921C3911B009D9333 /* LCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B42821C3911B009D9333 /* LCColor.m */; };
+		536D0BD721DF4A0400FB0653 /* LCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 536D0BD621DF4A0400FB0653 /* LCClient.m */; };
 		539B3A5F21C7A77700431B7A /* PreviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B3A5E21C7A77700431B7A /* PreviewTableViewCell.m */; };
 		539B3A6221C7AB1500431B7A /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B3A6121C7AB1500431B7A /* TextFieldTableViewCell.m */; };
 		539B3A6521C7B01300431B7A /* TitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B3A6421C7B01300431B7A /* TitleTableViewCell.m */; };
@@ -156,6 +157,8 @@
 		5357B42721C3911B009D9333 /* LCColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCColor.h; sourceTree = "<group>"; };
 		5357B42821C3911B009D9333 /* LCColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCColor.m; sourceTree = "<group>"; };
 		536D0BD321DF41E600FB0653 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		536D0BD521DF4A0400FB0653 /* LCClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCClient.h; sourceTree = "<group>"; };
+		536D0BD621DF4A0400FB0653 /* LCClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCClient.m; sourceTree = "<group>"; };
 		539B3A5D21C7A77700431B7A /* PreviewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewTableViewCell.h; sourceTree = "<group>"; };
 		539B3A5E21C7A77700431B7A /* PreviewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewTableViewCell.m; sourceTree = "<group>"; };
 		539B3A6021C7AB1500431B7A /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
@@ -388,6 +391,8 @@
 			isa = PBXGroup;
 			children = (
 				531AD08021C9F09500A4B2BC /* SQLfile */,
+				536D0BD521DF4A0400FB0653 /* LCClient.h */,
+				536D0BD621DF4A0400FB0653 /* LCClient.m */,
 				5356ECF321C7466B00862FE1 /* LCNavigationViewController.h */,
 				5356ECF421C7466C00862FE1 /* LCNavigationViewController.m */,
 				5356ECEF21C7463A00862FE1 /* LCTabBarController.h */,
@@ -619,6 +624,7 @@
 				53AC8E2E21D33E5800DD0079 /* LCSettings.m in Sources */,
 				531AD0A521CB7DAC00A4B2BC /* DateFormatter.m in Sources */,
 				53AC8E0C21D1DC9D00DD0079 /* LCRefresh.m in Sources */,
+				536D0BD721DF4A0400FB0653 /* LCClient.m in Sources */,
 				531AD0CF21CCF0EF00A4B2BC /* AppListViewController.m in Sources */,
 				539B3A5F21C7A77700431B7A /* PreviewTableViewCell.m in Sources */,
 				531AD0CC21CCE9A200A4B2BC /* AboutDeveloperViewController.m in Sources */,

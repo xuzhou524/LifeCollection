@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "LCTabBarController.h"
 
+#import "AddViewController.h"
+#import "FoundViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -27,6 +30,19 @@
 #endif
     
     return YES;
+}
+
+-(void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler{
+    NSString *typeName = shortcutItem.type;
+    if ([typeName isEqualToString:kLifeCollectionTimeHome]) {
+        
+    } else if ([typeName isEqualToString:kLifeCollectionTimeAdd]) {
+        [[LCClient sharedInstance].lcCenterNav pushViewController:[AddViewController new] animated:YES];
+    } else if ([typeName isEqualToString:kLifeCollectionFound]) {
+        [[LCClient sharedInstance].lcCenterNav pushViewController:[FoundViewController new] animated:YES];
+    } else if ([typeName isEqualToString:kLifeCollectionShare]) {
+
+    }
 }
 
 @end

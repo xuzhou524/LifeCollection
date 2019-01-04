@@ -6,6 +6,7 @@
 //  Copyright © 2018 com.longdai. All rights reserved.
 //
 
+#import "LCClient.h"
 #import "LCColor.h"
 #import "Masonry.h"
 #import "MBProgressHUD.h"

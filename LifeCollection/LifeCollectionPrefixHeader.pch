@@ -43,3 +43,9 @@
 //启动图
 #define kLaunchScreenModel     @"launchScreenModel"
 
+
+#define kLifeCollectionTimeHome  @"com.xuzhou.LifeCollection.TimeHome"
+#define kLifeCollectionTimeAdd  @"com.xuzhou.LifeCollection.TimeAdd"
+#define kLifeCollectionFound  @"com.xuzhou.LifeCollection.Found"
+#define kLifeCollectionShare  @"com.xuzhou.LifeCollection.Share"
+

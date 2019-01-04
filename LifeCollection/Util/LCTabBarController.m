@@ -48,8 +48,9 @@
     UIImage * image = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     controller.tabBarItem.selectedImage = image;
 
-    LCNavigationViewController * ldNav = [[LCNavigationViewController alloc] initWithRootViewController:controller];
-    return ldNav;
+    LCNavigationViewController * lcNav = [[LCNavigationViewController alloc] initWithRootViewController:controller];
+    [LCClient sharedInstance].lcCenterNav = lcNav;
+    return lcNav;
 }
 
 - (void)didReceiveMemoryWarning {
