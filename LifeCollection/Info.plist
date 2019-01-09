@@ -28,7 +28,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -79,14 +79,6 @@
 			<string>发现</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>com.xuzhou.LifeCollection.Found</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeShare</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>分享</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>com.xuzhou.LifeCollection.Share</string>
 		</dict>
 	</array>
 	<key>UIMainStoryboardFile</key>
