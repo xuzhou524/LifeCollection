@@ -11,6 +11,7 @@
 #import "TitleTableViewCell.h"
 #import "LCWebViewViewController.h"
 #import "AboutDeveloperViewController.h"
+#import <StoreKit/StoreKit.h>
 
 @interface UserViewController ()<UITableViewDelegate,UITableViewDataSource>
 
