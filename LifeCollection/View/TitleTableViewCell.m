@@ -20,7 +20,7 @@
 
 -(void)sebViews{
     self.contentView.backgroundColor = [LCColor backgroudColor];
-    
+    self.clipsToBounds = YES;
     UIView *bgView = [UIView new];
     bgView.backgroundColor = [LCColor whiteColor];
     [self.contentView addSubview:bgView];
