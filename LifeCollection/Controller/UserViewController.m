@@ -55,7 +55,7 @@
     if (section == 0) {
         return 2;
     }
-    return 3;
+    return 4;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -83,7 +83,7 @@
             return cell;
         }
     }else{
-        if (indexPath.row == 2) {
+        if (indexPath.row == 3) {
             TitleNoRightImageTableViewCell * cell = getCell(TitleNoRightImageTableViewCell);
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.titleLabel.text = @"咘咕版本";
@@ -92,7 +92,7 @@
         }
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @[@"服务条款",@"关于开发者"][indexPath.row];
+        cell.titleLabel.text = @[@"服务条款",@"分享咘咕",@"关于开发者"][indexPath.row];
         cell.summeryLabel.text = @"";
         return cell;
     }
@@ -106,6 +106,21 @@
             webViewVC.urlStr = @"http://img.gozap.com/group19/M01/80/08/wKgCN1wcrJ6WDKlrAAHm_9rYe-c967.pdf";
             [self.navigationController pushViewController:webViewVC animated:YES];
         }else if (indexPath.row == 1){
+            NSString * title = @"咘咕 - 让生活更精彩";
+            NSString * url = @"https://www.gezhipu.com";
+            NSString * image = @"http://img.gozap.com/group19/M01/B4/0F/wKgCOFwvGqnXXzibAACN7VDmKvQ248.png";
+            NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:image]];
+            UIImage *imageToShare = [UIImage imageWithData:data];
+            NSString *textToShare = [NSString stringWithFormat:@"%@ %@",title,url];
+            NSURL *urlToShare = [NSURL URLWithString:url];
+            
+            NSArray *activityItems = @[textToShare,imageToShare,urlToShare];
+            UIActivity *bookActivity = [UIActivity new];
+            NSArray *applicationActivities = @[bookActivity];
+            UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems
+                                                                                    applicationActivities: applicationActivities];
+            [[LCClient sharedInstance].lcCenterNav presentViewController:activityVC animated:TRUE completion:nil];
+        }else if (indexPath.row == 2){
             AboutDeveloperViewController * aboutDeveloperVC =[AboutDeveloperViewController new];
             [self.navigationController pushViewController:aboutDeveloperVC animated:YES];
         }
