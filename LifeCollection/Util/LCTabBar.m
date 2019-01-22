@@ -12,6 +12,7 @@
 
 -(void)layoutSubviews{
     [super layoutSubviews];
+     [[UITabBar appearance] setTranslucent:NO];
     for (UITabBarItem * item in self.items) {
         if (LDiPhoneX) {
             item.imageInsets = UIEdgeInsetsMake(5.0, 0, -5.0, 0);
