@@ -23,8 +23,6 @@
 		531AD0C221CCCBAB00A4B2BC /* about_criticism.png in Resources */ = {isa = PBXBuildFile; fileRef = 531AD0C021CCCBAA00A4B2BC /* about_criticism.png */; };
 		531AD0C621CCD57F00A4B2BC /* summery.png in Resources */ = {isa = PBXBuildFile; fileRef = 531AD0C521CCD57F00A4B2BC /* summery.png */; };
 		531AD0C921CCE12300A4B2BC /* LCWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD0C821CCE12300A4B2BC /* LCWebViewViewController.m */; };
-		531AD0CC21CCE9A200A4B2BC /* AboutDeveloperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD0CB21CCE9A200A4B2BC /* AboutDeveloperViewController.m */; };
-		531AD0CF21CCF0EF00A4B2BC /* AppListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD0CE21CCF0EF00A4B2BC /* AppListViewController.m */; };
 		5325DF7A21D08B2100743052 /* FoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5325DF7921D08B2100743052 /* FoundViewController.m */; };
 		5325DF7F21D08C0C00743052 /* tab_bar_found_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5325DF7B21D08C0B00743052 /* tab_bar_found_sel@3x.png */; };
 		5325DF8021D08C0C00743052 /* tab_bar_found_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5325DF7C21D08C0B00743052 /* tab_bar_found_sel@2x.png */; };
@@ -68,7 +66,6 @@
 		539B3A8821C8A48C00431B7A /* d_Arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 539B3A8221C8A48C00431B7A /* d_Arrow_left@2x.png */; };
 		53AC8E0921D0D02700DD0079 /* FoundListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AC8E0821D0D02700DD0079 /* FoundListModel.m */; };
 		53AC8E0C21D1DC9D00DD0079 /* LCRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AC8E0B21D1DC9D00DD0079 /* LCRefresh.m */; };
-		53AC8E1121D2271C00DD0079 /* AppreciatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AC8E1021D2271C00DD0079 /* AppreciatesViewController.m */; };
 		53AC8E1F21D2310700DD0079 /* WechatIMG1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 53AC8E1E21D2310600DD0079 /* WechatIMG1.jpeg */; };
 		53AC8E2521D32A3100DD0079 /* StartFigureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AC8E2421D32A3100DD0079 /* StartFigureManager.m */; };
 		53AC8E2E21D33E5800DD0079 /* LCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AC8E2D21D33E5800DD0079 /* LCSettings.m */; };
@@ -107,10 +104,6 @@
 		531AD0C521CCD57F00A4B2BC /* summery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = summery.png; sourceTree = "<group>"; };
 		531AD0C721CCE12300A4B2BC /* LCWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCWebViewViewController.h; sourceTree = "<group>"; };
 		531AD0C821CCE12300A4B2BC /* LCWebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCWebViewViewController.m; sourceTree = "<group>"; };
-		531AD0CA21CCE9A200A4B2BC /* AboutDeveloperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutDeveloperViewController.h; sourceTree = "<group>"; };
-		531AD0CB21CCE9A200A4B2BC /* AboutDeveloperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutDeveloperViewController.m; sourceTree = "<group>"; };
-		531AD0CD21CCF0EF00A4B2BC /* AppListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppListViewController.h; sourceTree = "<group>"; };
-		531AD0CE21CCF0EF00A4B2BC /* AppListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppListViewController.m; sourceTree = "<group>"; };
 		5325DF7821D08B2100743052 /* FoundViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoundViewController.h; sourceTree = "<group>"; };
 		5325DF7921D08B2100743052 /* FoundViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoundViewController.m; sourceTree = "<group>"; };
 		5325DF7B21D08C0B00743052 /* tab_bar_found_sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_found_sel@3x.png"; sourceTree = "<group>"; };
@@ -177,8 +170,6 @@
 		53AC8E0821D0D02700DD0079 /* FoundListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoundListModel.m; sourceTree = "<group>"; };
 		53AC8E0A21D1DC9D00DD0079 /* LCRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCRefresh.h; sourceTree = "<group>"; };
 		53AC8E0B21D1DC9D00DD0079 /* LCRefresh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCRefresh.m; sourceTree = "<group>"; };
-		53AC8E0F21D2271C00DD0079 /* AppreciatesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppreciatesViewController.h; sourceTree = "<group>"; };
-		53AC8E1021D2271C00DD0079 /* AppreciatesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppreciatesViewController.m; sourceTree = "<group>"; };
 		53AC8E1E21D2310600DD0079 /* WechatIMG1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG1.jpeg; sourceTree = "<group>"; };
 		53AC8E2321D32A3100DD0079 /* StartFigureManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartFigureManager.h; sourceTree = "<group>"; };
 		53AC8E2421D32A3100DD0079 /* StartFigureManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartFigureManager.m; sourceTree = "<group>"; };
@@ -352,16 +343,10 @@
 				5356ED3021C7845D00862FE1 /* AddViewController.m */,
 				5356ED0721C7474100862FE1 /* UserViewController.h */,
 				5356ED0821C7474100862FE1 /* UserViewController.m */,
-				531AD0CA21CCE9A200A4B2BC /* AboutDeveloperViewController.h */,
-				531AD0CB21CCE9A200A4B2BC /* AboutDeveloperViewController.m */,
-				531AD0CD21CCF0EF00A4B2BC /* AppListViewController.h */,
-				531AD0CE21CCF0EF00A4B2BC /* AppListViewController.m */,
 				531AD0C721CCE12300A4B2BC /* LCWebViewViewController.h */,
 				531AD0C821CCE12300A4B2BC /* LCWebViewViewController.m */,
 				5325DF7821D08B2100743052 /* FoundViewController.h */,
 				5325DF7921D08B2100743052 /* FoundViewController.m */,
-				53AC8E0F21D2271C00DD0079 /* AppreciatesViewController.h */,
-				53AC8E1021D2271C00DD0079 /* AppreciatesViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -620,14 +605,11 @@
 				5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */,
 				531AD0BA21CCBF1900A4B2BC /* UserViewTableViewCell.m in Sources */,
 				5356ED2E21C75F0A00862FE1 /* TimeListTableViewCell.m in Sources */,
-				53AC8E1121D2271C00DD0079 /* AppreciatesViewController.m in Sources */,
 				53AC8E2E21D33E5800DD0079 /* LCSettings.m in Sources */,
 				531AD0A521CB7DAC00A4B2BC /* DateFormatter.m in Sources */,
 				53AC8E0C21D1DC9D00DD0079 /* LCRefresh.m in Sources */,
 				536D0BD721DF4A0400FB0653 /* LCClient.m in Sources */,
-				531AD0CF21CCF0EF00A4B2BC /* AppListViewController.m in Sources */,
 				539B3A5F21C7A77700431B7A /* PreviewTableViewCell.m in Sources */,
-				531AD0CC21CCE9A200A4B2BC /* AboutDeveloperViewController.m in Sources */,
 				531AD09E21CB414C00A4B2BC /* DoActionSheet.m in Sources */,
 				53AC8E2521D32A3100DD0079 /* StartFigureManager.m in Sources */,
 				531AD08821CA28C700A4B2BC /* EventModelTool.m in Sources */,

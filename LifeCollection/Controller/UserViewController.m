@@ -10,7 +10,6 @@
 #import "UserViewTableViewCell.h"
 #import "TitleTableViewCell.h"
 #import "LCWebViewViewController.h"
-#import "AboutDeveloperViewController.h"
 #import <StoreKit/StoreKit.h>
 
 @interface UserViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -55,7 +54,7 @@
     if (section == 0) {
         return 2;
     }
-    return 4;
+    return 3;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -83,7 +82,7 @@
             return cell;
         }
     }else{
-        if (indexPath.row == 3) {
+        if (indexPath.row == 2) {
             TitleNoRightImageTableViewCell * cell = getCell(TitleNoRightImageTableViewCell);
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.titleLabel.text = @"咘咕版本";
@@ -92,7 +91,7 @@
         }
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @[@"服务条款",@"分享咘咕",@"关于开发者"][indexPath.row];
+        cell.titleLabel.text = @[@"服务条款",@"分享咘咕"][indexPath.row];
         cell.summeryLabel.text = @"";
         return cell;
     }
@@ -120,9 +119,6 @@
             UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems
                                                                                     applicationActivities: applicationActivities];
             [[LCClient sharedInstance].lcCenterNav presentViewController:activityVC animated:TRUE completion:nil];
-        }else if (indexPath.row == 2){
-            AboutDeveloperViewController * aboutDeveloperVC =[AboutDeveloperViewController new];
-            [self.navigationController pushViewController:aboutDeveloperVC animated:YES];
         }
     }
 }
