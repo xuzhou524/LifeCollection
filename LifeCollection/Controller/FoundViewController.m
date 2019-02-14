@@ -20,9 +20,19 @@
 
 @implementation FoundViewController
 
+//-(void)viewWillAppear:(BOOL)animated{
+//    if (@available(iOS 11.0, *)) {
+//        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//        self.tableView.estimatedRowHeight = 0;
+//        self.tableView.estimatedSectionFooterHeight = 0;
+//        self.tableView.estimatedSectionHeaderHeight = 0;
+//    }
+//}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [LCColor backgroudColor];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     UILabel * liftLabel = [UILabel new];
     liftLabel.text = @"发现";
@@ -40,17 +50,14 @@
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.equalTo(self.view);
-        make.bottom.equalTo(self.view).with.offset(-(Height_TabBar));
+        make.bottom.equalTo(self.view);
     }];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.backgroundColor = [LCColor backgroudColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     if (@available(iOS 11.0, *)) {
-        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         self.tableView.estimatedRowHeight = 0;
-        self.tableView.estimatedSectionFooterHeight = 0;
-        self.tableView.estimatedSectionHeaderHeight = 0;
     }
     
     regClass(self.tableView, FoundTableViewCell);
