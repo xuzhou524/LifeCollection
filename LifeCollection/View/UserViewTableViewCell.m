@@ -73,7 +73,7 @@
     oneView.backgroundColor = [LCColor whiteColor];
     [self.contentView addSubview:oneView];
     [oneView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.bottom.equalTo(self.contentView);
+        make.left.top.equalTo(self.contentView);
         make.bottom.equalTo(self.contentView).offset(-15);
         make.right.equalTo(self.contentView.mas_centerX).offset(-0);
     }];
@@ -104,7 +104,7 @@
     twoView.backgroundColor = [LCColor whiteColor];
     [self.contentView addSubview:twoView];
     [twoView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.top.bottom.equalTo(self.contentView);
+        make.right.top.equalTo(self.contentView);
         make.bottom.equalTo(self.contentView).offset(-15);
         make.left.equalTo(self.contentView.mas_centerX).offset(0);
     }];
