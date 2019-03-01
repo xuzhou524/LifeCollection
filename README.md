@@ -1,5 +1,5 @@
 ## LifeCollection
-This is a simple, concise, and fool the weather.All individual work is available, may not be used as it USES.
+This is a simple, concise, and tool life.All individual work is available, may not be used as it USES.
 
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/xuzhou524/LifeCollection/master/LICENSE)
 
