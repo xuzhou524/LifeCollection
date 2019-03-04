@@ -36,7 +36,7 @@
     
     UILabel * liftLabel = [UILabel new];
     liftLabel.text = @"发现";
-    liftLabel.font = LCFont(25);
+    liftLabel.font = LCFont(23);
     liftLabel.textColor = [LCColor LCColor_77_92_127];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
     

@@ -58,7 +58,7 @@
     
     UILabel * liftLabel = [UILabel new];
     liftLabel.text = @"Time";
-    liftLabel.font = LCFont(30);
+    liftLabel.font = LCFont(28);
     liftLabel.textColor = [LCColor LCColor_77_92_127];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
 
