@@ -142,10 +142,10 @@
     _tapLeftView.backgroundColor = [LCColor clearColor];
     [self addSubview:_tapLeftView];
     [_tapLeftView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_leftImageView).offset(-10);
-        make.right.equalTo(_leftImageView).offset(60);
-        make.bottom.equalTo(_leftImageView).offset(10);
-        make.top.equalTo(_leftImageView).offset(-10);
+        make.left.equalTo(self.leftImageView).offset(-10);
+        make.right.equalTo(self.leftImageView).offset(60);
+        make.bottom.equalTo(self.leftImageView).offset(10);
+        make.top.equalTo(self.leftImageView).offset(-10);
     }];
     
     _rightImageView = [UIImageView new];

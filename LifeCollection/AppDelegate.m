@@ -21,11 +21,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [LCColor backgroudColor];
     LCTabBarController * rootTabBarVC = [LCTabBarController new];
     self.window.rootViewController = rootTabBarVC;
     [LCClient sharedInstance].lcCenterTabBar = rootTabBarVC;
     [self.window makeKeyAndVisible];
-    self.window.backgroundColor = [UIColor whiteColor];
 #ifdef DEBUG
 #else
     [Fabric with:@[[Crashlytics class]]];

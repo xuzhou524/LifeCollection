@@ -20,9 +20,19 @@
 
 @implementation FoundViewController
 
+//-(void)viewWillAppear:(BOOL)animated{
+//    if (@available(iOS 11.0, *)) {
+//        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//        self.tableView.estimatedRowHeight = 0;
+//        self.tableView.estimatedSectionFooterHeight = 0;
+//        self.tableView.estimatedSectionHeaderHeight = 0;
+//    }
+//}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [LCColor backgroudColor];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     UILabel * liftLabel = [UILabel new];
     liftLabel.text = @"发现";
@@ -40,17 +50,14 @@
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.equalTo(self.view);
-        make.bottom.equalTo(self.view).with.offset(-(Height_TabBar));
+        make.bottom.equalTo(self.view);
     }];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.backgroundColor = [LCColor backgroudColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     if (@available(iOS 11.0, *)) {
-        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         self.tableView.estimatedRowHeight = 0;
-        self.tableView.estimatedSectionFooterHeight = 0;
-        self.tableView.estimatedSectionHeaderHeight = 0;
     }
     
     regClass(self.tableView, FoundTableViewCell);
@@ -115,7 +122,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-
+    
     return self.foundListArray.count;
 }
 
@@ -138,7 +145,7 @@
     //图片
     //https://gank.io/api/data/福利/10/10
     
-//http://v3.wufazhuce.com:8000/api/channel/one/0/0?platform=ios&sign=98f5fb5f92c35e49cf6a93fed22c4885&user_id=&uuid=B1A45930-C3D8-453A-81C9-9782150CA634&version=v4.6.1
+    //http://v3.wufazhuce.com:8000/api/channel/one/0/0?platform=ios&sign=98f5fb5f92c35e49cf6a93fed22c4885&user_id=&uuid=B1A45930-C3D8-453A-81C9-9782150CA634&version=v4.6.1
     //2019-01-01
     kWeakSelf;
     NSString * url = [NSString stringWithFormat:@"http://v3.wufazhuce.com:8000/api/topic/htmlcontent/%@?source_id=%@",mdeol.content_id,mdeol.id];
@@ -149,7 +156,7 @@
         webViewVC.htmlStr = dic[@"html_content"];
         webViewVC.bg_color = dic[@"bg_color"];
         [weakSelf.navigationController pushViewController:webViewVC animated:YES];
-
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         
