@@ -107,7 +107,7 @@
             [self.navigationController pushViewController:webViewVC animated:YES];
         }else if (indexPath.row == 1){
             NSString * title = @"咘咕 - 让生活更精彩";
-            NSString * url = @"https://www.gezhipu.com";
+            NSString * url = @"https://itunes.apple.com/us/app//id1447845919?l=zh&ls=1&mt=8";
             NSString * image = @"http://img.gozap.com/group19/M01/B4/0F/wKgCOFwvGqnXXzibAACN7VDmKvQ248.png";
             NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:image]];
             UIImage *imageToShare = [UIImage imageWithData:data];
