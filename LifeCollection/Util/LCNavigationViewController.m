@@ -67,10 +67,6 @@
     if (viewController.navigationItem.leftBarButtonItem == nil && [self.viewControllers count] > 1) {
         viewController.navigationItem.leftBarButtonItem =[self createBackButton];
     }
-    // 修改tabBra的frame  适配iPhone X Push过程中TabBar位置上移
-    CGRect frame = self.tabBarController.tabBar.frame;
-    frame.origin.y = [UIScreen mainScreen].bounds.size.height - frame.size.height;
-    self.tabBarController.tabBar.frame = frame;
 }
 
 //-(void)setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated{

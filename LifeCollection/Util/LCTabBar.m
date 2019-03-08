@@ -18,17 +18,15 @@
         }else{
             item.imageInsets = UIEdgeInsetsMake(-5.0, 0, 5.0, 0);
         }
-//        item.titlePositionAdjustment = UIOffsetMake(0,-3);
     }
     for (UIControl * tabBarButton in self.subviews) {
         if ([tabBarButton isKindOfClass:NSClassFromString(@"_UIBarBackground")]) {
             for (UIView * view in tabBarButton.subviews) {
                 if ([view isKindOfClass:NSClassFromString(@"UIImageView")]) {
-                    view.layer.shadowOffset = CGSizeMake(1,1);
-                    view.layer.shadowOpacity = 1;
+                    view.layer.shadowOffset = CGSizeMake(1,0);
+                    view.layer.shadowOpacity = 0.5;
                     view.layer.shadowRadius = 3.0;
                     view.layer.shadowColor = [UIColor grayColor].CGColor;
-                    view.layer.shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 1)].CGPath;
                 }
                 view.backgroundColor = [UIColor whiteColor];
             }
@@ -52,29 +50,5 @@
             [view.layer addAnimation:animation forKey:nil];
         }
     }
-}
-
-- (void) safeAreaInsetsDidChange{
-    [super safeAreaInsetsDidChange];
-    if(self.oldSafeAreaInsets.left != self.safeAreaInsets.left ||
-       self.oldSafeAreaInsets.right != self.safeAreaInsets.right ||
-       self.oldSafeAreaInsets.top != self.safeAreaInsets.top ||
-       self.oldSafeAreaInsets.bottom != self.safeAreaInsets.bottom){
-        self.oldSafeAreaInsets = self.safeAreaInsets;
-        [self invalidateIntrinsicContentSize];
-        [self.superview setNeedsLayout];
-        [self.superview layoutSubviews];
-    }
-}
-
-- (CGSize) sizeThatFits:(CGSize) size{
-    CGSize s = [super sizeThatFits:size];
-    if(@available(iOS 11.0, *)){
-        CGFloat bottomInset = self.safeAreaInsets.bottom;
-        if( bottomInset > 0 && s.height < 50) {
-            s.height += bottomInset;
-        }
-    }
-    return s;
 }
 @end
