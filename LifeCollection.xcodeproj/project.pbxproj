@@ -85,6 +85,7 @@
 		53B7FC3D223617160052D63C /* tab_bar_tool_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53B7FC39223617150052D63C /* tab_bar_tool_sel@2x.png */; };
 		53B7FC3E223617160052D63C /* tab_bar_tool_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53B7FC3A223617150052D63C /* tab_bar_tool_sel@3x.png */; };
 		53B7FC3F223617160052D63C /* tab_bar_tool@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53B7FC3B223617150052D63C /* tab_bar_tool@3x.png */; };
+		53B7FC422236479B0052D63C /* ToolCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B7FC412236479B0052D63C /* ToolCollectionViewCell.m */; };
 		855A42587625B7BB03CD4F6E /* Pods_LifeCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E969EF071FF62323FD55A93A /* Pods_LifeCollection.framework */; };
 /* End PBXBuildFile section */
 
@@ -203,6 +204,8 @@
 		53B7FC39223617150052D63C /* tab_bar_tool_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_tool_sel@2x.png"; sourceTree = "<group>"; };
 		53B7FC3A223617150052D63C /* tab_bar_tool_sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_tool_sel@3x.png"; sourceTree = "<group>"; };
 		53B7FC3B223617150052D63C /* tab_bar_tool@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_tool@3x.png"; sourceTree = "<group>"; };
+		53B7FC402236479B0052D63C /* ToolCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolCollectionViewCell.h; sourceTree = "<group>"; };
+		53B7FC412236479B0052D63C /* ToolCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolCollectionViewCell.m; sourceTree = "<group>"; };
 		A46CB81A40A90EFAE12EAFA2 /* Pods-LifeCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LifeCollection/Pods-LifeCollection.debug.xcconfig"; sourceTree = "<group>"; };
 		DAB28567032FA38DDC677DEE /* Pods-LifeCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeCollection.release.xcconfig"; path = "Pods/Target Support Files/Pods-LifeCollection/Pods-LifeCollection.release.xcconfig"; sourceTree = "<group>"; };
 		E969EF071FF62323FD55A93A /* Pods_LifeCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LifeCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -399,6 +402,8 @@
 				531AD0B921CCBF1900A4B2BC /* UserViewTableViewCell.m */,
 				5325DF8321D0BEA000743052 /* FoundTableViewCell.h */,
 				5325DF8421D0BEA000743052 /* FoundTableViewCell.m */,
+				53B7FC402236479B0052D63C /* ToolCollectionViewCell.h */,
+				53B7FC412236479B0052D63C /* ToolCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -634,6 +639,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53B7FC422236479B0052D63C /* ToolCollectionViewCell.m in Sources */,
 				539B3A6221C7AB1500431B7A /* TextFieldTableViewCell.m in Sources */,
 				539B3A6C21C7B57800431B7A /* SelectColorTableViewCell.m in Sources */,
 				5325DF8521D0BEA000743052 /* FoundTableViewCell.m in Sources */,

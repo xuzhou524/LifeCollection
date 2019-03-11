@@ -32,7 +32,7 @@
     
     _iconImageView = [UIImageView new];
     _iconImageView.image = [UIImage imageNamed:@"logo"];
-    _iconImageView.layer.cornerRadius = 3;
+    _iconImageView.layer.cornerRadius = 8;
     _iconImageView.layer.masksToBounds = YES;
     [bgView addSubview:_iconImageView];
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
