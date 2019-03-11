@@ -69,7 +69,8 @@
 
 -(void)sebView{
     _bgImageView = [UIImageView new];
-    _bgImageView.backgroundColor = [LCColor orangeColor];
+//    _bgImageView.backgroundColor = [LCColor orangeColor];
+    _bgImageView.image = [UIImage imageNamed:@"haha"];
     _bgImageView.layer.cornerRadius = 8;
     _bgImageView.layer.masksToBounds = YES;
     [self.contentView addSubview:_bgImageView];
