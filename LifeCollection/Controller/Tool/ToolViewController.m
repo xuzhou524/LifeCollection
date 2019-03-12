@@ -9,6 +9,8 @@
 #import "ToolViewController.h"
 #import "ToolCollectionViewCell.h"
 
+#import "LCProtractorViewController.h"
+
 @interface ToolViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong)UICollectionView * collectionView;
 
@@ -28,7 +30,7 @@
     liftLabel.textColor = [LCColor LCColor_77_92_127];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
     
-    _titleArray = @[@"指南针",@"手电筒",@"量角器",@"水平仪",@"噪音",@"网速",@"矫正",@"直尺"];
+    _titleArray = @[@"量角器",@"水平仪",@"噪音",@"网速",@"矫正",@"直尺"];
     
     [self createCollectionView];
 }
@@ -70,15 +72,17 @@
     }
     ToolCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ToolCollectionViewCell" forIndexPath:indexPath];
     cell.titleLabel.text = self.titleArray[indexPath.row];
+    NSString * imageStr = LCEventBackgroundImage(indexPath.row);
+    cell.bgImageView.image = [UIImage imageNamed:imageStr];
     return cell;
 }
 
 //item大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        return CGSizeMake((ScreenWidth - 16) , 200);
+        return CGSizeMake((ScreenWidth - 16) , 220);
     }
-    return CGSizeMake((ScreenWidth - 16) / 2.0 , 100);
+    return CGSizeMake((ScreenWidth - 16) / 2.0 , 80);
 
 }
 
@@ -92,13 +96,14 @@
 #pragma mark -- item点击跳转
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            LCProtractorViewController *VC = [[LCProtractorViewController alloc] init];
+            self.navigationController.navigationBarHidden = YES;
+            [self.navigationController pushViewController:VC animated:YES];
+        }
+    }
 
 }
-
-
-
-
-
 
 @end

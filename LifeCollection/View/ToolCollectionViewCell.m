@@ -49,7 +49,7 @@
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.bgImageView);
         make.right.equalTo(self.titleLabel.mas_left).offset(-15);
-        make.width.height.equalTo(@42);
+        make.width.height.equalTo(@36);
     }];
 }
 
