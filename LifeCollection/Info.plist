@@ -56,6 +56,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>是否允许咘咕使用相机？</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>授权麦克风，以用于正常录音</string>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>

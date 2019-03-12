@@ -13,7 +13,7 @@
 
 #define ScreenWidth      [[UIScreen mainScreen] bounds].size.width
 #define ScreenHeight     [[UIScreen mainScreen] bounds].size.height
-
+#define kStatesNavHeight ([[UIApplication sharedApplication] statusBarFrame].size.height + 44)
 #define LCEventBackgroundImageArray     @[@"01",@"07",@"02",@"48",@"38",@"28",@"55"]
 #define LCEventBackgroundImage(index)   LCEventBackgroundImageArray[index]
 
