@@ -15,9 +15,10 @@
 #import "LCCorrectViewController.h"
 #import "LCRuleViewController.h"
 
+
 @interface ToolViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong)UICollectionView * collectionView;
-
+@property (nonatomic,strong)NSArray *imageArr;
 @property(nonatomic,strong)NSArray * titleArray;
 @end
 
@@ -40,7 +41,7 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
     
     _titleArray = @[@"量角器",@"水平仪",@"噪音",@"矫正",@"直尺"];
-    
+    _imageArr = @[@"liangjiaoqi",@"shuipingyi",@"zaoyin",@"jiaozheng",@"chizi"];
     [self createCollectionView];
 }
 
@@ -81,6 +82,7 @@
     }
     ToolCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ToolCollectionViewCell" forIndexPath:indexPath];
     cell.titleLabel.text = self.titleArray[indexPath.row];
+    cell.iconImageView.image = [UIImage imageNamed:self.imageArr[indexPath.row]];
     NSString * imageStr = LCEventBackgroundImage(indexPath.row);
     cell.bgImageView.image = [UIImage imageNamed:imageStr];
     return cell;
@@ -92,14 +94,11 @@
         return CGSizeMake((ScreenWidth - 16) , 220);
     }
     return CGSizeMake((ScreenWidth - 16) / 2.0 , 80);
-
 }
 
 //调节item边距
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    
     return UIEdgeInsetsMake(0, 8, 0, 8);
-    
 }
 
 #pragma mark -- item点击跳转

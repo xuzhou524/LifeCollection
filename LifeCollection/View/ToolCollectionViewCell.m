@@ -22,7 +22,6 @@
 
 -(void)sebView{
     _bgImageView = [UIImageView new];
-    _bgImageView.backgroundColor = [LCColor orangeColor];
     _bgImageView.layer.cornerRadius = 8;
     _bgImageView.layer.masksToBounds = YES;
     [self.contentView addSubview:_bgImageView];
@@ -44,12 +43,11 @@
     }];
     
     _iconImageView = [UIImageView new];
-    _iconImageView.backgroundColor = [LCColor whiteColor];
     [self.contentView addSubview:_iconImageView];
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.bgImageView);
         make.right.equalTo(self.titleLabel.mas_left).offset(-15);
-        make.width.height.equalTo(@36);
+        make.width.height.equalTo(@25);
     }];
 }
 
