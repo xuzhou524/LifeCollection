@@ -34,7 +34,7 @@
     
     _titleLabel = [UILabel new];
     _titleLabel.text = @"指南针";
-    _titleLabel.font = LCFont(16);
+    _titleLabel.font = LCFont(18);
     _titleLabel.textColor = [LCColor whiteColor];
     [self.contentView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -47,7 +47,7 @@
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.bgImageView);
         make.right.equalTo(self.titleLabel.mas_left).offset(-15);
-        make.width.height.equalTo(@25);
+        make.width.height.equalTo(@28);
     }];
 }
 

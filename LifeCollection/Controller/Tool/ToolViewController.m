@@ -19,6 +19,7 @@
 @interface ToolViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong)UICollectionView * collectionView;
 @property (nonatomic,strong)NSArray *imageArr;
+@property (nonatomic,strong)NSArray *BgColorArr;
 @property(nonatomic,strong)NSArray * titleArray;
 @end
 
@@ -42,6 +43,12 @@
     
     _titleArray = @[@"量角器",@"水平仪",@"噪音",@"矫正",@"直尺"];
     _imageArr = @[@"liangjiaoqi",@"shuipingyi",@"zaoyin",@"jiaozheng",@"chizi"];
+    _BgColorArr = @[[LCColor colorWithHexString:@"#CC99F0"],
+                   [LCColor colorWithHexString:@"#81BE8D"],
+                   [LCColor colorWithHexString:@"#EF7D6C"],
+                   [LCColor colorWithHexString:@"#65C0F5"],
+                   [LCColor colorWithHexString:@"#FFC05D"],
+                   [LCColor colorWithHexString:@"#FEA5A4"]];
     [self createCollectionView];
 }
 
@@ -83,8 +90,7 @@
     ToolCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ToolCollectionViewCell" forIndexPath:indexPath];
     cell.titleLabel.text = self.titleArray[indexPath.row];
     cell.iconImageView.image = [UIImage imageNamed:self.imageArr[indexPath.row]];
-    NSString * imageStr = LCEventBackgroundImage(indexPath.row);
-    cell.bgImageView.image = [UIImage imageNamed:imageStr];
+    cell.bgImageView.backgroundColor = self.BgColorArr[indexPath.row];
     return cell;
 }
 
@@ -93,7 +99,7 @@
     if (indexPath.section == 0) {
         return CGSizeMake((ScreenWidth - 16) , 220);
     }
-    return CGSizeMake((ScreenWidth - 16) / 2.0 , 80);
+    return CGSizeMake((ScreenWidth - 16) / 2.0 , 100);
 }
 
 //调节item边距
