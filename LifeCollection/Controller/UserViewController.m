@@ -13,6 +13,8 @@
 #import "AboutDeveloperViewController.h"
 #import <StoreKit/StoreKit.h>
 
+#import "ToolViewController.h"
+
 @interface UserViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView * tableView;
@@ -55,7 +57,7 @@
     if (section == 0) {
         return 2;
     }
-    return 4;
+    return 5;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -83,7 +85,7 @@
             return cell;
         }
     }else{
-        if (indexPath.row == 3) {
+        if (indexPath.row == 4) {
             TitleNoRightImageTableViewCell * cell = getCell(TitleNoRightImageTableViewCell);
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.titleLabel.text = @"咘咕版本";
@@ -92,7 +94,7 @@
         }
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @[@"服务条款",@"分享咘咕",@"关于开发者"][indexPath.row];
+        cell.titleLabel.text = @[@"日常工具",@"服务条款",@"分享咘咕",@"关于开发者"][indexPath.row];
         cell.summeryLabel.text = @"";
         return cell;
     }
@@ -100,12 +102,15 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
-        if (indexPath.row == 0) {
+        if (indexPath.row == 0){
+            ToolViewController * toolVC =[ToolViewController new];
+            [self.navigationController pushViewController:toolVC animated:YES];
+        }else if (indexPath.row == 1) {
             LCWebViewViewController * webViewVC =[LCWebViewViewController new];
             webViewVC.titleStr = @"服务条款";
             webViewVC.urlStr = @"http://img.gozap.com/group19/M01/80/08/wKgCN1wcrJ6WDKlrAAHm_9rYe-c967.pdf";
             [self.navigationController pushViewController:webViewVC animated:YES];
-        }else if (indexPath.row == 1){
+        }else if (indexPath.row == 2){
             NSString * title = @"咘咕 - 让生活更精彩";
             NSString * url = @"https://itunes.apple.com/us/app//id1447845919?l=zh&ls=1&mt=8";
             NSString * image = @"http://img.gozap.com/group19/M01/B4/0F/wKgCOFwvGqnXXzibAACN7VDmKvQ248.png";
@@ -120,7 +125,7 @@
             UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems
                                                                                     applicationActivities: applicationActivities];
             [[LCClient sharedInstance].lcCenterNav presentViewController:activityVC animated:TRUE completion:nil];
-        }else if (indexPath.row == 2){
+        }else if (indexPath.row == 3){
             AboutDeveloperViewController * aboutDeveloperVC =[AboutDeveloperViewController new];
             [self.navigationController pushViewController:aboutDeveloperVC animated:YES];
         }

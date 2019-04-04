@@ -34,12 +34,13 @@
     [super viewDidLoad];
     self.view.backgroundColor = [LCColor backgroudColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.navigationItem.title = @"日常工具";
     
-    UILabel * liftLabel = [UILabel new];
-    liftLabel.text = @"生活";
-    liftLabel.font = LCFont(23);
-    liftLabel.textColor = [LCColor LCColor_77_92_127];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
+//    UILabel * liftLabel = [UILabel new];
+//    liftLabel.text = @"日常工具";
+//    liftLabel.font = LCFont(23);
+//    liftLabel.textColor = [LCColor LCColor_77_92_127];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
     
     _titleArray = @[@"量角器",@"水平仪",@"噪音",@"矫正",@"直尺"];
     _imageArr = @[@"liangjiaoqi",@"shuipingyi",@"zaoyin",@"jiaozheng",@"chizi"];
@@ -77,7 +78,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     if (section == 0) {
-        return 1;
+        return 0;
     }
     return self.titleArray.count;
 }
