@@ -159,7 +159,6 @@
         _timeStrLabel.text = @"目标日:";
         _dayStrLabel.text = @"剩余天数";
         NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:model.time] timeIntervalSinceNow];
-        timeInterval = timeInterval - 8 * 60 * 60 + 24 * 60 * 60;   //减去时区差  加上 一天
         if (timeInterval < 0) {
             NSCalendar *gregorian = [[ NSCalendar alloc ] initWithCalendarIdentifier : NSCalendarIdentifierGregorian];
             unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
@@ -210,7 +209,6 @@
                 
                 NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
                 NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:timeSp] timeIntervalSinceNow];
-                timeInterval = timeInterval - 8 * 60 * 60;
                 long temp = 0;
                 NSString *result;
                 temp = fabs(timeInterval)/60;
@@ -237,7 +235,6 @@
         _dayStrLabel.text = @"已过天数";
         
         NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:model.time] timeIntervalSinceNow];
-        timeInterval = timeInterval - 8 * 60 * 60;
         if (timeInterval < 0) {
             long temp = 0;
             NSString *result;
