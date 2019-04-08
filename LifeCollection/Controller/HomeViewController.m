@@ -80,7 +80,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     
-    self.eventModelLists = [self.eventModel queryWithNote];
+    self.eventModelLists = [self.eventModel queryWithTime];
     [self.tableView reloadData];
 }
 
@@ -121,7 +121,7 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete){
         EventModel * tempModel = self.eventModelLists[indexPath.row];
-        [tempModel deleteNote:tempModel.ids];
+        [tempModel deleteTime:tempModel.ids];
         [self.eventModelLists removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
     }

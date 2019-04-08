@@ -36,6 +36,7 @@
 		532F8E2C223A31EE001A0E11 /* zaoyin.png in Resources */ = {isa = PBXBuildFile; fileRef = 532F8E2B223A31EE001A0E11 /* zaoyin.png */; };
 		532F8E2E223A31F8001A0E11 /* jiaozheng.png in Resources */ = {isa = PBXBuildFile; fileRef = 532F8E2D223A31F7001A0E11 /* jiaozheng.png */; };
 		532F8E30223A3217001A0E11 /* chizi.png in Resources */ = {isa = PBXBuildFile; fileRef = 532F8E2F223A3217001A0E11 /* chizi.png */; };
+		53349011225B269900DBBA9F /* NoteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53349010225B269900DBBA9F /* NoteListViewController.m */; };
 		5356ECF121C7463A00862FE1 /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECED21C7463A00862FE1 /* LCTabBarController.m */; };
 		5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF021C7463A00862FE1 /* LCTabBar.m */; };
 		5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF421C7466C00862FE1 /* LCNavigationViewController.m */; };
@@ -170,6 +171,8 @@
 		532F8E2B223A31EE001A0E11 /* zaoyin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zaoyin.png; sourceTree = "<group>"; };
 		532F8E2D223A31F7001A0E11 /* jiaozheng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jiaozheng.png; sourceTree = "<group>"; };
 		532F8E2F223A3217001A0E11 /* chizi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chizi.png; sourceTree = "<group>"; };
+		5334900F225B269900DBBA9F /* NoteListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteListViewController.h; sourceTree = "<group>"; };
+		53349010225B269900DBBA9F /* NoteListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteListViewController.m; sourceTree = "<group>"; };
 		5356ECED21C7463A00862FE1 /* LCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarController.m; sourceTree = "<group>"; };
 		5356ECEE21C7463A00862FE1 /* LCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBar.h; sourceTree = "<group>"; };
 		5356ECEF21C7463A00862FE1 /* LCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarController.h; sourceTree = "<group>"; };
@@ -366,6 +369,15 @@
 			path = DoActionSheet;
 			sourceTree = "<group>";
 		};
+		5334900E225B266100DBBA9F /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				5334900F225B269900DBBA9F /* NoteListViewController.h */,
+				53349010225B269900DBBA9F /* NoteListViewController.m */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
 		5356ECF621C7469C00862FE1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,6 +474,7 @@
 		5357B42121C38CAD009D9333 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5334900E225B266100DBBA9F /* Note */,
 				53B7FC2222360C990052D63C /* Tool */,
 				5357B40B21C38B73009D9333 /* HomeViewController.h */,
 				5357B40C21C38B73009D9333 /* HomeViewController.m */,
@@ -856,6 +869,7 @@
 				53AC8E2521D32A3100DD0079 /* StartFigureManager.m in Sources */,
 				531AD08821CA28C700A4B2BC /* EventModelTool.m in Sources */,
 				531AD0C921CCE12300A4B2BC /* LCWebViewViewController.m in Sources */,
+				53349011225B269900DBBA9F /* NoteListViewController.m in Sources */,
 				539B3A6521C7B01300431B7A /* TitleTableViewCell.m in Sources */,
 				5357B40A21C38B73009D9333 /* AppDelegate.m in Sources */,
 				531AD09421CA411000A4B2BC /* LCDatePickerWindow.m in Sources */,

@@ -25,15 +25,15 @@
 @property (nonatomic, copy) NSString * colorType;
 
 
--(NSMutableArray *)queryWithNote;
+-(NSMutableArray *)queryWithTime;
 
--(void)deleteNote:(int)ids;
+-(void)deleteTime:(int)ids;
 
--(void)insertNote:(EventModel *)diaryNote;
+-(void)insertTime:(EventModel *)diaryTime;
 
--(EventModel *)queryOneNote:(int)ids;
+-(EventModel *)queryOneTime:(int)ids;
 
--(void)updataNote:(EventModel *)updataNote;
+-(void)updataTime:(EventModel *)updataTime;
 
 @end
 

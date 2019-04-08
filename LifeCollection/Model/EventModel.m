@@ -11,25 +11,25 @@
 
 @implementation EventModel
 
--(NSMutableArray *)queryWithNote{
-    return [EventModelTool queryWithNote];
+-(NSMutableArray *)queryWithTime{
+    return [EventModelTool queryWithTime];
 }
 
--(void)deleteNote:(int)ids{
-    [EventModelTool deleteNote:ids];
+-(void)deleteTime:(int)ids{
+    [EventModelTool deleteTime:ids];
 }
 
--(void)insertNote:(EventModel *)diaryNote{
-    [EventModelTool insertNote:diaryNote];
+-(void)insertTime:(EventModel *)diaryTime{
+    [EventModelTool insertTime:diaryTime];
 }
 
 
--(EventModel *)queryOneNote:(int)ids{
-    return [EventModelTool queryOneNote:ids];
+-(EventModel *)queryOneTime:(int)ids{
+    return [EventModelTool queryOneTime:ids];
 }
 
--(void)updataNote:(EventModel *)updataNote{
-    [EventModelTool updataNote:updataNote];
+-(void)updataTime:(EventModel *)updataTime{
+    [EventModelTool updataTime:updataTime];
 }
 
 @end

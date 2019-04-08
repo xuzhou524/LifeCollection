@@ -107,9 +107,9 @@
     self.eventModel.title = _textFieldCell.titleTextField.text;
     if (self.eventModel.ids > 0) {
         //编辑状态  更新数据
-        [self.eventModel updataNote:self.eventModel];
+        [self.eventModel updataTime:self.eventModel];
     }else{
-        [self.eventModel insertNote:self.eventModel];
+        [self.eventModel insertTime:self.eventModel];
     }
     
     [self.navigationController popViewControllerAnimated:YES];
