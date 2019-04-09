@@ -13,7 +13,16 @@
 @property(nonatomic,strong)UIImageView * bgView;
 
 @property(nonatomic,strong)UILabel * titleLabel;
+
+@property(nonatomic,strong)UIImageView * coverImageView;
+
+@property(nonatomic,strong)UILabel * dayLabel;
+@property(nonatomic,strong)UILabel * weekLabel;
 @property(nonatomic,strong)UILabel * timeLabel;
+
+@property(nonatomic,strong)UIImageView * weatherImageView;
+
+@property(nonatomic,strong)UILabel * contentLabel;
 
 -(void)bind:(NoteModel *)model;
 @end

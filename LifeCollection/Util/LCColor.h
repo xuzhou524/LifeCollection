@@ -24,4 +24,6 @@
 
 + (UIColor *)LCColor_113_120_150;
 
+
++ (UIColor *)LCColor_110_110_110;
 @end

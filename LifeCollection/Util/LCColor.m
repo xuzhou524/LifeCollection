@@ -109,4 +109,8 @@
     return [LCColor colorWithR255:173 G255:180 B255:200 A255:255];
 }
 
++ (UIColor *)LCColor_110_110_110{
+    return [LCColor colorWithR255:110 G255:110 B255:110 A255:255];
+}
+
 @end
