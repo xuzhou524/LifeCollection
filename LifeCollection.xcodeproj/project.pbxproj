@@ -37,6 +37,7 @@
 		532F8E2E223A31F8001A0E11 /* jiaozheng.png in Resources */ = {isa = PBXBuildFile; fileRef = 532F8E2D223A31F7001A0E11 /* jiaozheng.png */; };
 		532F8E30223A3217001A0E11 /* chizi.png in Resources */ = {isa = PBXBuildFile; fileRef = 532F8E2F223A3217001A0E11 /* chizi.png */; };
 		53349011225B269900DBBA9F /* NoteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53349010225B269900DBBA9F /* NoteListViewController.m */; };
+		53349013225C80BD00DBBA9F /* LifeCollectionNote.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 53349012225C80BD00DBBA9F /* LifeCollectionNote.sqlite */; };
 		5356ECF121C7463A00862FE1 /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECED21C7463A00862FE1 /* LCTabBarController.m */; };
 		5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF021C7463A00862FE1 /* LCTabBar.m */; };
 		5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF421C7466C00862FE1 /* LCNavigationViewController.m */; };
@@ -173,6 +174,7 @@
 		532F8E2F223A3217001A0E11 /* chizi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chizi.png; sourceTree = "<group>"; };
 		5334900F225B269900DBBA9F /* NoteListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteListViewController.h; sourceTree = "<group>"; };
 		53349010225B269900DBBA9F /* NoteListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteListViewController.m; sourceTree = "<group>"; };
+		53349012225C80BD00DBBA9F /* LifeCollectionNote.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = LifeCollectionNote.sqlite; sourceTree = "<group>"; };
 		5356ECED21C7463A00862FE1 /* LCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarController.m; sourceTree = "<group>"; };
 		5356ECEE21C7463A00862FE1 /* LCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBar.h; sourceTree = "<group>"; };
 		5356ECEF21C7463A00862FE1 /* LCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarController.h; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				531AD0A121CB7BA600A4B2BC /* LifeCollection.sqlite */,
+				53349012225C80BD00DBBA9F /* LifeCollectionNote.sqlite */,
 			);
 			path = SQLfile;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				532F8E2C223A31EE001A0E11 /* zaoyin.png in Resources */,
 				531AD0C621CCD57F00A4B2BC /* summery.png in Resources */,
 				53B7FC7B2237A1F00052D63C /* zp@3x.png in Resources */,
+				53349013225C80BD00DBBA9F /* LifeCollectionNote.sqlite in Resources */,
 				53AC8E3B21D385ED00DD0079 /* 01.png in Resources */,
 				53B7FC7A2237A1F00052D63C /* zp@2x.png in Resources */,
 				5356ED2221C7536200862FE1 /* tab_bar_user_sel@3x.png in Resources */,
