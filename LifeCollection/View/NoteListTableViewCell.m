@@ -45,7 +45,7 @@
     [self.contentView addSubview:_dayLabel];
     [_dayLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.bgView).offset(20);
-        make.top.equalTo(self.bgView).offset(10);
+        make.top.equalTo(self.bgView).offset(15);
     }];
     
     _weekLabel = [UILabel new];
@@ -55,7 +55,7 @@
     [self.contentView addSubview:_weekLabel];
     [_weekLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.dayLabel.mas_right).offset(15);
-        make.bottom.equalTo(self.dayLabel.mas_centerY).offset(-3);
+        make.bottom.equalTo(self.dayLabel.mas_centerY).offset(-2);
     }];
     
     _timeLabel = [UILabel new];
@@ -65,7 +65,7 @@
     [self.contentView addSubview:_timeLabel];
     [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.dayLabel.mas_right).offset(15);
-        make.top.equalTo(self.dayLabel.mas_centerY).offset(3);
+        make.top.equalTo(self.dayLabel.mas_centerY).offset(2);
     }];
     
     _weatherImageView = [UIImageView new];
@@ -80,17 +80,6 @@
         make.width.height.equalTo(@35);
     }];
     
-    _titleLabel = [UILabel new];
-    _titleLabel.text = @"请输入标题";
-    _titleLabel.font = LCFont2(16);
-    _titleLabel.alpha = 0.8;
-    _titleLabel.textColor = [LCColor LCColor_77_92_127];
-    [self.contentView addSubview:_titleLabel];
-    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.bgView).offset(20);
-        make.top.equalTo(self.dayLabel.mas_bottom).offset(5);
-    }];
-
     _coverImageView = [UIImageView new];
     _coverImageView.layer.cornerRadius = 5;
     _coverImageView.layer.masksToBounds = YES;
@@ -99,15 +88,15 @@
     _coverImageView.backgroundColor = [LCColor orangeColor];
     [self.contentView addSubview:_coverImageView];
     [_coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(15);
-        make.left.equalTo(self.titleLabel);
-        make.width.height.equalTo(@88);
+        make.top.equalTo(self.dayLabel.mas_bottom).offset(15);
+        make.left.equalTo(self.dayLabel);
+        make.width.height.equalTo(@80);
     }];
     
     _contentLabel = [UILabel new];
     _contentLabel.text = @"生命周期感知，消息随时订阅，自动取消订阅，生命周期感知，消息随时订阅，自动取消订阅生命周期感知，消息随时订阅，自动取消订阅，生命周期感知，消息随时订阅，自动取消订阅生自动取消订阅生";
-    _contentLabel.font = LCFont2(14);
-    _contentLabel.numberOfLines = 5;
+    _contentLabel.font = LCFont2(15);
+    _contentLabel.numberOfLines = 4;
     _contentLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     _contentLabel.textColor = [LCColor LCColor_110_110_110];
     [self.contentView addSubview:_contentLabel];
@@ -119,9 +108,7 @@
 }
 
 -(void)bind:(NoteModel *)model{
-    
-    self.titleLabel.text = model.title;
-    
+
     self.contentLabel.text = model.content;
     
 }

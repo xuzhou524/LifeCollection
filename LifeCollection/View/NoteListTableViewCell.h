@@ -12,8 +12,6 @@
 @interface NoteListTableViewCell : UITableViewCell
 @property(nonatomic,strong)UIImageView * bgView;
 
-@property(nonatomic,strong)UILabel * titleLabel;
-
 @property(nonatomic,strong)UIImageView * coverImageView;
 
 @property(nonatomic,strong)UILabel * dayLabel;
