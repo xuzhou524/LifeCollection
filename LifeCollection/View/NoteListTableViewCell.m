@@ -145,7 +145,7 @@
     _coverImageView = [UIImageView new];
     _coverImageView.layer.cornerRadius = 5;
     _coverImageView.layer.masksToBounds = YES;
-    _coverImageView.userInteractionEnabled = YES;
+    _coverImageView.userInteractionEnabled = NO;
     _coverImageView.contentMode = UIViewContentModeScaleToFill;
     _coverImageView.backgroundColor = [LCColor orangeColor];
     [self.contentView addSubview:_coverImageView];

@@ -14,9 +14,10 @@
 
 @end
 
-@interface AddNoteViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface AddNoteViewController ()<UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property(nonatomic,strong)UITableView * tableView;
+@property(nonatomic,strong)AddNoteTableViewCell * addNoteViewCell;
 
 @end
 
@@ -48,12 +49,36 @@
     regClass(self.tableView, NoteListTableViewCell);
     regClass(self.tableView, AddNoteTableViewCell);
     
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backupgroupTap:)];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:tapGestureRecognizer]; //只需要点击非文字输入区域就会响应
+    [tapGestureRecognizer setCancelsTouchesInView:NO];
+}
+
+- (void)backupgroupTap:(id)sender {
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+}
+
+-(NoteModel *)noteModel{
+    if (_noteModel == nil){
+        _noteModel = [NoteModel new];
+    }
+    return _noteModel;
 }
 
 -(void)rightBtnClick{
+    if (_addNoteViewCell.contentTextView.text.length <= 0) {
+        return;
+    }
+    self.noteModel.content = _addNoteViewCell.contentTextView.text;
+    if (self.noteModel.ids > 0) {
+        //编辑状态  更新数据
+        [self.noteModel updataNote:self.noteModel];
+    }else{
+        [self.noteModel insertNote:self.noteModel];
+    }
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -86,11 +111,50 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else if (indexPath.row == 2){
-        AddNoteTableViewCell * cell = getCell(AddNoteTableViewCell);
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
+        _addNoteViewCell = getCell(AddNoteTableViewCell);
+        _addNoteViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _addNoteViewCell.contentTextView.delegate = self;
+        [_addNoteViewCell.coverImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(converTapClick)]];
+        return _addNoteViewCell;
     }
     return nil;
+}
+
+-(void)converTapClick{
+    UIImagePickerController *imagePicker = [UIImagePickerController new];
+    [imagePicker.navigationBar  setBackgroundImage:[LCColor createImageWithColor:[LCColor whiteColor]] forBarPosition:UIBarPositionTopAttached barMetrics:UIBarMetricsDefault];
+    [imagePicker.navigationBar setTitleTextAttributes:@{
+                                                        NSFontAttributeName:LCFont2(18) ,
+                                                        NSForegroundColorAttributeName: [LCColor LCColor_77_92_127]
+                                                        }];
+    imagePicker.navigationBar.tintColor=[LCColor LCColor_77_92_127];
+    imagePicker.delegate = self;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePicker.allowsEditing = NO;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    //获取照片的原图
+    UIImage *original = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [self compressionUploadingImage:original];
+}
+-(void)compressionUploadingImage:(UIImage *)image{
+    NSLog(@"%@",image);
+    _addNoteViewCell.coverImageView.image = image;
+}
+
+-(void)textViewDidBeginEditing:(UITextView *)textView{
+    if ([textView.text isEqualToString:@"写下你的描述"]) {
+        textView.text = @"";
+    }
+}
+
+-(void)textViewDidEndEditing:(UITextView *)textView{
+    if ([textView.text isEqualToString:@""]){
+        textView.text = @"写下你的描述";
+    }
 }
 
 @end
