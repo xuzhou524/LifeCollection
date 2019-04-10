@@ -42,6 +42,7 @@ static FMDatabaseQueue *_queue;
             datanote.time = [rs stringForColumn:@"time"];
             datanote.weather = [rs stringForColumn:@"weather"];
             datanote.mood = [rs stringForColumn:@"mood"];
+            datanote.coverImageUrl = [rs stringForColumn:@"coverImageUrl"];
             [diaryArray addObject:datanote];
         }
     }];
@@ -56,7 +57,7 @@ static FMDatabaseQueue *_queue;
 
 +(void)insertNote:(NoteModel *)diaryNote{
     [_queue inDatabase:^(FMDatabase *db){
-        [db executeUpdate:@"insert into LifeCollectionNote(title, content, time, weather, mood) values (?, ?, ?, ?, ?)",diaryNote.title, diaryNote.content, diaryNote.time, diaryNote.weather, diaryNote.mood];
+        [db executeUpdate:@"insert into LifeCollectionNote(title, content, time, weather, mood, coverImageUrl) values (?, ?, ?, ?, ?, ?)",diaryNote.title, diaryNote.content, diaryNote.time, diaryNote.weather, diaryNote.mood, diaryNote.coverImageUrl];
     }];
 }
 
@@ -73,6 +74,7 @@ static FMDatabaseQueue *_queue;
             datanote.time = [rs stringForColumn:@"time"];
             datanote.weather = [rs stringForColumn:@"weather"];
             datanote.mood = [rs stringForColumn:@"mood"];
+            datanote.coverImageUrl = [rs stringForColumn:@"coverImageUrl"];
         }
     }];
     return datanote;
@@ -80,7 +82,7 @@ static FMDatabaseQueue *_queue;
 
 +(void)updataNote:(NoteModel *)updataNote{
     [_queue inDatabase:^(FMDatabase *db){
-        [db executeUpdate:@"update LifeCollectionNote set title = ? , content = ?, time = ?, weather = ? , mood = ? where ids = ? ;",updataNote.title, updataNote.content, updataNote.time, updataNote.weather, updataNote.mood, [NSNumber numberWithInt:updataNote.ids]];
+        [db executeUpdate:@"update LifeCollectionNote set title = ? , content = ?, time = ?, weather = ? , mood = ? , coverImageUrl = ? where ids = ? ;",updataNote.title, updataNote.content, updataNote.time, updataNote.weather, updataNote.mood, updataNote.coverImageUrl, [NSNumber numberWithInt:updataNote.ids]];
     }];
 }
 @end

@@ -25,3 +25,11 @@
 -(void)bind:(NoteModel *)model;
 @end
 
+@interface AddNoteTableViewCell : UITableViewCell
+
+@property(nonatomic,strong)UITextView * contentTextView;
+
+@property(nonatomic,strong)UIImageView * coverImageView;
+
+@end
+

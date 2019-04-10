@@ -115,3 +115,58 @@
 
 @end
 
+
+@implementation AddNoteTableViewCell
+
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self sebViews];
+    }
+    return self;
+}
+
+-(void)sebViews{
+    self.contentView.backgroundColor = [LCColor backgroudColor];
+
+    _contentTextView = [UITextView new];
+    _contentTextView.text = @"写下你的描述";
+    _contentTextView.font = LCFont2(15);
+    _contentTextView.textColor = [LCColor LCColor_110_110_110];
+    _contentTextView.backgroundColor = [LCColor whiteColor];
+    [self.contentView addSubview:_contentTextView];
+    [_contentTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView).offset(20);
+        make.right.equalTo(self.contentView).offset(-20);
+        make.top.equalTo(self.contentView).offset(20);
+        make.height.equalTo(@150);
+    }];
+    
+    _coverImageView = [UIImageView new];
+    _coverImageView.layer.cornerRadius = 5;
+    _coverImageView.layer.masksToBounds = YES;
+    _coverImageView.userInteractionEnabled = YES;
+    _coverImageView.contentMode = UIViewContentModeScaleToFill;
+    _coverImageView.backgroundColor = [LCColor orangeColor];
+    [self.contentView addSubview:_coverImageView];
+    [_coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.contentTextView.mas_bottom).offset(20);
+        make.left.equalTo(self.contentView).offset(20);
+        make.right.equalTo(self.contentView).offset(-20);
+        make.height.equalTo(@120);
+    }];
+    
+    UILabel * label = [UILabel new];
+    label.text = @"封面图";
+    label.font = LCFont2(18);
+    label.textColor = [LCColor whiteColor];
+    [self.contentView addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.coverImageView).offset(20);
+        make.centerY.equalTo(self.coverImageView);
+    }];
+    
+}
+
+@end
+

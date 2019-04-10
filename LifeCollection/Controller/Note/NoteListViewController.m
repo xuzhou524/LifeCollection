@@ -101,8 +101,8 @@
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete){
-        EventModel * tempModel = self.noteModelLists[indexPath.row];
-        [tempModel deleteTime:tempModel.ids];
+        NoteModel * tempModel = self.noteModelLists[indexPath.row];
+        [tempModel deleteNote:tempModel.ids];
         [self.noteModelLists removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
     }
