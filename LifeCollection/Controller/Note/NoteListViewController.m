@@ -10,6 +10,7 @@
 #import "NoteListTableViewCell.h"
 #import "AddViewController.h"
 #import "NoteModel.h"
+#import "AddNoteViewController.h"
 
 @interface NoteListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -65,8 +66,8 @@
 }
 
 -(void)rightBtnClick{
-    AddViewController * addVC = [AddViewController new];
-    [self.navigationController pushViewController:addVC animated:YES];
+    AddNoteViewController * addNoteVC = [AddNoteViewController new];
+    [self.navigationController pushViewController:addNoteVC animated:YES];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

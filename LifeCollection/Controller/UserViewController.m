@@ -27,7 +27,7 @@
     [super viewDidLoad];
     
     UILabel * liftLabel = [UILabel new];
-    liftLabel.text = @"咘咕";
+    liftLabel.text = @"记点";
     liftLabel.font = LCFont(23);
     liftLabel.textColor = [LCColor LCColor_77_92_127];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
@@ -88,7 +88,7 @@
         if (indexPath.row == 4) {
             TitleNoRightImageTableViewCell * cell = getCell(TitleNoRightImageTableViewCell);
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.titleLabel.text = @"咘咕版本";
+            cell.titleLabel.text = @"当前版本";
             cell.summeryLabel.text = [NSString stringWithFormat:@"v%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
             return cell;
         }
