@@ -29,8 +29,8 @@
     
     NSMutableArray * controllerArray = [NSMutableArray new];
     
-    [controllerArray addObject:[self addChildViewControllerWith:@"HomeViewController" title:@"" normalImage:@"tab_bar_home"]];
-    [controllerArray addObject:[self addChildViewControllerWith:@"NoteListViewController" title:@"" normalImage:@"tab_bar_tool"]];
+    [controllerArray addObject:[self addChildViewControllerWith:@"HomeViewController" title:@"" normalImage:@"tab_bar_tool"]];
+    [controllerArray addObject:[self addChildViewControllerWith:@"NoteListViewController" title:@"" normalImage:@"tab_bar_home"]];
     [controllerArray addObject:[self addChildViewControllerWith:@"FoundViewController" title:@"" normalImage:@"tab_bar_found"]];
     [controllerArray addObject:[self addChildViewControllerWith:@"UserViewController" title:@"" normalImage:@"tab_bar_user"]];
     
