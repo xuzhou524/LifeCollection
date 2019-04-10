@@ -40,7 +40,7 @@
     
     _dayLabel = [UILabel new];
     _dayLabel.text = @"28";
-    _dayLabel.font = LCFont2(45);
+    _dayLabel.font = LCFont2(40);
     _dayLabel.textColor = [LCColor blackColor];
     [self.contentView addSubview:_dayLabel];
     [_dayLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -50,7 +50,7 @@
     
     _weekLabel = [UILabel new];
     _weekLabel.text = @"星期日";
-    _weekLabel.font = LCFont2(13);
+    _weekLabel.font = LCFont2(12);
     _weekLabel.textColor = [LCColor LCColor_110_110_110];
     [self.contentView addSubview:_weekLabel];
     [_weekLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -60,7 +60,7 @@
     
     _timeLabel = [UILabel new];
     _timeLabel.text = @"2019年04月";
-    _timeLabel.font = LCFont2(13);
+    _timeLabel.font = LCFont2(12);
     _timeLabel.textColor = [LCColor LCColor_110_110_110];
     [self.contentView addSubview:_timeLabel];
     [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -77,7 +77,7 @@
     [_weatherImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.dayLabel);
         make.right.equalTo(self.bgView).offset(-20);
-        make.width.height.equalTo(@35);
+        make.width.height.equalTo(@30);
     }];
     
     _coverImageView = [UIImageView new];
@@ -90,12 +90,12 @@
     [_coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.dayLabel.mas_bottom).offset(15);
         make.left.equalTo(self.dayLabel);
-        make.width.height.equalTo(@80);
+        make.width.height.equalTo(@68);
     }];
     
     _contentLabel = [UILabel new];
     _contentLabel.text = @"生命周期感知，消息随时订阅，自动取消订阅，生命周期感知，消息随时订阅，自动取消订阅生命周期感知，消息随时订阅，自动取消订阅，生命周期感知，消息随时订阅，自动取消订阅生自动取消订阅生";
-    _contentLabel.font = LCFont2(15);
+    _contentLabel.font = LCFont2(13);
     _contentLabel.numberOfLines = 4;
     _contentLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     _contentLabel.textColor = [LCColor LCColor_110_110_110];
@@ -139,14 +139,14 @@
         make.left.equalTo(self.contentView).offset(20);
         make.right.equalTo(self.contentView).offset(-20);
         make.top.equalTo(self.contentView).offset(20);
-        make.height.equalTo(@150);
+        make.height.equalTo(@120);
     }];
     
     _coverImageView = [UIImageView new];
     _coverImageView.layer.cornerRadius = 5;
     _coverImageView.layer.masksToBounds = YES;
-    _coverImageView.userInteractionEnabled = NO;
-    _coverImageView.contentMode = UIViewContentModeScaleToFill;
+    _coverImageView.userInteractionEnabled = YES;
+    _coverImageView.contentMode = UIViewContentModeScaleAspectFill;
     _coverImageView.backgroundColor = [LCColor orangeColor];
     [self.contentView addSubview:_coverImageView];
     [_coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -158,7 +158,7 @@
     
     UILabel * label = [UILabel new];
     label.text = @"封面图";
-    label.font = LCFont2(18);
+    label.font = LCFont2(16);
     label.textColor = [LCColor whiteColor];
     [self.contentView addSubview:label];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
