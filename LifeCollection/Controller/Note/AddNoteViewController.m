@@ -17,6 +17,7 @@
 @interface AddNoteViewController ()<UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property(nonatomic,strong)UITableView * tableView;
+@property(nonatomic,strong)NoteListTableViewCell * noteListCell;
 @property(nonatomic,strong)AddNoteTableViewCell * addNoteViewCell;
 
 @end
@@ -75,6 +76,7 @@
         //编辑状态  更新数据
         [self.noteModel updataNote:self.noteModel];
     }else{
+        self.noteModel.time = [DateFormatter stringFromBirthday:[NSDate new]];
         [self.noteModel insertNote:self.noteModel];
     }
     [self.navigationController popViewControllerAnimated:YES];
@@ -107,9 +109,9 @@
         previewCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return previewCell;
     }else if (indexPath.row == 1){
-        NoteListTableViewCell * cell = getCell(NoteListTableViewCell);
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
+        _noteListCell = getCell(NoteListTableViewCell);
+        _noteListCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return _noteListCell;
     }else if (indexPath.row == 2){
         _addNoteViewCell = getCell(AddNoteTableViewCell);
         _addNoteViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -143,6 +145,9 @@
 -(void)compressionUploadingImage:(UIImage *)image{
     NSLog(@"%@",image);
     _addNoteViewCell.coverImageView.image = image;
+    _noteListCell.coverImageView.image = image;
+    
+    self.noteModel.coverImageData = [NSString stringWithFormat:@"%@",UIImagePNGRepresentation(image)] ;
 }
 
 -(void)textViewDidBeginEditing:(UITextView *)textView{
@@ -155,6 +160,10 @@
     if ([textView.text isEqualToString:@""]){
         textView.text = @"写下你的描述";
     }
+}
+
+-(void)textViewDidChange:(UITextView *)textView{
+    _noteListCell.contentLabel.text = textView.text;
 }
 
 @end

@@ -16,7 +16,7 @@
 @property (nonatomic, copy) NSString * time;
 @property (nonatomic, copy) NSString * weather;
 @property (nonatomic, copy) NSString * mood;
-@property (nonatomic, copy) NSString * coverImageUrl;
+@property (nonatomic, copy) NSString * coverImageData;
 
 -(NSMutableArray *)queryWithNote;
 

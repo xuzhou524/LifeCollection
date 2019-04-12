@@ -42,7 +42,7 @@ static FMDatabaseQueue *_queue;
             datanote.time = [rs stringForColumn:@"time"];
             datanote.weather = [rs stringForColumn:@"weather"];
             datanote.mood = [rs stringForColumn:@"mood"];
-            datanote.coverImageUrl = [rs stringForColumn:@"coverImageUrl"];
+            datanote.coverImageData = [rs stringForColumn:@"coverImageData"];
             [diaryArray addObject:datanote];
         }
     }];
@@ -57,7 +57,7 @@ static FMDatabaseQueue *_queue;
 
 +(void)insertNote:(NoteModel *)diaryNote{
     [_queue inDatabase:^(FMDatabase *db){
-        [db executeUpdate:@"insert into LifeCollectionNote(title, content, time, weather, mood, coverImageUrl) values (?, ?, ?, ?, ?, ?)",diaryNote.title, diaryNote.content, diaryNote.time, diaryNote.weather, diaryNote.mood, diaryNote.coverImageUrl];
+        [db executeUpdate:@"insert into LifeCollectionNote(title, content, time, weather, mood, coverImageData) values (?, ?, ?, ?, ?, ?)",diaryNote.title, diaryNote.content, diaryNote.time, diaryNote.weather, diaryNote.mood, diaryNote.coverImageData];
     }];
 }
 
@@ -74,7 +74,7 @@ static FMDatabaseQueue *_queue;
             datanote.time = [rs stringForColumn:@"time"];
             datanote.weather = [rs stringForColumn:@"weather"];
             datanote.mood = [rs stringForColumn:@"mood"];
-            datanote.coverImageUrl = [rs stringForColumn:@"coverImageUrl"];
+            datanote.coverImageData = [rs stringForColumn:@"coverImageData"];
         }
     }];
     return datanote;
@@ -82,7 +82,7 @@ static FMDatabaseQueue *_queue;
 
 +(void)updataNote:(NoteModel *)updataNote{
     [_queue inDatabase:^(FMDatabase *db){
-        [db executeUpdate:@"update LifeCollectionNote set title = ? , content = ?, time = ?, weather = ? , mood = ? , coverImageUrl = ? where ids = ? ;",updataNote.title, updataNote.content, updataNote.time, updataNote.weather, updataNote.mood, updataNote.coverImageUrl, [NSNumber numberWithInt:updataNote.ids]];
+        [db executeUpdate:@"update LifeCollectionNote set title = ? , content = ?, time = ?, weather = ? , mood = ? , coverImageData = ? where ids = ? ;",updataNote.title, updataNote.content, updataNote.time, updataNote.weather, updataNote.mood, updataNote.coverImageData, [NSNumber numberWithInt:updataNote.ids]];
     }];
 }
 @end

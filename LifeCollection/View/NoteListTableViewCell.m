@@ -122,6 +122,7 @@
     }else{
         self.contentLabel.text = @"拾掇生活中的点滴，记录时光的故事";
     }
+    
 }
 
 @end
