@@ -10,9 +10,15 @@
 
 @interface DateFormatter : NSObject
 
++ (NSString *)weekdayStringWithDate:(NSDate *)date;  //获取星期几
+
 + (NSDate *)dateFromTimeStampString:(NSString *)timeStamp;  //时间戳 转 Data
 
-+ (NSString*) stringFromBirthday:(NSDate*)date;//Data 转 时间字符串  yyyy-MM-dd
++ (NSString*) stringFromBirthday:(NSDate*)date;//Date 转 时间字符串  yyyy-MM-dd
++ (NSString*) stringFromStringYeayWeek:(NSDate*)date;//Date 转 时间字符串  yyyy年MM月
++ (NSString*) stringFromStringDay:(NSDate*)date;//Date 转 时间字符串  dd
+
++ (NSDate *)dateFromString:(NSString *)dateString; //时间字符串 转 Date yyyy-MM-dd
 
 @end
 

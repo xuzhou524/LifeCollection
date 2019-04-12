@@ -39,7 +39,7 @@
     }];
     
     _dayLabel = [UILabel new];
-    _dayLabel.text = @"28";
+    _dayLabel.text = [DateFormatter stringFromStringDay:[NSDate new]];
     _dayLabel.font = LCFont2(40);
     _dayLabel.textColor = [LCColor blackColor];
     [self.contentView addSubview:_dayLabel];
@@ -49,7 +49,7 @@
     }];
     
     _weekLabel = [UILabel new];
-    _weekLabel.text = @"星期日";
+    _weekLabel.text = [DateFormatter weekdayStringWithDate:[NSDate new]];
     _weekLabel.font = LCFont2(12);
     _weekLabel.textColor = [LCColor LCColor_110_110_110];
     [self.contentView addSubview:_weekLabel];
@@ -59,7 +59,7 @@
     }];
     
     _timeLabel = [UILabel new];
-    _timeLabel.text = @"2019年04月";
+    _timeLabel.text = [DateFormatter stringFromStringYeayWeek:[NSDate new]];
     _timeLabel.font = LCFont2(12);
     _timeLabel.textColor = [LCColor LCColor_110_110_110];
     [self.contentView addSubview:_timeLabel];
@@ -94,7 +94,7 @@
     }];
     
     _contentLabel = [UILabel new];
-    _contentLabel.text = @"生命周期感知，消息随时订阅，自动取消订阅，生命周期感知，消息随时订阅，自动取消订阅生命周期感知，消息随时订阅，自动取消订阅，生命周期感知，消息随时订阅，自动取消订阅生自动取消订阅生";
+    _contentLabel.text = @"拾掇生活中的点滴，记录时光的故事";
     _contentLabel.font = LCFont2(13);
     _contentLabel.numberOfLines = 4;
     _contentLabel.lineBreakMode = NSLineBreakByTruncatingTail;
@@ -108,9 +108,20 @@
 }
 
 -(void)bind:(NoteModel *)model{
-
-    self.contentLabel.text = model.content;
     
+    NSDate * date = [NSDate new];
+    if (model && model.time && model.time.length > 0) {
+        date = [DateFormatter dateFromString:model.time];
+    }
+    self.dayLabel.text = [DateFormatter stringFromStringDay:date];
+    self.weekLabel.text = [DateFormatter weekdayStringWithDate:date];
+    self.timeLabel.text = [DateFormatter stringFromStringYeayWeek:date];
+    
+    if (model && model.content && model.content.length > 0) {
+        self.contentLabel.text = model.content;
+    }else{
+        self.contentLabel.text = @"拾掇生活中的点滴，记录时光的故事";
+    }
 }
 
 @end
