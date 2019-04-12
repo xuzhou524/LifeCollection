@@ -122,7 +122,13 @@
     }else{
         self.contentLabel.text = @"拾掇生活中的点滴，记录时光的故事";
     }
-    
+    if (model.coverImageData) {
+        NSData *imageData = [[NSData alloc] initWithBase64EncodedString:model.coverImageData options:0];
+        UIImage * image = [UIImage imageWithData:imageData];
+        self.coverImageView.image = image;
+    }else{
+        self.coverImageView.image = nil;
+    }
 }
 
 @end

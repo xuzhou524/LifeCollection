@@ -147,7 +147,8 @@
     _addNoteViewCell.coverImageView.image = image;
     _noteListCell.coverImageView.image = image;
     
-    self.noteModel.coverImageData = [NSString stringWithFormat:@"%@",UIImagePNGRepresentation(image)] ;
+    NSData * imageData = UIImagePNGRepresentation(image);
+    self.noteModel.coverImageData = [imageData base64EncodedDataWithOptions:0];
 }
 
 -(void)textViewDidBeginEditing:(UITextView *)textView{
