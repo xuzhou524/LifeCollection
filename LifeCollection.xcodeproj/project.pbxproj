@@ -68,6 +68,7 @@
 		53519AF622642A5700A8C776 /* 100.png in Resources */ = {isa = PBXBuildFile; fileRef = 53519ADE22642A5600A8C776 /* 100.png */; };
 		53519AF722642A5700A8C776 /* 101.png in Resources */ = {isa = PBXBuildFile; fileRef = 53519ADF22642A5600A8C776 /* 101.png */; };
 		53519AFA22643FFE00A8C776 /* WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53519AF922643FFE00A8C776 /* WeatherManager.m */; };
+		53519AFC2264783D00A8C776 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53519AFB2264783D00A8C776 /* CoreLocation.framework */; };
 		5356ECF121C7463A00862FE1 /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECED21C7463A00862FE1 /* LCTabBarController.m */; };
 		5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF021C7463A00862FE1 /* LCTabBar.m */; };
 		5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF421C7466C00862FE1 /* LCNavigationViewController.m */; };
@@ -240,6 +241,7 @@
 		53519ADF22642A5600A8C776 /* 101.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 101.png; sourceTree = "<group>"; };
 		53519AF822643FFE00A8C776 /* WeatherManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherManager.h; sourceTree = "<group>"; };
 		53519AF922643FFE00A8C776 /* WeatherManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherManager.m; sourceTree = "<group>"; };
+		53519AFB2264783D00A8C776 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5356ECED21C7463A00862FE1 /* LCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarController.m; sourceTree = "<group>"; };
 		5356ECEE21C7463A00862FE1 /* LCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBar.h; sourceTree = "<group>"; };
 		5356ECEF21C7463A00862FE1 /* LCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarController.h; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53519AFC2264783D00A8C776 /* CoreLocation.framework in Frameworks */,
 				855A42587625B7BB03CD4F6E /* Pods_LifeCollection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -734,6 +737,7 @@
 		DD5677F4BB641C2F91264A51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53519AFB2264783D00A8C776 /* CoreLocation.framework */,
 				536D0BD321DF41E600FB0653 /* LocalAuthentication.framework */,
 				E969EF071FF62323FD55A93A /* Pods_LifeCollection.framework */,
 			);
