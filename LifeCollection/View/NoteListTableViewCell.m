@@ -69,15 +69,13 @@
     }];
     
     _weatherImageView = [UIImageView new];
-    _weatherImageView.layer.cornerRadius = 5;
-    _weatherImageView.layer.masksToBounds = YES;
     _weatherImageView.userInteractionEnabled = YES;
-    _weatherImageView.backgroundColor = [LCColor greenColor];
+    self.weatherImageView.image = [UIImage imageNamed:@"100"];
     [self.contentView addSubview:_weatherImageView];
     [_weatherImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.dayLabel);
         make.right.equalTo(self.bgView).offset(-20);
-        make.width.height.equalTo(@30);
+        make.width.height.equalTo(@38);
     }];
     
     _coverImageView = [UIImageView new];
@@ -116,6 +114,8 @@
     self.dayLabel.text = [DateFormatter stringFromStringDay:date];
     self.weekLabel.text = [DateFormatter weekdayStringWithDate:date];
     self.timeLabel.text = [DateFormatter stringFromStringYeayWeek:date];
+    
+    self.weatherImageView.image = [UIImage imageNamed:model.weather];
     
     if (model && model.content && model.content.length > 0) {
         self.contentLabel.text = model.content;
