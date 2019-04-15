@@ -71,11 +71,7 @@
     
     _weatherImageView = [UIImageView new];
     _weatherImageView.userInteractionEnabled = YES;
-    if ([WeatherManager sharedInstance].weatherIconIndex) {
-        _weatherImageView.image = [UIImage imageNamed:[WeatherManager sharedInstance].weatherIconIndex];
-    }else{
-        _weatherImageView.image = [UIImage imageNamed:@"100"];
-    }
+    _weatherImageView.image = [UIImage imageNamed:[WeatherManager sharedInstance].weatherIconIndex];
     [self.contentView addSubview:_weatherImageView];
     [_weatherImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.dayLabel);
@@ -123,11 +119,7 @@
     if (model.weather) {
         self.weatherImageView.image = [UIImage imageNamed:model.weather];
     }else{
-        if ([WeatherManager sharedInstance].weatherIconIndex) {
-            self.weatherImageView.image = [UIImage imageNamed:[WeatherManager sharedInstance].weatherIconIndex];
-        }else{
-            self.weatherImageView.image = [UIImage imageNamed:@"100"];
-        }
+        self.weatherImageView.image = [UIImage imageNamed:[WeatherManager sharedInstance].weatherIconIndex];
     }
     
     if (model && model.content && model.content.length > 0) {
