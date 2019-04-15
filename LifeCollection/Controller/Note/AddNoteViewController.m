@@ -9,6 +9,8 @@
 #import "AddNoteViewController.h"
 #import "NoteListTableViewCell.h"
 #import "PreviewTableViewCell.h"
+#import "DoActionSheet.h"
+#import "WeatherManager.h"
 
 @interface AddNoteViewController ()
 
@@ -77,6 +79,7 @@
         [self.noteModel updataNote:self.noteModel];
     }else{
         self.noteModel.time = [DateFormatter stringFromBirthday:[NSDate new]];
+        self.noteModel.weather = [WeatherManager sharedInstance].weatherIconIndex;
         [self.noteModel insertNote:self.noteModel];
     }
     [self.navigationController popViewControllerAnimated:YES];

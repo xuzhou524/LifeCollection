@@ -67,6 +67,7 @@
 		53519AF522642A5700A8C776 /* 106.png in Resources */ = {isa = PBXBuildFile; fileRef = 53519ADD22642A5600A8C776 /* 106.png */; };
 		53519AF622642A5700A8C776 /* 100.png in Resources */ = {isa = PBXBuildFile; fileRef = 53519ADE22642A5600A8C776 /* 100.png */; };
 		53519AF722642A5700A8C776 /* 101.png in Resources */ = {isa = PBXBuildFile; fileRef = 53519ADF22642A5600A8C776 /* 101.png */; };
+		53519AFA22643FFE00A8C776 /* WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53519AF922643FFE00A8C776 /* WeatherManager.m */; };
 		5356ECF121C7463A00862FE1 /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECED21C7463A00862FE1 /* LCTabBarController.m */; };
 		5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF021C7463A00862FE1 /* LCTabBar.m */; };
 		5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF421C7466C00862FE1 /* LCNavigationViewController.m */; };
@@ -237,6 +238,8 @@
 		53519ADD22642A5600A8C776 /* 106.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 106.png; sourceTree = "<group>"; };
 		53519ADE22642A5600A8C776 /* 100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100.png; sourceTree = "<group>"; };
 		53519ADF22642A5600A8C776 /* 101.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 101.png; sourceTree = "<group>"; };
+		53519AF822643FFE00A8C776 /* WeatherManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherManager.h; sourceTree = "<group>"; };
+		53519AF922643FFE00A8C776 /* WeatherManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherManager.m; sourceTree = "<group>"; };
 		5356ECED21C7463A00862FE1 /* LCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarController.m; sourceTree = "<group>"; };
 		5356ECEE21C7463A00862FE1 /* LCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBar.h; sourceTree = "<group>"; };
 		5356ECEF21C7463A00862FE1 /* LCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarController.h; sourceTree = "<group>"; };
@@ -667,6 +670,8 @@
 				53AC8E0B21D1DC9D00DD0079 /* LCRefresh.m */,
 				53AC8E2C21D33E5800DD0079 /* LCSettings.h */,
 				53AC8E2D21D33E5800DD0079 /* LCSettings.m */,
+				53519AF822643FFE00A8C776 /* WeatherManager.h */,
+				53519AF922643FFE00A8C776 /* WeatherManager.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -992,6 +997,7 @@
 				5357B40D21C38B73009D9333 /* HomeViewController.m in Sources */,
 				53349019225C81AA00DBBA9F /* NoteModelTool.m in Sources */,
 				5357B41321C38B73009D9333 /* LifeCollection.xcdatamodeld in Sources */,
+				53519AFA22643FFE00A8C776 /* WeatherManager.m in Sources */,
 				53B7FC4B223798BF0052D63C /* LCProtractorViewController.m in Sources */,
 				53349016225C819800DBBA9F /* NoteModel.m in Sources */,
 				5357B42921C3911B009D9333 /* LCColor.m in Sources */,

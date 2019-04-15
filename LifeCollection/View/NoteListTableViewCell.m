@@ -7,6 +7,7 @@
 //
 
 #import "NoteListTableViewCell.h"
+#import "WeatherManager.h"
 
 @interface NoteListTableViewCell()
 
@@ -70,7 +71,11 @@
     
     _weatherImageView = [UIImageView new];
     _weatherImageView.userInteractionEnabled = YES;
-    self.weatherImageView.image = [UIImage imageNamed:@"100"];
+    if ([WeatherManager sharedInstance].weatherIconIndex) {
+        _weatherImageView.image = [UIImage imageNamed:[WeatherManager sharedInstance].weatherIconIndex];
+    }else{
+        _weatherImageView.image = [UIImage imageNamed:@"100"];
+    }
     [self.contentView addSubview:_weatherImageView];
     [_weatherImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.dayLabel);
@@ -115,7 +120,15 @@
     self.weekLabel.text = [DateFormatter weekdayStringWithDate:date];
     self.timeLabel.text = [DateFormatter stringFromStringYeayWeek:date];
     
-    self.weatherImageView.image = [UIImage imageNamed:model.weather];
+    if (model.weather) {
+        self.weatherImageView.image = [UIImage imageNamed:model.weather];
+    }else{
+        if ([WeatherManager sharedInstance].weatherIconIndex) {
+            self.weatherImageView.image = [UIImage imageNamed:[WeatherManager sharedInstance].weatherIconIndex];
+        }else{
+            self.weatherImageView.image = [UIImage imageNamed:@"100"];
+        }
+    }
     
     if (model && model.content && model.content.length > 0) {
         self.contentLabel.text = model.content;
