@@ -11,7 +11,7 @@
 #import "AddViewController.h"
 #import "NoteModel.h"
 #import "AddNoteViewController.h"
-#import "WeatherManager.h"
+
 @interface NoteListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView * tableView;
@@ -24,19 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [LCColor backgroudColor];
-    
-    kWeakSelf;
-//    NSString * url = @"https://api.seniverse.com/v3/weather/now.json?key=YA5WCX1HTU&location=beijing&language=zh-Hans&unit=c";
-    NSString * url = @"https://api.caiyunapp.com/v2/TAkhjf8d1nlSlspN/121.6544,25.1552/realtime.json";
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-
-        NSMutableDictionary * resultDic =  responseObject[@"result"];
-        [WeatherManager sharedInstance].weatherIconIndex = resultDic[@"skycon"];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-
-    }];
     
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
