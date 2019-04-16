@@ -108,7 +108,7 @@
         }else if (indexPath.row == 1) {
             LCWebViewViewController * webViewVC =[LCWebViewViewController new];
             webViewVC.titleStr = @"服务条款";
-            webViewVC.urlStr = @"http://img.gozap.com/group19/M01/80/08/wKgCN1wcrJ6WDKlrAAHm_9rYe-c967.pdf";
+            webViewVC.urlStr = @"http://img.gozap.com/group19/M00/0F/E5/wKgCN1y1mYvZp1H6AAIFAVCycb8814.pdf";
             [self.navigationController pushViewController:webViewVC animated:YES];
         }else if (indexPath.row == 2){
             NSString * title = @"记点 - 让生活更精彩";
