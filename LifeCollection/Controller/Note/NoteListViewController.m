@@ -79,7 +79,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 175;
+    return 160;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -90,9 +90,9 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    AddViewController * addVC = [AddViewController new];
-//    addVC.eventModel = self.noteModelLists[indexPath.row];
-//    [self.navigationController pushViewController:addVC animated:YES];
+    AddNoteViewController * addNoteVC = [AddNoteViewController new];
+    addNoteVC.noteModel = self.noteModelLists[indexPath.row];
+    [self.navigationController pushViewController:addNoteVC animated:YES];
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {

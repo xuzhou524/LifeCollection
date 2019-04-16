@@ -27,10 +27,13 @@
     self.contentView.backgroundColor = [LCColor backgroudColor];
     
     _bgView = [UIImageView new];
-    _bgView.layer.cornerRadius = 8;
-    _bgView.layer.masksToBounds = YES;
     _bgView.userInteractionEnabled = YES;
     _bgView.backgroundColor = [LCColor whiteColor];
+    _bgView.layer.shadowColor= [LCColor LCColor_110_110_110].CGColor;//阴影颜色
+    _bgView.layer.shadowOffset= CGSizeMake(0,0);//偏移距离
+    _bgView.layer.shadowOpacity= 0.1;//不透明度
+    _bgView.layer.shadowRadius= 3.0;//半径
+    _bgView.layer.cornerRadius = 5;
     [self.contentView addSubview:_bgView];
     [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView).offset(8);
@@ -41,12 +44,12 @@
     
     _dayLabel = [UILabel new];
     _dayLabel.text = [DateFormatter stringFromStringDay:[NSDate new]];
-    _dayLabel.font = LCFont2(40);
-    _dayLabel.textColor = [LCColor blackColor];
+    _dayLabel.font = LCFont2(38);
+    _dayLabel.textColor = [LCColor LCColor_77_92_127];
     [self.contentView addSubview:_dayLabel];
     [_dayLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.bgView).offset(20);
-        make.top.equalTo(self.bgView).offset(15);
+        make.top.equalTo(self.bgView).offset(10);
     }];
     
     _weekLabel = [UILabel new];
@@ -76,25 +79,25 @@
     [_weatherImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.dayLabel);
         make.right.equalTo(self.bgView).offset(-20);
-        make.width.height.equalTo(@38);
+        make.width.height.equalTo(@36);
     }];
     
     _coverImageView = [UIImageView new];
     _coverImageView.layer.cornerRadius = 5;
     _coverImageView.layer.masksToBounds = YES;
     _coverImageView.userInteractionEnabled = YES;
-    _coverImageView.contentMode = UIViewContentModeScaleToFill;
+    _coverImageView.contentMode = UIViewContentModeScaleAspectFill;
     _coverImageView.image = [UIImage imageNamed:@"ico_fabu_tianjia"];
     [self.contentView addSubview:_coverImageView];
     [_coverImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.dayLabel.mas_bottom).offset(15);
+        make.top.equalTo(self.dayLabel.mas_bottom).offset(10);
         make.left.equalTo(self.dayLabel);
         make.width.height.equalTo(@68);
     }];
     
     _contentLabel = [UILabel new];
     _contentLabel.text = @"拾掇生活中的点滴，记录时光的故事";
-    _contentLabel.font = LCFont2(13);
+    _contentLabel.font = LCFont2(14);
     _contentLabel.numberOfLines = 4;
     _contentLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     _contentLabel.textColor = [LCColor LCColor_110_110_110];
@@ -132,14 +135,14 @@
         UIImage * image = [UIImage imageWithData:imageData];
         self.coverImageView.image = image;
         [_coverImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.dayLabel.mas_bottom).offset(15);
+            make.top.equalTo(self.dayLabel.mas_bottom).offset(5);
             make.left.equalTo(self.dayLabel);
             make.width.height.equalTo(@68);
         }];
     }else{
         self.coverImageView.image = nil;
         [_coverImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.dayLabel.mas_bottom).offset(15);
+            make.top.equalTo(self.dayLabel.mas_bottom).offset(5);
             make.left.equalTo(self.dayLabel).offset(-20);
             make.height.equalTo(@68);
             make.width.equalTo(@0);
@@ -166,12 +169,14 @@
     _contentTextView = [UITextView new];
     _contentTextView.text = @"写下你的描述";
     _contentTextView.font = LCFont2(15);
+    _contentTextView.layer.cornerRadius = 5;
+    _contentTextView.layer.masksToBounds = YES;
     _contentTextView.textColor = [LCColor LCColor_110_110_110];
     _contentTextView.backgroundColor = [LCColor whiteColor];
     [self.contentView addSubview:_contentTextView];
     [_contentTextView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(20);
-        make.right.equalTo(self.contentView).offset(-20);
+        make.left.equalTo(self.contentView).offset(16);
+        make.right.equalTo(self.contentView).offset(-16);
         make.top.equalTo(self.contentView).offset(20);
         make.height.equalTo(@120);
     }];
@@ -185,7 +190,7 @@
     [self.contentView addSubview:_coverImageView];
     [_coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentTextView.mas_bottom).offset(20);
-        make.left.equalTo(self.contentView).offset(20);
+        make.left.equalTo(self.contentView).offset(16);
         make.width.height.equalTo(@68);
     }];
     

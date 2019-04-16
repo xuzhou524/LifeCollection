@@ -27,7 +27,7 @@
     [super viewDidLoad];
     
     UILabel * liftLabel = [UILabel new];
-    liftLabel.text = @"记点";
+    liftLabel.text = @"咘咕";
     liftLabel.font = LCFont(23);
     liftLabel.textColor = [LCColor LCColor_77_92_127];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];

@@ -70,7 +70,7 @@
 }
 
 -(void)rightBtnClick{
-    if (_addNoteViewCell.contentTextView.text.length <= 0) {
+    if (_addNoteViewCell.contentTextView.text.length <= 0 || [_addNoteViewCell.contentTextView.text isEqualToString:@"写下你的描述"]) {
         return;
     }
     self.noteModel.content = _addNoteViewCell.contentTextView.text;
@@ -120,6 +120,9 @@
         _addNoteViewCell = getCell(AddNoteTableViewCell);
         _addNoteViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
         _addNoteViewCell.contentTextView.delegate = self;
+        if (self.noteModel && self.noteModel.content) {
+            _addNoteViewCell.contentTextView.text = self.noteModel.content;
+        }
         [_addNoteViewCell.coverImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(converTapClick)]];
         return _addNoteViewCell;
     }
