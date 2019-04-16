@@ -84,9 +84,9 @@
     _coverImageView.layer.masksToBounds = YES;
     _coverImageView.userInteractionEnabled = YES;
     _coverImageView.contentMode = UIViewContentModeScaleToFill;
-    _coverImageView.backgroundColor = [LCColor orangeColor];
+    _coverImageView.image = [UIImage imageNamed:@"ico_fabu_tianjia"];
     [self.contentView addSubview:_coverImageView];
-    [_coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_coverImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.dayLabel.mas_bottom).offset(15);
         make.left.equalTo(self.dayLabel);
         make.width.height.equalTo(@68);
@@ -127,12 +127,23 @@
     }else{
         self.contentLabel.text = @"拾掇生活中的点滴，记录时光的故事";
     }
-    if (model.coverImageData) {
+    if (model.coverImageData && model.coverImageData.length > 0) {
         NSData *imageData = [[NSData alloc] initWithBase64EncodedString:model.coverImageData options:0];
         UIImage * image = [UIImage imageWithData:imageData];
         self.coverImageView.image = image;
+        [_coverImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.dayLabel.mas_bottom).offset(15);
+            make.left.equalTo(self.dayLabel);
+            make.width.height.equalTo(@68);
+        }];
     }else{
         self.coverImageView.image = nil;
+        [_coverImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.dayLabel.mas_bottom).offset(15);
+            make.left.equalTo(self.dayLabel).offset(-20);
+            make.height.equalTo(@68);
+            make.width.equalTo(@0);
+        }];
     }
 }
 
@@ -170,24 +181,23 @@
     _coverImageView.layer.masksToBounds = YES;
     _coverImageView.userInteractionEnabled = YES;
     _coverImageView.contentMode = UIViewContentModeScaleAspectFill;
-    _coverImageView.backgroundColor = [LCColor orangeColor];
+    _coverImageView.image = [UIImage imageNamed:@"ico_fabu_tianjia"];
     [self.contentView addSubview:_coverImageView];
     [_coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentTextView.mas_bottom).offset(20);
         make.left.equalTo(self.contentView).offset(20);
-        make.right.equalTo(self.contentView).offset(-20);
-        make.height.equalTo(@120);
+        make.width.height.equalTo(@68);
     }];
     
-    UILabel * label = [UILabel new];
-    label.text = @"封面图";
-    label.font = LCFont2(16);
-    label.textColor = [LCColor whiteColor];
-    [self.contentView addSubview:label];
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.coverImageView).offset(20);
-        make.centerY.equalTo(self.coverImageView);
-    }];
+//    UILabel * label = [UILabel new];
+//    label.text = @"封面图";
+//    label.font = LCFont2(16);
+//    label.textColor = [LCColor whiteColor];
+//    [self.contentView addSubview:label];
+//    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self.coverImageView).offset(20);
+//        make.centerY.equalTo(self.coverImageView);
+//    }];
     
 }
 

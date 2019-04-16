@@ -114,6 +114,7 @@
     }else if (indexPath.row == 1){
         _noteListCell = getCell(NoteListTableViewCell);
         _noteListCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [_noteListCell bind:self.noteModel];
         return _noteListCell;
     }else if (indexPath.row == 2){
         _addNoteViewCell = getCell(AddNoteTableViewCell);
@@ -148,10 +149,11 @@
 -(void)compressionUploadingImage:(UIImage *)image{
     NSLog(@"%@",image);
     _addNoteViewCell.coverImageView.image = image;
-    _noteListCell.coverImageView.image = image;
+//    _noteListCell.coverImageView.image = image;
     
     NSData * imageData = UIImagePNGRepresentation(image);
     self.noteModel.coverImageData = [imageData base64EncodedStringWithOptions:0];
+    [_noteListCell bind:self.noteModel];
 }
 
 -(void)textViewDidBeginEditing:(UITextView *)textView{

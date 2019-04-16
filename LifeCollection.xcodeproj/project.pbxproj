@@ -69,6 +69,8 @@
 		53519AF722642A5700A8C776 /* 101.png in Resources */ = {isa = PBXBuildFile; fileRef = 53519ADF22642A5600A8C776 /* 101.png */; };
 		53519AFA22643FFE00A8C776 /* WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53519AF922643FFE00A8C776 /* WeatherManager.m */; };
 		53519AFC2264783D00A8C776 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53519AFB2264783D00A8C776 /* CoreLocation.framework */; };
+		53519AFF22657C7B00A8C776 /* ico_fabu_tianjia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53519AFD22657C7A00A8C776 /* ico_fabu_tianjia@2x.png */; };
+		53519B0022657C7B00A8C776 /* ico_fabu_tianjia@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53519AFE22657C7A00A8C776 /* ico_fabu_tianjia@3x.png */; };
 		5356ECF121C7463A00862FE1 /* LCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECED21C7463A00862FE1 /* LCTabBarController.m */; };
 		5356ECF221C7463A00862FE1 /* LCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF021C7463A00862FE1 /* LCTabBar.m */; };
 		5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ECF421C7466C00862FE1 /* LCNavigationViewController.m */; };
@@ -242,6 +244,8 @@
 		53519AF822643FFE00A8C776 /* WeatherManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherManager.h; sourceTree = "<group>"; };
 		53519AF922643FFE00A8C776 /* WeatherManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherManager.m; sourceTree = "<group>"; };
 		53519AFB2264783D00A8C776 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		53519AFD22657C7A00A8C776 /* ico_fabu_tianjia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_fabu_tianjia@2x.png"; sourceTree = "<group>"; };
+		53519AFE22657C7A00A8C776 /* ico_fabu_tianjia@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_fabu_tianjia@3x.png"; sourceTree = "<group>"; };
 		5356ECED21C7463A00862FE1 /* LCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTabBarController.m; sourceTree = "<group>"; };
 		5356ECEE21C7463A00862FE1 /* LCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBar.h; sourceTree = "<group>"; };
 		5356ECEF21C7463A00862FE1 /* LCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTabBarController.h; sourceTree = "<group>"; };
@@ -525,6 +529,8 @@
 				531AD0B021CCB27F00A4B2BC /* tixing.png */,
 				531AD0B221CCB36200A4B2BC /* shijian.png */,
 				531AD0B621CCB93900A4B2BC /* edit_title.png */,
+				53519AFD22657C7A00A8C776 /* ico_fabu_tianjia@2x.png */,
+				53519AFE22657C7A00A8C776 /* ico_fabu_tianjia@3x.png */,
 				53B7FC39223617150052D63C /* tab_bar_tool_sel@2x.png */,
 				53B7FC3A223617150052D63C /* tab_bar_tool_sel@3x.png */,
 				53B7FC38223617150052D63C /* tab_bar_tool@2x.png */,
@@ -806,6 +812,7 @@
 			files = (
 				53519AE822642A5700A8C776 /* 118.png in Resources */,
 				53519AF322642A5700A8C776 /* 111.png in Resources */,
+				53519B0022657C7B00A8C776 /* ico_fabu_tianjia@3x.png in Resources */,
 				53B7FC872237A5250052D63C /* guhua@3x.png in Resources */,
 				53AC8E4021D38C3500DD0079 /* 48.png in Resources */,
 				53519AE422642A5700A8C776 /* 109.png in Resources */,
@@ -829,6 +836,7 @@
 				53519AE322642A5700A8C776 /* 105.png in Resources */,
 				53519AE022642A5700A8C776 /* 102.png in Resources */,
 				5356ED2021C7536200862FE1 /* tab_bar_user@2x.png in Resources */,
+				53519AFF22657C7B00A8C776 /* ico_fabu_tianjia@2x.png in Resources */,
 				53519AF422642A5700A8C776 /* 120.png in Resources */,
 				5356ED0421C7471200862FE1 /* guanbi@3x.png in Resources */,
 				5356ED2121C7536200862FE1 /* tab_bar_user@3x.png in Resources */,
