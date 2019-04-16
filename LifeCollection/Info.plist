@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>咘咕</string>
+	<string>记点</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -55,13 +55,13 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>是否允许咘咕使用相机？</string>
+	<string>是否允许记点使用相机？</string>
 	<key>NSLocationUsageDescription</key>
 	<string>是否允许访问位置？</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>是否允许访问位置？</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>是否允许咘咕使用相册？</string>
+	<string>是否允许记点使用相册？</string>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>

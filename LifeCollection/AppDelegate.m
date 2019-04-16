@@ -53,7 +53,7 @@
     } else if ([typeName isEqualToString:kLifeCollectionFound]) {
         [LCClient sharedInstance].lcCenterTabBar.selectedIndex = 1;
     } else if ([typeName isEqualToString:kLifeCollectionShare]) {
-        NSString * title = @"咘咕 - 让生活更精彩";
+        NSString * title = @"记点 - 让生活更精彩";
         NSString * url = @"https://www.gezhipu.com";
         NSString * image = @"http://img.gozap.com/group19/M01/B4/0F/wKgCOFwvGqnXXzibAACN7VDmKvQ248.png";
         NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:image]];

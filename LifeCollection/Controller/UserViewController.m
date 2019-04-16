@@ -27,7 +27,7 @@
     [super viewDidLoad];
     
     UILabel * liftLabel = [UILabel new];
-    liftLabel.text = @"咘咕";
+    liftLabel.text = @"记点";
     liftLabel.font = LCFont(23);
     liftLabel.textColor = [LCColor LCColor_77_92_127];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
@@ -94,7 +94,7 @@
         }
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @[@"日常工具",@"服务条款",@"分享咘咕",@"关于开发者"][indexPath.row];
+        cell.titleLabel.text = @[@"日常工具",@"服务条款",@"分享记点",@"关于开发者"][indexPath.row];
         cell.summeryLabel.text = @"";
         return cell;
     }
@@ -111,7 +111,7 @@
             webViewVC.urlStr = @"http://img.gozap.com/group19/M01/80/08/wKgCN1wcrJ6WDKlrAAHm_9rYe-c967.pdf";
             [self.navigationController pushViewController:webViewVC animated:YES];
         }else if (indexPath.row == 2){
-            NSString * title = @"咘咕 - 让生活更精彩";
+            NSString * title = @"记点 - 让生活更精彩";
             NSString * url = @"https://itunes.apple.com/us/app//id1447845919?l=zh&ls=1&mt=8";
             NSString * image = @"http://img.gozap.com/group19/M01/B4/0F/wKgCOFwvGqnXXzibAACN7VDmKvQ248.png";
             NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:image]];
