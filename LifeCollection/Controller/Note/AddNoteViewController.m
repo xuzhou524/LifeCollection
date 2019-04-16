@@ -30,6 +30,10 @@
     [super viewDidLoad];
     self.navigationItem.title = @"添加";
     self.view.backgroundColor = [LCColor backgroudColor];
+    if (_noteModel) {
+        self.navigationItem.title = @"编辑";
+    }
+    self.view.backgroundColor = [LCColor backgroudColor];
     
     UIButton * rightBtn = [UIButton new];
     [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
