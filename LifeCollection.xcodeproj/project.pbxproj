@@ -44,6 +44,11 @@
 		53349019225C81AA00DBBA9F /* NoteModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 53349018225C81AA00DBBA9F /* NoteModelTool.m */; };
 		5342BF8D226D9E0D002BC1FE /* SetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5342BF8C226D9E0D002BC1FE /* SetingViewController.m */; };
 		5342BF95226EBED9002BC1FE /* shezhi.png in Resources */ = {isa = PBXBuildFile; fileRef = 5342BF94226EBED9002BC1FE /* shezhi.png */; };
+		5342BFB3226ED14D002BC1FE /* JinnLockSudoko.m in Sources */ = {isa = PBXBuildFile; fileRef = 5342BFA9226ED14C002BC1FE /* JinnLockSudoko.m */; };
+		5342BFB4226ED14D002BC1FE /* JinnLockTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5342BFAA226ED14C002BC1FE /* JinnLockTool.m */; };
+		5342BFB5226ED14D002BC1FE /* JinnLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5342BFAC226ED14D002BC1FE /* JinnLockViewController.m */; };
+		5342BFB6226ED14D002BC1FE /* JinnLockIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5342BFAF226ED14D002BC1FE /* JinnLockIndicator.m */; };
+		5342BFB7226ED14D002BC1FE /* JinnLockCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5342BFB2226ED14D002BC1FE /* JinnLockCircle.m */; };
 		53519AC522642A1B00A8C776 /* weather.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53519AC422642A1A00A8C776 /* weather.plist */; };
 		53519AE022642A5700A8C776 /* 102.png in Resources */ = {isa = PBXBuildFile; fileRef = 53519AC822642A5300A8C776 /* 102.png */; };
 		53519AE122642A5700A8C776 /* 115.png in Resources */ = {isa = PBXBuildFile; fileRef = 53519AC922642A5400A8C776 /* 115.png */; };
@@ -235,6 +240,17 @@
 		5342BF8B226D9E0D002BC1FE /* SetingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetingViewController.h; sourceTree = "<group>"; };
 		5342BF8C226D9E0D002BC1FE /* SetingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetingViewController.m; sourceTree = "<group>"; };
 		5342BF94226EBED9002BC1FE /* shezhi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shezhi.png; sourceTree = "<group>"; };
+		5342BFA8226ED14C002BC1FE /* JinnLockIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JinnLockIndicator.h; sourceTree = "<group>"; };
+		5342BFA9226ED14C002BC1FE /* JinnLockSudoko.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JinnLockSudoko.m; sourceTree = "<group>"; };
+		5342BFAA226ED14C002BC1FE /* JinnLockTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JinnLockTool.m; sourceTree = "<group>"; };
+		5342BFAB226ED14D002BC1FE /* JinnLockCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JinnLockCircle.h; sourceTree = "<group>"; };
+		5342BFAC226ED14D002BC1FE /* JinnLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JinnLockViewController.m; sourceTree = "<group>"; };
+		5342BFAD226ED14D002BC1FE /* JinnLockConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JinnLockConfig.h; sourceTree = "<group>"; };
+		5342BFAE226ED14D002BC1FE /* JinnLockSudoko.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JinnLockSudoko.h; sourceTree = "<group>"; };
+		5342BFAF226ED14D002BC1FE /* JinnLockIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JinnLockIndicator.m; sourceTree = "<group>"; };
+		5342BFB0226ED14D002BC1FE /* JinnLockTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JinnLockTool.h; sourceTree = "<group>"; };
+		5342BFB1226ED14D002BC1FE /* JinnLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JinnLockViewController.h; sourceTree = "<group>"; };
+		5342BFB2226ED14D002BC1FE /* JinnLockCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JinnLockCircle.m; sourceTree = "<group>"; };
 		53519AC422642A1A00A8C776 /* weather.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = weather.plist; sourceTree = "<group>"; };
 		53519AC822642A5300A8C776 /* 102.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 102.png; sourceTree = "<group>"; };
 		53519AC922642A5400A8C776 /* 115.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 115.png; sourceTree = "<group>"; };
@@ -442,9 +458,10 @@
 		531AD07621C9EA8C00A4B2BC /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				5342BFA7226ED14C002BC1FE /* JinnLock */,
+				531AD09521CB37FE00A4B2BC /* DoActionSheet */,
 				53B7FC4E223799790052D63C /* UIControl+Block_Handle.h */,
 				53B7FC4C223799370052D63C /* UIControl+Block_Handle.m */,
-				531AD09521CB37FE00A4B2BC /* DoActionSheet */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -476,6 +493,24 @@
 				5303626E225D899F002B5A7F /* AddNoteViewController.m */,
 			);
 			path = Note;
+			sourceTree = "<group>";
+		};
+		5342BFA7226ED14C002BC1FE /* JinnLock */ = {
+			isa = PBXGroup;
+			children = (
+				5342BFA8226ED14C002BC1FE /* JinnLockIndicator.h */,
+				5342BFA9226ED14C002BC1FE /* JinnLockSudoko.m */,
+				5342BFAA226ED14C002BC1FE /* JinnLockTool.m */,
+				5342BFAB226ED14D002BC1FE /* JinnLockCircle.h */,
+				5342BFAC226ED14D002BC1FE /* JinnLockViewController.m */,
+				5342BFAD226ED14D002BC1FE /* JinnLockConfig.h */,
+				5342BFAE226ED14D002BC1FE /* JinnLockSudoko.h */,
+				5342BFAF226ED14D002BC1FE /* JinnLockIndicator.m */,
+				5342BFB0226ED14D002BC1FE /* JinnLockTool.h */,
+				5342BFB1226ED14D002BC1FE /* JinnLockViewController.h */,
+				5342BFB2226ED14D002BC1FE /* JinnLockCircle.m */,
+			);
+			path = JinnLock;
 			sourceTree = "<group>";
 		};
 		53519AC322642A0900A8C776 /* Plist */ = {
@@ -1030,6 +1065,7 @@
 				539B3A6C21C7B57800431B7A /* SelectColorTableViewCell.m in Sources */,
 				5325DF8521D0BEA000743052 /* FoundTableViewCell.m in Sources */,
 				53AC8E0921D0D02700DD0079 /* FoundListModel.m in Sources */,
+				5342BFB5226ED14D002BC1FE /* JinnLockViewController.m in Sources */,
 				5356ED0921C7474100862FE1 /* UserViewController.m in Sources */,
 				5357B40D21C38B73009D9333 /* HomeViewController.m in Sources */,
 				53349019225C81AA00DBBA9F /* NoteModelTool.m in Sources */,
@@ -1040,6 +1076,8 @@
 				5357B42921C3911B009D9333 /* LCColor.m in Sources */,
 				5356ED3121C7845D00862FE1 /* AddViewController.m in Sources */,
 				5356ECF121C7463A00862FE1 /* LCTabBarController.m in Sources */,
+				5342BFB7226ED14D002BC1FE /* JinnLockCircle.m in Sources */,
+				5342BFB3226ED14D002BC1FE /* JinnLockSudoko.m in Sources */,
 				53B7FC932237A64C0052D63C /* LCRulesLineModel.m in Sources */,
 				5357B41B21C38B74009D9333 /* main.m in Sources */,
 				5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */,
@@ -1053,6 +1091,7 @@
 				53B7FC8D2237A5D60052D63C /* LCRulesLineView.m in Sources */,
 				53AC8E1121D2271C00DD0079 /* AppreciatesViewController.m in Sources */,
 				53AC8E2E21D33E5800DD0079 /* LCSettings.m in Sources */,
+				5342BFB4226ED14D002BC1FE /* JinnLockTool.m in Sources */,
 				531AD0A521CB7DAC00A4B2BC /* DateFormatter.m in Sources */,
 				53AC8E0C21D1DC9D00DD0079 /* LCRefresh.m in Sources */,
 				536D0BD721DF4A0400FB0653 /* LCClient.m in Sources */,
@@ -1063,6 +1102,7 @@
 				531AD0CC21CCE9A200A4B2BC /* AboutDeveloperViewController.m in Sources */,
 				531AD09E21CB414C00A4B2BC /* DoActionSheet.m in Sources */,
 				53AC8E2521D32A3100DD0079 /* StartFigureManager.m in Sources */,
+				5342BFB6226ED14D002BC1FE /* JinnLockIndicator.m in Sources */,
 				531AD08821CA28C700A4B2BC /* EventModelTool.m in Sources */,
 				531AD0C921CCE12300A4B2BC /* LCWebViewViewController.m in Sources */,
 				53349011225B269900DBBA9F /* NoteListViewController.m in Sources */,
