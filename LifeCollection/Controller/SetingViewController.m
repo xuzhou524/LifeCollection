@@ -9,7 +9,9 @@
 #import "SetingViewController.h"
 #import "TitleTableViewCell.h"
 
-@interface SetingViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "JinnLockViewController.h"
+
+@interface SetingViewController ()<UITableViewDelegate,UITableViewDataSource,JinnLockViewControllerDelegate>
 
 @property(nonatomic,strong)UITableView * tableView;
 
@@ -41,7 +43,11 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 2;
+    if (![JinnLockTool isGestureUnlockEnabled]){
+        return 1;
+    }else{
+        return 2;
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -53,11 +59,45 @@
     TitleSwitchTableViewCell * cell = getCell(TitleSwitchTableViewCell);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.titleLabel.text = @[@"手势密码",@"指纹密码"][indexPath.row];
+    if (indexPath.row == 0) {
+        [cell.sevenSwitch setOn:[JinnLockTool isGestureUnlockEnabled]];
+        [cell.sevenSwitch addTarget:self action:@selector(gestureUnLockSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+    }else{
+        [cell.sevenSwitch setOn:[JinnLockTool isTouchIdUnlockEnabled]];
+        [cell.sevenSwitch addTarget:self action:@selector(touchIdUnLockSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+    }
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
  
+}
+
+#pragma mark - Private
+
+- (void)gestureUnLockSwitchChanged:(UISwitch *)sender{
+    if (sender.on){
+        JinnLockViewController *lockViewController = [[JinnLockViewController alloc] initWithDelegate:self type:JinnLockTypeCreate appearMode:JinnLockAppearModePush];
+        [self.navigationController pushViewController:lockViewController animated:YES];
+    }else{
+        JinnLockViewController *lockViewController = [[JinnLockViewController alloc] initWithDelegate:self type:JinnLockTypeRemove appearMode:JinnLockAppearModePush];
+        [self.navigationController pushViewController:lockViewController animated:YES];
+    }
+    [self.tableView reloadData];
+}
+
+- (void)touchIdUnLockSwitchChanged:(UISwitch *)sender{
+    [JinnLockTool setTouchIdUnlockEnabled:sender.on];
+}
+
+#pragma mark - JinnLockViewControllerDelegate
+
+- (void)passcodeDidCreate:(NSString *)passcode{
+    [self.tableView reloadData];
+}
+
+- (void)passcodeDidRemove{
+    [self.tableView reloadData];
 }
 
 @end
