@@ -166,3 +166,43 @@
     
 }
 @end
+
+@implementation TitleSwitchTableViewCell
+
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self sebViews];
+    }
+    return self;
+}
+
+-(void)sebViews{
+    self.contentView.backgroundColor = [LCColor whiteColor];
+    
+    _titleLabel = [UILabel new];
+    _titleLabel.font = LCFont(15);
+    _titleLabel.textColor = [LCColor LCColor_77_92_127];
+    [self.contentView addSubview:_titleLabel];
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView).offset(16);
+        make.centerY.equalTo(self.contentView);
+    }];
+    
+    _sevenSwitch = [UISwitch new];
+    // 设置控件开启状态填充色
+    _sevenSwitch.onTintColor = [LCColor LCColor_113_120_150];
+    // 设置控件关闭状态填充色
+    _sevenSwitch.tintColor = [LCColor LCColor_113_120_150];
+    // 设置控件开关按钮颜色
+    _sevenSwitch.thumbTintColor = [LCColor LCColor_77_92_127];
+    [self.contentView addSubview:_sevenSwitch];
+    [_sevenSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.contentView).offset(-16);
+        make.centerY.equalTo(self.contentView);
+        make.width.equalTo(@50);
+        make.height.equalTo(@30);
+    }];
+    
+}
+@end

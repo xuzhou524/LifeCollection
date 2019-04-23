@@ -23,22 +23,22 @@
     
     _iconImageView = [UIImageView new];
     _iconImageView.image = [UIImage imageNamed:@"logo"];
-    _iconImageView.layer.cornerRadius = 20;
+    _iconImageView.layer.cornerRadius = 10;
     _iconImageView.layer.masksToBounds = YES;
     [self.contentView addSubview:_iconImageView];
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(30);
+        make.top.equalTo(self.contentView).offset(20);
         make.centerX.equalTo(self.contentView);
-        make.width.height.equalTo(@100);
+        make.width.height.equalTo(@80);
     }];
     
     _titleLabel = [UILabel new];
     _titleLabel.text = @"让生活更精彩";
-    _titleLabel.font = LCFont(15);
+    _titleLabel.font = LCFont(14);
     _titleLabel.textColor = [LCColor LCColor_77_92_127];
     [self.contentView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.iconImageView.mas_bottom).offset(20);
+        make.top.equalTo(self.iconImageView.mas_bottom).offset(15);
         make.centerX.equalTo(self.contentView);
     }];
     
@@ -86,18 +86,18 @@
     [self.contentView addSubview:_zanImageView];
     [_zanImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(oneView);
-        make.top.equalTo(oneView).offset(12);
+        make.top.equalTo(oneView).offset(10);
         make.width.height.equalTo(@40);
     }];
     
     _zanLabel = [UILabel new];
     _zanLabel.text = @"给个赞";
-    _zanLabel.font = LCFont(15);
+    _zanLabel.font = LCFont(14);
     _zanLabel.textColor = [LCColor LCColor_77_92_127];
     [self.contentView addSubview:_zanLabel];
     [_zanLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(oneView);
-        make.top.equalTo(self.zanImageView.mas_bottom).offset(8);
+        make.top.equalTo(self.zanImageView.mas_bottom).offset(5);
     }];
     
     UIView * twoView = [UIView new];

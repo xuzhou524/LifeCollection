@@ -25,3 +25,8 @@
 @property(nonatomic,strong)UILabel * summeryLabel;
 @end
 
+@interface TitleSwitchTableViewCell : UITableViewCell
+@property(nonatomic,strong)UILabel * titleLabel;
+@property(nonatomic,strong)UISwitch * sevenSwitch;
+@end
+

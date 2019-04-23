@@ -12,7 +12,7 @@
 #import "LCWebViewViewController.h"
 #import "AboutDeveloperViewController.h"
 #import <StoreKit/StoreKit.h>
-
+#import "SetingViewController.h"
 #import "ToolViewController.h"
 
 @interface UserViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -26,11 +26,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UILabel * liftLabel = [UILabel new];
-    liftLabel.text = @"记点";
-    liftLabel.font = LCFont(23);
-    liftLabel.textColor = [LCColor LCColor_77_92_127];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
+    UIButton * rightBtn = [UIButton new];
+    [rightBtn setImage:[UIImage imageNamed:@"shezhi"] forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
     
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
@@ -49,6 +48,11 @@
     
 }
 
+-(void)rightBtnClick{
+    SetingViewController * aboutDeveloperVC =[SetingViewController new];
+    [self.navigationController pushViewController:aboutDeveloperVC animated:YES];
+}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
 }
@@ -63,9 +67,9 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            return 190;
+            return 150;
         }else{
-            return 105;
+            return 95;
         }
     }
     return 70;
