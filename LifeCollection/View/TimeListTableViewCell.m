@@ -152,8 +152,6 @@
     NSString * imageStr = LCEventBackgroundImage([model.colorType integerValue]);
     self.bgView.image = [UIImage imageNamed:imageStr];
     
-//    self.bgView.backgroundColor = LCEventBackgroundColor([model.colorType integerValue]);
-    
     NSString * targetDateStr = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:model.time]];
     if ([model.classType isEqualToString:@"倒计日"]) {
         _timeStrLabel.text = @"目标日:";
