@@ -60,7 +60,7 @@
             return 0;
         }
     }
-    return 70;
+    return 65;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

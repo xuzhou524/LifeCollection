@@ -11,7 +11,7 @@
 #import "WeatherManager.h"
 #import "AddViewController.h"
 #import "FoundViewController.h"
-
+#import "JinnLockViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
 @interface AppDelegate ()<CLLocationManagerDelegate>{
@@ -26,7 +26,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [LCColor backgroudColor];
-    
+
     [self getLocation];
     
     LCTabBarController * rootTabBarVC = [LCTabBarController new];
@@ -39,7 +39,23 @@
     [Fabric with:@[[Crashlytics class]]];
 #endif
     
+    [self verify];
+    
     return YES;
+}
+
+- (void)verify{
+    if ([JinnLockTool isGestureUnlockEnabled]){
+        JinnLockViewController *lockViewController = [[JinnLockViewController alloc] initWithDelegate:nil
+                                                                                                 type:JinnLockTypeVerify
+                                                                                           appearMode:JinnLockAppearModePresent];
+        
+        if (![[LCClient sharedInstance].lcCenterNav.visibleViewController isKindOfClass:[JinnLockViewController class]]){
+            [[LCClient sharedInstance].lcCenterNav.visibleViewController presentViewController:lockViewController
+                                                                          animated:NO
+                                                                        completion:nil];
+        }
+    }
 }
 
 -(void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler{

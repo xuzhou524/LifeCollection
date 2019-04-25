@@ -95,4 +95,16 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
++ (BOOL)isFaceID{
+    if (@available(iOS 11.0, *)) {
+        if ([[LAContext alloc] init].biometryType == LABiometryTypeTouchID) {
+            return NO;
+        }else{
+            return YES;
+        }
+    }else{
+        return NO;
+    }
+}
+
 @end

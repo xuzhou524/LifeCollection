@@ -17,10 +17,10 @@
 #define JinnLockConfig_h
 
 // 背景颜色
-#define JINN_LOCK_COLOR_BACKGROUND [UIColor whiteColor]
+#define JINN_LOCK_COLOR_BACKGROUND [LCColor backgroudColor]
 
 // 正常主题颜色
-#define JINN_LOCK_COLOR_NORMAL [UIColor blackColor]
+#define JINN_LOCK_COLOR_NORMAL [LCColor LCColor_77_92_127]
 
 // 错误提示颜色
 #define JINN_LOCK_COLOR_ERROR [UIColor redColor]
@@ -31,7 +31,7 @@
 /**
  *  指示器大小
  */
-static const CGFloat kIndicatorSideLength = 30.f;
+static const CGFloat kIndicatorSideLength = 36.f;
 
 /**
  *  九宫格大小
@@ -92,6 +92,7 @@ static NSString * const kJinnLockPasscode = @"JinnLockPasscode";
  *  提示文本
  */
 static NSString * const kJinnLockTouchIdText  = @"指纹验证";
+static NSString * const kJinnLockFaceIDText  = @"面容验证";
 static NSString * const kJinnLockResetText    = @"重新设置";
 static NSString * const kJinnLockNewText      = @"请设置新密码";
 static NSString * const kJinnLockVerifyText   = @"请输入密码";

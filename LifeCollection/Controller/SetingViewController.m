@@ -19,6 +19,13 @@
 
 @implementation SetingViewController
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if (_tableView) {
+        [self.tableView reloadData];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"设置";
@@ -52,13 +59,18 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    return 70;
+    return 65;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TitleSwitchTableViewCell * cell = getCell(TitleSwitchTableViewCell);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.titleLabel.text = @[@"手势密码",@"指纹密码"][indexPath.row];
+
+    if ([JinnLockTool isFaceID]) {
+        cell.titleLabel.text = @[@"手势密码",@"面容密码"][indexPath.row];
+    }else{
+        cell.titleLabel.text = @[@"手势密码",@"指纹密码"][indexPath.row];
+    }
     if (indexPath.row == 0) {
         [cell.sevenSwitch setOn:[JinnLockTool isGestureUnlockEnabled]];
         [cell.sevenSwitch addTarget:self action:@selector(gestureUnLockSwitchChanged:) forControlEvents:UIControlEventValueChanged];
@@ -83,7 +95,6 @@
         JinnLockViewController *lockViewController = [[JinnLockViewController alloc] initWithDelegate:self type:JinnLockTypeRemove appearMode:JinnLockAppearModePush];
         [self.navigationController pushViewController:lockViewController animated:YES];
     }
-    [self.tableView reloadData];
 }
 
 - (void)touchIdUnLockSwitchChanged:(UISwitch *)sender{

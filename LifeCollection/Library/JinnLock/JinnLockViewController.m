@@ -131,7 +131,8 @@ typedef NS_ENUM(NSInteger, JinnLockStep)
     [self.view addSubview:sudoko];
     [self setSudoko:sudoko];
     [sudoko mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view).offset(-10);
+         make.centerX.equalTo(self.view);
         make.size.mas_equalTo(CGSizeMake(kSudokoSideLength, kSudokoSideLength));
     }];
     
@@ -140,18 +141,18 @@ typedef NS_ENUM(NSInteger, JinnLockStep)
     [self setIndicator:indicator];
     [indicator mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.bottom.equalTo(sudoko.mas_top).offset(-20);
+        make.bottom.equalTo(sudoko.mas_top).offset(-30);
         make.size.mas_equalTo(CGSizeMake(kIndicatorSideLength, kIndicatorSideLength));
     }];
     
     UILabel *noticeLabel = [[UILabel alloc] init];
-    [noticeLabel setFont:[UIFont systemFontOfSize:14]];
+    [noticeLabel setFont:[UIFont systemFontOfSize:15]];
     [noticeLabel setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:noticeLabel];
     [self setNoticeLabel:noticeLabel];
     [noticeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
-        make.bottom.equalTo(indicator.mas_top).offset(-30);
+        make.bottom.equalTo(indicator.mas_top).offset(-40);
         make.height.mas_equalTo(20);
     }];
     
@@ -169,7 +170,11 @@ typedef NS_ENUM(NSInteger, JinnLockStep)
     }];
     
     UIButton *touchIdButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [touchIdButton setTitle:kJinnLockTouchIdText forState:UIControlStateNormal];
+    if ([JinnLockTool isFaceID]) {
+        [touchIdButton setTitle:kJinnLockFaceIDText forState:UIControlStateNormal];
+    }else{
+        [touchIdButton setTitle:kJinnLockTouchIdText forState:UIControlStateNormal];
+    }
     [touchIdButton setTitleColor:JINN_LOCK_COLOR_BUTTON forState:UIControlStateNormal];
     [touchIdButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
     [touchIdButton addTarget:self action:@selector(touchIdButtonClicked) forControlEvents:UIControlEventTouchUpInside];

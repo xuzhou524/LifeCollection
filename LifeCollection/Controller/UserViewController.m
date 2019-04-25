@@ -15,7 +15,9 @@
 #import "SetingViewController.h"
 #import "ToolViewController.h"
 
-@interface UserViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface UserViewController ()<UITableViewDelegate,UITableViewDataSource>{
+    UIButton *_rightBtn;
+}
 
 @property(nonatomic,strong)UITableView * tableView;
 
@@ -23,19 +25,24 @@
 
 @implementation UserViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    _rightBtn.hidden = NO;
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+     self.navigationController.navigationBar.hidden = NO;
+    _rightBtn.hidden = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UILabel * liftLabel = [UILabel new];
-    liftLabel.text = @"记点";
-    liftLabel.font = LCFont(23);
-    liftLabel.textColor = [LCColor LCColor_77_92_127];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
-    
-    UIButton * rightBtn = [UIButton new];
-    [rightBtn setImage:[UIImage imageNamed:@"shezhi"] forState:UIControlStateNormal];
-    [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
     
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
@@ -51,6 +58,27 @@
     regClass(self.tableView, TitleTableViewCell);
     regClass(self.tableView, UserHeadViewTableViewCell);
     regClass(self.tableView, TitleNoRightImageTableViewCell);
+    
+    UILabel * liftLabel = [UILabel new];
+    liftLabel.text = @"记点";
+    liftLabel.font = LCFont(23);
+    liftLabel.textColor = [LCColor LCColor_77_92_127];
+    [self .view addSubview:liftLabel];
+    [liftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(20);
+        make.top.equalTo(self.view).offset(54);
+    }];
+    
+    _rightBtn = [UIButton new];
+    [_rightBtn setImage:[UIImage imageNamed:@"Settings~iphone"] forState:UIControlStateNormal];
+    [_rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self .view addSubview:_rightBtn];
+    [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(liftLabel);
+        make.right.equalTo(self.view).offset(-20);
+        make.width.equalTo(@25);
+        make.height.equalTo(@27);
+    }];
     
 }
 
@@ -73,12 +101,12 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            return 150;
+            return 200;
         }else{
             return 95;
         }
     }
-    return 70;
+    return 65;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

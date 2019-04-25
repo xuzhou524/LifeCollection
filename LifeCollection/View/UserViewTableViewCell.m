@@ -27,9 +27,9 @@
     _iconImageView.layer.masksToBounds = YES;
     [self.contentView addSubview:_iconImageView];
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(20);
+        make.bottom.equalTo(self.contentView).offset(-50);
         make.centerX.equalTo(self.contentView);
-        make.width.height.equalTo(@80);
+        make.width.height.equalTo(@88);
     }];
     
     _titleLabel = [UILabel new];
@@ -41,17 +41,6 @@
         make.top.equalTo(self.iconImageView.mas_bottom).offset(15);
         make.centerX.equalTo(self.contentView);
     }];
-    
-//    UIImageView * summeryImageView = [UIImageView new];
-//    summeryImageView.image = [UIImage imageNamed:@"summery"];
-//    [self.contentView addSubview:summeryImageView];
-//    [summeryImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerX.equalTo(self.contentView);
-//        make.top.equalTo(self.iconImageView.mas_bottom).offset(10);
-//        make.width.equalTo(@154);
-//        make.height.equalTo(@34);
-//    }];
-
 }
 
 @end

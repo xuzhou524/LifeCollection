@@ -102,10 +102,8 @@
         return 35;
     }else if (indexPath.row == 1){
         return 160;
-    }else if (indexPath.row == 2 || indexPath.row == 3 ||indexPath.row == 4 ||indexPath.row == 5){
+    }else if (indexPath.row == 2){
         return 300;
-    }else if (indexPath.row == 6){
-        return 70;
     }
     return 0;
 }

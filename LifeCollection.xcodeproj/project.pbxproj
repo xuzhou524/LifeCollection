@@ -43,12 +43,13 @@
 		53349016225C819800DBBA9F /* NoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53349015225C819800DBBA9F /* NoteModel.m */; };
 		53349019225C81AA00DBBA9F /* NoteModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 53349018225C81AA00DBBA9F /* NoteModelTool.m */; };
 		5342BF8D226D9E0D002BC1FE /* SetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5342BF8C226D9E0D002BC1FE /* SetingViewController.m */; };
-		5342BF95226EBED9002BC1FE /* shezhi.png in Resources */ = {isa = PBXBuildFile; fileRef = 5342BF94226EBED9002BC1FE /* shezhi.png */; };
 		5342BFB3226ED14D002BC1FE /* JinnLockSudoko.m in Sources */ = {isa = PBXBuildFile; fileRef = 5342BFA9226ED14C002BC1FE /* JinnLockSudoko.m */; };
 		5342BFB4226ED14D002BC1FE /* JinnLockTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5342BFAA226ED14C002BC1FE /* JinnLockTool.m */; };
 		5342BFB5226ED14D002BC1FE /* JinnLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5342BFAC226ED14D002BC1FE /* JinnLockViewController.m */; };
 		5342BFB6226ED14D002BC1FE /* JinnLockIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5342BFAF226ED14D002BC1FE /* JinnLockIndicator.m */; };
 		5342BFB7226ED14D002BC1FE /* JinnLockCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5342BFB2226ED14D002BC1FE /* JinnLockCircle.m */; };
+		5342BFBA227168B7002BC1FE /* Settings~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5342BFB8227168B6002BC1FE /* Settings~iphone@2x.png */; };
+		5342BFBB227168B7002BC1FE /* Settings~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5342BFB9227168B6002BC1FE /* Settings~iphone.png */; };
 		53519AC522642A1B00A8C776 /* weather.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53519AC422642A1A00A8C776 /* weather.plist */; };
 		53519AE022642A5700A8C776 /* 102.png in Resources */ = {isa = PBXBuildFile; fileRef = 53519AC822642A5300A8C776 /* 102.png */; };
 		53519AE122642A5700A8C776 /* 115.png in Resources */ = {isa = PBXBuildFile; fileRef = 53519AC922642A5400A8C776 /* 115.png */; };
@@ -239,7 +240,6 @@
 		53349018225C81AA00DBBA9F /* NoteModelTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteModelTool.m; sourceTree = "<group>"; };
 		5342BF8B226D9E0D002BC1FE /* SetingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetingViewController.h; sourceTree = "<group>"; };
 		5342BF8C226D9E0D002BC1FE /* SetingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetingViewController.m; sourceTree = "<group>"; };
-		5342BF94226EBED9002BC1FE /* shezhi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shezhi.png; sourceTree = "<group>"; };
 		5342BFA8226ED14C002BC1FE /* JinnLockIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JinnLockIndicator.h; sourceTree = "<group>"; };
 		5342BFA9226ED14C002BC1FE /* JinnLockSudoko.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JinnLockSudoko.m; sourceTree = "<group>"; };
 		5342BFAA226ED14C002BC1FE /* JinnLockTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JinnLockTool.m; sourceTree = "<group>"; };
@@ -251,6 +251,8 @@
 		5342BFB0226ED14D002BC1FE /* JinnLockTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JinnLockTool.h; sourceTree = "<group>"; };
 		5342BFB1226ED14D002BC1FE /* JinnLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JinnLockViewController.h; sourceTree = "<group>"; };
 		5342BFB2226ED14D002BC1FE /* JinnLockCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JinnLockCircle.m; sourceTree = "<group>"; };
+		5342BFB8227168B6002BC1FE /* Settings~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings~iphone@2x.png"; sourceTree = "<group>"; };
+		5342BFB9227168B6002BC1FE /* Settings~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings~iphone.png"; sourceTree = "<group>"; };
 		53519AC422642A1A00A8C776 /* weather.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = weather.plist; sourceTree = "<group>"; };
 		53519AC822642A5300A8C776 /* 102.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 102.png; sourceTree = "<group>"; };
 		53519AC922642A5400A8C776 /* 115.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 115.png; sourceTree = "<group>"; };
@@ -499,16 +501,16 @@
 			isa = PBXGroup;
 			children = (
 				5342BFA8226ED14C002BC1FE /* JinnLockIndicator.h */,
+				5342BFAF226ED14D002BC1FE /* JinnLockIndicator.m */,
+				5342BFAE226ED14D002BC1FE /* JinnLockSudoko.h */,
 				5342BFA9226ED14C002BC1FE /* JinnLockSudoko.m */,
+				5342BFB0226ED14D002BC1FE /* JinnLockTool.h */,
 				5342BFAA226ED14C002BC1FE /* JinnLockTool.m */,
 				5342BFAB226ED14D002BC1FE /* JinnLockCircle.h */,
+				5342BFB2226ED14D002BC1FE /* JinnLockCircle.m */,
+				5342BFB1226ED14D002BC1FE /* JinnLockViewController.h */,
 				5342BFAC226ED14D002BC1FE /* JinnLockViewController.m */,
 				5342BFAD226ED14D002BC1FE /* JinnLockConfig.h */,
-				5342BFAE226ED14D002BC1FE /* JinnLockSudoko.h */,
-				5342BFAF226ED14D002BC1FE /* JinnLockIndicator.m */,
-				5342BFB0226ED14D002BC1FE /* JinnLockTool.h */,
-				5342BFB1226ED14D002BC1FE /* JinnLockViewController.h */,
-				5342BFB2226ED14D002BC1FE /* JinnLockCircle.m */,
 			);
 			path = JinnLock;
 			sourceTree = "<group>";
@@ -575,6 +577,8 @@
 				53AC8E3F21D38C3400DD0079 /* 48.png */,
 				53AC8E3221D385EB00DD0079 /* 55.png */,
 				53AC8E1E21D2310600DD0079 /* WechatIMG1.jpeg */,
+				5342BFB9227168B6002BC1FE /* Settings~iphone.png */,
+				5342BFB8227168B6002BC1FE /* Settings~iphone@2x.png */,
 				531AD0C521CCD57F00A4B2BC /* summery.png */,
 				531AD0C021CCCBAA00A4B2BC /* about_criticism.png */,
 				531AD0BF21CCCBAA00A4B2BC /* about_praise.png */,
@@ -764,7 +768,6 @@
 			isa = PBXGroup;
 			children = (
 				532F8E2F223A3217001A0E11 /* chizi.png */,
-				5342BF94226EBED9002BC1FE /* shezhi.png */,
 				532F8E2D223A31F7001A0E11 /* jiaozheng.png */,
 				532F8E2B223A31EE001A0E11 /* zaoyin.png */,
 				532F8E29223A31E2001A0E11 /* shuipingyi.png */,
@@ -877,7 +880,6 @@
 				53519AE422642A5700A8C776 /* 109.png in Resources */,
 				531AD0B121CCB27F00A4B2BC /* tixing.png in Resources */,
 				5357B41821C38B74009D9333 /* LaunchScreen.storyboard in Resources */,
-				5342BF95226EBED9002BC1FE /* shezhi.png in Resources */,
 				53519AE922642A5700A8C776 /* 119.png in Resources */,
 				53B7FC862237A5250052D63C /* guhua@2x.png in Resources */,
 				53519AF122642A5700A8C776 /* 103.png in Resources */,
@@ -907,6 +909,7 @@
 				539B3A8721C8A48C00431B7A /* circleright@3x.png in Resources */,
 				53AC8E3821D385ED00DD0079 /* 02.png in Resources */,
 				53519AED22642A5700A8C776 /* 110.png in Resources */,
+				5342BFBA227168B7002BC1FE /* Settings~iphone@2x.png in Resources */,
 				53B7FC3C223617160052D63C /* tab_bar_tool@2x.png in Resources */,
 				531AD0AA21CCAF7D00A4B2BC /* leixing.png in Resources */,
 				5357B41521C38B74009D9333 /* Assets.xcassets in Resources */,
@@ -925,6 +928,7 @@
 				53AC8E4E21D39AE300DD0079 /* startup.png in Resources */,
 				531AD0C121CCCBAB00A4B2BC /* about_praise.png in Resources */,
 				53B7FC802237A22A0052D63C /* cezao-bg@3x.png in Resources */,
+				5342BFBB227168B7002BC1FE /* Settings~iphone.png in Resources */,
 				53519AE522642A5700A8C776 /* 104.png in Resources */,
 				53B7FC3F223617160052D63C /* tab_bar_tool@3x.png in Resources */,
 				53B7FC6F2237A0AC0052D63C /* spy-bg@3x.png in Resources */,

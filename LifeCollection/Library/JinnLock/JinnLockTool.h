@@ -69,4 +69,9 @@
  */
 + (void)setTouchIdUnlockEnabled:(BOOL)enabled;
 
+/**
+ 是FaceID  还是 TouchID
+ */
++ (BOOL)isFaceID;
+
 @end

@@ -56,6 +56,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>是否允许记点使用相机？</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>是否允许记点使用面容解锁?</string>
 	<key>NSLocationUsageDescription</key>
 	<string>是否允许记点访问位置来获取本地天气信息？</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
