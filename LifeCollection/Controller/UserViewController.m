@@ -176,7 +176,7 @@
     if([SKStoreReviewController respondsToSelector:@selector(requestReview)]){
         [SKStoreReviewController requestReview];
     }else{
-        NSString  * nsStringToOpen = [NSString  stringWithFormat: @"itms-apps://itunes.apple.com/app/id%@?action=write-review",@"1447845919"];
+        NSString  * nsStringToOpen = [NSString  stringWithFormat: @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@",@"1447845919"];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:nsStringToOpen]];
     }
 #endif
