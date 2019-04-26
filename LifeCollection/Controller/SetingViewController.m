@@ -41,6 +41,7 @@
     _tableView.dataSource = self;
     
     regClass(self.tableView, TitleSwitchTableViewCell);
+    regClass(self.tableView, UITableViewCell);
     
 }
 
@@ -51,9 +52,9 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
     if (![JinnLockTool isGestureUnlockEnabled]){
-        return 1;
-    }else{
         return 2;
+    }else{
+        return 3;
     }
 }
 
@@ -63,22 +64,43 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    TitleSwitchTableViewCell * cell = getCell(TitleSwitchTableViewCell);
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
-    if ([JinnLockTool isFaceID]) {
-        cell.titleLabel.text = @[@"手势密码",@"面容密码"][indexPath.row];
+    if (indexPath.row == 2) {
+        UITableViewCell * cell =getCell(UITableViewCell);
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.backgroundColor = [LCColor backgroudColor];
+        
+        UILabel * label = [UILabel new];
+        label.textColor = [LCColor LCColor_222_36_61];
+        label.font = LCFont2(11);
+        label.numberOfLines = 0;
+        label.text = @"* 一定要谨记自己设置的手势密码，忘记无法找回，导致app打不开。谨记、谨记、谨记 重要的事情说三遍；";
+        [cell.contentView addSubview:label];
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(cell.contentView).offset(20);
+            make.right.equalTo(cell.contentView).offset(-20);
+            make.centerY.equalTo(cell.contentView);
+        }];
+        
+        return cell;
     }else{
-        cell.titleLabel.text = @[@"手势密码",@"指纹密码"][indexPath.row];
+        TitleSwitchTableViewCell * cell = getCell(TitleSwitchTableViewCell);
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        if ([JinnLockTool isFaceID]) {
+            cell.titleLabel.text = @[@"手势密码",@"面容密码"][indexPath.row];
+        }else{
+            cell.titleLabel.text = @[@"手势密码",@"指纹密码"][indexPath.row];
+        }
+        if (indexPath.row == 0) {
+            [cell.sevenSwitch setOn:[JinnLockTool isGestureUnlockEnabled]];
+            [cell.sevenSwitch addTarget:self action:@selector(gestureUnLockSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+        }else{
+            [cell.sevenSwitch setOn:[JinnLockTool isTouchIdUnlockEnabled]];
+            [cell.sevenSwitch addTarget:self action:@selector(touchIdUnLockSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+        }
+         return cell;
     }
-    if (indexPath.row == 0) {
-        [cell.sevenSwitch setOn:[JinnLockTool isGestureUnlockEnabled]];
-        [cell.sevenSwitch addTarget:self action:@selector(gestureUnLockSwitchChanged:) forControlEvents:UIControlEventValueChanged];
-    }else{
-        [cell.sevenSwitch setOn:[JinnLockTool isTouchIdUnlockEnabled]];
-        [cell.sevenSwitch addTarget:self action:@selector(touchIdUnLockSwitchChanged:) forControlEvents:UIControlEventValueChanged];
-    }
-    return cell;
+    return [UITableViewCell new];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
