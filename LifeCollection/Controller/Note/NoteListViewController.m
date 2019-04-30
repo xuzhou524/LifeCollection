@@ -12,6 +12,9 @@
 #import "NoteModel.h"
 #import "AddNoteViewController.h"
 
+#import "AccountAndPasswordTableViewCell.h"
+#import "AccountAndPswListViewController.h"
+
 @interface NoteListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView * tableView;
@@ -36,6 +39,7 @@
     _tableView.dataSource = self;
     
     regClass(self.tableView, NoteListTableViewCell);
+    regClass(self.tableView, AccountAndPasswordTableViewCell);
     
     UILabel * liftLabel = [UILabel new];
     liftLabel.text = @"小记";
@@ -71,18 +75,30 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return 2;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.noteModelLists.count;
+    if (section == 0) {
+        return 1;
+    }else{
+       return self.noteModelLists.count;
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return 100;
+    }
     return 160;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        AccountAndPasswordTableViewCell * cell = getCell(AccountAndPasswordTableViewCell);
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    }
     NoteListTableViewCell * cell = getCell(NoteListTableViewCell);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell bind:self.noteModelLists[indexPath.row]];
@@ -90,9 +106,15 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    AddNoteViewController * addNoteVC = [AddNoteViewController new];
-    addNoteVC.noteModel = self.noteModelLists[indexPath.row];
-    [self.navigationController pushViewController:addNoteVC animated:YES];
+    if (indexPath.section == 1) {
+        AddNoteViewController * addNoteVC = [AddNoteViewController new];
+        addNoteVC.noteModel = self.noteModelLists[indexPath.row];
+        [self.navigationController pushViewController:addNoteVC animated:YES];
+    }else{
+        
+        AccountAndPswListViewController * accountAndPswListVC = [AccountAndPswListViewController new];
+        [self.navigationController pushViewController:accountAndPswListVC animated:YES];
+    }
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -100,7 +122,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (editingStyle == UITableViewCellEditingStyleDelete){
+    if (indexPath.section == 1 && editingStyle == UITableViewCellEditingStyleDelete){
         NoteModel * tempModel = self.noteModelLists[indexPath.row];
         [tempModel deleteNote:tempModel.ids];
         [self.noteModelLists removeObjectAtIndex:indexPath.row];
@@ -109,11 +131,17 @@
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return @"删除";
+    if (indexPath.section == 1){
+        return @"删除";
+    }
+    return @"";
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
-    return YES;
+    if (indexPath.section == 1){
+        return YES;
+    }
+    return NO;
 }
 
 @end
