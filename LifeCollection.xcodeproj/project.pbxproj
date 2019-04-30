@@ -106,6 +106,7 @@
 		536D0BD721DF4A0400FB0653 /* LCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 536D0BD621DF4A0400FB0653 /* LCClient.m */; };
 		5395484A2277F87F0074BAEB /* AccountAndPasswordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 539548492277F87F0074BAEB /* AccountAndPasswordTableViewCell.m */; };
 		539548542277FB700074BAEB /* AccountAndPswListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 539548532277FB700074BAEB /* AccountAndPswListViewController.m */; };
+		539548562277FEDB0074BAEB /* AccountAndPassword_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 539548552277FEDB0074BAEB /* AccountAndPassword_bg.png */; };
 		539B3A5F21C7A77700431B7A /* PreviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B3A5E21C7A77700431B7A /* PreviewTableViewCell.m */; };
 		539B3A6221C7AB1500431B7A /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B3A6121C7AB1500431B7A /* TextFieldTableViewCell.m */; };
 		539B3A6521C7B01300431B7A /* TitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B3A6421C7B01300431B7A /* TitleTableViewCell.m */; };
@@ -329,6 +330,7 @@
 		539548492277F87F0074BAEB /* AccountAndPasswordTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountAndPasswordTableViewCell.m; sourceTree = "<group>"; };
 		539548522277FB700074BAEB /* AccountAndPswListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountAndPswListViewController.h; sourceTree = "<group>"; };
 		539548532277FB700074BAEB /* AccountAndPswListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountAndPswListViewController.m; sourceTree = "<group>"; };
+		539548552277FEDB0074BAEB /* AccountAndPassword_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountAndPassword_bg.png; sourceTree = "<group>"; };
 		539B3A5D21C7A77700431B7A /* PreviewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewTableViewCell.h; sourceTree = "<group>"; };
 		539B3A5E21C7A77700431B7A /* PreviewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewTableViewCell.m; sourceTree = "<group>"; };
 		539B3A6021C7AB1500431B7A /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
@@ -582,6 +584,7 @@
 				53AC8E4121D38C6700DD0079 /* 38.png */,
 				53AC8E3F21D38C3400DD0079 /* 48.png */,
 				53AC8E3221D385EB00DD0079 /* 55.png */,
+				539548552277FEDB0074BAEB /* AccountAndPassword_bg.png */,
 				53AC8E1E21D2310600DD0079 /* WechatIMG1.jpeg */,
 				5342BFB9227168B6002BC1FE /* Settings~iphone.png */,
 				5342BFB8227168B6002BC1FE /* Settings~iphone@2x.png */,
@@ -929,6 +932,7 @@
 				53519AED22642A5700A8C776 /* 110.png in Resources */,
 				5342BFBA227168B7002BC1FE /* Settings~iphone@2x.png in Resources */,
 				53B7FC3C223617160052D63C /* tab_bar_tool@2x.png in Resources */,
+				539548562277FEDB0074BAEB /* AccountAndPassword_bg.png in Resources */,
 				531AD0AA21CCAF7D00A4B2BC /* leixing.png in Resources */,
 				5357B41521C38B74009D9333 /* Assets.xcassets in Resources */,
 				53B7FC6122379CCB0052D63C /* tool_fanhui_left@2x.png in Resources */,

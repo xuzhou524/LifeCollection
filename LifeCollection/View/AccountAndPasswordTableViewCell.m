@@ -25,7 +25,7 @@
     _bgView.layer.cornerRadius = 8;
     _bgView.layer.masksToBounds = YES;
     _bgView.userInteractionEnabled = YES;
-    _bgView.backgroundColor = [LCColor orangeColor];
+    _bgView.image = [UIImage imageNamed:@"AccountAndPassword_bg"];
     _bgView.contentMode = UIViewContentModeScaleToFill;
     [self.contentView addSubview:_bgView];
     [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -37,7 +37,7 @@
     
     _titleLabel = [UILabel new];
     _titleLabel.text = @"账号密码本";
-    _titleLabel.font = LCFont(17);
+    _titleLabel.font = LCFont(16);
     _titleLabel.alpha = 0.8;
     _titleLabel.textColor = [LCColor whiteColor];
     [self.contentView addSubview:_titleLabel];
