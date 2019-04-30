@@ -64,7 +64,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 2) {
+    if ((![JinnLockTool isGestureUnlockEnabled] && indexPath.row == 1) || ([JinnLockTool isGestureUnlockEnabled] && indexPath.row == 2)) {
         UITableViewCell * cell =getCell(UITableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = [LCColor backgroudColor];
