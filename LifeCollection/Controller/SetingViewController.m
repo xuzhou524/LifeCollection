@@ -70,7 +70,7 @@
         cell.backgroundColor = [LCColor backgroudColor];
         
         UILabel * label = [UILabel new];
-        label.textColor = [LCColor LCColor_222_36_61];
+        label.textColor = [LCColor LCColor_243_90_93];
         label.font = LCFont2(11);
         label.numberOfLines = 0;
         label.text = @"* 一定要谨记自己设置的手势密码，忘记无法找回，导致app打不开。谨记、谨记、谨记 重要的事情说三遍；";
