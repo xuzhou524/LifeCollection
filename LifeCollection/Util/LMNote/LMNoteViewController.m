@@ -78,7 +78,12 @@
     
     [self loadSubviews];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveDraft)];
+    UIButton * rightBtn = [UIButton new];
+    [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
+    rightBtn.titleLabel.font = LCFont(16);
+    [rightBtn setTitleColor:[LCColor LCColor_77_92_127] forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(saveDraft) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
 }
 
 - (void)layoutTextView
