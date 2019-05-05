@@ -60,11 +60,9 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)storeChanged:(NSNotification *)notification
-{
+- (void)storeChanged:(NSNotification *)notification{
     [[LMNStore shared] reload];
     self.folder = [LMNStore shared].rootFolder;
-//    regClass(self.tableView, NoteListTableViewCell);
     [self.tableView reloadData];
 }
 
@@ -81,32 +79,38 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     LMNItem *item = self.folder.contents[indexPath.row];
-    UITableViewCell *cell;
-    if ([item isKindOfClass:[LMNFolder class]]) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.textLabel.text = item.name;
-    }
-    else if ([item isKindOfClass:[LMNDraft class]]) {
-        NoteListTableViewCell * cell = [[NoteListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    NoteListTableViewCell * cell = [self.tableView dequeueReusableCellWithIdentifier:@"NoteListTableViewCell"];
+    if (!cell) {
+        cell = [[NoteListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"NoteListTableViewCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell bindLMNote:item];
-        return cell;
     }
+    [cell bindLMNote:item];
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     LMNItem *item = self.folder.contents[indexPath.row];
-    if ([item isKindOfClass:[LMNFolder class]]) {
-//        FolderViewController *vc = [[FolderViewController alloc] initWithFolder:(LMNFolder *)item];
-//        [self.navigationController pushViewController:vc animated:YES];
+    LMNoteViewController *vc = [[LMNoteViewController alloc] initWithDraft:(LMNDraft *)item];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        LMNItem *item  = self.folder.contents[indexPath.row];
+        [self.folder remove:item];
     }
-    else if ([item isKindOfClass:[LMNDraft class]]) {
-        LMNoteViewController *vc = [[LMNoteViewController alloc] initWithDraft:(LMNDraft *)item];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
 }
 
 @end

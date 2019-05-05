@@ -78,7 +78,7 @@
     
     [self loadSubviews];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"HTML" style:UIBarButtonItemStylePlain target:self action:@selector(export)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveDraft)];
 }
 
 - (void)layoutTextView
@@ -131,7 +131,7 @@
 {
     [super viewWillDisappear:animated];
     [self removeObservers];
-    [self saveDraft];
+//    [self saveDraft];
 }
 
 - (void)addObservers
@@ -170,17 +170,19 @@
     else {
         [self.draft delete];
     }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)export
-{
-    [self.textView exportHTML:^(BOOL succeed, NSString *html) {
-        NSLog(@"html:\n%@", html);
-        LMNWebViewController *vc = [[LMNWebViewController alloc] init];
-        vc.html = html;
-        [self.navigationController pushViewController:vc animated:YES];
-    }];
-}
+//- (void)export
+//{
+//    [self.textView exportHTML:^(BOOL succeed, NSString *html) {
+//        NSLog(@"html:\n%@", html);
+//        LMNWebViewController *vc = [[LMNWebViewController alloc] init];
+//        vc.html = html;
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }];
+//}
 
 #pragma mark - input
 
