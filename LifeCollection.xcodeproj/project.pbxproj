@@ -86,8 +86,6 @@
 		53954898227838A40074BAEB /* LMNToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 53954869227838A40074BAEB /* LMNToolBar.m */; };
 		53954899227838A40074BAEB /* LMNWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5395486A227838A40074BAEB /* LMNWebViewController.m */; };
 		5395489A227838A40074BAEB /* LMNImageInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5395486B227838A40074BAEB /* LMNImageInputViewController.m */; };
-		5395489B227838A40074BAEB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5395486D227838A40074BAEB /* .gitignore */; };
-		5395489C227838A40074BAEB /* Feature in Resources */ = {isa = PBXBuildFile; fileRef = 5395486E227838A40074BAEB /* Feature */; };
 		5395489D227838A40074BAEB /* LMNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53954870227838A40074BAEB /* LMNoteViewController.m */; };
 		5395489E227838A40074BAEB /* LMNLineChain+Numbering.m in Sources */ = {isa = PBXBuildFile; fileRef = 53954872227838A40074BAEB /* LMNLineChain+Numbering.m */; };
 		5395489F227838A40074BAEB /* LMNSpecialLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5395487A227838A40074BAEB /* LMNSpecialLine.m */; };
@@ -360,8 +358,6 @@
 		5395486A227838A40074BAEB /* LMNWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNWebViewController.m; sourceTree = "<group>"; };
 		5395486B227838A40074BAEB /* LMNImageInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNImageInputViewController.m; sourceTree = "<group>"; };
 		5395486C227838A40074BAEB /* LMNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNoteViewController.h; sourceTree = "<group>"; };
-		5395486D227838A40074BAEB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		5395486E227838A40074BAEB /* Feature */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Feature; sourceTree = "<group>"; };
 		5395486F227838A40074BAEB /* LMNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNote.h; sourceTree = "<group>"; };
 		53954870227838A40074BAEB /* LMNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNoteViewController.m; sourceTree = "<group>"; };
 		53954872227838A40074BAEB /* LMNLineChain+Numbering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LMNLineChain+Numbering.m"; sourceTree = "<group>"; };
@@ -830,10 +826,8 @@
 				53954858227838A40074BAEB /* TextView */,
 				53954861227838A40074BAEB /* OtherViews */,
 				5395486C227838A40074BAEB /* LMNoteViewController.h */,
-				5395486D227838A40074BAEB /* .gitignore */,
-				5395486E227838A40074BAEB /* Feature */,
-				5395486F227838A40074BAEB /* LMNote.h */,
 				53954870227838A40074BAEB /* LMNoteViewController.m */,
+				5395486F227838A40074BAEB /* LMNote.h */,
 				53954871227838A40074BAEB /* Lines */,
 				53954885227838A40074BAEB /* Store */,
 			);
@@ -843,14 +837,14 @@
 		53954858227838A40074BAEB /* TextView */ = {
 			isa = PBXGroup;
 			children = (
-				53954859227838A40074BAEB /* LMNTextView.m */,
+				5395485E227838A40074BAEB /* UIFont+LMNote.h */,
 				5395485A227838A40074BAEB /* UIFont+LMNote.m */,
+				5395485D227838A40074BAEB /* LMNTextView.h */,
+				53954859227838A40074BAEB /* LMNTextView.m */,
+				53954860227838A40074BAEB /* LMNTextStorage.h */,
 				5395485B227838A40074BAEB /* LMNTextStorage.m */,
 				5395485C227838A40074BAEB /* LMNTextStorage+Export.h */,
-				5395485D227838A40074BAEB /* LMNTextView.h */,
-				5395485E227838A40074BAEB /* UIFont+LMNote.h */,
 				5395485F227838A40074BAEB /* LMNTextStorage+Export.m */,
-				53954860227838A40074BAEB /* LMNTextStorage.h */,
 			);
 			path = TextView;
 			sourceTree = "<group>";
@@ -858,15 +852,15 @@
 		53954861227838A40074BAEB /* OtherViews */ = {
 			isa = PBXGroup;
 			children = (
-				53954862227838A40074BAEB /* LMNPhotoCollectionCell.m */,
-				53954863227838A40074BAEB /* LMNImageView.m */,
-				53954864227838A40074BAEB /* LMNWebViewController.h */,
-				53954865227838A40074BAEB /* LMNToolBar.h */,
-				53954866227838A40074BAEB /* LMNImageInputViewController.h */,
 				53954867227838A40074BAEB /* LMNImageView.h */,
-				53954868227838A40074BAEB /* LMNPhotoCollectionCell.h */,
+				53954863227838A40074BAEB /* LMNImageView.m */,
+				53954865227838A40074BAEB /* LMNToolBar.h */,
 				53954869227838A40074BAEB /* LMNToolBar.m */,
+				53954868227838A40074BAEB /* LMNPhotoCollectionCell.h */,
+				53954862227838A40074BAEB /* LMNPhotoCollectionCell.m */,
+				53954864227838A40074BAEB /* LMNWebViewController.h */,
 				5395486A227838A40074BAEB /* LMNWebViewController.m */,
+				53954866227838A40074BAEB /* LMNImageInputViewController.h */,
 				5395486B227838A40074BAEB /* LMNImageInputViewController.m */,
 			);
 			path = OtherViews;
@@ -875,25 +869,25 @@
 		53954871227838A40074BAEB /* Lines */ = {
 			isa = PBXGroup;
 			children = (
+				5395487F227838A40074BAEB /* LMNLineChain+Numbering.h */,
 				53954872227838A40074BAEB /* LMNLineChain+Numbering.m */,
 				53954873227838A40074BAEB /* LMNImageLine.h */,
-				53954874227838A40074BAEB /* LMNNumberingLine.h */,
-				53954875227838A40074BAEB /* LMNBulletsLine.h */,
-				53954876227838A40074BAEB /* LMNLineModes.h */,
-				53954877227838A40074BAEB /* LMNTextLine.h */,
-				53954878227838A40074BAEB /* LMNLine.h */,
-				53954879227838A40074BAEB /* LMNCheckboxLine.h */,
-				5395487A227838A40074BAEB /* LMNSpecialLine.m */,
-				5395487B227838A40074BAEB /* LMNLineChain.m */,
-				5395487C227838A40074BAEB /* LMNBulletsLine.m */,
-				5395487D227838A40074BAEB /* LMNNumberingLine.m */,
 				5395487E227838A40074BAEB /* LMNImageLine.m */,
-				5395487F227838A40074BAEB /* LMNLineChain+Numbering.h */,
-				53954880227838A40074BAEB /* LMNLine.m */,
+				53954874227838A40074BAEB /* LMNNumberingLine.h */,
+				5395487D227838A40074BAEB /* LMNNumberingLine.m */,
+				53954875227838A40074BAEB /* LMNBulletsLine.h */,
+				5395487C227838A40074BAEB /* LMNBulletsLine.m */,
+				53954876227838A40074BAEB /* LMNLineModes.h */,
+				5395487B227838A40074BAEB /* LMNLineChain.m */,
+				53954877227838A40074BAEB /* LMNTextLine.h */,
 				53954881227838A40074BAEB /* LMNTextLine.m */,
-				53954882227838A40074BAEB /* LMNLineChain.h */,
+				53954878227838A40074BAEB /* LMNLine.h */,
+				53954880227838A40074BAEB /* LMNLine.m */,
+				53954879227838A40074BAEB /* LMNCheckboxLine.h */,
 				53954883227838A40074BAEB /* LMNCheckboxLine.m */,
 				53954884227838A40074BAEB /* LMNSpecialLine.h */,
+				5395487A227838A40074BAEB /* LMNSpecialLine.m */,
+				53954882227838A40074BAEB /* LMNLineChain.h */,
 			);
 			path = Lines;
 			sourceTree = "<group>";
@@ -901,18 +895,18 @@
 		53954885227838A40074BAEB /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				5395488D227838A40074BAEB /* LMNItem.h */,
 				53954886227838A40074BAEB /* LMNItem.m */,
+				5395488C227838A40074BAEB /* LMNFolder.h */,
 				53954887227838A40074BAEB /* LMNFolder.m */,
+				5395488F227838A40074BAEB /* LMNDraft.h */,
 				53954888227838A40074BAEB /* LMNDraft.m */,
+				5395488E227838A40074BAEB /* NSTextAttachment+LMNStore.m */,
 				53954889227838A40074BAEB /* NSTextAttachment+LMNStore.h */,
 				5395488A227838A40074BAEB /* LMNStore.h */,
-				5395488B227838A40074BAEB /* UIImage+LMNStore.h */,
-				5395488C227838A40074BAEB /* LMNFolder.h */,
-				5395488D227838A40074BAEB /* LMNItem.h */,
-				5395488E227838A40074BAEB /* NSTextAttachment+LMNStore.m */,
-				5395488F227838A40074BAEB /* LMNDraft.h */,
-				53954890227838A40074BAEB /* UIImage+LMNStore.m */,
 				53954891227838A40074BAEB /* LMNStore.m */,
+				5395488B227838A40074BAEB /* UIImage+LMNStore.h */,
+				53954890227838A40074BAEB /* UIImage+LMNStore.m */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -1125,7 +1119,6 @@
 				5356ED2221C7536200862FE1 /* tab_bar_user_sel@3x.png in Resources */,
 				5356ED2021C7536200862FE1 /* tab_bar_user@2x.png in Resources */,
 				53519AFF22657C7B00A8C776 /* ico_fabu_tianjia@2x.png in Resources */,
-				5395489C227838A40074BAEB /* Feature in Resources */,
 				5395490C22783CE80074BAEB /* lmn_tool_title@2x.png in Resources */,
 				539548F622783CE80074BAEB /* lmn_alignment_left@3x.png in Resources */,
 				539548F122783CE80074BAEB /* lmn_btn_plus@3x.png in Resources */,
@@ -1140,7 +1133,6 @@
 				539548F722783CE80074BAEB /* lmn_list_checkbox@3x.png in Resources */,
 				5342BFBA227168B7002BC1FE /* Settings~iphone@2x.png in Resources */,
 				53B7FC3C223617160052D63C /* tab_bar_tool@2x.png in Resources */,
-				5395489B227838A40074BAEB /* .gitignore in Resources */,
 				539548FD22783CE80074BAEB /* lmn_tool_title@3x.png in Resources */,
 				539548562277FEDB0074BAEB /* AccountAndPassword_bg.png in Resources */,
 				539548F922783CE80074BAEB /* lmn_tool_t@2x.png in Resources */,
