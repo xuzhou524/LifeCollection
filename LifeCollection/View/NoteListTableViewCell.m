@@ -109,6 +109,22 @@
     }];
 }
 
+-(void)bindLMNote:(LMNItem *)model{
+    NSDate * date = model.date;
+    self.dayLabel.text = [DateFormatter stringFromStringDay:date];
+    self.weekLabel.text = [DateFormatter weekdayStringWithDate:date];
+    self.timeLabel.text = [DateFormatter stringFromStringYeayWeek:date];
+    
+    self.contentLabel.text = model.name;
+
+    [_coverImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.dayLabel.mas_bottom).offset(5);
+        make.left.equalTo(self.dayLabel).offset(-20);
+        make.height.equalTo(@68);
+        make.width.equalTo(@0);
+    }];
+}
+
 -(void)bind:(NoteModel *)model{
     
     NSDate * date = [NSDate new];

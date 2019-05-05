@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NoteModel.h"
+#import "LMNote.h"
 
 @interface NoteListTableViewCell : UITableViewCell
 @property(nonatomic,strong)UIImageView * bgView;
@@ -23,6 +24,7 @@
 @property(nonatomic,strong)UILabel * contentLabel;
 
 -(void)bind:(NoteModel *)model;
+-(void)bindLMNote:(LMNItem *)model;
 @end
 
 @interface AddNoteTableViewCell : UITableViewCell

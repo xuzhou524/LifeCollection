@@ -8,7 +8,7 @@
 
 #import "LCNoteListViewController.h"
 #import "LMNote.h"
-
+#import "NoteListTableViewCell.h"
 @interface LCNoteListViewController ()
 
 @property (nonatomic, strong, readwrite) LMNFolder *folder;
@@ -33,7 +33,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [LCColor backgroudColor];
+    self.tableView.backgroundColor = [LCColor backgroudColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     UILabel * liftLabel = [UILabel new];
     liftLabel.text = @"小记";
@@ -62,7 +64,7 @@
 {
     [[LMNStore shared] reload];
     self.folder = [LMNStore shared].rootFolder;
-    
+//    regClass(self.tableView, NoteListTableViewCell);
     [self.tableView reloadData];
 }
 
@@ -70,6 +72,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.folder.contents.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 160;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -82,9 +88,10 @@
         cell.textLabel.text = item.name;
     }
     else if ([item isKindOfClass:[LMNDraft class]]) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
-        cell.textLabel.text = item.name;
-        cell.detailTextLabel.text = item.date.description;
+        NoteListTableViewCell * cell = [[NoteListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell bindLMNote:item];
+        return cell;
     }
     return cell;
 }
