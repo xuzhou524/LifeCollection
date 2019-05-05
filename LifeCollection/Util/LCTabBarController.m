@@ -9,13 +9,9 @@
 #import "LCTabBarController.h"
 #import "LCTabBar.h"
 #import "LCNavigationViewController.h"
-
 #import "HomeViewController.h"
 #import "UserViewController.h"
 #import "FoundViewController.h"
-#import "NoteListViewController.h"
-
-
 #import "LCNoteListViewController.h"
 
 @interface LCTabBarController ()<UITabBarControllerDelegate>
@@ -33,7 +29,6 @@
     
     [controllerArray addObject:[self addChildViewControllerWith:@"HomeViewController" title:@"" normalImage:@"tab_bar_home"]];
     [controllerArray addObject:[self addChildViewControllerWith:@"LCNoteListViewController" title:@"" normalImage:@"tab_bar_tool"]];
-    [controllerArray addObject:[self addChildViewControllerWith:@"NoteListViewController" title:@"" normalImage:@"tab_bar_tool"]];
     [controllerArray addObject:[self addChildViewControllerWith:@"FoundViewController" title:@"" normalImage:@"tab_bar_found"]];
     [controllerArray addObject:[self addChildViewControllerWith:@"UserViewController" title:@"" normalImage:@"tab_bar_user"]];
     

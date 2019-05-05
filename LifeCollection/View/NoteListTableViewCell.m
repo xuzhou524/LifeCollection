@@ -125,48 +125,6 @@
         make.width.equalTo(@0);
     }];
 }
-
--(void)bind:(NoteModel *)model{
-    
-    NSDate * date = [NSDate new];
-    if (model && model.time && model.time.length > 0) {
-        date = [DateFormatter dateFromString:model.time];
-    }
-    self.dayLabel.text = [DateFormatter stringFromStringDay:date];
-    self.weekLabel.text = [DateFormatter weekdayStringWithDate:date];
-    self.timeLabel.text = [DateFormatter stringFromStringYeayWeek:date];
-    
-    if (model.weather) {
-        self.weatherImageView.image = [UIImage imageNamed:model.weather];
-    }else{
-        self.weatherImageView.image = [UIImage imageNamed:[WeatherManager sharedInstance].weatherIconIndex];
-    }
-    
-    if (model && model.content && model.content.length > 0) {
-        self.contentLabel.text = model.content;
-    }else{
-        self.contentLabel.text = @"拾掇生活中的点滴，记录时光的故事";
-    }
-    if (model.coverImageData && model.coverImageData.length > 0) {
-        NSData *imageData = [[NSData alloc] initWithBase64EncodedString:model.coverImageData options:0];
-        UIImage * image = [UIImage imageWithData:imageData];
-        self.coverImageView.image = image;
-        [_coverImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.dayLabel.mas_bottom).offset(5);
-            make.left.equalTo(self.dayLabel);
-            make.width.height.equalTo(@68);
-        }];
-    }else{
-        self.coverImageView.image = nil;
-        [_coverImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.dayLabel.mas_bottom).offset(5);
-            make.left.equalTo(self.dayLabel).offset(-20);
-            make.height.equalTo(@68);
-            make.width.equalTo(@0);
-        }];
-    }
-}
-
 @end
 
 
