@@ -116,7 +116,8 @@
     self.timeLabel.text = [DateFormatter stringFromStringYeayWeek:date];
     
     self.contentLabel.text = model.name;
-
+    
+    self.weatherImageView.image = nil;
     [_coverImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.dayLabel.mas_bottom).offset(5);
         make.left.equalTo(self.dayLabel).offset(-20);
