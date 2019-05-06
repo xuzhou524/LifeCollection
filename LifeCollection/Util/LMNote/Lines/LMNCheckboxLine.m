@@ -16,7 +16,7 @@
 
 @implementation LMNCheckboxLine
 
-static CGFloat const kCheckboxLineHeight = 30.f;
+static CGFloat const kCheckboxLineHeight = 22.f;
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
