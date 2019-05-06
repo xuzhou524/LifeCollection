@@ -13,7 +13,7 @@
 -(void)layoutSubviews{
     [super layoutSubviews];
     for (UITabBarItem * item in self.items) {
-        if (LDiPhoneX) {
+        if (LCiPhoneX) {
             item.imageInsets = UIEdgeInsetsMake(5.0, 0, -5.0, 0);
         }else{
             item.imageInsets = UIEdgeInsetsMake(-5.0, 0, 5.0, 0);

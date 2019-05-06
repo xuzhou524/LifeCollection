@@ -45,7 +45,9 @@
 {
     self.textView = ({
         LMNTextView *textView = [[LMNTextView alloc] initWithTextStorage:self.draft.textStorage];
-        textView.backgroundColor = [UIColor whiteColor];
+        textView.backgroundColor = [LCColor backgroudColor];
+        textView.textColor = [LCColor LCColor_110_110_110];
+        textView.font = LCFont2(16);
         textView.spellCheckingType = UITextSpellCheckingTypeNo;
         textView.delegate = self;
         textView;
@@ -88,7 +90,7 @@
 
 - (void)layoutTextView
 {
-    CGFloat toolbarHeight = 44.f;
+    CGFloat toolbarHeight = Height_TabBar;
     self.textView.frame = self.view.bounds;
     self.toolBar.frame = ({
         CGRect rect = self.view.bounds;
@@ -111,17 +113,17 @@
     
     self.editButton.frame = ({
         CGRect rect = CGRectZero;
-        rect.size = CGSizeMake(50.f, 50.f);
-        rect.origin.x = CGRectGetWidth(self.view.bounds) - 50.f - 20.f;
-        rect.origin.y = CGRectGetHeight(self.view.bounds) - 50.f - 20.f - self.keyboardHeight;
+        rect.size = CGSizeMake(46.f, 46.f);
+        rect.origin.x = CGRectGetWidth(self.view.bounds) - 46.f - 20.f;
+        rect.origin.y = CGRectGetHeight(self.view.bounds) - 46.f - 20.f - self.keyboardHeight;
         rect;
     });
-    self.editButton.layer.cornerRadius = 25.f;
+    self.editButton.layer.cornerRadius = 23.f;
     
     self.toolBar.frame = ({
         CGRect rect = self.view.bounds;
-        rect.origin.y = CGRectGetHeight(rect) - 44.f - self.keyboardHeight;
-        rect.size.height = 44.f;
+        rect.origin.y = CGRectGetHeight(rect) - Height_TabBar - self.keyboardHeight;
+        rect.size.height = Height_TabBar;
         rect;
     });
 }
@@ -270,10 +272,10 @@
 {
     NSDictionary *info = [notification userInfo];
     CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
-    if (self.keyboardHeight == keyboardSize.height) {
+    if (self.keyboardHeight == (LCiPhoneX ? keyboardSize.height - 34 : keyboardSize.height)) {
         return;
     }
-    self.keyboardHeight = keyboardSize.height;
+    self.keyboardHeight = (LCiPhoneX ? keyboardSize.height - 34 : keyboardSize.height);
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         [self layoutTextView];
     } completion:nil];

@@ -153,7 +153,7 @@ UIImage *lmn_getRectangleImageWithOptions(CGSize size, BOOL opaque, CGFloat scal
                         [UIImage imageNamed:@"lmn_font_underline"],
                         [UIImage imageNamed:@"lmn_font_strikethrough"],
                         [UIImage imageNamed:@"lmn_left_square"]
-                        ];;
+                        ];
     for (int idx = 0; idx < images.count; idx ++) {
         UIImage *image = images[idx];
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -212,7 +212,8 @@ UIImage *lmn_getRectangleImageWithOptions(CGSize size, BOOL opaque, CGFloat scal
     {
         self.toolBar.frame = self.bounds;
         CGRect rect = self.toolBar.bounds;
-        rect.size.width = CGRectGetHeight(rect);
+        rect.size.width = 44;
+        rect.size.height = 44;
         rect.origin.x = 8.f;
         for (UIButton *button in self.itemButtons) {
             if (button == self.itemButtons.lastObject) {
@@ -222,7 +223,7 @@ UIImage *lmn_getRectangleImageWithOptions(CGSize size, BOOL opaque, CGFloat scal
             rect.origin.x += CGRectGetWidth(rect) + 4.f;
         }
     }
-    CGFloat height = CGRectGetHeight(self.bounds);
+    CGFloat height = 44;
     self.subToolBarLeftView.frame = CGRectMake(0, 0, height, height);
     {
         self.subToolBar.frame = ({
@@ -232,7 +233,8 @@ UIImage *lmn_getRectangleImageWithOptions(CGSize size, BOOL opaque, CGFloat scal
             rect;
         });
         CGRect rect = self.subToolBar.bounds;
-        rect.size.width = CGRectGetHeight(rect);
+        rect.size.width = 44;
+        rect.size.height = 44;
         rect.origin.x = 8.f;
         for (UIButton *button in self.subItemButtons) {
             // 隐藏斜体按钮，"PingFang SC" 字体不支持斜体。
