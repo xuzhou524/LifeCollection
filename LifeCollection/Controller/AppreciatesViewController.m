@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"赞赏开发者";
+    self.navigationItem.title = @"支持开发者";
     self.view.backgroundColor = [LCColor backgroudColor];
     
     _iconImageView = [UIImageView new];
@@ -34,7 +34,7 @@
     
     _summeryLabel = [UILabel new];
     _summeryLabel.font = LCFont(18);
-    _summeryLabel.text = @"点击二维码即可赞赏";
+    _summeryLabel.text = @"点击二维码即可支持";
     _summeryLabel.textColor = [LCColor LCColor_77_92_127];
     [self.view addSubview:_summeryLabel];
     [_summeryLabel mas_makeConstraints:^(MASConstraintMaker *make) {
