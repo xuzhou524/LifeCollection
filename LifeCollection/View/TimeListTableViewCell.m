@@ -156,7 +156,7 @@
     if ([model.classType isEqualToString:@"倒计日"]) {
         _timeStrLabel.text = @"目标日:";
         _dayStrLabel.text = @"剩余天数";
-        NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:model.time] timeIntervalSinceNow] + 24 * 60 * 60;
+        NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:model.time] timeIntervalSinceNow];
         if (timeInterval < 0) {
             NSCalendar *gregorian = [[ NSCalendar alloc ] initWithCalendarIdentifier : NSCalendarIdentifierGregorian];
             unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
@@ -206,7 +206,7 @@
                 NSDate* date = [formatter dateFromString:targetDateStr];
                 
                 NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
-                NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:timeSp] timeIntervalSinceNow];
+                NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:timeSp] timeIntervalSinceNow] + 24 * 60 * 60;
                 long temp = 0;
                 NSString *result;
                 temp = fabs(timeInterval)/60;
@@ -218,6 +218,7 @@
                 self.dayLabel.text = result;
             }
         }else{
+            timeInterval = timeInterval + 24 * 60 * 60;
             long temp = 0;
             NSString *result;
             temp = fabs(timeInterval)/60;

@@ -117,7 +117,8 @@
 }
 
 -(void)enterClick{
-    self.eventModel.time = [NSString stringWithFormat:@"%ld", (long)[_pickerWindow.datePicker.date timeIntervalSince1970]];
+    NSString * str = [DateFormatter stringFromBirthday:_pickerWindow.datePicker.date];
+    self.eventModel.time = [NSString stringWithFormat:@"%ld", (long)[[DateFormatter dateFromString:str] timeIntervalSince1970]];
     [self.tableView reloadData];
     [_pickerWindow hide];
 }
