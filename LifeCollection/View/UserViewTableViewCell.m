@@ -33,7 +33,7 @@
     }];
     
     _titleLabel = [UILabel new];
-    _titleLabel.text = @"让生活更精彩";
+    _titleLabel.text = @"专注时间管理、记事本日常工具";
     _titleLabel.font = LCFont(14);
     _titleLabel.textColor = [LCColor LCColor_77_92_127];
     [self.contentView addSubview:_titleLabel];
