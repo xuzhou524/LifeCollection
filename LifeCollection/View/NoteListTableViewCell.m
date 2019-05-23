@@ -86,19 +86,21 @@
     _coverImageView.layer.cornerRadius = 5;
     _coverImageView.layer.masksToBounds = YES;
     _coverImageView.userInteractionEnabled = YES;
+    _coverImageView.backgroundColor = [UIColor orangeColor];
     _coverImageView.contentMode = UIViewContentModeScaleAspectFill;
     _coverImageView.image = [UIImage imageNamed:@"ico_fabu_tianjia"];
     [self.contentView addSubview:_coverImageView];
     [_coverImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.dayLabel.mas_bottom).offset(10);
+        make.top.equalTo(self.dayLabel.mas_bottom);
         make.left.equalTo(self.dayLabel);
-        make.width.height.equalTo(@68);
+        make.width.equalTo(@68);
+        make.bottom.equalTo(self.bgView);
     }];
     
     _contentLabel = [UILabel new];
     _contentLabel.text = @"拾掇生活中的点滴，记录时光的故事";
     _contentLabel.font = LCFont2(14);
-    _contentLabel.numberOfLines = 4;
+    _contentLabel.numberOfLines = 2;
     _contentLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     _contentLabel.textColor = [LCColor LCColor_110_110_110];
     [self.contentView addSubview:_contentLabel];
@@ -119,9 +121,9 @@
     
     self.weatherImageView.image = nil;
     [_coverImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.dayLabel.mas_bottom).offset(5);
+        make.top.equalTo(self.dayLabel.mas_bottom);
         make.left.equalTo(self.dayLabel).offset(-20);
-        make.height.equalTo(@68);
+        make.bottom.equalTo(self.bgView);
         make.width.equalTo(@0);
     }];
 }
