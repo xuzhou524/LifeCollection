@@ -65,6 +65,12 @@
 		5356ED2321C7536200862FE1 /* tab_bar_user_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5356ED1F21C7536200862FE1 /* tab_bar_user_sel@2x.png */; };
 		5356ED2E21C75F0A00862FE1 /* TimeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ED2D21C75F0A00862FE1 /* TimeListTableViewCell.m */; };
 		5356ED3121C7845D00862FE1 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356ED3021C7845D00862FE1 /* AddViewController.m */; };
+		53570FC72297A7BB00DBABE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53570FC62297A7BB00DBABE8 /* Assets.xcassets */; };
+		53570FCE2297A7BB00DBABE8 /* LifeCollectioniMessage MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 53570FCD2297A7BB00DBABE8 /* LifeCollectioniMessage MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		53570FD22297A7BB00DBABE8 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53570FD12297A7BB00DBABE8 /* Messages.framework */; };
+		53570FDB2297A7BC00DBABE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53570FDA2297A7BC00DBABE8 /* Assets.xcassets */; };
+		53570FE52297A7D700DBABE8 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53570FE42297A7D700DBABE8 /* MessagesViewController.m */; };
+		53570FE82297A7E100DBABE8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53570FE62297A7E100DBABE8 /* MainInterface.storyboard */; };
 		5357B40A21C38B73009D9333 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B40921C38B73009D9333 /* AppDelegate.m */; };
 		5357B40D21C38B73009D9333 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B40C21C38B73009D9333 /* HomeViewController.m */; };
 		5357B41021C38B73009D9333 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5357B40E21C38B73009D9333 /* Main.storyboard */; };
@@ -216,6 +222,16 @@
 		855A42587625B7BB03CD4F6E /* Pods_LifeCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E969EF071FF62323FD55A93A /* Pods_LifeCollection.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		53570FCF2297A7BB00DBABE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5357B3FD21C38B73009D9333 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53570FCC2297A7BB00DBABE8;
+			remoteInfo = "LifeCollectioniMessage MessagesExtension";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		531EC86C226984630063C1B3 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -223,6 +239,17 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53570FE22297A7BC00DBABE8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				53570FCE2297A7BB00DBABE8 /* LifeCollectioniMessage MessagesExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +344,16 @@
 		5356ED2D21C75F0A00862FE1 /* TimeListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeListTableViewCell.m; sourceTree = "<group>"; };
 		5356ED2F21C7845D00862FE1 /* AddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		5356ED3021C7845D00862FE1 /* AddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		53570FC42297A7BA00DBABE8 /* LifeCollectioniMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeCollectioniMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53570FC62297A7BB00DBABE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53570FC82297A7BB00DBABE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53570FCD2297A7BB00DBABE8 /* LifeCollectioniMessage MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "LifeCollectioniMessage MessagesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53570FD12297A7BB00DBABE8 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		53570FD42297A7BB00DBABE8 /* MessagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
+		53570FDA2297A7BC00DBABE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53570FDC2297A7BC00DBABE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53570FE42297A7D700DBABE8 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
+		53570FE72297A7E100DBABE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		5357B40521C38B73009D9333 /* LifeCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5357B40821C38B73009D9333 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5357B40921C38B73009D9333 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -528,6 +565,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		53570FCA2297A7BB00DBABE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53570FD22297A7BB00DBABE8 /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5357B40221C38B73009D9333 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -677,10 +722,33 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		53570FC52297A7BB00DBABE8 /* LifeCollectioniMessage */ = {
+			isa = PBXGroup;
+			children = (
+				53570FC62297A7BB00DBABE8 /* Assets.xcassets */,
+				53570FC82297A7BB00DBABE8 /* Info.plist */,
+			);
+			path = LifeCollectioniMessage;
+			sourceTree = "<group>";
+		};
+		53570FD32297A7BB00DBABE8 /* LifeCollectioniMessage MessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				53570FE62297A7E100DBABE8 /* MainInterface.storyboard */,
+				53570FD42297A7BB00DBABE8 /* MessagesViewController.h */,
+				53570FE42297A7D700DBABE8 /* MessagesViewController.m */,
+				53570FDA2297A7BC00DBABE8 /* Assets.xcassets */,
+				53570FDC2297A7BC00DBABE8 /* Info.plist */,
+			);
+			path = "LifeCollectioniMessage MessagesExtension";
+			sourceTree = "<group>";
+		};
 		5357B3FC21C38B73009D9333 = {
 			isa = PBXGroup;
 			children = (
 				5357B40721C38B73009D9333 /* LifeCollection */,
+				53570FC52297A7BB00DBABE8 /* LifeCollectioniMessage */,
+				53570FD32297A7BB00DBABE8 /* LifeCollectioniMessage MessagesExtension */,
 				5357B40621C38B73009D9333 /* Products */,
 				0C8790F08621332121D8810D /* Pods */,
 				DD5677F4BB641C2F91264A51 /* Frameworks */,
@@ -691,6 +759,8 @@
 			isa = PBXGroup;
 			children = (
 				5357B40521C38B73009D9333 /* LifeCollection.app */,
+				53570FC42297A7BA00DBABE8 /* LifeCollectioniMessage.app */,
+				53570FCD2297A7BB00DBABE8 /* LifeCollectioniMessage MessagesExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1013,6 +1083,7 @@
 				536D0BD321DF41E600FB0653 /* LocalAuthentication.framework */,
 				E969EF071FF62323FD55A93A /* Pods_LifeCollection.framework */,
 				531EC85C226984630063C1B3 /* NotificationCenter.framework */,
+				53570FD12297A7BB00DBABE8 /* Messages.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1020,6 +1091,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		53570FC32297A7BA00DBABE8 /* LifeCollectioniMessage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53570FE32297A7BC00DBABE8 /* Build configuration list for PBXNativeTarget "LifeCollectioniMessage" */;
+			buildPhases = (
+				53570FC22297A7BA00DBABE8 /* Resources */,
+				53570FE22297A7BC00DBABE8 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53570FD02297A7BB00DBABE8 /* PBXTargetDependency */,
+			);
+			name = LifeCollectioniMessage;
+			productName = LifeCollectioniMessage;
+			productReference = 53570FC42297A7BA00DBABE8 /* LifeCollectioniMessage.app */;
+			productType = "com.apple.product-type.application.messages";
+		};
+		53570FCC2297A7BB00DBABE8 /* LifeCollectioniMessage MessagesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53570FE12297A7BC00DBABE8 /* Build configuration list for PBXNativeTarget "LifeCollectioniMessage MessagesExtension" */;
+			buildPhases = (
+				53570FC92297A7BB00DBABE8 /* Sources */,
+				53570FCA2297A7BB00DBABE8 /* Frameworks */,
+				53570FCB2297A7BB00DBABE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LifeCollectioniMessage MessagesExtension";
+			productName = "LifeCollectioniMessage MessagesExtension";
+			productReference = 53570FCD2297A7BB00DBABE8 /* LifeCollectioniMessage MessagesExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 		5357B40421C38B73009D9333 /* LifeCollection */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5357B41E21C38B74009D9333 /* Build configuration list for PBXNativeTarget "LifeCollection" */;
@@ -1050,6 +1155,12 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = com.longdai;
 				TargetAttributes = {
+					53570FC32297A7BA00DBABE8 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					53570FCC2297A7BB00DBABE8 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 					5357B40421C38B73009D9333 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -1069,11 +1180,30 @@
 			projectRoot = "";
 			targets = (
 				5357B40421C38B73009D9333 /* LifeCollection */,
+				53570FC32297A7BA00DBABE8 /* LifeCollectioniMessage */,
+				53570FCC2297A7BB00DBABE8 /* LifeCollectioniMessage MessagesExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		53570FC22297A7BA00DBABE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53570FC72297A7BB00DBABE8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53570FCB2297A7BB00DBABE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53570FDB2297A7BC00DBABE8 /* Assets.xcassets in Resources */,
+				53570FE82297A7E100DBABE8 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5357B40321C38B73009D9333 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1282,6 +1412,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		53570FC92297A7BB00DBABE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53570FE52297A7D700DBABE8 /* MessagesViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5357B40121C38B73009D9333 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1370,7 +1508,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		53570FD02297A7BB00DBABE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53570FCC2297A7BB00DBABE8 /* LifeCollectioniMessage MessagesExtension */;
+			targetProxy = 53570FCF2297A7BB00DBABE8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		53570FE62297A7E100DBABE8 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53570FE72297A7E100DBABE8 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		5357B40E21C38B73009D9333 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1390,6 +1544,74 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		53570FDD2297A7BC00DBABE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
+				INFOPLIST_FILE = LifeCollectioniMessage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.longdai.LifeCollectioniMessage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53570FDE2297A7BC00DBABE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
+				INFOPLIST_FILE = LifeCollectioniMessage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.longdai.LifeCollectioniMessage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		53570FDF2297A7BC00DBABE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
+				INFOPLIST_FILE = "LifeCollectioniMessage MessagesExtension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.longdai.LifeCollectioniMessage.MessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53570FE02297A7BC00DBABE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
+				INFOPLIST_FILE = "LifeCollectioniMessage MessagesExtension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.longdai.LifeCollectioniMessage.MessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		5357B41C21C38B74009D9333 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1547,6 +1769,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		53570FE12297A7BC00DBABE8 /* Build configuration list for PBXNativeTarget "LifeCollectioniMessage MessagesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53570FDF2297A7BC00DBABE8 /* Debug */,
+				53570FE02297A7BC00DBABE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53570FE32297A7BC00DBABE8 /* Build configuration list for PBXNativeTarget "LifeCollectioniMessage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53570FDD2297A7BC00DBABE8 /* Debug */,
+				53570FDE2297A7BC00DBABE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5357B40021C38B73009D9333 /* Build configuration list for PBXProject "LifeCollection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
