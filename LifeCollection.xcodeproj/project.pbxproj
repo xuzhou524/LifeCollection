@@ -1225,7 +1225,10 @@
 						CreatedOnToolsVersion = 10.2.1;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
+							};
+							com.apple.DataProtection = {
+								enabled = 0;
 							};
 						};
 					};
@@ -1233,6 +1236,9 @@
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.DataProtection = {
 								enabled = 0;
 							};
 						};
@@ -1671,7 +1677,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				CODE_SIGN_ENTITLEMENTS = "LifeCollectioniMessage MessagesExtension/LifeCollectioniMessage MessagesExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = "LifeCollectioniMessage MessagesExtension/Info.plist";
@@ -1692,7 +1697,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				CODE_SIGN_ENTITLEMENTS = "LifeCollectioniMessage MessagesExtension/LifeCollectioniMessage MessagesExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = "LifeCollectioniMessage MessagesExtension/Info.plist";
