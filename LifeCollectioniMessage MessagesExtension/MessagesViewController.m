@@ -7,19 +7,59 @@
 //
 
 #import "MessagesViewController.h"
+#import "EventModel.h"
+#import "StickerTableViewCell.h"
 
-
-@interface MessagesViewController ()
-
+@interface MessagesViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property(nonatomic,strong)UITableView * tableView;
+@property (nonatomic, strong) NSMutableArray * eventModelLists;
+@property (nonatomic, strong) EventModel * eventModel;
 @end
 
 @implementation MessagesViewController
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    
+    self.eventModelLists = [self.eventModel queryWithTime];
+    [self.tableView reloadData];
+}
+-(EventModel *)eventModel{
+    if (_eventModel == nil){
+        _eventModel = [EventModel new];
+    }
+    return _eventModel;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIView * v = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-    v.backgroundColor = [UIColor orangeColor];
-    [self.view addSubview:v];
+    
+    _tableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:_tableView];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 130;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.eventModelLists.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    StickerTableViewCell * cell = [self.tableView dequeueReusableCellWithIdentifier:@"StickerTableViewCell"];
+    if (!cell) {
+        cell = [[StickerTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"StickerTableViewCell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    [cell bind:self.eventModelLists[indexPath.row]];
+    return cell;
 }
 
 #pragma mark - Conversation Handling

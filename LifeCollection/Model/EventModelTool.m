@@ -24,6 +24,7 @@ static FMDatabaseQueue *_queue;
         NSString *backupDbPath = [[NSBundle mainBundle]pathForResource:@"LifeCollection.sqlite" ofType:nil];
         [fm copyItemAtPath:backupDbPath toPath:path error:nil];
     }
+//    NSString *bundlepath = [[NSBundle mainBundle]pathForResource:@"LifeCollection" ofType:@"sqlite"];
     _queue = [FMDatabaseQueue databaseQueueWithPath:path];
 }
 

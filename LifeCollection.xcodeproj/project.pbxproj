@@ -32,6 +32,23 @@
 		5325DF8121D08C0C00743052 /* tab_bar_found@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5325DF7D21D08C0B00743052 /* tab_bar_found@3x.png */; };
 		5325DF8221D08C0C00743052 /* tab_bar_found@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5325DF7E21D08C0C00743052 /* tab_bar_found@2x.png */; };
 		5325DF8521D0BEA000743052 /* FoundTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5325DF8421D0BEA000743052 /* FoundTableViewCell.m */; };
+		532DD37B229E253C00CE3631 /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD08421CA286000A4B2BC /* EventModel.m */; };
+		532DD37C229E253F00CE3631 /* EventModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD08721CA28C700A4B2BC /* EventModelTool.m */; };
+		532DD37D229E267B00CE3631 /* LifeCollection.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 531AD0A121CB7BA600A4B2BC /* LifeCollection.sqlite */; };
+		532DD380229E26FD00CE3631 /* StickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 532DD37F229E26FC00CE3631 /* StickerTableViewCell.m */; };
+		532DD381229E277300CE3631 /* DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD0A421CB7DAC00A4B2BC /* DateFormatter.m */; };
+		532DD390229E283400CE3631 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 532DD386229E283400CE3631 /* FMDatabaseQueue.m */; };
+		532DD391229E283400CE3631 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 532DD389229E283400CE3631 /* FMDatabaseAdditions.m */; };
+		532DD392229E283400CE3631 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 532DD38A229E283400CE3631 /* FMDatabase.m */; };
+		532DD393229E283400CE3631 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 532DD38E229E283400CE3631 /* FMDatabasePool.m */; };
+		532DD394229E283400CE3631 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 532DD38F229E283400CE3631 /* FMResultSet.m */; };
+		532DD397229E2CC200CE3631 /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = 53AC8E3321D385EC00DD0079 /* 01.png */; };
+		532DD398229E2CC200CE3631 /* 02.png in Resources */ = {isa = PBXBuildFile; fileRef = 53AC8E3021D385EB00DD0079 /* 02.png */; };
+		532DD399229E2CC200CE3631 /* 07.png in Resources */ = {isa = PBXBuildFile; fileRef = 53AC8E3621D385EC00DD0079 /* 07.png */; };
+		532DD39A229E2CC200CE3631 /* 28.png in Resources */ = {isa = PBXBuildFile; fileRef = 53AC8E4321D38C9E00DD0079 /* 28.png */; };
+		532DD39B229E2CC200CE3631 /* 38.png in Resources */ = {isa = PBXBuildFile; fileRef = 53AC8E4121D38C6700DD0079 /* 38.png */; };
+		532DD39C229E2CC200CE3631 /* 48.png in Resources */ = {isa = PBXBuildFile; fileRef = 53AC8E3F21D38C3400DD0079 /* 48.png */; };
+		532DD39D229E2CC200CE3631 /* 55.png in Resources */ = {isa = PBXBuildFile; fileRef = 53AC8E3221D385EB00DD0079 /* 55.png */; };
 		532F8E28223A31BD001A0E11 /* liangjiaoqi.png in Resources */ = {isa = PBXBuildFile; fileRef = 532F8E27223A31BD001A0E11 /* liangjiaoqi.png */; };
 		532F8E2A223A31E3001A0E11 /* shuipingyi.png in Resources */ = {isa = PBXBuildFile; fileRef = 532F8E29223A31E2001A0E11 /* shuipingyi.png */; };
 		532F8E2C223A31EE001A0E11 /* zaoyin.png in Resources */ = {isa = PBXBuildFile; fileRef = 532F8E2B223A31EE001A0E11 /* zaoyin.png */; };
@@ -223,6 +240,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		532DD395229E2C4C00CE3631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5357B3FD21C38B73009D9333 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5357B40421C38B73009D9333;
+			remoteInfo = LifeCollection;
+		};
 		53570FCF2297A7BB00DBABE8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5357B3FD21C38B73009D9333 /* Project object */;
@@ -295,6 +319,21 @@
 		5325DF7E21D08C0C00743052 /* tab_bar_found@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_found@2x.png"; sourceTree = "<group>"; };
 		5325DF8321D0BEA000743052 /* FoundTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoundTableViewCell.h; sourceTree = "<group>"; };
 		5325DF8421D0BEA000743052 /* FoundTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoundTableViewCell.m; sourceTree = "<group>"; };
+		532DD37E229E26FC00CE3631 /* StickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StickerTableViewCell.h; sourceTree = "<group>"; };
+		532DD37F229E26FC00CE3631 /* StickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StickerTableViewCell.m; sourceTree = "<group>"; };
+		532DD383229E27F100CE3631 /* LifeCollection.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LifeCollection.entitlements; sourceTree = "<group>"; };
+		532DD385229E283400CE3631 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		532DD386229E283400CE3631 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		532DD387229E283400CE3631 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		532DD388229E283400CE3631 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		532DD389229E283400CE3631 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		532DD38A229E283400CE3631 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		532DD38B229E283400CE3631 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		532DD38C229E283400CE3631 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		532DD38D229E283400CE3631 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		532DD38E229E283400CE3631 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		532DD38F229E283400CE3631 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		532DD39E229E2D0700CE3631 /* LifeCollectioniMessage MessagesExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "LifeCollectioniMessage MessagesExtension.entitlements"; sourceTree = "<group>"; };
 		532F8E27223A31BD001A0E11 /* liangjiaoqi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = liangjiaoqi.png; sourceTree = "<group>"; };
 		532F8E29223A31E2001A0E11 /* shuipingyi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuipingyi.png; sourceTree = "<group>"; };
 		532F8E2B223A31EE001A0E11 /* zaoyin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zaoyin.png; sourceTree = "<group>"; };
@@ -639,6 +678,24 @@
 			path = DoActionSheet;
 			sourceTree = "<group>";
 		};
+		532DD384229E283400CE3631 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				532DD385229E283400CE3631 /* FMDatabase.h */,
+				532DD386229E283400CE3631 /* FMDatabaseQueue.m */,
+				532DD387229E283400CE3631 /* FMResultSet.h */,
+				532DD388229E283400CE3631 /* FMDatabasePool.h */,
+				532DD389229E283400CE3631 /* FMDatabaseAdditions.m */,
+				532DD38A229E283400CE3631 /* FMDatabase.m */,
+				532DD38B229E283400CE3631 /* FMDatabaseQueue.h */,
+				532DD38C229E283400CE3631 /* FMDB.h */,
+				532DD38D229E283400CE3631 /* FMDatabaseAdditions.h */,
+				532DD38E229E283400CE3631 /* FMDatabasePool.m */,
+				532DD38F229E283400CE3631 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
 		5334900E225B266100DBBA9F /* Note */ = {
 			isa = PBXGroup;
 			children = (
@@ -734,9 +791,13 @@
 		53570FD32297A7BB00DBABE8 /* LifeCollectioniMessage MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
+				532DD39E229E2D0700CE3631 /* LifeCollectioniMessage MessagesExtension.entitlements */,
+				532DD384229E283400CE3631 /* fmdb */,
 				53570FE62297A7E100DBABE8 /* MainInterface.storyboard */,
 				53570FD42297A7BB00DBABE8 /* MessagesViewController.h */,
 				53570FE42297A7D700DBABE8 /* MessagesViewController.m */,
+				532DD37E229E26FC00CE3631 /* StickerTableViewCell.h */,
+				532DD37F229E26FC00CE3631 /* StickerTableViewCell.m */,
 				53570FDA2297A7BC00DBABE8 /* Assets.xcassets */,
 				53570FDC2297A7BC00DBABE8 /* Info.plist */,
 			);
@@ -768,6 +829,7 @@
 		5357B40721C38B73009D9333 /* LifeCollection */ = {
 			isa = PBXGroup;
 			children = (
+				532DD383229E27F100CE3631 /* LifeCollection.entitlements */,
 				5357B40821C38B73009D9333 /* AppDelegate.h */,
 				5357B40921C38B73009D9333 /* AppDelegate.m */,
 				5356ED1221C7498100862FE1 /* LifeCollectionPrefixHeader.pch */,
@@ -1119,6 +1181,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				532DD396229E2C4C00CE3631 /* PBXTargetDependency */,
 			);
 			name = "LifeCollectioniMessage MessagesExtension";
 			productName = "LifeCollectioniMessage MessagesExtension";
@@ -1160,9 +1223,19 @@
 					};
 					53570FCC2297A7BB00DBABE8 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					5357B40421C38B73009D9333 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -1199,7 +1272,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				532DD39C229E2CC200CE3631 /* 48.png in Resources */,
+				532DD399229E2CC200CE3631 /* 07.png in Resources */,
+				532DD398229E2CC200CE3631 /* 02.png in Resources */,
+				532DD37D229E267B00CE3631 /* LifeCollection.sqlite in Resources */,
 				53570FDB2297A7BC00DBABE8 /* Assets.xcassets in Resources */,
+				532DD39D229E2CC200CE3631 /* 55.png in Resources */,
+				532DD39B229E2CC200CE3631 /* 38.png in Resources */,
+				532DD39A229E2CC200CE3631 /* 28.png in Resources */,
+				532DD397229E2CC200CE3631 /* 01.png in Resources */,
 				53570FE82297A7E100DBABE8 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1417,6 +1498,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				53570FE52297A7D700DBABE8 /* MessagesViewController.m in Sources */,
+				532DD381229E277300CE3631 /* DateFormatter.m in Sources */,
+				532DD380229E26FD00CE3631 /* StickerTableViewCell.m in Sources */,
+				532DD37C229E253F00CE3631 /* EventModelTool.m in Sources */,
+				532DD394229E283400CE3631 /* FMResultSet.m in Sources */,
+				532DD393229E283400CE3631 /* FMDatabasePool.m in Sources */,
+				532DD37B229E253C00CE3631 /* EventModel.m in Sources */,
+				532DD391229E283400CE3631 /* FMDatabaseAdditions.m in Sources */,
+				532DD390229E283400CE3631 /* FMDatabaseQueue.m in Sources */,
+				532DD392229E283400CE3631 /* FMDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1509,6 +1599,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		532DD396229E2C4C00CE3631 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5357B40421C38B73009D9333 /* LifeCollection */;
+			targetProxy = 532DD395229E2C4C00CE3631 /* PBXContainerItemProxy */;
+		};
 		53570FD02297A7BB00DBABE8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 53570FCC2297A7BB00DBABE8 /* LifeCollectioniMessage MessagesExtension */;
@@ -1576,6 +1671,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = "LifeCollectioniMessage MessagesExtension/LifeCollectioniMessage MessagesExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = "LifeCollectioniMessage MessagesExtension/Info.plist";
@@ -1596,6 +1692,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = "LifeCollectioniMessage MessagesExtension/LifeCollectioniMessage MessagesExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = "LifeCollectioniMessage MessagesExtension/Info.plist";
