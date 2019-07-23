@@ -166,7 +166,11 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.iconImageView.image = [UIImage imageNamed:@"shijian"];
         cell.titleLabel.text = @"时间";
-        cell.summeryLabel.text = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:self.eventModel.time]];
+        if (_timeCell.timeLabel.text && _timeCell.timeLabel.text.length > 0) {
+            cell.summeryLabel.text = _timeCell.timeLabel.text;
+        }else{
+            cell.summeryLabel.text = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:self.eventModel.time]];
+        }
         return cell;
     }else if (indexPath.row == 4){
         TitleAndImageTableViewCell * cell = getCell(TitleAndImageTableViewCell);
