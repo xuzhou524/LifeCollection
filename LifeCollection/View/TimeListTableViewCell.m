@@ -180,10 +180,9 @@
                         if (newDateComponent.month == 12) {//当前月为12  显示下一年的01月
                             targetDateStr = [NSString stringWithFormat:@"%ld-%@-%ld",newDateComponent.year + 1,@"01",components.day];
                         }else{
-                            targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",newDateComponent.year,newDateComponent.month + 1,components.day];
                             if (newDateComponent.month == 1 && (components.day == 29 || components.day == 30 || components.day == 31)) {
                                 //当前月为01月  下月是2月   假如日为29、30、31 统一显示 28
-                                targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%@",newDateComponent.year,newDateComponent.month + 1,@"28"];
+                                targetDateStr = [NSString stringWithFormat:@"%ld-%@-%@",newDateComponent.year,@"02",@"28"];
                             }else if (components.day == 31 && (newDateComponent.month + 1 == 4 || newDateComponent.month + 1 == 6 || newDateComponent.month + 1 == 9 || newDateComponent.month + 1 == 11)){
                                 //目标日期为四月，六月，九月，十一月  假如日是31  统一显示 30
                                 targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%@",newDateComponent.year,newDateComponent.month + 1,@"30"];
@@ -249,6 +248,15 @@
             self.dayLabel.text = result;
         }else{
             self.dayLabel.text = @"0";
+        }
+    }
+    if (targetDateStr) {
+        NSArray * arr = [targetDateStr componentsSeparatedByString:@"-"];
+        if (arr.count > 2) {
+            NSString * str = arr[1];
+            if (str.length == 1) {
+                targetDateStr = [NSString stringWithFormat:@"%@-0%@-%@",arr.firstObject,arr[1],arr.lastObject];
+            }
         }
     }
     self.timeLabel.text = targetDateStr;
