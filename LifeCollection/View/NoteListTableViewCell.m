@@ -74,7 +74,7 @@
     
     _weatherImageView = [UIImageView new];
     _weatherImageView.userInteractionEnabled = YES;
-    _weatherImageView.image = [UIImage imageNamed:[WeatherManager sharedInstance].weatherIconIndex];
+    _weatherImageView.image = nil;
     [self.contentView addSubview:_weatherImageView];
     [_weatherImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.dayLabel);
@@ -92,9 +92,9 @@
     [self.contentView addSubview:_coverImageView];
     [_coverImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.dayLabel.mas_bottom);
-        make.left.equalTo(self.dayLabel);
-        make.width.equalTo(@68);
+        make.left.equalTo(self.dayLabel).offset(-20);
         make.bottom.equalTo(self.bgView);
+        make.width.equalTo(@0);
     }];
     
     _contentLabel = [UILabel new];
@@ -118,14 +118,7 @@
     self.timeLabel.text = [DateFormatter stringFromStringYeayWeek:date];
     
     self.contentLabel.text = model.name;
-    
-    self.weatherImageView.image = nil;
-    [_coverImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.dayLabel.mas_bottom);
-        make.left.equalTo(self.dayLabel).offset(-20);
-        make.bottom.equalTo(self.bgView);
-        make.width.equalTo(@0);
-    }];
+
 }
 @end
 
