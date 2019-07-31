@@ -7,7 +7,7 @@
 //
 
 #import "AppreciatesViewController.h"
-
+#import "StartFigureManager.h"
 @interface AppreciatesViewController ()
 @property(nonatomic,strong)UIImageView * iconImageView;
 @property(nonatomic,strong)UILabel * summeryLabel;
@@ -44,8 +44,8 @@
 }
 
 -(void)saoyisaoImageView{
-    NSString *str = @"alipayqr://platformapi/startapp?saId=10000007&qrcode=https://qr.alipay.com/fkx01590ythcty3atyusi88?t=1545729953985";
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    LaunchAdModel * model =  [[LCSettings sharedInstance] objectForKey:kLaunchScreenModel];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model.support]];
 }
 
 @end

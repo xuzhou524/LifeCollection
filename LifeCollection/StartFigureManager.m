@@ -16,6 +16,7 @@
     [aCoder encodeObject:self.openUrl forKey:@"openUrl"];
     [aCoder encodeObject:self.contentSize forKey:@"contentSize"];
     [aCoder encodeObject:self.duration forKey:@"duration"];
+    [aCoder encodeObject:self.support forKey:@"support"];
 }
 - (nullable instancetype)initWithCoder:(NSCoder *)aDecoder{
     self = [super init];
@@ -28,6 +29,8 @@
             self.contentSize = [aDecoder decodeObjectForKey:@"contentSize"];
         if ([aDecoder containsValueForKey:@"duration"])
             self.duration = [aDecoder decodeObjectForKey:@"duration"];
+        if ([aDecoder containsValueForKey:@"support"])
+            self.support = [aDecoder decodeObjectForKey:@"support"];
     }
     return self;
 }

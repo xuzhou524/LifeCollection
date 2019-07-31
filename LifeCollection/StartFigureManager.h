@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSString *openUrl;
 @property (nonatomic, strong) NSString *contentSize;
 @property (nonatomic, strong) NSString *duration;
-
+@property (nonatomic, strong) NSString *support;
 @end
 
 @interface StartFigureManager : NSObject
