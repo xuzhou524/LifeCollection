@@ -39,6 +39,7 @@
                                                                                            appearMode:JinnLockAppearModePresent];
         
         if (![[LCClient sharedInstance].lcCenterNav.visibleViewController isKindOfClass:[JinnLockViewController class]]){
+            lockViewController.modalPresentationStyle = UIModalPresentationFullScreen;
             [[LCClient sharedInstance].lcCenterNav.visibleViewController presentViewController:lockViewController
                                                                           animated:NO
                                                                         completion:nil];

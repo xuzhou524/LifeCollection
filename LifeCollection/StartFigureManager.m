@@ -130,12 +130,12 @@
     /** openModel即配置广告数据设置的点击广告时打开页面参数(configuration.openModel) */
     if(openModel==nil) return;
     
-    LCWebViewViewController *VC = [[LCWebViewViewController alloc] init];
+    LCWebViewViewController *vc = [[LCWebViewViewController alloc] init];
     NSString *urlString = (NSString *)openModel;
-    VC.urlStr = urlString;
+    vc.urlStr = urlString;
+    vc.titleStr = @"详情";
     //此处不要直接取keyWindow
-    UIViewController* rootVC = [[UIApplication sharedApplication].delegate window].rootViewController;
-    [rootVC.navigationController pushViewController:VC animated:YES];
+    [[LCClient sharedInstance].lcCenterNav pushViewController:vc animated:YES];
     
 }
 @end
