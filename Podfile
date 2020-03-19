@@ -11,8 +11,6 @@ def pods
    pod 'YYModel'
    pod 'MJRefresh'
    pod 'XHLaunchAd'
-   pod 'Fabric'
-   pod 'Crashlytics'
 end
 
 
