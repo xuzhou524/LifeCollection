@@ -22,11 +22,7 @@
     [LCClient sharedInstance].lcCenterTabBar = rootTabBarVC;
     [self.window makeKeyAndVisible];
     [[UITabBar appearance] setTranslucent:NO];
-#ifdef DEBUG
-#else
-    [Fabric with:@[[Crashlytics class]]];
-#endif
-    
+ 
     [self verify];
     
     return YES;
