@@ -22,6 +22,7 @@
     
     [self subEnoughViews];
     [self subViews];
+
 }
 
 -(void)liftNavigationClick{
@@ -54,9 +55,9 @@
     [self.view addSubview:bgView];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.centerY.equalTo(self.view).offset(-((ScreenWidth - 60) * 0.26));
-        make.width.equalTo(@(ScreenWidth - 60));
-        make.height.equalTo(@((ScreenWidth - 60) * 0.55));
+        make.centerY.equalTo(self.view).offset(-((ScreenWidth - 50) * 0.27));
+        make.width.equalTo(@(ScreenWidth - 50));
+        make.height.equalTo(@((ScreenWidth - 50) * 0.55));
     }];
     
     TimeListTableView* timeView = [TimeListTableView new];
@@ -66,7 +67,55 @@
         make.left.right.top.bottom.equalTo(bgView);
     }];
     [timeView bind:self.eventModel];
+    
+    UIButton * editorButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    editorButton.layer.cornerRadius = 8;
+    editorButton.layer.masksToBounds = YES;
+    NSString * imageStr = LCEventBackgroundImage([self.eventModel.colorType integerValue]);
+    [editorButton setBackgroundImage:[UIImage imageNamed:imageStr] forState:UIControlStateNormal];
+    
+    [editorButton setBackgroundColor:[UIColor whiteColor]];
+    editorButton.alpha = 0.3;
+    [self.view addSubview:editorButton];
+    [editorButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view).offset(-30);
+        make.top.equalTo(bgView.mas_bottom).offset(50);
+        make.width.equalTo(@((ScreenWidth - 50) / 2.0));
+        make.height.equalTo(@35);
+    }];
+    UILabel * label = [UILabel new];
+    label.text = @"编辑";
+    label.font = LCFont2(15);
+    label.alpha = 0.8;
+    label.textColor = [LCColor whiteColor];
+    [self.view addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(editorButton);
+    }];
+    
+    UIButton * shareButton = [UIButton new];
+    shareButton.layer.cornerRadius = 8;
+    shareButton.layer.masksToBounds = YES;
+    [shareButton setBackgroundImage:[UIImage imageNamed:imageStr] forState:UIControlStateNormal];
+    shareButton.alpha = 0.3;
+    [self.view addSubview:shareButton];
+    [shareButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view).offset(-30);
+        make.top.equalTo(editorButton.mas_bottom).offset(20);
+        make.width.equalTo(@((ScreenWidth - 50) / 4.0));
+        make.height.equalTo(@35);
+    }];
+    UILabel * label1 = [UILabel new];
+    label1.text = @"分享";
+    label1.font = LCFont2(15);
+    label1.alpha = 0.8;
+    label1.textColor = [LCColor whiteColor];
+    [self.view addSubview:label1];
+    [label1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(shareButton);
+    }];
 }
+
 
 - (UIView *)topView{
     if (_topView == nil) {

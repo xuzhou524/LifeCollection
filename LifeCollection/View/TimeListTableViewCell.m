@@ -382,7 +382,7 @@
     
     _dayLabel = [UILabel new];
     _dayLabel.text = @"626";
-    _dayLabel.font = LCFont(50);
+    _dayLabel.font = LCFont(45);
     _dayLabel.alpha = 0.8;
     _dayLabel.textColor = [LCColor whiteColor];
     [self addSubview:_dayLabel];
