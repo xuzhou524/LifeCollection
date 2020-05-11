@@ -21,3 +21,16 @@
 
 -(void)bind:(EventModel *)model;
 @end
+
+@interface TimeListTableView : UIView
+@property(nonatomic,strong)UIImageView * bgView;
+
+@property(nonatomic,strong)UILabel * titleLabel;
+@property(nonatomic,strong)UILabel * timeLabel;
+@property(nonatomic,strong)UILabel * dayLabel;
+
+@property(nonatomic,strong)UILabel * classTypeLabel;
+@property(nonatomic,strong)UILabel * remindTypeLabel;
+
+-(void)bind:(EventModel *)model;
+@end

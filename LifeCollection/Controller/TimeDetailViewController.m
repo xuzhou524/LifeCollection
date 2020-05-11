@@ -7,6 +7,7 @@
 //
 
 #import "TimeDetailViewController.h"
+#import "TimeListTableViewCell.h"
 
 @interface TimeDetailViewController ()
 @property(nonatomic,strong)LDNavigationTapView *topView;
@@ -48,26 +49,23 @@
 
 -(void)subViews{
     UIView * bgView = [UIView new];
-    bgView.backgroundColor = [UIColor whiteColor];
     bgView.layer.masksToBounds = YES;
-    bgView.layer.cornerRadius = 6;
+    bgView.layer.cornerRadius = 8;
     [self.view addSubview:bgView];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.centerY.equalTo(self.view).offset(-((ScreenWidth - 60) * 0.25));
+        make.centerY.equalTo(self.view).offset(-((ScreenWidth - 60) * 0.26));
         make.width.equalTo(@(ScreenWidth - 60));
-        make.height.equalTo(@((ScreenWidth - 60) * 0.67));
+        make.height.equalTo(@((ScreenWidth - 60) * 0.55));
     }];
     
-    UIImageView * imageView = [UIImageView new];
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
-    NSString * imageStr = LCEventBackgroundImage([self.eventModel.colorType integerValue]);
-    imageView.image = [UIImage imageNamed:imageStr];
-    [bgView addSubview:imageView];
-    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    TimeListTableView* timeView = [TimeListTableView new];
+    timeView.bgView.backgroundColor = [UIColor clearColor];
+    [bgView addSubview:timeView];
+    [timeView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.equalTo(bgView);
     }];
-    
+    [timeView bind:self.eventModel];
 }
 
 - (UIView *)topView{
@@ -76,7 +74,7 @@
         if(LCiPhoneX){
             _topView.frame = CGRectMake(0, 0, ScreenWidth, 64 + 22);
         }
-        _topView.titleLabel.text = @"Time详情";
+        _topView.titleLabel.text = @"";
         _topView.leftImageView.image = [[UIImage imageNamed:@"d_Arrow_left"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         _topView.leftImageView.tintColor = [UIColor whiteColor];
         [_topView.tapLeftView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(liftNavigationClick)]];
