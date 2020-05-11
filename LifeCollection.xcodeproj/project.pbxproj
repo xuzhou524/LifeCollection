@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5303626C225C8451002B5A7F /* NoteListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5303626B225C8451002B5A7F /* NoteListTableViewCell.m */; };
+		531548452468F30600E8D251 /* TimeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531548442468F30600E8D251 /* TimeDetailViewController.m */; };
 		531AD08521CA286000A4B2BC /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD08421CA286000A4B2BC /* EventModel.m */; };
 		531AD08821CA28C700A4B2BC /* EventModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD08721CA28C700A4B2BC /* EventModelTool.m */; };
 		531AD09421CA411000A4B2BC /* LCDatePickerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD09321CA411000A4B2BC /* LCDatePickerWindow.m */; };
@@ -282,6 +283,8 @@
 /* Begin PBXFileReference section */
 		5303626A225C8451002B5A7F /* NoteListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteListTableViewCell.h; sourceTree = "<group>"; };
 		5303626B225C8451002B5A7F /* NoteListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteListTableViewCell.m; sourceTree = "<group>"; };
+		531548432468F30600E8D251 /* TimeDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeDetailViewController.h; sourceTree = "<group>"; };
+		531548442468F30600E8D251 /* TimeDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeDetailViewController.m; sourceTree = "<group>"; };
 		531AD08321CA286000A4B2BC /* EventModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
 		531AD08421CA286000A4B2BC /* EventModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
 		531AD08621CA28C700A4B2BC /* EventModelTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventModelTool.h; sourceTree = "<group>"; };
@@ -865,6 +868,8 @@
 				5357B40C21C38B73009D9333 /* HomeViewController.m */,
 				5356ED2F21C7845D00862FE1 /* AddViewController.h */,
 				5356ED3021C7845D00862FE1 /* AddViewController.m */,
+				531548432468F30600E8D251 /* TimeDetailViewController.h */,
+				531548442468F30600E8D251 /* TimeDetailViewController.m */,
 				5356ED0721C7474100862FE1 /* UserViewController.h */,
 				5356ED0821C7474100862FE1 /* UserViewController.m */,
 				5342BF8B226D9E0D002BC1FE /* SetingViewController.h */,
@@ -1570,6 +1575,7 @@
 				53B7FC6622379FC30052D63C /* LCLevelViewController.m in Sources */,
 				53954893227838A40074BAEB /* UIFont+LMNote.m in Sources */,
 				531AD0CF21CCF0EF00A4B2BC /* AppListViewController.m in Sources */,
+				531548452468F30600E8D251 /* TimeDetailViewController.m in Sources */,
 				539B3A5F21C7A77700431B7A /* PreviewTableViewCell.m in Sources */,
 				531AD0CC21CCE9A200A4B2BC /* AboutDeveloperViewController.m in Sources */,
 				531AD09E21CB414C00A4B2BC /* DoActionSheet.m in Sources */,

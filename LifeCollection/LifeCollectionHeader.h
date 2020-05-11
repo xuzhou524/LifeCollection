@@ -18,3 +18,4 @@
 #import "UIImageView+WebCache.h"
 #import "XHLaunchAd.h"
 #import "LCSettings.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"

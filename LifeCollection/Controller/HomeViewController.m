@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "TimeListTableViewCell.h"
 #import "AddViewController.h"
+#import "TimeDetailViewController.h"
 #import "EventModel.h"
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -109,9 +110,13 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    AddViewController * addVC = [AddViewController new];
-    addVC.eventModel = self.eventModelLists[indexPath.row];
-    [self.navigationController pushViewController:addVC animated:YES];
+    TimeDetailViewController * timeDetailVC = [TimeDetailViewController new];
+    timeDetailVC.eventModel = self.eventModelLists[indexPath.row];
+    [self.navigationController pushViewController:timeDetailVC animated:YES];
+    
+//    AddViewController * addVC = [AddViewController new];
+//    addVC.eventModel = self.eventModelLists[indexPath.row];
+//    [self.navigationController pushViewController:addVC animated:YES];
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
