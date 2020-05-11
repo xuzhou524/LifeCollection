@@ -19,19 +19,20 @@
     self.view.backgroundColor = [LCColor backgroudColor];
     self.fd_prefersNavigationBarHidden = YES;
     
-    [self setbViews];
+    [self subEnoughViews];
+    [self subViews];
 }
 
 -(void)liftNavigationClick{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
--(void)setbViews{
-    UIImageView * im = [UIImageView new];
+-(void)subEnoughViews{
+    UIImageView * backgroundImageView = [UIImageView new];
     NSString * imageStr = LCEventBackgroundImage([self.eventModel.colorType integerValue]);
-    im.image = [UIImage imageNamed:imageStr];
-    [self.view addSubview:im];
-    [im mas_makeConstraints:^(MASConstraintMaker *make) {
+    backgroundImageView.image = [UIImage imageNamed:imageStr];
+    [self.view addSubview:backgroundImageView];
+    [backgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.equalTo(self.view);
     }];
     //模糊的效果
@@ -39,9 +40,34 @@
     UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blur];
     visualEffectView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     visualEffectView.alpha = 0.6;
-    [im addSubview:visualEffectView];
+    [backgroundImageView addSubview:visualEffectView];
     
     [self.view addSubview:self.topView];
+    
+}
+
+-(void)subViews{
+    UIView * bgView = [UIView new];
+    bgView.backgroundColor = [UIColor whiteColor];
+    bgView.layer.masksToBounds = YES;
+    bgView.layer.cornerRadius = 6;
+    [self.view addSubview:bgView];
+    [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view).offset(-((ScreenWidth - 60) * 0.25));
+        make.width.equalTo(@(ScreenWidth - 60));
+        make.height.equalTo(@((ScreenWidth - 60) * 0.67));
+    }];
+    
+    UIImageView * imageView = [UIImageView new];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    NSString * imageStr = LCEventBackgroundImage([self.eventModel.colorType integerValue]);
+    imageView.image = [UIImage imageNamed:imageStr];
+    [bgView addSubview:imageView];
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.bottom.equalTo(bgView);
+    }];
+    
 }
 
 - (UIView *)topView{
@@ -50,7 +76,7 @@
         if(LCiPhoneX){
             _topView.frame = CGRectMake(0, 0, ScreenWidth, 64 + 22);
         }
-        _topView.titleLabel.text = @"详情";
+        _topView.titleLabel.text = @"Time详情";
         _topView.leftImageView.image = [[UIImage imageNamed:@"d_Arrow_left"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         _topView.leftImageView.tintColor = [UIColor whiteColor];
         [_topView.tapLeftView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(liftNavigationClick)]];
