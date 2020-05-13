@@ -105,6 +105,7 @@
         make.width.equalTo(@((ScreenWidth - 50) / 4.0));
         make.height.equalTo(@35);
     }];
+    [shareButton addTarget:self action:@selector(didiShareClick) forControlEvents:UIControlEventTouchUpInside];
     UILabel * label1 = [UILabel new];
     label1.text = @"分享";
     label1.font = LCFont2(15);
@@ -116,6 +117,17 @@
     }];
 }
 
+-(void)didiShareClick{
+   NSString *textToShare = [NSString stringWithFormat:@"%@",self.eventModel.title];
+   NSArray *activityItems = @[textToShare];
+   UIActivity *bookActivity = [UIActivity new];
+   NSArray *applicationActivities = @[bookActivity];
+   UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems
+                                                                        applicationActivities: applicationActivities];
+   //不出现在活动项目
+   activityVC.excludedActivityTypes = @[UIActivityTypeAirDrop];
+   [self.navigationController presentViewController:activityVC animated:TRUE completion:nil];
+}
 
 - (UIView *)topView{
     if (_topView == nil) {
