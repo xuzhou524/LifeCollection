@@ -244,7 +244,7 @@
             _topView.frame = CGRectMake(0, 0, ScreenWidth, 64 + 22);
         }
         _topView.titleLabel.text = @"";
-        _topView.leftImageView.image = [[UIImage imageNamed:@"d_Arrow_left"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        _topView.leftImageView.image = [[UIImage imageNamed:@"guanbi"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         _topView.leftImageView.tintColor = [UIColor whiteColor];
         [_topView.tapLeftView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(liftNavigationClick)]];
     }
@@ -292,9 +292,9 @@
     _leftImageView.userInteractionEnabled = YES;
     [self addSubview:_leftImageView];
     [_leftImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(13);
+        make.left.equalTo(self).offset(25);
         make.bottom.equalTo(self).offset(-13);
-        make.width.height.equalTo(@20);
+        make.width.height.equalTo(@22);
     }];
 
     _tapLeftView = [UIView new];
