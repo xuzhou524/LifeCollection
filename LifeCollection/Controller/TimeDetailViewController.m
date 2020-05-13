@@ -118,7 +118,115 @@
 }
 
 -(void)didiShareClick{
-   NSString *textToShare = [NSString stringWithFormat:@"%@",self.eventModel.title];
+    
+    NSString * dayStr = @"0";
+    NSString * timeStr = @"起始日";
+    NSString * dayTypeStr = @"已过天数";
+    NSString * targetDateStr = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:self.eventModel.time]];
+    if ([self.eventModel.classType isEqualToString:@"倒计日"]) {
+        dayTypeStr = @"剩余天数";
+        timeStr = @"下一目标日";
+        NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:self.eventModel.time] timeIntervalSinceNow];
+        if (timeInterval < 0) {
+            NSCalendar *gregorian = [[ NSCalendar alloc ] initWithCalendarIdentifier : NSCalendarIdentifierGregorian];
+            unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+            //格式化时间
+            NSDate *createDate = [DateFormatter dateFromTimeStampString:self.eventModel.time];
+            NSDateComponents* components = [gregorian components:unitFlags fromDate:createDate];
+            [components setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
+            //格式化现在时间
+            NSDateComponents* newDateComponent = [gregorian components:unitFlags fromDate:[NSDate date]];
+            [newDateComponent setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
+            
+            if ([self.eventModel.remindType isEqualToString:@"无循环"]){
+                dayStr = @"0";
+            }else{
+                if ([self.eventModel.remindType isEqualToString:@"月循环"]) {
+                    if (components.day <= newDateComponent.day) {
+                        targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",newDateComponent.year,newDateComponent.month + 1,components.day];
+                        if (newDateComponent.month == 12) {//当前月为12  显示下一年的01月
+                            targetDateStr = [NSString stringWithFormat:@"%ld-%@-%ld",newDateComponent.year + 1,@"01",components.day];
+                        }else{
+                            if (newDateComponent.month == 1 && (components.day == 29 || components.day == 30 || components.day == 31)) {
+                                //当前月为01月  下月是2月   假如日为29、30、31 统一显示 28
+                                targetDateStr = [NSString stringWithFormat:@"%ld-%@-%@",newDateComponent.year,@"02",@"28"];
+                            }else if (components.day == 31 && (newDateComponent.month + 1 == 4 || newDateComponent.month + 1 == 6 || newDateComponent.month + 1 == 9 || newDateComponent.month + 1 == 11)){
+                                //目标日期为四月，六月，九月，十一月  假如日是31  统一显示 30
+                                targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%@",newDateComponent.year,newDateComponent.month + 1,@"30"];
+                            }
+                        }
+                    }else{
+                        targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",newDateComponent.year,newDateComponent.month,components.day];
+                    }
+                }else if ([self.eventModel.remindType isEqualToString:@"年循环"]){
+                    if (components.day <= newDateComponent.day) {
+                        targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",newDateComponent.year + 1,components.month,components.day];
+                    }else{
+                        targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",newDateComponent.year,components.month,components.day];
+                    }
+                }
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                [formatter setDateStyle:NSDateFormatterMediumStyle];
+                [formatter setTimeStyle:NSDateFormatterShortStyle];
+                [formatter setDateFormat:@"YYYY-MM-dd"];
+                NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
+                [formatter setTimeZone:timeZone];
+                
+                NSDate* date = [formatter dateFromString:targetDateStr];
+                
+                NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
+                NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:timeSp] timeIntervalSinceNow] + 24 * 60 * 60;
+                long temp = 0;
+                NSString *result;
+                temp = fabs(timeInterval)/60;
+                if((temp = temp/60) <24){
+                    result= [NSString stringWithFormat:@"0"];
+                }else if((temp = temp/24) <10000){
+                    result = [NSString stringWithFormat:@"%ld",temp];
+                }
+                dayStr = result;
+            }
+        }else{
+            timeInterval = timeInterval + 24 * 60 * 60;
+            long temp = 0;
+            NSString *result;
+            temp = fabs(timeInterval)/60;
+            if((temp = temp/60) <24){
+                result= [NSString stringWithFormat:@"0"];
+            }else if((temp = temp/24) <10000){
+                result = [NSString stringWithFormat:@"%ld",temp];
+            }
+            dayStr = result;
+        }
+    }else if ([self.eventModel.classType isEqualToString:@"累计日"]){
+        dayTypeStr = @"已过天数";
+        timeStr = @"起始日";
+        NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:self.eventModel.time] timeIntervalSinceNow];
+        if (timeInterval < 0) {
+            long temp = 0;
+            NSString *result;
+            temp = fabs(timeInterval)/60;
+            if((temp = temp/60) <24){
+                result= [NSString stringWithFormat:@"0"];
+            }else if((temp = temp/24) <10000){
+                result = [NSString stringWithFormat:@"%ld",temp];
+            }
+            dayStr = result;
+        }else{
+            dayStr = @"0";
+        }
+    }
+    if (targetDateStr) {
+        NSArray * arr = [targetDateStr componentsSeparatedByString:@"-"];
+        if (arr.count > 2) {
+            NSString * str = arr[1];
+            if (str.length == 1) {
+                targetDateStr = [NSString stringWithFormat:@"%@-0%@-%@",arr.firstObject,arr[1],arr.lastObject];
+            }
+        }
+    }
+    
+   NSString *textToShare = [NSString stringWithFormat:@"%@ %@:%@ %@:%@\n记点 - 拾掇生活中的点滴，记录时光的故事",self.eventModel.title,dayTypeStr,dayStr,timeStr,targetDateStr];
    NSArray *activityItems = @[textToShare];
    UIActivity *bookActivity = [UIActivity new];
    NSArray *applicationActivities = @[bookActivity];
