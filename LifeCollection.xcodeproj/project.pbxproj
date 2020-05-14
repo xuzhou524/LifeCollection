@@ -393,7 +393,7 @@
 		53570FDC2297A7BC00DBABE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53570FE42297A7D700DBABE8 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		53570FE72297A7E100DBABE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		5357B40521C38B73009D9333 /* LifeCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5357B40521C38B73009D9333 /* 记点生活.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "记点生活.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5357B40821C38B73009D9333 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5357B40921C38B73009D9333 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5357B40B21C38B73009D9333 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -826,7 +826,7 @@
 		5357B40621C38B73009D9333 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5357B40521C38B73009D9333 /* LifeCollection.app */,
+				5357B40521C38B73009D9333 /* 记点生活.app */,
 				53570FC42297A7BA00DBABE8 /* LifeCollectioniMessage.app */,
 				53570FCD2297A7BB00DBABE8 /* LifeCollectioniMessage MessagesExtension.appex */,
 			);
@@ -1214,7 +1214,7 @@
 			);
 			name = LifeCollection;
 			productName = LifeCollection;
-			productReference = 5357B40521C38B73009D9333 /* LifeCollection.app */;
+			productReference = 5357B40521C38B73009D9333 /* 记点生活.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1835,7 +1835,7 @@
 				);
 				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.LifeCollection;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "记点生活";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1858,7 +1858,7 @@
 				);
 				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.LifeCollection;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "记点生活";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
