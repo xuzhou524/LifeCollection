@@ -1828,12 +1828,12 @@
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				GCC_PREFIX_HEADER = LifeCollection/LifeCollectionPrefixHeader.pch;
 				INFOPLIST_FILE = LifeCollection/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.LifeCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1851,12 +1851,12 @@
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				GCC_PREFIX_HEADER = LifeCollection/LifeCollectionPrefixHeader.pch;
 				INFOPLIST_FILE = LifeCollection/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.LifeCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
