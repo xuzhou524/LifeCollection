@@ -111,8 +111,7 @@
     }else{
         [self.eventModel insertTime:self.eventModel];
     }
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 
 }
 
@@ -250,7 +249,5 @@
                      }
                  }
      ];
-    
 }
-
 @end

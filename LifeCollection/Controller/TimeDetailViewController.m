@@ -8,6 +8,7 @@
 
 #import "TimeDetailViewController.h"
 #import "TimeListTableViewCell.h"
+#import "AddViewController.h"
 
 @interface TimeDetailViewController ()
 @property(nonatomic,strong)LDNavigationTapView *topView;
@@ -83,6 +84,7 @@
         make.width.equalTo(@((ScreenWidth - 50) / 2.0));
         make.height.equalTo(@35);
     }];
+    [editorButton addTarget:self action:@selector(didiEditorClick) forControlEvents:UIControlEventTouchUpInside];
     UILabel * label = [UILabel new];
     label.text = @"编辑";
     label.font = LCFont2(15);
@@ -115,6 +117,12 @@
     [label1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(shareButton);
     }];
+}
+
+-(void)didiEditorClick{
+    AddViewController * addVC = [AddViewController new];
+    addVC.eventModel = self.eventModel;
+    [self.navigationController pushViewController:addVC animated:YES];
 }
 
 -(void)didiShareClick{
