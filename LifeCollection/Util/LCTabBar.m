@@ -13,21 +13,17 @@
 -(void)layoutSubviews{
     [super layoutSubviews];
     for (UITabBarItem * item in self.items) {
-        if (LCiPhoneX) {
-            item.imageInsets = UIEdgeInsetsMake(5.0, 0, -5.0, 0);
-        }else{
-            item.imageInsets = UIEdgeInsetsMake(-5.0, 0, 5.0, 0);
-        }
+        item.imageInsets = UIEdgeInsetsMake(-5.0, 0, 5.0, 0);
     }
     for (UIControl * tabBarButton in self.subviews) {
         if ([tabBarButton isKindOfClass:NSClassFromString(@"_UIBarBackground")]) {
             for (UIView * view in tabBarButton.subviews) {
-                if ([view isKindOfClass:NSClassFromString(@"UIImageView")]) {
-                    view.layer.shadowOffset = CGSizeMake(1,0);
-                    view.layer.shadowOpacity = 0.5;
-                    view.layer.shadowRadius = 3.0;
-                    view.layer.shadowColor = [UIColor grayColor].CGColor;
-                }
+//                if ([view isKindOfClass:NSClassFromString(@"UIImageView")]) {
+//                    view.layer.shadowOffset = CGSizeMake(2,0);
+//                    view.layer.shadowOpacity = 0.3;
+//                    view.layer.shadowRadius = 2.0;
+//                    view.layer.shadowColor = [UIColor grayColor].CGColor;
+//                }
                 view.backgroundColor = [UIColor whiteColor];
             }
         }
