@@ -31,7 +31,7 @@
 }
 
 -(void)sebViews{
-    self.contentView.backgroundColor = [UIColor whiteColor];
+    self.contentView.backgroundColor = [LCColor backgroudColor];
     
     _bgView = [[UIImageView alloc] initWithFrame:CGRectMake(12, 8, [UIScreen mainScreen].bounds.size.width - 24, 120)];
     _bgView.layer.cornerRadius = 8;

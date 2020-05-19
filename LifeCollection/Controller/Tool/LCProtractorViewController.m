@@ -1174,7 +1174,7 @@
 {
     [super viewDidLoad];
     self.fd_prefersNavigationBarHidden = YES;
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [LCColor backgroudColor];
     _LyView = [[LYProtractorView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHight) frontCamera:NO];
     [self.view addSubview:_LyView];
     [_LyView.flashButton addTarget:self action:@selector(buttonClick) forControlEvents:(UIControlEventTouchUpInside)];

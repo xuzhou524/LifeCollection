@@ -39,7 +39,7 @@ static CGFloat const kVerticalMargin = kVerticalInset + kMargin;
 {
     self = [self initWithFrame:CGRectZero];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [LCColor backgroudColor];
         
         _borderView = [[UIControl alloc] init];
         _borderView.layer.borderColor = [UIColor colorWithWhite:0.8f alpha:1.f].CGColor;

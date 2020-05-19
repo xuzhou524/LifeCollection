@@ -84,7 +84,7 @@
     NSString * imageStr = LCEventBackgroundImage([self.eventModel.colorType integerValue]);
     [editorButton setBackgroundImage:[UIImage imageNamed:imageStr] forState:UIControlStateNormal];
     
-    [editorButton setBackgroundColor:[UIColor whiteColor]];
+    [editorButton setBackgroundColor:[LCColor backgroudColor]];
     editorButton.alpha = 0.3;
     [self.view addSubview:editorButton];
     [editorButton mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //navigationBar 背景颜色（或者可以用图片
+    
     [self.navigationBar setBackgroundImage:[LCColor createImageWithColor:[LCColor backgroudColor]]
                              forBarMetrics:UIBarMetricsDefault];
     //navigationBar Title 样式

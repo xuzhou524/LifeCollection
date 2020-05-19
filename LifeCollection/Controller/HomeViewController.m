@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.view.backgroundColor = [LCColor backgroudColor];
     UIImageView * summeryImageView = [UIImageView new];
     summeryImageView.image = [UIImage imageNamed:@"summery"];

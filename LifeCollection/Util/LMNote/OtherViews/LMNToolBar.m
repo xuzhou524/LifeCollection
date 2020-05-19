@@ -82,7 +82,7 @@ UIImage *lmn_getRectangleImageWithOptions(CGSize size, BOOL opaque, CGFloat scal
 {
     if (!_toolBar) {
         _toolBar = [[UIView alloc] init];
-        _toolBar.backgroundColor = [UIColor whiteColor];
+        _toolBar.backgroundColor = [LCColor backgroudColor];
         NSMutableArray *itemButtons = [NSMutableArray array];
         NSArray *images = @[
                             [UIImage imageNamed:@"lmn_tool_a"],
@@ -145,7 +145,7 @@ UIImage *lmn_getRectangleImageWithOptions(CGSize size, BOOL opaque, CGFloat scal
     });
     
     _subToolBar = [[UIView alloc] init];
-    _subToolBar.backgroundColor = [UIColor whiteColor];
+    _subToolBar.backgroundColor = [LCColor backgroudColor];
     NSMutableArray *itemButtons = [NSMutableArray array];
     NSArray *images = @[
                         [UIImage imageNamed:@"lmn_font_bold"],

@@ -59,7 +59,7 @@
     self.contentView.backgroundColor = [LCColor backgroudColor];
     
     UIView * oneView = [UIView new];
-    oneView.backgroundColor = [LCColor whiteColor];
+    oneView.backgroundColor = [LCColor backgroudColor];
     [self.contentView addSubview:oneView];
     [oneView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.equalTo(self.contentView);
@@ -90,7 +90,7 @@
     }];
     
     UIView * twoView = [UIView new];
-    twoView.backgroundColor = [LCColor whiteColor];
+    twoView.backgroundColor = [LCColor backgroudColor];
     [self.contentView addSubview:twoView];
     [twoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.top.equalTo(self.contentView);

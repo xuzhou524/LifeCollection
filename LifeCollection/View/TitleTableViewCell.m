@@ -22,7 +22,7 @@
     self.contentView.backgroundColor = [LCColor backgroudColor];
     self.clipsToBounds = YES;
     UIView *bgView = [UIView new];
-    bgView.backgroundColor = [LCColor whiteColor];
+    bgView.backgroundColor = [LCColor backgroudColor];
     [self.contentView addSubview:bgView];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.equalTo(self.contentView);
@@ -76,7 +76,7 @@
     self.contentView.backgroundColor = [LCColor backgroudColor];
     
     UIView *bgView = [UIView new];
-    bgView.backgroundColor = [LCColor whiteColor];
+    bgView.backgroundColor = [LCColor backgroudColor];
     [self.contentView addSubview:bgView];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.equalTo(self.contentView);
@@ -139,7 +139,7 @@
     self.contentView.backgroundColor = [LCColor backgroudColor];
     
     UIView *bgView = [UIView new];
-    bgView.backgroundColor = [LCColor whiteColor];
+    bgView.backgroundColor = [LCColor backgroudColor];
     [self.contentView addSubview:bgView];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.equalTo(self.contentView);
@@ -178,7 +178,7 @@
 }
 
 -(void)sebViews{
-    self.contentView.backgroundColor = [LCColor whiteColor];
+    self.contentView.backgroundColor = [LCColor backgroudColor];
     
     _titleLabel = [UILabel new];
     _titleLabel.font = LCFont(15);

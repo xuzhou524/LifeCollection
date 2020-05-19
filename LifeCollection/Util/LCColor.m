@@ -90,7 +90,8 @@
 
 
 + (UIColor *)backgroudColor {
-    return [LCColor colorWithR255:244 G255:244 B255:247 A255:255];
+    return [UIColor colorWithLightColorStr:@"EBEBEB" DarkColor:@"333333"];
+//    return [LCColor colorWithR255:244 G255:244 B255:247 A255:255];
 }
 
 + (UIColor *)LCColor_235_235_235{
