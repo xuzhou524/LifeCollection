@@ -47,9 +47,9 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return 5;
+        return 1;
     }
-    return 4;
+    return 2;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -86,12 +86,12 @@
     if (indexPath.section == 0) {
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @[@"用易房贷",@"随时笔记",@"OnePai",@"蓝牙通",@"用易天气"][indexPath.row];
+        cell.titleLabel.text = @[@"房贷计算器"][indexPath.row];
         return cell;
     }else{
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @[@"V2EX",@"龙贷",@"抽屉新热榜",@"秘峰"][indexPath.row];
+        cell.titleLabel.text = @[@"V2EX",@"抽屉新热榜"][indexPath.row];
         return cell;
     }
 }
@@ -99,16 +99,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *str;
     if (indexPath.section == 0) {
-        str = @[@"https://itunes.apple.com/cn/app/id1272033544",
-                @"https://itunes.apple.com/cn/app/id1330908170",
-                @"https://itunes.apple.com/cn/app/id1239242152",
-                @"https://itunes.apple.com/cn/app/id1116575370",
-                @"https://itunes.apple.com/cn/app/id1107521185"][indexPath.row];
+        str = @[@"https://itunes.apple.com/cn/app/id1272033544"][indexPath.row];
     }else{
         str = @[@"https://itunes.apple.com/cn/app/id1078157349",
-                @"https://itunes.apple.com/cn/app/id900365369",
-                @"https://itunes.apple.com/cn/app/id513228984",
-                @"https://itunes.apple.com/cn/app/id1330536377"][indexPath.row];
+                @"https://itunes.apple.com/cn/app/id513228984"][indexPath.row];
     }
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
