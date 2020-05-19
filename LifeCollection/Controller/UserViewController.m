@@ -184,7 +184,7 @@
 
 -(void)tuImageView{
     NSString *str = @"mqq://im/chat?chat_type=wpa&uin=1043037904&version=1&src_type=web";
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str] options:@{} completionHandler:nil];
 }
 
 @end

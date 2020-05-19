@@ -104,7 +104,7 @@
         str = @[@"https://itunes.apple.com/cn/app/id1078157349",
                 @"https://itunes.apple.com/cn/app/id513228984"][indexPath.row];
     }
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str] options:@{} completionHandler:nil];
 }
 
 @end
