@@ -14,9 +14,8 @@
 
 @implementation LCNavigationViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
+-(void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
     [self.navigationBar setBackgroundImage:[LCColor createImageWithColor:[LCColor backgroudColor]]
                              forBarMetrics:UIBarMetricsDefault];
     //navigationBar Title 样式
@@ -25,6 +24,11 @@
                                                  NSForegroundColorAttributeName : [LCColor LCColor_77_92_127]
                                                  }];
     [self.navigationBar setShadowImage:[LCColor createImageWithColor:[LCColor backgroudColor]]];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
     self.interactivePopGestureRecognizer.delegate = self;
 }
 
