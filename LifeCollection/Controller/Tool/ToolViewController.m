@@ -11,7 +11,6 @@
 
 #import "LCProtractorViewController.h"
 #import "LCLevelViewController.h"
-#import "LCNoiseViewController.h"
 #import "LCCorrectViewController.h"
 #import "LCRuleViewController.h"
 
@@ -36,13 +35,7 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationItem.title = @"日常工具";
     
-//    UILabel * liftLabel = [UILabel new];
-//    liftLabel.text = @"日常工具";
-//    liftLabel.font = LCFont(23);
-//    liftLabel.textColor = [LCColor LCColor_77_92_127];
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
-    
-    _titleArray = @[@"量角器",@"水平仪",@"噪音",@"矫正",@"直尺"];
+    _titleArray = @[@"量角器",@"水平仪",@"矫正",@"直尺"];
     _imageArr = @[@"liangjiaoqi",@"shuipingyi",@"zaoyin",@"jiaozheng",@"chizi"];
     _BgColorArr = @[[LCColor colorWithHexString:@"#CC99F0"],
                    [LCColor colorWithHexString:@"#81BE8D"],
@@ -114,27 +107,18 @@
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
             LCProtractorViewController *VC = [[LCProtractorViewController alloc] init];
-            self.navigationController.navigationBarHidden = YES;
             [self.navigationController pushViewController:VC animated:YES];
         }else if(indexPath.row == 1){
             LCLevelViewController *VC = [[LCLevelViewController alloc] init];
-            self.navigationController.navigationBarHidden = YES;
             [self.navigationController pushViewController:VC animated:YES];
         }else if(indexPath.row == 2){
-            LCNoiseViewController *VC = [[LCNoiseViewController alloc] init];
-            self.navigationController.navigationBarHidden = YES;
+            LCCorrectViewController *VC = [[LCCorrectViewController alloc] init];
             [self.navigationController pushViewController:VC animated:YES];
         }else if(indexPath.row == 3){
-            LCCorrectViewController *VC = [[LCCorrectViewController alloc] init];
-            self.navigationController.navigationBarHidden = YES;
-            [self.navigationController pushViewController:VC animated:YES];
-        }else if(indexPath.row == 4){
             LCRuleViewController *VC = [[LCRuleViewController alloc] init];
-            self.navigationController.navigationBarHidden = YES;
             [self.navigationController pushViewController:VC animated:YES];
         }
     }
-
 }
 
 @end

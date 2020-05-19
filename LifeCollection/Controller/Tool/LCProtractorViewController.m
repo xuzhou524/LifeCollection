@@ -1072,14 +1072,15 @@
     if (!_takePictureButton)
     {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setFrame:CGRectMake(0, 0, 150, 60)];
-        button.center = CGPointMake(self.bounds.size.width - 50, 110);
+        [button setFrame:CGRectMake(0, 0, 120, 60)];
+        button.center = CGPointMake(self.bounds.size.width - 50, 100);
         button.backgroundColor = [UIColor clearColor];
         _takePictureButton = button;
         _takePictureButton.transform = CGAffineTransformRotate(_takePictureButton.transform, M_PI_2);
         _takePictureButton.titleLabel.font = [UIFont systemFontOfSize:17];
-        [_takePictureButton setTitle:@"打开相机" forState:UIControlStateNormal];
+        [_takePictureButton setTitle:@"拍照片" forState:UIControlStateNormal];
         [_takePictureButton setImage:[UIImage imageNamed:@"paishe"] forState:(UIControlStateNormal)];
+        _takePictureButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, -10);
     }
     return _takePictureButton;
 }
@@ -1088,7 +1089,9 @@
 {
     if (!_flashButton)
     {
-        _flashButton = [self buttonAtPoint:CGPointMake( self.bounds.size.width - 100, 60)];
+        _flashButton = [self buttonAtPoint:CGPointMake( self.bounds.size.width - 110, 75)];
+//        [_flashButton setFrame:CGRectMake(self.bounds.size.width - 50, 50, 150, 60)];
+        
         [_flashButton setImage:[UIImage imageNamed:@"tool_fanhui"] forState:(UIControlStateNormal)];
         _flashButton.tag = 24;
         _flashButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
@@ -1119,13 +1122,14 @@
     {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setFrame:CGRectMake(0, 0, 120, 60)];
-        button.center = CGPointMake(self.bounds.size.width - 50, 95);
+        button.center = CGPointMake(self.bounds.size.width - 50, 100);
         button.backgroundColor = [UIColor clearColor];
         _retakeButton = button;
         _retakeButton.transform = CGAffineTransformRotate(_retakeButton.transform, M_PI_2);
         [_retakeButton setImage:[UIImage imageNamed:@"jia0du_quxiao"] forState:(UIControlStateNormal)];
         _retakeButton.titleLabel.font = [UIFont systemFontOfSize:17];
-        [_retakeButton setTitle:@"重新" forState:UIControlStateNormal];
+        [_retakeButton setTitle:@"重新拍" forState:UIControlStateNormal];
+        _retakeButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, -10);
     }
     return _retakeButton;
 }
@@ -1169,6 +1173,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.fd_prefersNavigationBarHidden = YES;
     self.view.backgroundColor = [UIColor whiteColor];
     _LyView = [[LYProtractorView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHight) frontCamera:NO];
     [self.view addSubview:_LyView];

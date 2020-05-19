@@ -285,6 +285,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.fd_prefersNavigationBarHidden = YES;
     self.view.backgroundColor = [UIColor whiteColor];
     _LyView = [[ZJ_HangerView alloc] initWithFrame:self.view.bounds frontCamera:NO];
     [self.view addSubview:_LyView];
