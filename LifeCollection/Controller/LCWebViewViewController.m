@@ -41,7 +41,9 @@
     [btn setFrame:CGRectMake(0, 0, 24, 24)];
     btn.imageView.contentMode=UIViewContentModeTopLeft;
     btn.imageEdgeInsets = UIEdgeInsetsMake( 0, -5, 0, 5);
-    [btn setImage:[UIImage imageNamed:@"d_Arrow_left"] forState:UIControlStateNormal];
+    UIImage * arrowIamge = [[UIImage imageNamed:@"d_Arrow_left"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    btn.tintColor = [LCColor LCColor_77_92_127];
+    [btn setImage:arrowIamge forState:UIControlStateNormal];
     
     _closeBtn= [UIButton buttonWithType:UIButtonTypeCustom];
     [_closeBtn addTarget:self action:@selector(back2) forControlEvents:UIControlEventTouchUpInside];
