@@ -33,7 +33,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [LCColor backgroudColor];
     self.tableView.backgroundColor = [LCColor backgroudColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     

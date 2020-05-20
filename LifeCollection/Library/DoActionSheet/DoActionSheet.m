@@ -64,11 +64,11 @@
     bt.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 
     if (bCancel){
-        bt.backgroundColor = DO_AS_CANCEL_COLOR;
+        bt.backgroundColor = [LCColor itemBackgroudColor];
         bt.titleLabel.font = DO_AS_TITLE_FONT;
         [bt setTitleColor:DO_AS_CANCEL_TEXT_COLOR forState:UIControlStateNormal];
     }else{
-        bt.backgroundColor = DO_AS_BUTTON_COLOR;
+        bt.backgroundColor = [LCColor itemBackgroudColor];
         bt.titleLabel.font = DO_AS_BUTTON_FONT;
         [bt setTitleColor:DO_AS_BUTTON_TEXT_COLOR forState:UIControlStateNormal];
     }
@@ -84,7 +84,7 @@
 
     // make back view -----------------------------------------------------------------------------------------------
     _vActionSheet = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
-    _vActionSheet.backgroundColor = DO_AS_BACK_COLOR;
+    _vActionSheet.backgroundColor = [LCColor backgroudColor];
     [self addSubview:_vActionSheet];
     
     // Title --------------------------------------------------------------------------------------------------------

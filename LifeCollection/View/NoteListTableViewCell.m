@@ -28,11 +28,11 @@
     
     _bgView = [UIImageView new];
     _bgView.userInteractionEnabled = YES;
-    _bgView.backgroundColor = [LCColor whiteColor];
-    _bgView.layer.shadowColor= [LCColor LCColor_110_110_110].CGColor;//阴影颜色
-    _bgView.layer.shadowOffset= CGSizeMake(0,0);//偏移距离
-    _bgView.layer.shadowOpacity= 0.1;//不透明度
-    _bgView.layer.shadowRadius= 3.0;//半径
+    _bgView.backgroundColor = [LCColor itemBackgroudColor];
+//    _bgView.layer.shadowColor= [LCColor LCColor_110_110_110].CGColor;//阴影颜色
+//    _bgView.layer.shadowOffset= CGSizeMake(0,0);//偏移距离
+//    _bgView.layer.shadowOpacity= 0.1;//不透明度
+//    _bgView.layer.shadowRadius= 3.0;//半径
     _bgView.layer.cornerRadius = 5;
     [self.contentView addSubview:_bgView];
     [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {

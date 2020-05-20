@@ -17,6 +17,9 @@
 + (UIColor *) colorWithHexString:(NSString *)color;
 
 + (UIColor *)backgroudColor;
++ (UIColor *)itemBackgroudColor;
+
+
 + (UIColor *)LCColor_235_235_235;
 + (UIColor *)LCColor_232_229_222;
 

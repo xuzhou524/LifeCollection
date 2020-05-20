@@ -24,7 +24,7 @@
 //                    view.layer.shadowRadius = 2.0;
 //                    view.layer.shadowColor = [UIColor grayColor].CGColor;
 //                }
-                view.backgroundColor = [UIColor whiteColor];
+                view.backgroundColor = [LCColor itemBackgroudColor];
             }
         }
         if ([tabBarButton isKindOfClass:NSClassFromString(@"UITabBarButton")]) {

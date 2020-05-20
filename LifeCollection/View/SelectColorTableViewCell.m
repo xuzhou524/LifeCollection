@@ -22,7 +22,7 @@
     self.contentView.backgroundColor = [LCColor backgroudColor];
     
     UIView *bgView = [UIView new];
-    bgView.backgroundColor = [LCColor backgroudColor];
+    bgView.backgroundColor = [LCColor itemBackgroudColor];
     [self.contentView addSubview:bgView];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.equalTo(self.contentView);

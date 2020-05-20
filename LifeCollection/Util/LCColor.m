@@ -90,17 +90,26 @@
 
 
 + (UIColor *)backgroudColor {
-    return [UIColor colorWithLightColorStr:@"EBEBEB" DarkColor:@"333333"];
+    return [UIColor colorWithLightColorStr:@"EBEBEB" DarkColor:@"191919"];
 //    return [LCColor colorWithR255:244 G255:244 B255:247 A255:255];
 }
+
++ (UIColor *)itemBackgroudColor {
+    return [UIColor colorWithLightColorStr:@"ffffff" DarkColor:@"1E1E1E"];
+}
++ (UIColor *)LCColor_232_229_222{
+    return [UIColor colorWithLightColorStr:@"EAEAF2" DarkColor:@"1E1E1E"];
+//    return [LCColor colorWithR255:234 G255:234 B255:242 A255:255];
+}
+
+
+
 
 + (UIColor *)LCColor_235_235_235{
     return [LCColor colorWithR255:235 G255:235 B255:235 A255:255];
 }
 
-+ (UIColor *)LCColor_232_229_222{
-    return [LCColor colorWithR255:234 G255:234 B255:242 A255:255];
-}
+
 
 + (UIColor *)LCColor_77_92_127{
     return [LCColor colorWithR255:77 G255:92 B255:127 A255:255];
