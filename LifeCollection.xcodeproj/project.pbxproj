@@ -63,6 +63,7 @@
 		5342BFB7226ED14D002BC1FE /* JinnLockCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5342BFB2226ED14D002BC1FE /* JinnLockCircle.m */; };
 		5342BFBA227168B7002BC1FE /* Settings~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5342BFB8227168B6002BC1FE /* Settings~iphone@2x.png */; };
 		5342BFBB227168B7002BC1FE /* Settings~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 5342BFB9227168B6002BC1FE /* Settings~iphone.png */; };
+		534A576224F62A75001C4EF9 /* AppreciatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 534A576124F62A75001C4EF9 /* AppreciatesViewController.m */; };
 		53519AFA22643FFE00A8C776 /* WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53519AF922643FFE00A8C776 /* WeatherManager.m */; };
 		53519AFC2264783D00A8C776 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53519AFB2264783D00A8C776 /* CoreLocation.framework */; };
 		53519AFF22657C7B00A8C776 /* ico_fabu_tianjia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53519AFD22657C7A00A8C776 /* ico_fabu_tianjia@2x.png */; };
@@ -350,6 +351,8 @@
 		5342BFB2226ED14D002BC1FE /* JinnLockCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JinnLockCircle.m; sourceTree = "<group>"; };
 		5342BFB8227168B6002BC1FE /* Settings~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings~iphone@2x.png"; sourceTree = "<group>"; };
 		5342BFB9227168B6002BC1FE /* Settings~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings~iphone.png"; sourceTree = "<group>"; };
+		534A576024F62A75001C4EF9 /* AppreciatesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppreciatesViewController.h; sourceTree = "<group>"; };
+		534A576124F62A75001C4EF9 /* AppreciatesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppreciatesViewController.m; sourceTree = "<group>"; };
 		53519AF822643FFE00A8C776 /* WeatherManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherManager.h; sourceTree = "<group>"; };
 		53519AF922643FFE00A8C776 /* WeatherManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherManager.m; sourceTree = "<group>"; };
 		53519AFB2264783D00A8C776 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -870,6 +873,8 @@
 				531AD0C821CCE12300A4B2BC /* LCWebViewViewController.m */,
 				5325DF7821D08B2100743052 /* FoundViewController.h */,
 				5325DF7921D08B2100743052 /* FoundViewController.m */,
+				534A576024F62A75001C4EF9 /* AppreciatesViewController.h */,
+				534A576124F62A75001C4EF9 /* AppreciatesViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1542,6 +1547,7 @@
 				53AC8E2E21D33E5800DD0079 /* LCSettings.m in Sources */,
 				5342BFB4226ED14D002BC1FE /* JinnLockTool.m in Sources */,
 				5395484A2277F87F0074BAEB /* AccountAndPasswordTableViewCell.m in Sources */,
+				534A576224F62A75001C4EF9 /* AppreciatesViewController.m in Sources */,
 				531AD0A521CB7DAC00A4B2BC /* DateFormatter.m in Sources */,
 				53AC8E0C21D1DC9D00DD0079 /* LCRefresh.m in Sources */,
 				536D0BD721DF4A0400FB0653 /* LCClient.m in Sources */,

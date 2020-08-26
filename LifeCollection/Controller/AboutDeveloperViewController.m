@@ -13,6 +13,8 @@
 #import "AboutDeveloperViewController.h"
 #import "AppListViewController.h"
 
+#import "AppreciatesViewController.h"
+
 @interface AboutDeveloperViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView * tableView;
@@ -50,7 +52,7 @@
     if (section == 0) {
         return 4;
     }
-    return 2;
+    return 3;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -81,8 +83,8 @@
     }else{
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @[@"ShareHub",@"开发者app集锦"][indexPath.row];
-        cell.summeryLabel.text = @[@"资源和工具的集合",@""][indexPath.row];
+        cell.titleLabel.text = @[@"ShareHub",@"开发者app集锦",@"赞赏"][indexPath.row];
+        cell.summeryLabel.text = @[@"资源和工具的集合",@"",@""][indexPath.row];
         return cell;
     }
 }
@@ -108,6 +110,9 @@
             [self.navigationController pushViewController:webViewVC animated:YES];
         }else if (indexPath.row == 1){
             AppListViewController * appListVC =[AppListViewController new];
+            [self.navigationController pushViewController:appListVC animated:YES];
+        }else if (indexPath.row == 2){
+            AppreciatesViewController * appListVC =[AppreciatesViewController new];
             [self.navigationController pushViewController:appListVC animated:YES];
         }
     }

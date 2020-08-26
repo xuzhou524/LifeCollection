@@ -12,6 +12,7 @@ def pods
    pod 'MJRefresh'
    pod 'XHLaunchAd'
    pod 'FDFullscreenPopGesture'
+   
 end
 
 
