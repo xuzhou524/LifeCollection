@@ -45,7 +45,7 @@
 
 -(void)saoyisaoImageView{
     NSString *str = @"alipayqr://platformapi/startapp?saId=10000007&qrcode=https://qr.alipay.com/fkx01590ythcty3atyusi88?t=1545729953985";
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str] options:nil completionHandler:nil];
 }
 
 @end
