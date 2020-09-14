@@ -60,7 +60,7 @@
     regClass(self.tableView, TitleNoRightImageTableViewCell);
     
     UILabel * liftLabel = [UILabel new];
-    liftLabel.text = @"记点";
+    liftLabel.text = @"我的时间";
     liftLabel.font = LCFont(23);
     liftLabel.textColor = [LCColor LCColor_77_92_127];
     [self .view addSubview:liftLabel];
@@ -132,7 +132,7 @@
         }
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @[@"日常工具",@"服务条款",@"分享记点",@"关于开发者"][indexPath.row];
+        cell.titleLabel.text = @[@"日常工具",@"服务条款",@"分享我的时间",@"关于开发者"][indexPath.row];
         cell.summeryLabel.text = @"";
         return cell;
     }
@@ -149,7 +149,7 @@
             webViewVC.urlStr = @"http://img.gozap.com/group19/M00/0F/E5/wKgCN1y1mYvZp1H6AAIFAVCycb8814.pdf";
             [self.navigationController pushViewController:webViewVC animated:YES];
         }else if (indexPath.row == 2){
-            NSString * title = @"记点 - 专注时间管理、记事本日常工具";
+            NSString * title = @"我的时间 - 专注时间管理、记事本日常工具";
             NSString * url = @"https://itunes.apple.com/us/app//id1447845919?l=zh&ls=1&mt=8";
             NSString * image = @"http://img.gozap.com/group19/M01/B4/0F/wKgCOFwvGqnXXzibAACN7VDmKvQ248.png";
             NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:image]];

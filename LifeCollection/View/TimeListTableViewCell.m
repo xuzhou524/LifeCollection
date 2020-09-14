@@ -144,7 +144,7 @@
 -(void)bind:(EventModel *)model{
     if (model.title) {
         if ([model.title isEqualToString:@"咘咕诞生"]) {
-            model.title = @"记点诞生";
+            model.title = @"我的时间诞生";
         }
         self.titleLabel.text = model.title;
     }else{
@@ -395,7 +395,7 @@
 -(void)bind:(EventModel *)model{
     if (model.title) {
         if ([model.title isEqualToString:@"咘咕诞生"]) {
-            model.title = @"记点诞生";
+            model.title = @"我的时间诞生";
         }
         self.titleLabel.text = model.title;
     }else{

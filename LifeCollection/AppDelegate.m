@@ -54,7 +54,7 @@
     } else if ([typeName isEqualToString:kLifeCollectionFound]) {
         [LCClient sharedInstance].lcCenterTabBar.selectedIndex = 1;
     } else if ([typeName isEqualToString:kLifeCollectionShare]) {
-        NSString * title = @"记点 - 专注时间管理、记事本日常工具";
+        NSString * title = @"我的时间 - 专注时间管理、记事本日常工具";
         NSString * url = @"https://www.gezhipu.com";
         NSString * image = @"http://img.gozap.com/group19/M01/B4/0F/wKgCOFwvGqnXXzibAACN7VDmKvQ248.png";
         NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:image]];
