@@ -73,6 +73,13 @@
 		5357B41821C38B74009D9333 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5357B41621C38B74009D9333 /* LaunchScreen.storyboard */; };
 		5357B41B21C38B74009D9333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B41A21C38B74009D9333 /* main.m */; };
 		5357B42921C3911B009D9333 /* LCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B42821C3911B009D9333 /* LCColor.m */; };
+		5363CF3825131E1E0067138A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5363CF3725131E1E0067138A /* WidgetKit.framework */; };
+		5363CF3A25131E1E0067138A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5363CF3925131E1E0067138A /* SwiftUI.framework */; };
+		5363CF3F25131E210067138A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5363CF3E25131E200067138A /* Assets.xcassets */; };
+		5363CF4325131E210067138A /* LifeCollectionOneTimeExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5363CF3625131E1E0067138A /* LifeCollectionOneTimeExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5363CF4A25131E320067138A /* LifeCollectionOneTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5363CF4925131E320067138A /* LifeCollectionOneTime.swift */; };
+		5363CF692513479C0067138A /* WidgetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5363CF682513479C0067138A /* WidgetModel.m */; };
+		5363CF6A2513479C0067138A /* WidgetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5363CF682513479C0067138A /* WidgetModel.m */; };
 		536D0BD721DF4A0400FB0653 /* LCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 536D0BD621DF4A0400FB0653 /* LCClient.m */; };
 		5395484A2277F87F0074BAEB /* AccountAndPasswordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 539548492277F87F0074BAEB /* AccountAndPasswordTableViewCell.m */; };
 		539548562277FEDB0074BAEB /* AccountAndPassword_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 539548552277FEDB0074BAEB /* AccountAndPassword_bg.png */; };
@@ -211,6 +218,16 @@
 		855A42587625B7BB03CD4F6E /* Pods_LifeCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E969EF071FF62323FD55A93A /* Pods_LifeCollection.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5363CF4125131E210067138A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5357B3FD21C38B73009D9333 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5363CF3525131E1E0067138A;
+			remoteInfo = LifeCollectionOneTimeExtension;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		531EC86C226984630063C1B3 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -218,6 +235,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				5363CF4325131E210067138A /* LifeCollectionOneTimeExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +347,16 @@
 		5357B41A21C38B74009D9333 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5357B42721C3911B009D9333 /* LCColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCColor.h; sourceTree = "<group>"; };
 		5357B42821C3911B009D9333 /* LCColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCColor.m; sourceTree = "<group>"; };
+		5363CF3625131E1E0067138A /* LifeCollectionOneTimeExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LifeCollectionOneTimeExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5363CF3725131E1E0067138A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		5363CF3925131E1E0067138A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		5363CF3E25131E200067138A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5363CF4025131E210067138A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5363CF4925131E320067138A /* LifeCollectionOneTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeCollectionOneTime.swift; sourceTree = "<group>"; };
+		5363CF4E25133A400067138A /* LifeCollectionOneTimeExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LifeCollectionOneTimeExtension.entitlements; sourceTree = "<group>"; };
+		5363CF662513479C0067138A /* LifeCollectionOneTimeExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LifeCollectionOneTimeExtension-Bridging-Header.h"; sourceTree = "<group>"; };
+		5363CF672513479C0067138A /* WidgetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WidgetModel.h; sourceTree = "<group>"; };
+		5363CF682513479C0067138A /* WidgetModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WidgetModel.m; sourceTree = "<group>"; };
 		536D0BD321DF41E600FB0653 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		536D0BD521DF4A0400FB0653 /* LCClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCClient.h; sourceTree = "<group>"; };
 		536D0BD621DF4A0400FB0653 /* LCClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCClient.m; sourceTree = "<group>"; };
@@ -531,6 +559,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5363CF3325131E1E0067138A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5363CF3A25131E1E0067138A /* SwiftUI.framework in Frameworks */,
+				5363CF3825131E1E0067138A /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -548,6 +585,8 @@
 			children = (
 				531AD08321CA286000A4B2BC /* EventModel.h */,
 				531AD08421CA286000A4B2BC /* EventModel.m */,
+				5363CF672513479C0067138A /* WidgetModel.h */,
+				5363CF682513479C0067138A /* WidgetModel.m */,
 				531AD08621CA28C700A4B2BC /* EventModelTool.h */,
 				531AD08721CA28C700A4B2BC /* EventModelTool.m */,
 				53AC8E0721D0D02700DD0079 /* FoundListModel.h */,
@@ -556,6 +595,7 @@
 				53B7FC682237A0110052D63C /* LCCompassManage.m */,
 				53B7FC912237A64C0052D63C /* LCRulesLineModel.h */,
 				53B7FC922237A64C0052D63C /* LCRulesLineModel.m */,
+				5363CF662513479C0067138A /* LifeCollectionOneTimeExtension-Bridging-Header.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -674,7 +714,9 @@
 		5357B3FC21C38B73009D9333 = {
 			isa = PBXGroup;
 			children = (
+				5363CF4E25133A400067138A /* LifeCollectionOneTimeExtension.entitlements */,
 				5357B40721C38B73009D9333 /* LifeCollection */,
+				5363CF3B25131E1E0067138A /* LifeCollectionOneTime */,
 				5357B40621C38B73009D9333 /* Products */,
 				0C8790F08621332121D8810D /* Pods */,
 				DD5677F4BB641C2F91264A51 /* Frameworks */,
@@ -685,6 +727,7 @@
 			isa = PBXGroup;
 			children = (
 				5357B40521C38B73009D9333 /* 我的时间.app */,
+				5363CF3625131E1E0067138A /* LifeCollectionOneTimeExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -805,6 +848,16 @@
 				53519AF922643FFE00A8C776 /* WeatherManager.m */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		5363CF3B25131E1E0067138A /* LifeCollectionOneTime */ = {
+			isa = PBXGroup;
+			children = (
+				5363CF4925131E320067138A /* LifeCollectionOneTime.swift */,
+				5363CF3E25131E200067138A /* Assets.xcassets */,
+				5363CF4025131E210067138A /* Info.plist */,
+			);
+			path = LifeCollectionOneTime;
 			sourceTree = "<group>";
 		};
 		53954857227838A40074BAEB /* LMNote */ = {
@@ -1006,6 +1059,8 @@
 				E969EF071FF62323FD55A93A /* Pods_LifeCollection.framework */,
 				531EC85C226984630063C1B3 /* NotificationCenter.framework */,
 				53570FD12297A7BB00DBABE8 /* Messages.framework */,
+				5363CF3725131E1E0067138A /* WidgetKit.framework */,
+				5363CF3925131E1E0067138A /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1028,11 +1083,29 @@
 			buildRules = (
 			);
 			dependencies = (
+				5363CF4225131E210067138A /* PBXTargetDependency */,
 			);
 			name = LifeCollection;
 			productName = LifeCollection;
 			productReference = 5357B40521C38B73009D9333 /* 我的时间.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5363CF3525131E1E0067138A /* LifeCollectionOneTimeExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5363CF4625131E210067138A /* Build configuration list for PBXNativeTarget "LifeCollectionOneTimeExtension" */;
+			buildPhases = (
+				5363CF3225131E1E0067138A /* Sources */,
+				5363CF3325131E1E0067138A /* Frameworks */,
+				5363CF3425131E1E0067138A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LifeCollectionOneTimeExtension;
+			productName = LifeCollectionOneTimeExtension;
+			productReference = 5363CF3625131E1E0067138A /* LifeCollectionOneTimeExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -1040,6 +1113,7 @@
 		5357B3FD21C38B73009D9333 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = com.longdai;
 				TargetAttributes = {
@@ -1053,6 +1127,10 @@
 								enabled = 0;
 							};
 						};
+					};
+					5363CF3525131E1E0067138A = {
+						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -1070,6 +1148,7 @@
 			projectRoot = "";
 			targets = (
 				5357B40421C38B73009D9333 /* LifeCollection */,
+				5363CF3525131E1E0067138A /* LifeCollectionOneTimeExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -1202,6 +1281,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5363CF3425131E1E0067138A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5363CF3F25131E210067138A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1317,6 +1404,7 @@
 				539548A6227838A40074BAEB /* LMNCheckboxLine.m in Sources */,
 				53B7FC8D2237A5D60052D63C /* LCRulesLineView.m in Sources */,
 				53AC8E2E21D33E5800DD0079 /* LCSettings.m in Sources */,
+				5363CF692513479C0067138A /* WidgetModel.m in Sources */,
 				5342BFB4226ED14D002BC1FE /* JinnLockTool.m in Sources */,
 				5395484A2277F87F0074BAEB /* AccountAndPasswordTableViewCell.m in Sources */,
 				534A576224F62A75001C4EF9 /* AppreciatesViewController.m in Sources */,
@@ -1348,7 +1436,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5363CF3225131E1E0067138A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5363CF4A25131E320067138A /* LifeCollectionOneTime.swift in Sources */,
+				5363CF6A2513479C0067138A /* WidgetModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5363CF4225131E210067138A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5363CF3525131E1E0067138A /* LifeCollectionOneTimeExtension */;
+			targetProxy = 5363CF4125131E210067138A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5357B40E21C38B73009D9333 /* Main.storyboard */ = {
@@ -1486,6 +1591,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A46CB81A40A90EFAE12EAFA2 /* Pods-LifeCollection.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "LifeCollection/我的时间.entitlements";
@@ -1494,7 +1600,7 @@
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				GCC_PREFIX_HEADER = LifeCollection/LifeCollectionPrefixHeader.pch;
 				INFOPLIST_FILE = LifeCollection/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1511,6 +1617,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DAB28567032FA38DDC677DEE /* Pods-LifeCollection.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "LifeCollection/我的时间.entitlements";
@@ -1519,7 +1626,7 @@
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				GCC_PREFIX_HEADER = LifeCollection/LifeCollectionPrefixHeader.pch;
 				INFOPLIST_FILE = LifeCollection/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1529,6 +1636,62 @@
 				PRODUCT_NAME = "我的时间";
 				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		5363CF4425131E210067138A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = LifeCollectionOneTimeExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
+				INFOPLIST_FILE = LifeCollectionOneTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.LifeCollection.LifeCollectionOneTime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "LifeCollection/Model/LifeCollectionOneTimeExtension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5363CF4525131E210067138A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = LifeCollectionOneTimeExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
+				INFOPLIST_FILE = LifeCollectionOneTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.LifeCollection.LifeCollectionOneTime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "LifeCollection/Model/LifeCollectionOneTimeExtension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1549,6 +1712,15 @@
 			buildConfigurations = (
 				5357B41F21C38B74009D9333 /* Debug */,
 				5357B42021C38B74009D9333 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5363CF4625131E210067138A /* Build configuration list for PBXNativeTarget "LifeCollectionOneTimeExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5363CF4425131E210067138A /* Debug */,
+				5363CF4525131E210067138A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

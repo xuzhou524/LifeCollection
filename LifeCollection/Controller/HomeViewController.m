@@ -11,6 +11,7 @@
 #import "AddViewController.h"
 #import "TimeDetailViewController.h"
 #import "EventModel.h"
+#import "WidgetModel.h"
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -72,6 +73,21 @@
     [super viewWillAppear:YES];
     
     self.eventModelLists = [self.eventModel queryWithTime];
+    
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.xuzhou.LifeCollection"];
+    
+    EventModel * eventModel = self.eventModelLists.firstObject;
+    
+    NSMutableDictionary * dic = [NSMutableDictionary new];
+    [dic setObject:eventModel.title forKey:@"title"];
+    [dic setValue:eventModel.content forKey:@"content"];
+    [dic setObject:eventModel.time forKey:@"time"];
+    [dic setObject:eventModel.classType forKey:@"classType"];
+    [dic setObject:eventModel.remindType forKey:@"remindType"];
+    [dic setObject:eventModel.colorType forKey:@"colorType"];
+
+    [userDefaults setObject:dic forKey:@"widget"];
+    
     [self.tableView reloadData];
 }
 

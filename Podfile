@@ -12,7 +12,7 @@ def pods
    pod 'MJRefresh'
    pod 'XHLaunchAd'
    pod 'FDFullscreenPopGesture'
-   
+   pod 'ZObjcStore', '~> 1.0.1'
 end
 
 

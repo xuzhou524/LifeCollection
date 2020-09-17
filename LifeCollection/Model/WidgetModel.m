@@ -1,37 +1,14 @@
 //
-//  EventModel.m
+//  WidgetModel.m
 //  LifeCollection
 //
-//  Created by gozap on 2018/12/19.
-//  Copyright © 2018 com.longdai. All rights reserved.
+//  Created by gozap on 2020/9/17.
+//  Copyright © 2020 com.longdai. All rights reserved.
 //
 
-#import "EventModel.h"
-#import "EventModelTool.h"
+#import "WidgetModel.h"
 
-@implementation EventModel
-
--(NSMutableArray *)queryWithTime{
-    return [EventModelTool queryWithTime];
-}
-
--(void)deleteTime:(int)ids{
-    [EventModelTool deleteTime:ids];
-}
-
--(void)insertTime:(EventModel *)diaryTime{
-    [EventModelTool insertTime:diaryTime];
-}
-
-
--(EventModel *)queryOneTime:(int)ids{
-    return [EventModelTool queryOneTime:ids];
-}
-
--(void)updataTime:(EventModel *)updataTime{
-    [EventModelTool updataTime:updataTime];
-}
-
+@implementation WidgetModel
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init]) {
         self.title = [aDecoder decodeObjectForKey:@"title"];
