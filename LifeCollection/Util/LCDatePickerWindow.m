@@ -64,6 +64,11 @@
     _datePicker = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, ScreenHeight-256 - 88,ScreenWidth, 216)];
     _datePicker.backgroundColor = [UIColor clearColor];
     _datePicker.datePickerMode = UIDatePickerModeDate;
+    
+    if (@available(iOS 14.0, *)) {
+        _datePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
+    }
+    
     _datePicker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
     [self.contentView addSubview:_datePicker];
     [self.datePicker mas_remakeConstraints:^(MASConstraintMaker *make) {
