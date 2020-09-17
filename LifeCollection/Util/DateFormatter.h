@@ -20,6 +20,10 @@
 
 + (NSDate *)dateFromString:(NSString *)dateString; //时间字符串 转 Date yyyy-MM-dd
 
+
+
++ (NSString*) stringFromStringtargetDateStr:(NSString*)targetDateStr;
+
 @end
 
 

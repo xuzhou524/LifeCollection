@@ -64,11 +64,11 @@
     bt.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 
     if (bCancel){
-        bt.backgroundColor = [LCColor itemBackgroudColor];
+        bt.backgroundColor = [LCColor LCColor_77_92_127];
         bt.titleLabel.font = DO_AS_TITLE_FONT;
         [bt setTitleColor:DO_AS_CANCEL_TEXT_COLOR forState:UIControlStateNormal];
     }else{
-        bt.backgroundColor = [LCColor itemBackgroudColor];
+        bt.backgroundColor = [LCColor LCColor_77_92_127];
         bt.titleLabel.font = DO_AS_BUTTON_FONT;
         [bt setTitleColor:DO_AS_BUTTON_TEXT_COLOR forState:UIControlStateNormal];
     }

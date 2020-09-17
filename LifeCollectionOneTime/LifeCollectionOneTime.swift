@@ -37,8 +37,11 @@ struct Provider: TimelineProvider {
         let time = dic["time"]
         var days = "0"
         //类型
+        let remindType = dic["remindType"]
         let classType = dic["classType"]
         var classTypeStr = "目标日:"
+        //日期
+        var targetDateStr = DateFormatter.string(fromBirthday: DateFormatter.date(fromTimeStamp: (dic["time"] as! String)))
         if classType as! String == "累计日" {
             classTypeStr = "起始日:"
             let timeInterval = DateFormatter.date(fromTimeStamp: (time as! String))
@@ -58,10 +61,63 @@ struct Provider: TimelineProvider {
                 }
             }
         }else{
-            
+            classTypeStr = "目标日:"
+            let timeInterval = DateFormatter.date(fromTimeStamp: (time as! String))
+            if var timeInt = timeInterval?.timeIntervalSinceNow {
+                if timeInt < 0 {
+                    
+                    let gregorian = NSCalendar.init(calendarIdentifier: .gregorian)
+                    let createDate = DateFormatter.date(fromTimeStamp: (time as! String))
+                    let components = gregorian?.components([.year,.month,.day], from: createDate!)
+                    
+                    let newDateComponent = gregorian?.components([.year,.month,.day], from: Date())
+
+                    if (remindType as! String == "无循环"){
+                        days = "0"
+                    }else{
+                        if (remindType as! String == "月循环" ) {
+                            if (components?.day ?? 0 <= newDateComponent?.day ?? 0) {
+                                targetDateStr = "\(newDateComponent?.year ?? 0)" + "\(newDateComponent?.month ?? 0)" + "\(components?.day ?? 0)"
+                                if (newDateComponent?.month == 12) {//当前月为12  显示下一年的01月
+                                    targetDateStr = "\(newDateComponent?.year ?? 0 + 1)" + "01" + "\(components?.day ?? 0)"
+                                }else{
+                                    if (newDateComponent?.month == 1 && (components?.day == 29 || components?.day == 30 || components?.day == 31)) {
+                                        //当前月为01月  下月是2月   假如日为29、30、31 统一显示 28
+                                        targetDateStr = "\(newDateComponent?.year ?? 0)" + "02" + "28"
+
+                                    }else if (components?.day == 31 && (newDateComponent?.month ?? 0 + 1 == 4 || newDateComponent?.month ?? 0 + 1 == 6 || newDateComponent?.month ?? 0 + 1 == 9 || newDateComponent?.month ?? 0 + 1 == 11)){
+                                        //目标日期为四月，六月，九月，十一月  假如日是31  统一显示 30
+                                        targetDateStr = "\(newDateComponent?.year ?? 0)" + "\(newDateComponent?.month ?? 0 + 1)" + "30"
+                                    }
+                                }
+                            }else{
+                                targetDateStr = "\(newDateComponent?.year ?? 0)" + "\(newDateComponent?.month ?? 0)" + "\(components?.day ?? 0)"
+                            }
+      
+                        }else if (remindType as! String == "年循环" ){
+                            if components?.day ?? 0 <= newDateComponent?.day ?? 0 {
+                                targetDateStr = "\(newDateComponent?.year ?? 0 + 1)" + "\(components?.month ?? 0)" + "\(components?.day ?? 0)"
+                            }else{
+                                targetDateStr = "\(newDateComponent?.year ?? 0)" + "\(components?.month ?? 0)" + "\(components?.day ?? 0)"
+                            }
+                        }
+                        days = DateFormatter.string(fromStringtargetDateStr: targetDateStr)
+                    }
+                }else{
+                    timeInt = timeInt + 24 * 60 * 60
+                    var temp = 0
+                    var result = "0"
+                    temp = Int(fabs(timeInt)/60)
+                    if ((temp/60) < 24) {
+                        result = "0"
+                    }else if ((temp/60/24) < 10000){
+                        result = "\(temp/60/24)"
+                    }
+                    days = result
+                }
+            }
         }
-        //日期
-        var targetDateStr = DateFormatter.string(fromBirthday: DateFormatter.date(fromTimeStamp: (dic["time"] as! String)))
+        
         targetDateStr = classTypeStr + (targetDateStr ?? "")
         
         let model = Model(image: UIImage(named: imageStr)!, title: titleStr,days: days,time: targetDateStr ?? "")

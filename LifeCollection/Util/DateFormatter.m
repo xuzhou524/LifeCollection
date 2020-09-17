@@ -62,4 +62,32 @@
     return destDate;
 }
 
+
+
+
+
++ (NSString*) stringFromStringtargetDateStr:(NSString*)targetDateStr{
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"YYYYMMdd"];
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
+    [formatter setTimeZone:timeZone];
+    
+    NSDate* date = [formatter dateFromString:targetDateStr];
+    
+    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
+    NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:timeSp] timeIntervalSinceNow] + 24 * 60 * 60;
+    long temp = 0;
+    NSString *result;
+    temp = fabs(timeInterval)/60;
+    if((temp = temp/60) <24){
+        result= [NSString stringWithFormat:@"0"];
+    }else if((temp = temp/24) <10000){
+        result = [NSString stringWithFormat:@"%ld",temp];
+    }
+    return result;
+}
+
 @end
