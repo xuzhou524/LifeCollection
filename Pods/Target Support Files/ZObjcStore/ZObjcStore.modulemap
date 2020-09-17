@@ -1,0 +1,6 @@
+framework module ZObjcStore {
+  umbrella header "ZObjcStore-umbrella.h"
+
+  export *
+  module * { export * }
+}

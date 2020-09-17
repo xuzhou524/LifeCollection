@@ -34,17 +34,37 @@ struct Provider: TimelineProvider {
         let imageArray = ["01","07","02","48","38","28","55"]
         let imageStr = imageArray[(colorType as! NSString).integerValue]
         
+        let time = dic["time"]
+        var days = "0"
         //类型
         let classType = dic["classType"]
         var classTypeStr = "目标日:"
         if classType as! String == "累计日" {
             classTypeStr = "起始日:"
+            let timeInterval = DateFormatter.date(fromTimeStamp: (time as! String))
+            if let timeInt = timeInterval?.timeIntervalSinceNow {
+                if timeInt < 0 {
+                    var temp = 0
+                    var result = "0"
+                    temp = Int(fabs(timeInt)/60)
+                    if ((temp/60) < 24) {
+                        result = "0"
+                    }else if ((temp/60/24) < 10000){
+                        result = "\(temp/60/24)"
+                    }
+                    days = result
+                }else{
+                    days = "0"
+                }
+            }
+        }else{
+            
         }
         //日期
         var targetDateStr = DateFormatter.string(fromBirthday: DateFormatter.date(fromTimeStamp: (dic["time"] as! String)))
         targetDateStr = classTypeStr + (targetDateStr ?? "")
         
-        let model = Model(image: UIImage(named: imageStr)!, title: titleStr,days: "90",time: targetDateStr ?? "")
+        let model = Model(image: UIImage(named: imageStr)!, title: titleStr,days: days,time: targetDateStr ?? "")
         let entry =  SimpleEntry(date: Date(), model: model)
         let timeline = Timeline(entries: [entry], policy: .atEnd)
         completion(timeline)
