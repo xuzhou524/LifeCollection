@@ -34,16 +34,6 @@
         make.width.equalTo(@154);
         make.height.equalTo(@34);
     }];
-    
-//    UILabel * sumeryLabel = [UILabel new];
-//    sumeryLabel.text = @"让生活更精彩";
-//    sumeryLabel.font = LCFont(13);
-//    sumeryLabel.textColor = [LCColor LCColor_77_92_127];
-//    [self.view addSubview:sumeryLabel];
-//    [sumeryLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerX.equalTo(self.view);
-//        make.top.equalTo(self.view).offset(10);
-//    }];
 
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
@@ -113,10 +103,6 @@
     TimeDetailViewController * timeDetailVC = [TimeDetailViewController new];
     timeDetailVC.eventModel = self.eventModelLists[indexPath.row];
     [self.navigationController pushViewController:timeDetailVC animated:YES];
-    
-//    AddViewController * addVC = [AddViewController new];
-//    addVC.eventModel = self.eventModelLists[indexPath.row];
-//    [self.navigationController pushViewController:addVC animated:YES];
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {

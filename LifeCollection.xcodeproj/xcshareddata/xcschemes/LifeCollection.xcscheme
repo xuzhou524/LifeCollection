@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5357B40421C38B73009D9333"
-               BuildableName = "&#x8bb0;&#x70b9;&#x751f;&#x6d3b;.app"
+               BuildableName = "&#x6211;&#x7684;&#x65f6;&#x95f4;.app"
                BlueprintName = "LifeCollection"
                ReferencedContainer = "container:LifeCollection.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5357B40421C38B73009D9333"
-            BuildableName = "&#x8bb0;&#x70b9;&#x751f;&#x6d3b;.app"
+            BuildableName = "&#x6211;&#x7684;&#x65f6;&#x95f4;.app"
             BlueprintName = "LifeCollection"
             ReferencedContainer = "container:LifeCollection.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5357B40421C38B73009D9333"
-            BuildableName = "&#x8bb0;&#x70b9;&#x751f;&#x6d3b;.app"
+            BuildableName = "&#x6211;&#x7684;&#x65f6;&#x95f4;.app"
             BlueprintName = "LifeCollection"
             ReferencedContainer = "container:LifeCollection.xcodeproj">
          </BuildableReference>
