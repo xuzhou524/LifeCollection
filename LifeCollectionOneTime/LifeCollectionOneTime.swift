@@ -23,12 +23,28 @@ struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        
         let userDefault = UserDefaults.init(suiteName: "group.com.xuzhou.LifeCollection")
-        
         let dic = userDefault?.object(forKey: "widget") as! NSDictionary
         
-        let model = Model(image: UIImage(named: "38")!, title: dic["title"] as! String,days: "90",time: "2020-09-17") // 这里给个默认图片
+        
+        //标题
+        let titleStr:String = dic["title"] as! String
+        //背景图片
+        let colorType = dic["colorType"]
+        let imageArray = ["01","07","02","48","38","28","55"]
+        let imageStr = imageArray[(colorType as! NSString).integerValue]
+        
+        //类型
+        let classType = dic["classType"]
+        var classTypeStr = "目标日:"
+        if classType as! String == "累计日" {
+            classTypeStr = "起始日:"
+        }
+        //日期
+        var targetDateStr = DateFormatter.string(fromBirthday: DateFormatter.date(fromTimeStamp: (dic["time"] as! String)))
+        targetDateStr = classTypeStr + (targetDateStr ?? "")
+        
+        let model = Model(image: UIImage(named: imageStr)!, title: titleStr,days: "90",time: targetDateStr ?? "")
         let entry =  SimpleEntry(date: Date(), model: model)
         let timeline = Timeline(entries: [entry], policy: .atEnd)
         completion(timeline)
@@ -84,11 +100,11 @@ struct WidgetView: View {
             Image(uiImage: model.image).resizable()
             VStack {
                 Text(model.title)
-                    .padding(10)
-                    .offset(x: 10, y: 10)
-                    .font(.system(size: 15))
+                    .padding(20)
+                    .offset(x: 10, y: 20)
+                    .font(.system(size: 18))
                     .foregroundColor(.white)
-                    .frame(width: 150, height: 20, alignment: .leading)
+                    .frame(width: 150, height: 20, alignment: .center)
                 
                 
                 Text(model.days)
@@ -99,9 +115,9 @@ struct WidgetView: View {
                 
                 Text(model.time)
                     .offset(x: 10, y: 10)
-                    .font(.system(size: 15))
+                    .font(.system(size: 13))
                     .foregroundColor(.white)
-                    .frame(width: 150, height: 20, alignment: .leading)
+                    .frame(width: 150, height: 20, alignment: .center)
                 
             }
         })

@@ -11,7 +11,6 @@
 #import "AddViewController.h"
 #import "TimeDetailViewController.h"
 #import "EventModel.h"
-#import "WidgetModel.h"
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
