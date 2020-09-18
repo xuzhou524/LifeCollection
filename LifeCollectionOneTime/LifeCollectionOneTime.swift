@@ -12,12 +12,12 @@ import SwiftUI
 struct Provider: TimelineProvider {
 
     func placeholder(in context: Context) -> SimpleEntry {
-        let model = Model(image: UIImage(named: "38")!, title: "我的时间诞生",days: "90",time: "2020-09-17")
+        let model = Model(image: UIImage(named: "38")!, title: "我的时间诞生",days: "90",time: "目标日:2020-09-17")
         return SimpleEntry(date: Date(), model: model)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let model = Model(image: UIImage(named: "38")!, title: "我的时间诞生",days: "90",time: "2020-09-17")
+        let model = Model(image: UIImage(named: "38")!, title: "我的时间诞生",days: "90",time: "目标日:2020-09-17")
         let entry = SimpleEntry(date: Date(), model: model)
         completion(entry)
     }
@@ -108,6 +108,8 @@ struct LifeCollectionOneTime: Widget {
         }
         .configurationDisplayName("我的时间")
         .description("记录我的重要日子")
+        .supportedFamilies([.systemSmall,.systemMedium,.systemLarge])
+
     }
 }
 
@@ -141,20 +143,20 @@ struct WidgetView: View {
             VStack {
                 Text(model.title)
                     .padding(20)
-                    .offset(x: 10, y: 20)
+//                    .offset(x: 10, y: 20)
                     .font(.system(size: 18))
                     .foregroundColor(.white)
                     .frame(width: 150, height: 20, alignment: .center)
                 
                 
                 Text(model.days)
-                    .offset(x: 10, y: 10)
+//                    .offset(x: 10, y: 10)
                     .font(.system(size: 35))
                     .foregroundColor(.white)
                     .frame(width: 80, height: 80, alignment: .center)
                 
                 Text(model.time)
-                    .offset(x: 10, y: 10)
+//                    .offset(x: 10, y: 10)
                     .font(.system(size: 13))
                     .foregroundColor(.white)
                     .frame(width: 150, height: 20, alignment: .center)
