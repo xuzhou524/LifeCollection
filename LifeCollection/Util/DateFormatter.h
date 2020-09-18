@@ -24,6 +24,9 @@
 
 + (NSString*) stringFromStringtargetDateStr:(NSString*)targetDateStr;
 
++ (NSString*) stringFromDays:(NSString*)time remindType:(NSString *)remindType targetDateStr:(NSString *)targetDateStr;
+
++ (NSString*) stringFromTargetDateStr:(NSString*)time remindType:(NSString *)remindType;
 @end
 
 
