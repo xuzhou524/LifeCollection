@@ -142,8 +142,8 @@ struct LifeCollectionOneTime: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             WidgetView(model: entry.model)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("我的时间")
+        .description("记录我的重要日子")
     }
 }
 
