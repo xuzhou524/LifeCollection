@@ -143,20 +143,20 @@ struct WidgetView: View {
             VStack {
                 Text(model.title)
                     .padding(20)
-//                    .offset(x: 10, y: 20)
+                    .offset(x: 0, y: 20)
                     .font(.system(size: 18))
                     .foregroundColor(.white)
-                    .frame(width: 150, height: 20, alignment: .center)
+                    .frame(width: 200, height: 20, alignment: .center)
                 
                 
                 Text(model.days)
-//                    .offset(x: 10, y: 10)
+                    .offset(x: 0, y: 10)
                     .font(.system(size: 35))
                     .foregroundColor(.white)
                     .frame(width: 80, height: 80, alignment: .center)
                 
                 Text(model.time)
-//                    .offset(x: 10, y: 10)
+                    .offset(x: 0, y: 10)
                     .font(.system(size: 13))
                     .foregroundColor(.white)
                     .frame(width: 150, height: 20, alignment: .center)
