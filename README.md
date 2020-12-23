@@ -13,11 +13,19 @@ This is a simple, concise, and tool life.All individual work is available, may n
 ```
 $ git clone https://github.com/xuzhou524/LifeCollection.git
 ```
-2) Open the workspace in Xcode
+2) Open LifeCollection
+```
+$ cd LifeCollection
+```
+3) Add a third-party library
+```
+$ pod install
+```
+4) Open the workspace in Xcode
 ```
 $ open "LifeCollection.xcworkspace"
 ```
-3) Compile and run the app in your simulator or iOS device
+5) Compile and run the app in your simulator or iOS device
 
 ## Requirements
 * Xcode 9.0+
