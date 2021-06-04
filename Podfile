@@ -13,6 +13,8 @@ def pods
    pod 'XHLaunchAd'
    pod 'FDFullscreenPopGesture'
    pod 'ZObjcStore', '~> 1.0.1'
+   
+   pod 'ReactiveObjC'
 end
 
 
