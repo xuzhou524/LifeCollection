@@ -7,7 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "LCTabBarController.h"
+#import "LCNavigationViewController.h"
+#import "HomeViewController.h"
+#import "WeatherManager.h"
+
 #import "AddViewController.h"
 #import "FoundViewController.h"
 #import "JinnLockViewController.h"
@@ -17,9 +20,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [LCColor backgroudColor];
     
-    LCTabBarController * rootTabBarVC = [LCTabBarController new];
+    LCNavigationViewController * rootTabBarVC = [[LCNavigationViewController alloc] initWithRootViewController:[HomeViewController new]];
     self.window.rootViewController = rootTabBarVC;
-    [LCClient sharedInstance].lcCenterTabBar = rootTabBarVC;
+//    [LCClient sharedInstance].lcCenterTabBar = rootTabBarVC;
     [self.window makeKeyAndVisible];
     [[UITabBar appearance] setTranslucent:NO];
  
@@ -77,8 +80,10 @@
 //    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
 //    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 //        NSMutableDictionary * resultDic =  responseObject[@"result"];
-//        [WeatherManager sharedInstance].weatherIconIndex = resultDic[@"skycon"];
-//    } failure:nil];
+////        [WeatherManager sharedInstance].weatherIconIndex = resultDic[@"skycon"];
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        NSLog(@"error = %@",error);
+//    }];
 //}
 
 @end

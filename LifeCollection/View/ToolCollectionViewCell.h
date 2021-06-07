@@ -14,7 +14,3 @@
 @property(nonatomic,strong)UIImageView * iconImageView;
 @property(nonatomic,strong)UILabel * titleLabel;
 @end
-
-@interface ToolHeaderCollectionViewCell : UICollectionViewCell
-@property(nonatomic,strong)UIImageView * bgImageView;
-@end

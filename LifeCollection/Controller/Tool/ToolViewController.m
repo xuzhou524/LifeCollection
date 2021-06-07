@@ -59,28 +59,21 @@
     fl.minimumLineSpacing = 0;
     
     [_collectionView registerClass:[ToolCollectionViewCell class] forCellWithReuseIdentifier:@"ToolCollectionViewCell"];
-    [_collectionView registerClass:[ToolHeaderCollectionViewCell class] forCellWithReuseIdentifier:@"ToolHeaderCollectionViewCell"];
     
 }
 
 #pragma mark -- dataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 2;
+    return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    if (section == 0) {
-        return 0;
-    }
+
     return self.titleArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        ToolHeaderCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ToolHeaderCollectionViewCell" forIndexPath:indexPath];
-        return cell;
-    }
     ToolCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ToolCollectionViewCell" forIndexPath:indexPath];
     cell.titleLabel.text = self.titleArray[indexPath.row];
     cell.iconImageView.image = [UIImage imageNamed:self.imageArr[indexPath.row]];
@@ -90,9 +83,6 @@
 
 //item大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        return CGSizeMake((ScreenWidth - 16) , 220);
-    }
     return CGSizeMake((ScreenWidth - 16) / 2.0 , 100);
 }
 
@@ -104,7 +94,7 @@
 #pragma mark -- item点击跳转
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 1) {
+    if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             LCProtractorViewController *VC = [[LCProtractorViewController alloc] init];
             [self.navigationController pushViewController:VC animated:YES];

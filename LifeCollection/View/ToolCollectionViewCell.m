@@ -52,32 +52,3 @@
 }
 
 @end
-
-
-@implementation ToolHeaderCollectionViewCell
-
--(instancetype)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self sebView];
-        
-    }
-    return self;
-}
-
--(void)sebView{
-    _bgImageView = [UIImageView new];
-//    _bgImageView.backgroundColor = [LCColor orangeColor];
-    _bgImageView.image = [UIImage imageNamed:@"haha"];
-    _bgImageView.layer.cornerRadius = 8;
-    _bgImageView.layer.masksToBounds = YES;
-    [self.contentView addSubview:_bgImageView];
-    [_bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(8);
-        make.right.equalTo(self.contentView).offset(-8);
-        make.bottom.equalTo(self.contentView).offset(-15);
-        make.top.equalTo(self.contentView).offset(10);
-    }];
-}
-
-@end

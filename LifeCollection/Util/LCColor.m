@@ -90,18 +90,17 @@
 
 
 + (UIColor *)backgroudColor {
-    return [UIColor colorWithLightColorStr:@"EBEBEB" DarkColor:@"191919"];
-//    return [LCColor colorWithR255:244 G255:244 B255:247 A255:255];
+    return [UIColor colorWithLightColorStr:@"#494E69" DarkColor:@"191919"];
 }
+
+
 
 + (UIColor *)itemBackgroudColor {
     return [UIColor colorWithLightColorStr:@"ffffff" DarkColor:@"1E1E1E"];
 }
 + (UIColor *)LCColor_232_229_222{
     return [UIColor colorWithLightColorStr:@"EAEAF2" DarkColor:@"1E1E1E"];
-//    return [LCColor colorWithR255:234 G255:234 B255:242 A255:255];
 }
-
 
 
 

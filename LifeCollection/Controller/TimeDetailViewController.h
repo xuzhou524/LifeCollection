@@ -6,7 +6,7 @@
 //  Copyright © 2020 com.longdai. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+
 #import "EventModel.h"
 
 @interface TimeDetailViewController : UIViewController

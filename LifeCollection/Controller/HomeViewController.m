@@ -48,9 +48,9 @@
     regClass(self.tableView, TimeListTableViewCell);
     
     UILabel * liftLabel = [UILabel new];
-    liftLabel.text = @"Time";
-    liftLabel.font = LCFont(28);
-    liftLabel.textColor = [LCColor LCColor_77_92_127];
+    liftLabel.text = @"记点生活";
+    liftLabel.font = LCFont(22);
+    liftLabel.textColor = [LCColor LCColor_235_235_235];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
 
     UIButton * rightBtn = [UIButton new];
