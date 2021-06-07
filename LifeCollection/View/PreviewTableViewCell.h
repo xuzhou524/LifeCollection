@@ -2,8 +2,8 @@
 //  PreviewTableViewCell.h
 //  LifeCollection
 //
-//  Created by gozap on 2018/12/17.
-//  Copyright © 2018 com.longdai. All rights reserved.
+//  Created by gozap on 2021/6/7.
+//  Copyright © 2021 com.xuzhou. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

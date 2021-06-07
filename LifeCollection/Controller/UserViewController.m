@@ -9,11 +9,8 @@
 #import "UserViewController.h"
 #import "UserViewTableViewCell.h"
 #import "TitleTableViewCell.h"
-#import "LCWebViewViewController.h"
-#import "AboutDeveloperViewController.h"
 #import <StoreKit/StoreKit.h>
 #import "SetingViewController.h"
-#import "ToolViewController.h"
 
 @interface UserViewController ()<UITableViewDelegate,UITableViewDataSource>{
     UIButton *_rightBtn;
@@ -141,13 +138,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
         if (indexPath.row == 0){
-            ToolViewController * toolVC =[ToolViewController new];
-            [self.navigationController pushViewController:toolVC animated:YES];
+
         }else if (indexPath.row == 1) {
-            LCWebViewViewController * webViewVC =[LCWebViewViewController new];
-            webViewVC.titleStr = @"服务条款";
-            webViewVC.urlStr = @"http://img.gozap.com/group19/M00/0F/E5/wKgCN1y1mYvZp1H6AAIFAVCycb8814.pdf";
-            [self.navigationController pushViewController:webViewVC animated:YES];
+
         }else if (indexPath.row == 2){
             NSString * title = @"我的时间 - 专注时间管理、记事本日常工具";
             NSString * url = @"https://itunes.apple.com/us/app//id1447845919?l=zh&ls=1&mt=8";
@@ -164,8 +157,7 @@
                                                                                     applicationActivities: applicationActivities];
             [[LCClient sharedInstance].lcCenterNav presentViewController:activityVC animated:TRUE completion:nil];
         }else if (indexPath.row == 3){
-            AboutDeveloperViewController * aboutDeveloperVC =[AboutDeveloperViewController new];
-            [self.navigationController pushViewController:aboutDeveloperVC animated:YES];
+
         }
     }
 }
