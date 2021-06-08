@@ -39,15 +39,22 @@
     UILabel * liftLabel = [UILabel new];
     liftLabel.text = @"记日子";
     liftLabel.font = LCFont(22);
-    liftLabel.textColor = [LCColor LCColor_77_92_127];
+    liftLabel.textColor = [LCColor LCColor_121_117_245];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
 
     UIButton * rightBtn = [UIButton new];
-    UIImage * addIamge = [[UIImage imageNamed:@"add"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    rightBtn.tintColor = [LCColor LCColor_77_92_127];
-    [rightBtn setImage:addIamge forState:UIControlStateNormal];
+    [rightBtn setImage:[UIImage imageNamed:@"ic_More"] forState:UIControlStateNormal];
     [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    
+    UIImageView * addImageView = [UIImageView new];
+    addImageView.image = [UIImage imageNamed:@"ic_newAdd"];
+    [self.view addSubview:addImageView];
+    [addImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.bottom.equalTo(self.view).offset(-60);
+        make.width.height.equalTo(@60);
+    }];
 }
 
 -(EventModel *)eventModel{

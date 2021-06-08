@@ -232,11 +232,11 @@
     }
     
     if ([model.classType isEqualToString:@"倒计日"]) {
-        _classTypeView.backgroundColor = [UIColor orangeColor];
+        _classTypeView.backgroundColor = [LCColor LCColor_121_117_245];
     }else if ([model.classType isEqualToString:@"累计日"]) {
-        _classTypeView.backgroundColor = [UIColor redColor];
+        _classTypeView.backgroundColor = [LCColor LCColor_255_221_124];
     }else{
-        _classTypeView.backgroundColor = [UIColor whiteColor];
+        _classTypeView.backgroundColor = [LCColor whiteColor];
     }
     self.tagLabel.text = model.tag;
     

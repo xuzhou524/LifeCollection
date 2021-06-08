@@ -45,7 +45,8 @@
     if (!_eventModel) {
         self.eventModel.classType = @"倒计日";
         self.eventModel.remindType = @"无循环";
-        self.eventModel.colorType = @"0";
+        int x = arc4random() % 7;
+        self.eventModel.colorType = [NSString stringWithFormat:@"%d",x];
         self.eventModel.tag = @"生日";
         self.eventModel.time = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
     }

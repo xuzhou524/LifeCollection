@@ -27,9 +27,10 @@
 
 + (UIColor *)LCColor_113_120_150;
 
-
++ (UIColor *)LCColor_255_221_124;
 + (UIColor *)LCColor_110_110_110;
 
++ (UIColor *)LCColor_121_117_245;
 
 + (UIColor *)LCColor_243_90_93;
 @end
