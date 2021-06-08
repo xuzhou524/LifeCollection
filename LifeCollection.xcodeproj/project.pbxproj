@@ -204,7 +204,6 @@
 		5325DF7C21D08C0B00743052 /* tab_bar_found_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_found_sel@2x.png"; sourceTree = "<group>"; };
 		5325DF7D21D08C0B00743052 /* tab_bar_found@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_found@3x.png"; sourceTree = "<group>"; };
 		5325DF7E21D08C0C00743052 /* tab_bar_found@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_found@2x.png"; sourceTree = "<group>"; };
-		532DD383229E27F100CE3631 /* LifeCollection.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LifeCollection.entitlements; sourceTree = "<group>"; };
 		532F8E27223A31BD001A0E11 /* liangjiaoqi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = liangjiaoqi.png; sourceTree = "<group>"; };
 		532F8E29223A31E2001A0E11 /* shuipingyi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuipingyi.png; sourceTree = "<group>"; };
 		532F8E2B223A31EE001A0E11 /* zaoyin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zaoyin.png; sourceTree = "<group>"; };
@@ -262,7 +261,6 @@
 		5357B42821C3911B009D9333 /* LCColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCColor.m; sourceTree = "<group>"; };
 		5363CF3725131E1E0067138A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		5363CF3925131E1E0067138A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		5363CF4E25133A400067138A /* LifeCollectionOneTimeExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LifeCollectionOneTimeExtension.entitlements; sourceTree = "<group>"; };
 		536D0BD321DF41E600FB0653 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		536D0BD521DF4A0400FB0653 /* LCClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCClient.h; sourceTree = "<group>"; };
 		536D0BD621DF4A0400FB0653 /* LCClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCClient.m; sourceTree = "<group>"; };
@@ -315,7 +313,6 @@
 		539548DE22783CE80074BAEB /* lmn_tool_title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lmn_tool_title@2x.png"; sourceTree = "<group>"; };
 		5395C818246BF6A3003076A7 /* guanbi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanbi@2x.png"; sourceTree = "<group>"; };
 		5395C819246BF6A3003076A7 /* guanbi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanbi@3x.png"; sourceTree = "<group>"; };
-		53984632250F534D003D3C71 /* 我的时间.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "我的时间.entitlements"; sourceTree = "<group>"; };
 		539B3A5D21C7A77700431B7A /* PreviewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewTableViewCell.h; sourceTree = "<group>"; };
 		539B3A5E21C7A77700431B7A /* PreviewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewTableViewCell.m; sourceTree = "<group>"; };
 		539B3A6021C7AB1500431B7A /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
@@ -513,7 +510,6 @@
 		5357B3FC21C38B73009D9333 = {
 			isa = PBXGroup;
 			children = (
-				5363CF4E25133A400067138A /* LifeCollectionOneTimeExtension.entitlements */,
 				5357B40721C38B73009D9333 /* LifeCollection */,
 				5357B40621C38B73009D9333 /* Products */,
 				0C8790F08621332121D8810D /* Pods */,
@@ -532,8 +528,6 @@
 		5357B40721C38B73009D9333 /* LifeCollection */ = {
 			isa = PBXGroup;
 			children = (
-				53984632250F534D003D3C71 /* 我的时间.entitlements */,
-				532DD383229E27F100CE3631 /* LifeCollection.entitlements */,
 				5357B40821C38B73009D9333 /* AppDelegate.h */,
 				5357B40921C38B73009D9333 /* AppDelegate.m */,
 				5356ED1221C7498100862FE1 /* LifeCollectionPrefixHeader.pch */,
