@@ -244,7 +244,7 @@
         }
     }
     
-   NSString *textToShare = [NSString stringWithFormat:@"%@ %@:%@ %@:%@\n我的时间 - 拾掇生活中的点滴，记录时光的故事",self.eventModel.title,dayTypeStr,dayStr,timeStr,targetDateStr];
+   NSString *textToShare = [NSString stringWithFormat:@"%@ %@:%@ %@:%@\n记日子 - 拾掇生活中的点滴，记录时光的故事",self.eventModel.title,dayTypeStr,dayStr,timeStr,targetDateStr];
    NSArray *activityItems = @[textToShare];
    UIActivity *bookActivity = [UIActivity new];
    NSArray *applicationActivities = @[bookActivity];

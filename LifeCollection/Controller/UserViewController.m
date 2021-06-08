@@ -92,7 +92,7 @@
         }
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @[@"日常工具",@"服务条款",@"分享我的时间",@"关于开发者"][indexPath.row];
+        cell.titleLabel.text = @[@"日常工具",@"服务条款",@"分享记日子",@"关于开发者"][indexPath.row];
         cell.summeryLabel.text = @"";
         return cell;
     }
@@ -105,7 +105,7 @@
         }else if (indexPath.row == 1) {
 
         }else if (indexPath.row == 2){
-            NSString * title = @"我的时间 - 专注时间管理、记事本日常工具";
+            NSString * title = @"记日子 - 专注时间管理、记事本日常工具";
             NSString * url = @"https://itunes.apple.com/us/app//id1447845919?l=zh&ls=1&mt=8";
             NSString * image = @"http://img.gozap.com/group19/M01/B4/0F/wKgCOFwvGqnXXzibAACN7VDmKvQ248.png";
             NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:image]];
