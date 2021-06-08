@@ -21,10 +21,10 @@
 
 + (NSDate *)dateFromTimeStampString:(NSString *)timeStamp{
     NSTimeInterval time;
-    if (timeStamp.length == 10) {
-        time=[timeStamp doubleValue];
-    }else{
+    if (timeStamp.length == 13) {
         time=[timeStamp doubleValue]/1000;
+    }else{
+        time=[timeStamp doubleValue];
     }
     NSDate *destDate= [NSDate dateWithTimeIntervalSince1970:time];
     return destDate;
