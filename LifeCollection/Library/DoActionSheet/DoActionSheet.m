@@ -64,13 +64,13 @@
     bt.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 
     if (bCancel){
-        bt.backgroundColor = [LCColor LCColor_77_92_127];
+        bt.backgroundColor = [LCColor LCColor_121_117_245];
         bt.titleLabel.font = DO_AS_TITLE_FONT;
         [bt setTitleColor:DO_AS_CANCEL_TEXT_COLOR forState:UIControlStateNormal];
     }else{
-        bt.backgroundColor = [LCColor LCColor_77_92_127];
+        bt.backgroundColor = [LCColor whiteColor];
         bt.titleLabel.font = DO_AS_BUTTON_FONT;
-        [bt setTitleColor:DO_AS_BUTTON_TEXT_COLOR forState:UIControlStateNormal];
+        [bt setTitleColor:[LCColor LCColor_121_117_245] forState:UIControlStateNormal];
     }
     CALayer *layer = [bt layer];
     [layer setMasksToBounds:YES];
