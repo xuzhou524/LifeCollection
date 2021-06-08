@@ -56,7 +56,7 @@
     [addImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
         make.bottom.equalTo(self.view).offset(-60);
-        make.width.height.equalTo(@60);
+        make.width.height.equalTo(@56);
     }];
 }
 

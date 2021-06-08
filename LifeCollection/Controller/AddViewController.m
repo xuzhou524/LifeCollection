@@ -35,10 +35,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"添加";
     self.view.backgroundColor = [LCColor backgroudColor];
+    
     if (self.isEditor) {
         self.navigationItem.title = @"编辑";
+    }else{
+        self.navigationItem.title = @"添加";
+        UIButton * guanBiBtn = [UIButton new];
+        UIImage * addIamge = [[UIImage imageNamed:@"guanbi"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        guanBiBtn.tintColor = [LCColor LCColor_121_117_245];
+        [guanBiBtn setBackgroundImage:addIamge forState:UIControlStateNormal];
+        [guanBiBtn addTarget:self action:@selector(guanbiClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:guanBiBtn];
+        [guanBiBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view).offset(20);
+            make.left.equalTo(self.view).offset(20);
+            make.width.height.equalTo(@20);
+        }];
     }
     
     //初始化默认值
@@ -54,7 +67,7 @@
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(self.isEditor ? 0:80);
+        make.top.equalTo(self.view).offset(self.isEditor ? 0:50);
         make.left.right.bottom.equalTo(self.view);
     }];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -71,11 +84,19 @@
     UIButton * rightBtn = [UIButton new];
     [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
     rightBtn.titleLabel.font = LCFont(17);
-    [rightBtn setTitleColor:[LCColor LCColor_121_117_245] forState:UIControlStateNormal];
+    [rightBtn setTitleColor:[LCColor whiteColor] forState:UIControlStateNormal];
+    rightBtn.layer.cornerRadius = 28;
+    rightBtn.layer.masksToBounds = YES;
+    [rightBtn setBackgroundColor:[LCColor LCColor_121_117_245]];
     [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
-    
-    
+    [self.view addSubview:rightBtn];
+    [rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.bottom.equalTo(self.view).offset(-60);
+        make.height.equalTo(@56);
+        make.width.equalTo(@160);
+    }];
+
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backupgroupTap:)];
     tapGestureRecognizer.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:tapGestureRecognizer]; //只需要点击非文字输入区域就会响应
@@ -100,6 +121,10 @@
         [_pickerWindow.enterButton addTarget:self action:@selector(enterClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _pickerWindow;
+}
+
+-(void)guanbiClick{
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 -(void)rightBtnClick{
@@ -156,6 +181,9 @@
     }else if (indexPath.row == 2){
         _textFieldCell = getCell(TextFieldTableViewCell);
         _textFieldCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        UIImage * addIamge = [[UIImage imageNamed:@"edit_title"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        _textFieldCell.iconImageView.tintColor = [LCColor LCColor_121_117_245];
+        _textFieldCell.iconImageView.image = addIamge;
         _textFieldCell.titleLabel.text = @"标题";
         _textFieldCell.titleTextField.delegate = self;
         _textFieldCell.titleTextField.text = self.eventModel.title;
@@ -163,7 +191,9 @@
     }else if (indexPath.row == 3){
         TitleAndImageTableViewCell * cell = getCell(TitleAndImageTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.iconImageView.image = [UIImage imageNamed:@"shijian"];
+        UIImage * addIamge = [[UIImage imageNamed:@"shijian"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        cell.iconImageView.tintColor = [LCColor LCColor_121_117_245];
+        cell.iconImageView.image = addIamge;
         cell.titleLabel.text = @"时间";
         if (_timeCell.timeLabel.text && _timeCell.timeLabel.text.length > 0) {
             cell.summeryLabel.text = _timeCell.timeLabel.text;
@@ -174,21 +204,27 @@
     }else if (indexPath.row == 4){
         TitleAndImageTableViewCell * cell = getCell(TitleAndImageTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.iconImageView.image = [UIImage imageNamed:@"leixing"];
+        UIImage * addIamge = [[UIImage imageNamed:@"leixing"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        cell.iconImageView.tintColor = [LCColor LCColor_121_117_245];
+        cell.iconImageView.image = addIamge;
         cell.titleLabel.text = @"类型";
         cell.summeryLabel.text = self.eventModel.classType;
         return cell;
     }else if (indexPath.row == 5){
         TitleAndImageTableViewCell * cell = getCell(TitleAndImageTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.iconImageView.image = [UIImage imageNamed:@"tixing"];
+        UIImage * addIamge = [[UIImage imageNamed:@"tixing"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        cell.iconImageView.tintColor = [LCColor LCColor_121_117_245];
+        cell.iconImageView.image = addIamge;
         cell.titleLabel.text = @"循环";
         cell.summeryLabel.text = self.eventModel.remindType;
         return cell;
     }else if (indexPath.row == 6){
         TitleAndImageTableViewCell * cell = getCell(TitleAndImageTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.iconImageView.image = [UIImage imageNamed:@"tixing"];
+        UIImage * addIamge = [[UIImage imageNamed:@"ic_tag"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        cell.iconImageView.tintColor = [LCColor LCColor_121_117_245];
+        cell.iconImageView.image = addIamge;
         cell.titleLabel.text = @"标签";
         cell.summeryLabel.text = self.eventModel.tag;
         return cell;

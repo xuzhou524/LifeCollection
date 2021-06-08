@@ -22,10 +22,14 @@
     self.contentView.backgroundColor = [LCColor backgroudColor];
     
     UIView *bgView = [UIView new];
+    bgView.layer.cornerRadius = 16;
+    bgView.layer.masksToBounds = YES;
     bgView.backgroundColor = [LCColor itemBackgroudColor];
     [self.contentView addSubview:bgView];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.left.right.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView);
+        make.left.equalTo(self.contentView).offset(15);
+        make.right.equalTo(self.contentView).offset(-15);
         make.top.equalTo(self.contentView).offset(10);
     }];
     
@@ -33,9 +37,9 @@
     _iconImageView.image = [UIImage imageNamed:@"edit_title"];
     [bgView addSubview:_iconImageView];
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(16);
+        make.left.equalTo(bgView).offset(15);
         make.centerY.equalTo(bgView);
-        make.width.height.equalTo(@20);
+        make.width.height.equalTo(@28);
     }];
     
     _titleLabel = [UILabel new];
@@ -47,29 +51,17 @@
         make.left.equalTo(self.iconImageView.mas_right).offset(10);
         make.centerY.equalTo(bgView);
     }];
-    
-    UIImageView *iconImageView = [UIImageView new];
-    UIImage * iconIamge = [[UIImage imageNamed:@"circleright"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    iconImageView.tintColor = [LCColor LCColor_113_120_150];
-    iconImageView.image=iconIamge;
-    [self.contentView addSubview:iconImageView];
-    [iconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView).offset(-15);
-        make.centerY.equalTo(bgView);
-        make.height.equalTo(@12);
-        make.width.equalTo(@8);
-    }];
-    
+
     _titleTextField = [UITextField new];
     _titleTextField.placeholder = @"请输入标题";
-    _titleTextField.textColor = [LCColor LCColor_113_120_150];
+    _titleTextField.textColor = [LCColor LCColor_77_92_127];
     _titleTextField.font = LCFont(15);
     _titleTextField.textAlignment = NSTextAlignmentRight;
     [self.contentView addSubview:_titleTextField];
     [_titleTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(bgView);
-        make.right.equalTo(iconImageView.mas_left).offset(-10);
-        make.left.equalTo(self.contentView.mas_centerX).offset(-20);
+        make.right.equalTo(bgView).offset(-15);
+        make.left.equalTo(bgView.mas_centerX).offset(-20);
     }];
 
 }
