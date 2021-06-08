@@ -24,17 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [LCColor backgroudColor];
-    UIImageView * summeryImageView = [UIImageView new];
-    summeryImageView.image = [UIImage imageNamed:@"summery"];
-    [self.view addSubview:summeryImageView];
-    [summeryImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view);
-        make.top.equalTo(self.view).offset(10);
-        make.width.equalTo(@154);
-        make.height.equalTo(@34);
-    }];
-
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -48,7 +37,7 @@
     regClass(self.tableView, TimeListTableViewCell);
     
     UILabel * liftLabel = [UILabel new];
-    liftLabel.text = @"记点生活";
+    liftLabel.text = @"记点日子";
     liftLabel.font = LCFont(22);
     liftLabel.textColor = [LCColor LCColor_235_235_235];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
