@@ -11,6 +11,7 @@
 #import "AddViewController.h"
 #import "TimeDetailViewController.h"
 #import "EventModel.h"
+#import "UserViewController.h"
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -49,6 +50,8 @@
     
     UIImageView * addImageView = [UIImageView new];
     addImageView.image = [UIImage imageNamed:@"ic_newAdd"];
+    addImageView.userInteractionEnabled = YES;
+    [addImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didiAddClick)]];
     [self.view addSubview:addImageView];
     [addImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
@@ -87,8 +90,14 @@
     [self.tableView reloadData];
 }
 
--(void)rightBtnClick{
+-(void)didiAddClick{
     AddViewController * addVC = [AddViewController new];
+    addVC.isEditor = NO;
+    [self.navigationController presentViewController:addVC animated:true completion:nil];
+}
+
+-(void)rightBtnClick{
+    UserViewController * addVC = [UserViewController new];
     [self.navigationController pushViewController:addVC animated:YES];
 }
 
@@ -117,6 +126,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     AddViewController * addVC = [AddViewController new];
+    addVC.isEditor = YES;
     addVC.eventModel = self.eventModelLists[indexPath.row];
     [self.navigationController pushViewController:addVC animated:YES];
     

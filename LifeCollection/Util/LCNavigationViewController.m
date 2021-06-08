@@ -51,7 +51,7 @@
 
 #pragma mark 创建返回按钮
 -(UIBarButtonItem *)createBackButton {
-    UIButton *liftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
+    UIButton *liftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 34, 34)];
     UIImage * arrowIamge = [[UIImage imageNamed:@"d_Arrow_left"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     liftBtn.tintColor = [LCColor LCColor_121_117_245];
     liftBtn.imageEdgeInsets = UIEdgeInsetsMake( 0, -5, 0, 5);

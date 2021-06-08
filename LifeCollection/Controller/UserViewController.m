@@ -22,21 +22,21 @@
 
 @implementation UserViewController
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
-}
-
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    _rightBtn.hidden = NO;
-}
-
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-     self.navigationController.navigationBar.hidden = NO;
-    _rightBtn.hidden = YES;
-}
+//-(void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    self.navigationController.navigationBar.hidden = YES;
+//}
+//
+//-(void)viewDidAppear:(BOOL)animated{
+//    [super viewDidAppear:animated];
+//    _rightBtn.hidden = NO;
+//}
+//
+//-(void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:animated];
+//     self.navigationController.navigationBar.hidden = NO;
+//    _rightBtn.hidden = YES;
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,28 +55,7 @@
     regClass(self.tableView, TitleTableViewCell);
     regClass(self.tableView, UserHeadViewTableViewCell);
     regClass(self.tableView, TitleNoRightImageTableViewCell);
-    
-    UILabel * liftLabel = [UILabel new];
-    liftLabel.text = @"我的时间";
-    liftLabel.font = LCFont(23);
-    liftLabel.textColor = [LCColor LCColor_77_92_127];
-    [self .view addSubview:liftLabel];
-    [liftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(20);
-        make.top.equalTo(self.view).offset(54);
-    }];
-    
-    _rightBtn = [UIButton new];
-    [_rightBtn setImage:[UIImage imageNamed:@"Settings~iphone"] forState:UIControlStateNormal];
-    [_rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    [self .view addSubview:_rightBtn];
-    [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(liftLabel);
-        make.right.equalTo(self.view).offset(-20);
-        make.width.equalTo(@25);
-        make.height.equalTo(@27);
-    }];
-    
+
 }
 
 -(void)rightBtnClick{

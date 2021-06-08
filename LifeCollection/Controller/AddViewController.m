@@ -37,7 +37,7 @@
     [super viewDidLoad];
     self.navigationItem.title = @"添加";
     self.view.backgroundColor = [LCColor backgroudColor];
-    if (_eventModel) {
+    if (self.isEditor) {
         self.navigationItem.title = @"编辑";
     }
     
@@ -54,7 +54,8 @@
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.bottom.equalTo(self.view);
+        make.top.equalTo(self.view).offset(self.isEditor ? 0:80);
+        make.left.right.bottom.equalTo(self.view);
     }];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.backgroundColor = [LCColor backgroudColor];

@@ -130,6 +130,7 @@
 
 -(void)didiEditorClick{
     AddViewController * addVC = [AddViewController new];
+    addVC.isEditor = YES;
     addVC.eventModel = self.eventModel;
     [self.navigationController pushViewController:addVC animated:YES];
 }

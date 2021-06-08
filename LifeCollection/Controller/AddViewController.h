@@ -11,4 +11,5 @@
 
 @interface AddViewController : UIViewController
 @property (nonatomic, strong) EventModel * eventModel;
+@property (nonatomic, assign) BOOL isEditor;
 @end

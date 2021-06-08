@@ -64,7 +64,6 @@
 		5357B41B21C38B74009D9333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B41A21C38B74009D9333 /* main.m */; };
 		5357B42921C3911B009D9333 /* LCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B42821C3911B009D9333 /* LCColor.m */; };
 		536D0BD721DF4A0400FB0653 /* LCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 536D0BD621DF4A0400FB0653 /* LCClient.m */; };
-		53735075266DC4B6004D95AB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53735074266DC4B6004D95AB /* MainViewController.m */; };
 		539548562277FEDB0074BAEB /* AccountAndPassword_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 539548552277FEDB0074BAEB /* AccountAndPassword_bg.png */; };
 		539548DF22783CE80074BAEB /* lmn_list_number@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 539548B122783CE70074BAEB /* lmn_list_number@3x.png */; };
 		539548E022783CE80074BAEB /* lmn_accessory_checkbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 539548B222783CE70074BAEB /* lmn_accessory_checkbox@2x.png */; };
@@ -267,8 +266,6 @@
 		536D0BD321DF41E600FB0653 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		536D0BD521DF4A0400FB0653 /* LCClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCClient.h; sourceTree = "<group>"; };
 		536D0BD621DF4A0400FB0653 /* LCClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCClient.m; sourceTree = "<group>"; };
-		53735073266DC4B6004D95AB /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		53735074266DC4B6004D95AB /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		539548552277FEDB0074BAEB /* AccountAndPassword_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountAndPassword_bg.png; sourceTree = "<group>"; };
 		539548B122783CE70074BAEB /* lmn_list_number@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lmn_list_number@3x.png"; sourceTree = "<group>"; };
 		539548B222783CE70074BAEB /* lmn_accessory_checkbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lmn_accessory_checkbox@2x.png"; sourceTree = "<group>"; };
@@ -560,7 +557,6 @@
 		5357B42121C38CAD009D9333 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				53735072266DC497004D95AB /* Home */,
 				5357B40B21C38B73009D9333 /* HomeViewController.h */,
 				5357B40C21C38B73009D9333 /* HomeViewController.m */,
 				5356ED2F21C7845D00862FE1 /* AddViewController.h */,
@@ -615,15 +611,6 @@
 				53FC59392473E4D10023CC46 /* UIColor+HZXColor.m */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		53735072266DC497004D95AB /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				53735073266DC4B6004D95AB /* MainViewController.h */,
-				53735074266DC4B6004D95AB /* MainViewController.m */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		539548B022783CE70074BAEB /* Note */ = {
@@ -1000,7 +987,6 @@
 				5342BFB7226ED14D002BC1FE /* JinnLockCircle.m in Sources */,
 				5342BFB3226ED14D002BC1FE /* JinnLockSudoko.m in Sources */,
 				5357B41B21C38B74009D9333 /* main.m in Sources */,
-				53735075266DC4B6004D95AB /* MainViewController.m in Sources */,
 				5356ECF521C7466C00862FE1 /* LCNavigationViewController.m in Sources */,
 				53B7FC4D223799370052D63C /* UIControl+Block_Handle.m in Sources */,
 				531AD0BA21CCBF1900A4B2BC /* UserViewTableViewCell.m in Sources */,
