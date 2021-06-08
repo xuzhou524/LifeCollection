@@ -22,22 +22,6 @@
 
 @implementation UserViewController
 
-//-(void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
-//    self.navigationController.navigationBar.hidden = YES;
-//}
-//
-//-(void)viewDidAppear:(BOOL)animated{
-//    [super viewDidAppear:animated];
-//    _rightBtn.hidden = NO;
-//}
-//
-//-(void)viewWillDisappear:(BOOL)animated{
-//    [super viewWillDisappear:animated];
-//     self.navigationController.navigationBar.hidden = NO;
-//    _rightBtn.hidden = YES;
-//}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -77,7 +61,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            return 210;
+            return 160;
         }else{
             return 95;
         }
