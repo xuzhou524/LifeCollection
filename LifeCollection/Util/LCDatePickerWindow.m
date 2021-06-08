@@ -3,7 +3,7 @@
 //  LifeCollection
 //
 //  Created by gozap on 2018/12/19.
-//  Copyright © 2018 com.longdai. All rights reserved.
+//  Copyright © 2021 com.xuzhou. All rights reserved.
 //
 
 #import "LCDatePickerWindow.h"

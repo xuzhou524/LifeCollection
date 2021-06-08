@@ -3,7 +3,7 @@
 //  LifeCollection
 //
 //  Created by gozap on 2019/1/4.
-//  Copyright © 2019 com.longdai. All rights reserved.
+//  Copyright © 2021 com.xuzhou. All rights reserved.
 //
 
 #import "LCClient.h"

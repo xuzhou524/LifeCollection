@@ -3,7 +3,7 @@
 //  LifeCollection
 //
 //  Created by gozap on 2020/5/11.
-//  Copyright © 2020 com.longdai. All rights reserved.
+//  Copyright © 2021 com.xuzhou. All rights reserved.
 //
 
 

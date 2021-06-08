@@ -37,8 +37,8 @@
     _bgView.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:_bgView];
     [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(8);
-        make.bottom.equalTo(self.contentView).offset(-8);
+        make.top.equalTo(self.contentView).offset(15);
+        make.bottom.equalTo(self.contentView).offset(-5);
         make.left.equalTo(self.contentView).offset(15);
         make.right.equalTo(self.contentView).offset(-15);
     }];

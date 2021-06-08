@@ -3,7 +3,7 @@
 //  LifeCollection
 //
 //  Created by gozap on 2018/12/14.
-//  Copyright © 2018 com.longdai. All rights reserved.
+//  Copyright © 2021 com.xuzhou. All rights reserved.
 //
 
 #import "HomeViewController.h"
@@ -37,7 +37,7 @@
     regClass(self.tableView, TimeListTableViewCell);
     
     UILabel * liftLabel = [UILabel new];
-    liftLabel.text = @"记点日子";
+    liftLabel.text = @"记日子";
     liftLabel.font = LCFont(22);
     liftLabel.textColor = [LCColor LCColor_77_92_127];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
@@ -94,7 +94,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 120;
+    return 130;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
