@@ -39,7 +39,7 @@
     UILabel * liftLabel = [UILabel new];
     liftLabel.text = @"记点日子";
     liftLabel.font = LCFont(22);
-    liftLabel.textColor = [LCColor LCColor_235_235_235];
+    liftLabel.textColor = [LCColor LCColor_77_92_127];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
 
     UIButton * rightBtn = [UIButton new];
@@ -71,6 +71,7 @@
     [dic setValue:eventModel.content forKey:@"content"];
     [dic setObject:eventModel.time forKey:@"time"];
     [dic setObject:eventModel.classType forKey:@"classType"];
+    [dic setObject:eventModel.tag forKey:@"tag"];
     [dic setObject:eventModel.remindType forKey:@"remindType"];
     [dic setObject:eventModel.colorType forKey:@"colorType"];
 
@@ -93,20 +94,28 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 130;
+    return 120;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TimeListTableViewCell * cell = getCell(TimeListTableViewCell);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell bind:self.eventModelLists[indexPath.row]];
+
+    cell.shareImageView.tag = indexPath.row;
+    [cell.shareImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didiShareClick:)]];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    TimeDetailViewController * timeDetailVC = [TimeDetailViewController new];
-    timeDetailVC.eventModel = self.eventModelLists[indexPath.row];
-    [self.navigationController pushViewController:timeDetailVC animated:YES];
+    
+    AddViewController * addVC = [AddViewController new];
+    addVC.eventModel = self.eventModelLists[indexPath.row];
+    [self.navigationController pushViewController:addVC animated:YES];
+    
+//    TimeDetailViewController * timeDetailVC = [TimeDetailViewController new];
+//    timeDetailVC.eventModel = self.eventModelLists[indexPath.row];
+//    [self.navigationController pushViewController:timeDetailVC animated:YES];
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -128,6 +137,129 @@
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
+}
+
+-(void)didiShareClick:(UITapGestureRecognizer *)tap{
+
+    EventModel * tempModel = self.eventModelLists[tap.view.tag];
+    
+    
+    NSString * dayStr = @"0";
+    NSString * timeStr = @"起始日";
+    NSString * dayTypeStr = @"已过天数";
+    NSString * targetDateStr = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:tempModel.time]];
+    if ([tempModel.classType isEqualToString:@"倒计日"]) {
+        dayTypeStr = @"剩余天数";
+        timeStr = @"下一目标日";
+        NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:tempModel.time] timeIntervalSinceNow];
+        if (timeInterval < 0) {
+            NSCalendar *gregorian = [[ NSCalendar alloc ] initWithCalendarIdentifier : NSCalendarIdentifierGregorian];
+            unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+            //格式化时间
+            NSDate *createDate = [DateFormatter dateFromTimeStampString:tempModel.time];
+            NSDateComponents* components = [gregorian components:unitFlags fromDate:createDate];
+            [components setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
+            //格式化现在时间
+            NSDateComponents* newDateComponent = [gregorian components:unitFlags fromDate:[NSDate date]];
+            [newDateComponent setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
+            
+            if ([tempModel.remindType isEqualToString:@"无循环"]){
+                dayStr = @"0";
+            }else{
+                if ([tempModel.remindType isEqualToString:@"月循环"]) {
+                    if (components.day <= newDateComponent.day) {
+                        targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",newDateComponent.year,newDateComponent.month + 1,components.day];
+                        if (newDateComponent.month == 12) {//当前月为12  显示下一年的01月
+                            targetDateStr = [NSString stringWithFormat:@"%ld-%@-%ld",newDateComponent.year + 1,@"01",components.day];
+                        }else{
+                            if (newDateComponent.month == 1 && (components.day == 29 || components.day == 30 || components.day == 31)) {
+                                //当前月为01月  下月是2月   假如日为29、30、31 统一显示 28
+                                targetDateStr = [NSString stringWithFormat:@"%ld-%@-%@",newDateComponent.year,@"02",@"28"];
+                            }else if (components.day == 31 && (newDateComponent.month + 1 == 4 || newDateComponent.month + 1 == 6 || newDateComponent.month + 1 == 9 || newDateComponent.month + 1 == 11)){
+                                //目标日期为四月，六月，九月，十一月  假如日是31  统一显示 30
+                                targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%@",newDateComponent.year,newDateComponent.month + 1,@"30"];
+                            }
+                        }
+                    }else{
+                        targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",newDateComponent.year,newDateComponent.month,components.day];
+                    }
+                }else if ([tempModel.remindType isEqualToString:@"年循环"]){
+                    if (components.day <= newDateComponent.day) {
+                        targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",newDateComponent.year + 1,components.month,components.day];
+                    }else{
+                        targetDateStr = [NSString stringWithFormat:@"%ld-%ld-%ld",newDateComponent.year,components.month,components.day];
+                    }
+                }
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                [formatter setDateStyle:NSDateFormatterMediumStyle];
+                [formatter setTimeStyle:NSDateFormatterShortStyle];
+                [formatter setDateFormat:@"YYYY-MM-dd"];
+                NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
+                [formatter setTimeZone:timeZone];
+                
+                NSDate* date = [formatter dateFromString:targetDateStr];
+                
+                NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
+                NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:timeSp] timeIntervalSinceNow] + 24 * 60 * 60;
+                long temp = 0;
+                NSString *result;
+                temp = fabs(timeInterval)/60;
+                if((temp = temp/60) <24){
+                    result= [NSString stringWithFormat:@"0"];
+                }else if((temp = temp/24) <10000){
+                    result = [NSString stringWithFormat:@"%ld",temp];
+                }
+                dayStr = result;
+            }
+        }else{
+            timeInterval = timeInterval + 24 * 60 * 60;
+            long temp = 0;
+            NSString *result;
+            temp = fabs(timeInterval)/60;
+            if((temp = temp/60) <24){
+                result= [NSString stringWithFormat:@"0"];
+            }else if((temp = temp/24) <10000){
+                result = [NSString stringWithFormat:@"%ld",temp];
+            }
+            dayStr = result;
+        }
+    }else if ([tempModel.classType isEqualToString:@"累计日"]){
+        dayTypeStr = @"已过天数";
+        timeStr = @"起始日";
+        NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:tempModel.time] timeIntervalSinceNow];
+        if (timeInterval < 0) {
+            long temp = 0;
+            NSString *result;
+            temp = fabs(timeInterval)/60;
+            if((temp = temp/60) <24){
+                result= [NSString stringWithFormat:@"0"];
+            }else if((temp = temp/24) <10000){
+                result = [NSString stringWithFormat:@"%ld",temp];
+            }
+            dayStr = result;
+        }else{
+            dayStr = @"0";
+        }
+    }
+    if (targetDateStr) {
+        NSArray * arr = [targetDateStr componentsSeparatedByString:@"-"];
+        if (arr.count > 2) {
+            NSString * str = arr[1];
+            if (str.length == 1) {
+                targetDateStr = [NSString stringWithFormat:@"%@-0%@-%@",arr.firstObject,arr[1],arr.lastObject];
+            }
+        }
+    }
+    
+   NSString *textToShare = [NSString stringWithFormat:@"%@ %@:%@ %@:%@\n记日子 - 拾掇生活中的点滴，记录时光的故事",tempModel.title,dayTypeStr,dayStr,timeStr,targetDateStr];
+   NSArray *activityItems = @[textToShare];
+   UIActivity *bookActivity = [UIActivity new];
+   NSArray *applicationActivities = @[bookActivity];
+   UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems
+                                                                        applicationActivities: applicationActivities];
+   //不出现在活动项目
+   activityVC.excludedActivityTypes = @[UIActivityTypeAirDrop];
+   [self.navigationController presentViewController:activityVC animated:TRUE completion:nil];
 }
 
 @end

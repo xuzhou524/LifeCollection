@@ -41,6 +41,7 @@
     [dic setValue:eventModel.content forKey:@"content"];
     [dic setObject:eventModel.time forKey:@"time"];
     [dic setObject:eventModel.classType forKey:@"classType"];
+    [dic setObject:eventModel.tag forKey:@"tag"];
     [dic setObject:eventModel.remindType forKey:@"remindType"];
     [dic setObject:eventModel.colorType forKey:@"colorType"];
 

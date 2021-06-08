@@ -20,6 +20,7 @@
 
 -(void)sebViews{
     self.contentView.backgroundColor = [LCColor backgroudColor];
+    self.clipsToBounds = YES;
     
     UILabel * label = [UILabel new];
     label.text = @"效果预览";

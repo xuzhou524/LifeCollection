@@ -24,6 +24,7 @@
 
 @property (nonatomic, copy) NSString * colorType;
 
+@property (nonatomic, copy) NSString * tag;
 
 -(NSMutableArray *)queryWithTime;
 

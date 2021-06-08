@@ -88,9 +88,9 @@
     return [self colorWithHexString:color alpha:1.0f];
 }
 
-
+//#494E69
 + (UIColor *)backgroudColor {
-    return [UIColor colorWithLightColorStr:@"#494E69" DarkColor:@"191919"];
+    return [UIColor colorWithLightColorStr:@"#EBEBEB" DarkColor:@"191919"];
 }
 
 

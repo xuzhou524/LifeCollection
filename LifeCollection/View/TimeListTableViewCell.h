@@ -12,12 +12,18 @@
 @interface TimeListTableViewCell : UITableViewCell
 @property(nonatomic,strong)UIImageView * bgView;
 
+@property(nonatomic,strong)UIImageView * typeImageView;
+@property(nonatomic,strong)UIView * classTypeView;
+
 @property(nonatomic,strong)UILabel * titleLabel;
 @property(nonatomic,strong)UILabel * timeLabel;
 @property(nonatomic,strong)UILabel * dayLabel;
+@property(nonatomic,strong)UILabel * tagLabel;
 
 @property(nonatomic,strong)UILabel * classTypeLabel;
 @property(nonatomic,strong)UILabel * remindTypeLabel;
+
+@property(nonatomic,strong)UIImageView * shareImageView;
 
 -(void)bind:(EventModel *)model;
 @end

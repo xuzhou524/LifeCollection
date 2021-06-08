@@ -34,6 +34,9 @@
 #define LCRemindTypeArray     @[@"无循环", @"月循环", @"年循环"]
 #define LCRemindType(index)    LCRemindTypeArray[index]
 
+#define LCTagTypeArray     @[@"生日",@"事件", @"关系", @"节日", @"高考", @"中考", @"地点", @"历史", @"节目", @"旅游", @"工作", @"其他"]
+#define LCTagType(index)    LCTagTypeArray[index]
+
 #define regClass( table,cell ) [table registerClass:[cell class] forCellReuseIdentifier:[NSString stringWithFormat:@"%@", [cell class]]]
 #define getCell(cell) [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"%@", [cell class]] forIndexPath:indexPath]
 

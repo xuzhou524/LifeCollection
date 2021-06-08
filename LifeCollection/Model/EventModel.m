@@ -41,6 +41,7 @@
         self.classType = [aDecoder decodeObjectForKey:@"classType"];
         self.remindType = [aDecoder decodeObjectForKey:@"remindType"];
         self.colorType = [aDecoder decodeObjectForKey:@"colorType"];
+        self.tag = [aDecoder decodeObjectForKey:@"tag"];
         
         self.ids = [aDecoder decodeIntForKey:@"ids"];
     }
@@ -57,6 +58,7 @@
     [aCoder encodeObject:self.classType forKey:@"classType"];
     [aCoder encodeObject:self.remindType forKey:@"remindType"];
     [aCoder encodeObject:self.colorType forKey:@"colorType"];
+    [aCoder encodeObject:self.tag forKey:@"tag"];
     
     [aCoder encodeInt:self.ids forKey:@"ids"];
 }

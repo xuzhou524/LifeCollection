@@ -46,6 +46,7 @@
         self.eventModel.classType = @"倒计日";
         self.eventModel.remindType = @"无循环";
         self.eventModel.colorType = @"0";
+        self.eventModel.tag = @"生日";
         self.eventModel.time = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
     }
 
@@ -132,13 +133,11 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
-        return 35;
+        return 0;
     }else if (indexPath.row == 1){
-        return 130;
-    }else if (indexPath.row == 2 || indexPath.row == 3 ||indexPath.row == 4 ||indexPath.row == 5){
-        return 60;
-    }else if (indexPath.row == 6){
-        return 70;
+        return 0;
+    }else if (indexPath.row == 2 || indexPath.row == 3 ||indexPath.row == 4 ||indexPath.row == 5||indexPath.row == 6){
+        return 74;
     }
     return 0;
 }
@@ -186,13 +185,11 @@
         cell.summeryLabel.text = self.eventModel.remindType;
         return cell;
     }else if (indexPath.row == 6){
-        SelectColorTableViewCell * cell = getCell(SelectColorTableViewCell);
+        TitleAndImageTableViewCell * cell = getCell(TitleAndImageTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        for (int i=0; i < cell.selectColorArray.count; i ++) {
-            UIView * tempView = cell.selectColorArray[i];
-            tempView.tag = i + 100;
-            [tempView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectColorClick:)]];
-        }
+        cell.iconImageView.image = [UIImage imageNamed:@"tixing"];
+        cell.titleLabel.text = @"标签";
+        cell.summeryLabel.text = self.eventModel.tag;
         return cell;
     }
     return [UITableViewCell new];
@@ -205,6 +202,8 @@
         [self classTypeDoActionSheetShow];
     }else if (indexPath.row == 5){
         [self remindDoActionSheetShow];
+    }else if (indexPath.row == 6){
+        [self tagTypeDoActionSheetShow];
     }
 }
 
@@ -213,12 +212,6 @@
         _timeCell.titleLabel.text = textField.text;
         self.eventModel.title = textField.text;
     }
-}
-
--(void)selectColorClick:(UITapGestureRecognizer *)tap{
-    NSString * imageStr = LCEventBackgroundImage(tap.view.tag - 100);;
-    _timeCell.bgView.image = [UIImage imageNamed:imageStr];
-    self.eventModel.colorType = [NSString stringWithFormat:@"%ld",tap.view.tag - 100];
 }
 
 -(void)remindDoActionSheetShow{
@@ -245,6 +238,21 @@
                  result:^(int nResult) {
                      if (nResult < LCClassTypeArray.count) {
                          weakSelf.eventModel.classType = LCClassType(nResult);
+                         [weakSelf.tableView reloadData];
+                     }
+                 }
+     ];
+}
+
+-(void)tagTypeDoActionSheetShow{
+    kWeakSelf;
+    DoActionSheet *tagTypeActionSheet = [DoActionSheet new];
+    [tagTypeActionSheet showC:@"标签"
+                 cancel:@"取消"
+                buttons:LCTagTypeArray
+                 result:^(int nResult) {
+                     if (nResult < LCTagTypeArray.count) {
+                         weakSelf.eventModel.tag = LCTagType(nResult);
                          [weakSelf.tableView reloadData];
                      }
                  }

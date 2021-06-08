@@ -44,6 +44,7 @@ static FMDatabaseQueue *_queue;
             dataTime.classType = [rs stringForColumn:@"classType"];
             dataTime.remindType = [rs stringForColumn:@"remindType"];
             dataTime.colorType = [rs stringForColumn:@"colorType"];
+            dataTime.tag = [rs stringForColumn:@"tag"];
             [diaryArray addObject:dataTime];
         }
     }];
@@ -58,7 +59,7 @@ static FMDatabaseQueue *_queue;
 
 +(void)insertTime:(EventModel *)diaryTime{
     [_queue inDatabase:^(FMDatabase *db){
-        [db executeUpdate:@"insert into LifeCollection_Tab(title, content, time, classType, remindType, colorType) values (?, ?, ?, ?, ?, ?)",diaryTime.title, diaryTime.content, diaryTime.time, diaryTime.classType, diaryTime.remindType, diaryTime.colorType];
+        [db executeUpdate:@"insert into LifeCollection_Tab(title, content, time, classType, remindType, colorType,tag) values (?, ?, ?, ?, ?, ?, ?)",diaryTime.title, diaryTime.content, diaryTime.time, diaryTime.classType, diaryTime.remindType, diaryTime.colorType,diaryTime.tag];
     }];
 }
 
@@ -76,6 +77,7 @@ static FMDatabaseQueue *_queue;
             dataTime.classType = [rs stringForColumn:@"classType"];
             dataTime.remindType = [rs stringForColumn:@"remindType"];
             dataTime.colorType = [rs stringForColumn:@"colorType"];
+            dataTime.tag = [rs stringForColumn:@"tag"];
         }
     }];
     return dataTime;
@@ -83,7 +85,7 @@ static FMDatabaseQueue *_queue;
 
 +(void)updataTime:(EventModel *)updataTime{
     [_queue inDatabase:^(FMDatabase *db){
-        [db executeUpdate:@"update LifeCollection_Tab set title = ? , content = ?, time = ?, classType = ? , remindType = ? , colorType = ? where ids = ? ;",updataTime.title, updataTime.content, updataTime.time, updataTime.classType, updataTime.remindType, updataTime.colorType, [NSNumber numberWithInt:updataTime.ids]];
+        [db executeUpdate:@"update LifeCollection_Tab set title = ? , content = ?, time = ?, classType = ? , remindType = ? , colorType = ? , tag = ? where ids = ? ;",updataTime.title, updataTime.content, updataTime.time, updataTime.classType, updataTime.remindType, updataTime.colorType,updataTime.tag, [NSNumber numberWithInt:updataTime.ids]];
     }];
 }
 
