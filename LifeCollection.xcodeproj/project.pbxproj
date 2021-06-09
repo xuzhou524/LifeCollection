@@ -19,7 +19,6 @@
 		531AD0B321CCB36200A4B2BC /* shijian.png in Resources */ = {isa = PBXBuildFile; fileRef = 531AD0B221CCB36200A4B2BC /* shijian.png */; };
 		531AD0B721CCB93900A4B2BC /* edit_title.png in Resources */ = {isa = PBXBuildFile; fileRef = 531AD0B621CCB93900A4B2BC /* edit_title.png */; };
 		531AD0BA21CCBF1900A4B2BC /* UserViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD0B921CCBF1900A4B2BC /* UserViewTableViewCell.m */; };
-		531AD0BE21CCC89300A4B2BC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 531AD0BD21CCC89300A4B2BC /* logo.png */; };
 		531AD0C121CCCBAB00A4B2BC /* about_praise.png in Resources */ = {isa = PBXBuildFile; fileRef = 531AD0BF21CCCBAA00A4B2BC /* about_praise.png */; };
 		531AD0C221CCCBAB00A4B2BC /* about_criticism.png in Resources */ = {isa = PBXBuildFile; fileRef = 531AD0C021CCCBAA00A4B2BC /* about_criticism.png */; };
 		531AD0C621CCD57F00A4B2BC /* summery.png in Resources */ = {isa = PBXBuildFile; fileRef = 531AD0C521CCD57F00A4B2BC /* summery.png */; };
@@ -195,7 +194,6 @@
 		531AD0B621CCB93900A4B2BC /* edit_title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_title.png; sourceTree = "<group>"; };
 		531AD0B821CCBF1900A4B2BC /* UserViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewTableViewCell.h; sourceTree = "<group>"; };
 		531AD0B921CCBF1900A4B2BC /* UserViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewTableViewCell.m; sourceTree = "<group>"; };
-		531AD0BD21CCC89300A4B2BC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		531AD0BF21CCCBAA00A4B2BC /* about_praise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_praise.png; sourceTree = "<group>"; };
 		531AD0C021CCCBAA00A4B2BC /* about_criticism.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_criticism.png; sourceTree = "<group>"; };
 		531AD0C521CCD57F00A4B2BC /* summery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = summery.png; sourceTree = "<group>"; };
@@ -246,7 +244,7 @@
 		5356ED2F21C7845D00862FE1 /* AddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		5356ED3021C7845D00862FE1 /* AddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		53570FD12297A7BB00DBABE8 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
-		5357B40521C38B73009D9333 /* 我的时间.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "我的时间.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5357B40521C38B73009D9333 /* 记日子.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "记日子.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5357B40821C38B73009D9333 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5357B40921C38B73009D9333 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5357B40B21C38B73009D9333 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -472,7 +470,6 @@
 				531AD0C521CCD57F00A4B2BC /* summery.png */,
 				531AD0C021CCCBAA00A4B2BC /* about_criticism.png */,
 				531AD0BF21CCCBAA00A4B2BC /* about_praise.png */,
-				531AD0BD21CCC89300A4B2BC /* logo.png */,
 				531AD0A621CCAF7C00A4B2BC /* leixing.png */,
 				531AD0B021CCB27F00A4B2BC /* tixing.png */,
 				531AD0B221CCB36200A4B2BC /* shijian.png */,
@@ -520,7 +517,7 @@
 		5357B40621C38B73009D9333 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5357B40521C38B73009D9333 /* 我的时间.app */,
+				5357B40521C38B73009D9333 /* 记日子.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -734,7 +731,7 @@
 			);
 			name = LifeCollection;
 			productName = LifeCollection;
-			productReference = 5357B40521C38B73009D9333 /* 我的时间.app */;
+			productReference = 5357B40521C38B73009D9333 /* 记日子.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -851,7 +848,6 @@
 				53B7FC6F2237A0AC0052D63C /* spy-bg@3x.png in Resources */,
 				539548E922783CE80074BAEB /* lmn_tool_a@3x.png in Resources */,
 				5356ED1B21C7531D00862FE1 /* tab_bar_home_sel@2x.png in Resources */,
-				531AD0BE21CCC89300A4B2BC /* logo.png in Resources */,
 				539548FE22783CE80074BAEB /* lmn_font_strikethrough@3x.png in Resources */,
 				531AD0B721CCB93900A4B2BC /* edit_title.png in Resources */,
 				539548EF22783CE80074BAEB /* lmn_left_square@3x.png in Resources */,
@@ -1142,8 +1138,8 @@
 			baseConfigurationReference = A46CB81A40A90EFAE12EAFA2 /* Pods-LifeCollection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = "LifeCollection/我的时间.entitlements";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
@@ -1156,7 +1152,7 @@
 				);
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.LifeCollection;
-				PRODUCT_NAME = "我的时间";
+				PRODUCT_NAME = "记日子";
 				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1167,8 +1163,8 @@
 			baseConfigurationReference = DAB28567032FA38DDC677DEE /* Pods-LifeCollection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = "LifeCollection/我的时间.entitlements";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
@@ -1181,7 +1177,7 @@
 				);
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.LifeCollection;
-				PRODUCT_NAME = "我的时间";
+				PRODUCT_NAME = "记日子";
 				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
