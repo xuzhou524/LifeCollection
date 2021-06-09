@@ -22,18 +22,18 @@
     self.contentView.backgroundColor = [LCColor backgroudColor];
     
     _iconImageView = [UIImageView new];
-    _iconImageView.image = [UIImage imageNamed:@"logo"];
+    _iconImageView.image = [UIImage imageNamed:@"logo_120"];
     _iconImageView.layer.cornerRadius = 10;
     _iconImageView.layer.masksToBounds = YES;
     [self.contentView addSubview:_iconImageView];
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.contentView).offset(-50);
+        make.bottom.equalTo(self.contentView).offset(-80);
         make.centerX.equalTo(self.contentView);
         make.width.height.equalTo(@88);
     }];
     
     _titleLabel = [UILabel new];
-    _titleLabel.text = @"专注时间管理、记事本日常工具";
+    _titleLabel.text = @"那些重要的日子";
     _titleLabel.font = LCFont(14);
     _titleLabel.textColor = [LCColor LCColor_77_92_127];
     [self.contentView addSubview:_titleLabel];
@@ -59,12 +59,15 @@
     self.contentView.backgroundColor = [LCColor backgroudColor];
     
     UIView * oneView = [UIView new];
-    oneView.backgroundColor = [LCColor backgroudColor];
+    oneView.backgroundColor = [LCColor whiteColor];
+    oneView.layer.cornerRadius = 16;
+    oneView.layer.masksToBounds = YES;
     [self.contentView addSubview:oneView];
     [oneView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.equalTo(self.contentView);
-        make.bottom.equalTo(self.contentView).offset(-15);
-        make.right.equalTo(self.contentView.mas_centerX).offset(-0);
+        make.left.equalTo(self.contentView).offset(15);
+        make.right.equalTo(self.contentView).offset(-15);
+        make.top.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView).offset(-10);
     }];
     
     _zanImageView = [UIImageView new];
@@ -74,8 +77,8 @@
     _zanImageView.layer.masksToBounds = YES;
     [self.contentView addSubview:_zanImageView];
     [_zanImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(oneView);
-        make.top.equalTo(oneView).offset(10);
+        make.left.equalTo(oneView).offset(60);
+        make.bottom.equalTo(oneView.mas_centerY).offset(10);
         make.width.height.equalTo(@40);
     }];
     
@@ -85,19 +88,19 @@
     _zanLabel.textColor = [LCColor LCColor_77_92_127];
     [self.contentView addSubview:_zanLabel];
     [_zanLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(oneView);
+        make.centerX.equalTo(self.zanImageView);
         make.top.equalTo(self.zanImageView.mas_bottom).offset(5);
     }];
     
-    UIView * twoView = [UIView new];
-    twoView.backgroundColor = [LCColor backgroudColor];
-    [self.contentView addSubview:twoView];
-    [twoView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.top.equalTo(self.contentView);
-        make.bottom.equalTo(self.contentView).offset(-15);
-        make.left.equalTo(self.contentView.mas_centerX).offset(0);
-    }];
-    
+//    UIView * twoView = [UIView new];
+//    twoView.backgroundColor = [LCColor backgroudColor];
+//    [self.contentView addSubview:twoView];
+//    [twoView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.top.equalTo(self.contentView);
+//        make.bottom.equalTo(self.contentView).offset(-15);
+//        make.left.equalTo(self.contentView.mas_centerX).offset(0);
+//    }];
+//
     _tuImageView = [UIImageView new];
     _tuImageView.image = [UIImage imageNamed:@"about_criticism"];
     _tuImageView.userInteractionEnabled = YES;
@@ -105,18 +108,18 @@
     _tuImageView.layer.masksToBounds = YES;
     [self.contentView addSubview:_tuImageView];
     [_tuImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(twoView);
-        make.top.equalTo(twoView).offset(12);
+        make.right.equalTo(oneView).offset(-60);
+        make.bottom.equalTo(oneView.mas_centerY).offset(10);
         make.width.height.equalTo(@40);
     }];
-    
+
     _tuLabel = [UILabel new];
     _tuLabel.text = @"出个槽";
     _tuLabel.font = LCFont(15);
     _tuLabel.textColor = [LCColor LCColor_77_92_127];
     [self.contentView addSubview:_tuLabel];
     [_tuLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(twoView);
+        make.centerX.equalTo(self.tuImageView);
         make.top.equalTo(self.zanImageView.mas_bottom).offset(8);
     }];
     

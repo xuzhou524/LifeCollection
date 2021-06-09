@@ -39,6 +39,13 @@
     regClass(self.tableView, TitleTableViewCell);
     regClass(self.tableView, UserHeadViewTableViewCell);
     regClass(self.tableView, TitleNoRightImageTableViewCell);
+    
+#ifdef DEBUG
+#else
+    if([SKStoreReviewController respondsToSelector:@selector(requestReview)]){
+        [SKStoreReviewController requestReview];
+    }
+#endif
 
 }
 
@@ -55,15 +62,15 @@
     if (section == 0) {
         return 2;
     }
-    return 5;
+    return 3;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            return 160;
+            return 180;
         }else{
-            return 95;
+            return 115;
         }
     }
     return 65;
@@ -83,7 +90,7 @@
             return cell;
         }
     }else{
-        if (indexPath.row == 4) {
+        if (indexPath.row == 2) {
             TitleNoRightImageTableViewCell * cell = getCell(TitleNoRightImageTableViewCell);
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.titleLabel.text = @"当前版本";
@@ -92,7 +99,7 @@
         }
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @[@"日常工具",@"服务条款",@"分享记日子",@"关于开发者"][indexPath.row];
+        cell.titleLabel.text = @[@"服务条款",@"分享记日子"][indexPath.row];
         cell.summeryLabel.text = @"";
         return cell;
     }
@@ -103,9 +110,7 @@
         if (indexPath.row == 0){
 
         }else if (indexPath.row == 1) {
-
-        }else if (indexPath.row == 2){
-            NSString * title = @"记日子 - 专注时间管理、记事本日常工具";
+            NSString * title = @"记日子 - 那些重要的日子";
             NSString * url = @"https://itunes.apple.com/us/app//id1447845919?l=zh&ls=1&mt=8";
             NSString * image = @"http://img.gozap.com/group19/M01/B4/0F/wKgCOFwvGqnXXzibAACN7VDmKvQ248.png";
             NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:image]];
@@ -118,23 +123,14 @@
             NSArray *applicationActivities = @[bookActivity];
             UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems
                                                                                     applicationActivities: applicationActivities];
-            [[LCClient sharedInstance].lcCenterNav presentViewController:activityVC animated:TRUE completion:nil];
-        }else if (indexPath.row == 3){
-
+            [self.navigationController presentViewController:activityVC animated:TRUE completion:nil];
         }
     }
 }
 
 -(void)zanImageViewTap{
-#ifdef DEBUG
-#else
-    if([SKStoreReviewController respondsToSelector:@selector(requestReview)]){
-        [SKStoreReviewController requestReview];
-    }else{
-        NSString  * nsStringToOpen = [NSString  stringWithFormat: @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@",@"1447845919"];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:nsStringToOpen]];
-    }
-#endif
+    NSString  * nsStringToOpen = [NSString  stringWithFormat: @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@",@"1447845919"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:nsStringToOpen] options:@{} completionHandler:nil];
 }
 
 -(void)tuImageView{

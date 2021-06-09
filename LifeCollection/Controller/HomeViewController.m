@@ -12,6 +12,7 @@
 #import "TimeDetailViewController.h"
 #import "EventModel.h"
 #import "UserViewController.h"
+#import <StoreKit/StoreKit.h>
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -58,6 +59,14 @@
         make.bottom.equalTo(self.view).offset(-60);
         make.width.height.equalTo(@56);
     }];
+    
+#ifdef DEBUG
+#else
+    if([SKStoreReviewController respondsToSelector:@selector(requestReview)]){
+        [SKStoreReviewController requestReview];
+    }
+#endif
+    
 }
 
 -(EventModel *)eventModel{

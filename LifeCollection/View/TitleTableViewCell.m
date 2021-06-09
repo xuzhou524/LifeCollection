@@ -23,10 +23,14 @@
     self.clipsToBounds = YES;
     UIView *bgView = [UIView new];
     bgView.backgroundColor = [LCColor itemBackgroudColor];
+    bgView.layer.cornerRadius = 16;
+    bgView.layer.masksToBounds = YES;
     [self.contentView addSubview:bgView];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.left.right.equalTo(self.contentView);
-        make.top.equalTo(self.contentView).offset(0);
+        make.left.equalTo(self.contentView).offset(15);
+        make.right.equalTo(self.contentView).offset(-15);
+        make.top.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView).offset(-10);
     }];
     
     _titleLabel = [UILabel new];
@@ -34,7 +38,7 @@
     _titleLabel.textColor = [LCColor LCColor_77_92_127];
     [bgView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(16);
+        make.left.equalTo(bgView).offset(15);
         make.centerY.equalTo(bgView);
     }];
     
@@ -44,7 +48,7 @@
     iconImageView.image=iconIamge;
     [self.contentView addSubview:iconImageView];
     [iconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView).offset(-15);
+        make.right.equalTo(bgView).offset(-15);
         make.centerY.equalTo(bgView);
         make.height.equalTo(@12);
         make.width.equalTo(@8);
@@ -144,10 +148,14 @@
     
     UIView *bgView = [UIView new];
     bgView.backgroundColor = [LCColor itemBackgroudColor];
+    bgView.layer.cornerRadius = 16;
+    bgView.layer.masksToBounds = YES;
     [self.contentView addSubview:bgView];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.left.right.equalTo(self.contentView);
-        make.top.equalTo(self.contentView).offset(0);
+        make.left.equalTo(self.contentView).offset(15);
+        make.right.equalTo(self.contentView).offset(-15);
+        make.top.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView).offset(-10);
     }];
     
     _titleLabel = [UILabel new];
@@ -155,7 +163,7 @@
     _titleLabel.textColor = [LCColor LCColor_77_92_127];
     [bgView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(16);
+        make.left.equalTo(bgView).offset(15);
         make.centerY.equalTo(bgView);
     }];
     
@@ -164,7 +172,7 @@
     _summeryLabel.font = LCFont(15);
     [self.contentView addSubview:_summeryLabel];
     [_summeryLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView).offset(-15);
+        make.right.equalTo(bgView).offset(-15);
         make.centerY.equalTo(self.titleLabel);
     }];
     
