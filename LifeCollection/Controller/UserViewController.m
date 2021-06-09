@@ -10,7 +10,7 @@
 #import "UserViewTableViewCell.h"
 #import "TitleTableViewCell.h"
 #import <StoreKit/StoreKit.h>
-#import "SetingViewController.h"
+#import "LCWebViewViewController.h"
 
 @interface UserViewController ()<UITableViewDelegate,UITableViewDataSource>{
     UIButton *_rightBtn;
@@ -47,11 +47,6 @@
     }
 #endif
 
-}
-
--(void)rightBtnClick{
-    SetingViewController * aboutDeveloperVC =[SetingViewController new];
-    [self.navigationController pushViewController:aboutDeveloperVC animated:YES];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -108,7 +103,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
         if (indexPath.row == 0){
-
+            LCWebViewViewController * webViewVC =[LCWebViewViewController new];
+            webViewVC.titleStr = @"服务条款";
+            webViewVC.urlStr = @"http://img.gozap.com/group19/M00/0F/E5/wKgCN1y1mYvZp1H6AAIFAVCycb8814.pdf";
+            [self.navigationController pushViewController:webViewVC animated:YES];
         }else if (indexPath.row == 1) {
             NSString * title = @"记日子 - 那些重要的日子";
             NSString * url = @"https://itunes.apple.com/us/app//id1447845919?l=zh&ls=1&mt=8";
