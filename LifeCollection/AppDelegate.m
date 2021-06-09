@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "LCNavigationViewController.h"
 #import "HomeViewController.h"
-#import "JinnLockViewController.h"
 
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -21,25 +20,8 @@
 
     [self.window makeKeyAndVisible];
     [[UITabBar appearance] setTranslucent:NO];
- 
-    [self verify];
     
     return YES;
-}
-
-- (void)verify{
-    if ([JinnLockTool isGestureUnlockEnabled]){
-        JinnLockViewController *lockViewController = [[JinnLockViewController alloc] initWithDelegate:nil
-                                                                                                 type:JinnLockTypeVerify
-                                                                                           appearMode:JinnLockAppearModePresent];
-        
-        if (![[LCClient sharedInstance].lcCenterNav.visibleViewController isKindOfClass:[JinnLockViewController class]]){
-            lockViewController.modalPresentationStyle = UIModalPresentationFullScreen;
-            [[LCClient sharedInstance].lcCenterNav.visibleViewController presentViewController:lockViewController
-                                                                          animated:NO
-                                                                        completion:nil];
-        }
-    }
 }
 
 @end

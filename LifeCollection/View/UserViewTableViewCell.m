@@ -59,7 +59,7 @@
     self.contentView.backgroundColor = [LCColor backgroudColor];
     
     UIView * oneView = [UIView new];
-    oneView.backgroundColor = [LCColor whiteColor];
+    oneView.backgroundColor = [LCColor itemBackgroudColor];
     oneView.layer.cornerRadius = 16;
     oneView.layer.masksToBounds = YES;
     [self.contentView addSubview:oneView];

@@ -68,7 +68,7 @@
         bt.titleLabel.font = DO_AS_TITLE_FONT;
         [bt setTitleColor:DO_AS_CANCEL_TEXT_COLOR forState:UIControlStateNormal];
     }else{
-        bt.backgroundColor = [LCColor whiteColor];
+        bt.backgroundColor = [LCColor itemBackgroudColor];
         bt.titleLabel.font = DO_AS_BUTTON_FONT;
         [bt setTitleColor:[LCColor LCColor_121_117_245] forState:UIControlStateNormal];
     }

@@ -44,7 +44,7 @@
     
     UIImageView *iconImageView = [UIImageView new];
     UIImage * iconIamge = [[UIImage imageNamed:@"circleright"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    iconImageView.tintColor = [LCColor LCColor_113_120_150];
+    iconImageView.tintColor = [LCColor LCColor_77_92_127];
     iconImageView.image=iconIamge;
     [self.contentView addSubview:iconImageView];
     [iconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -110,7 +110,7 @@
     
     UIImageView *imageView = [UIImageView new];
     UIImage * iconIamge = [[UIImage imageNamed:@"circleright"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    imageView.tintColor = [LCColor LCColor_113_120_150];
+    imageView.tintColor = [LCColor LCColor_77_92_127];
     imageView.image=iconIamge;
     [self.contentView addSubview:imageView];
     [imageView mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -168,7 +168,7 @@
     }];
     
     _summeryLabel = [UILabel new];
-    _summeryLabel.textColor = [LCColor LCColor_113_120_150];
+    _summeryLabel.textColor = [LCColor LCColor_77_92_127];
     _summeryLabel.font = LCFont(15);
     [self.contentView addSubview:_summeryLabel];
     [_summeryLabel mas_makeConstraints:^(MASConstraintMaker *make) {

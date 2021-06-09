@@ -34,7 +34,7 @@
     _bgView.layer.cornerRadius = 16;
     _bgView.layer.masksToBounds = YES;
     _bgView.userInteractionEnabled = YES;
-    _bgView.backgroundColor = [UIColor whiteColor];
+    _bgView.backgroundColor = [LCColor itemBackgroudColor];
     [self.contentView addSubview:_bgView];
     [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView).offset(12);
