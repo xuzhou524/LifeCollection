@@ -57,7 +57,7 @@
     [addImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
         make.bottom.equalTo(self.view).offset(-60);
-        make.width.height.equalTo(@56);
+        make.width.height.equalTo(@54);
     }];
     
 #ifdef DEBUG
@@ -119,7 +119,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 130;
+    return 115;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

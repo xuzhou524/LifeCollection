@@ -37,7 +37,7 @@
     _bgView.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:_bgView];
     [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(15);
+        make.top.equalTo(self.contentView).offset(12);
         make.bottom.equalTo(self.contentView).offset(-5);
         make.left.equalTo(self.contentView).offset(15);
         make.right.equalTo(self.contentView).offset(-15);
@@ -49,11 +49,11 @@
     [self.contentView addSubview:_typeImageView];
     [_typeImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.bottom.equalTo(self.bgView);
-        make.width.equalTo(@50);
+        make.width.equalTo(@45);
     }];
 
     _tagLabel = [UILabel new];
-    _tagLabel.font = LCFont(15);
+    _tagLabel.font = LCFont(14);
     _tagLabel.alpha = 0.8;
     _tagLabel.textColor = [LCColor whiteColor];
     [self.contentView addSubview:_tagLabel];
@@ -80,7 +80,7 @@
     _titleLabel.textColor = [LCColor LCColor_77_92_127];
     [self.contentView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.bgView).offset(20);
+        make.top.equalTo(self.bgView).offset(25);
         make.left.equalTo(self.typeImageView.mas_right).offset(15);
     }];
     
@@ -136,7 +136,7 @@
     [self.contentView addSubview:_timeStrLabel];
     [_timeStrLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.titleLabel);
-        make.bottom.equalTo(self.bgView).offset(-20);
+        make.bottom.equalTo(self.bgView).offset(-25);
     }];
     
     _timeLabel = [UILabel new];
@@ -163,7 +163,7 @@
     
     _dayLabel = [UILabel new];
     _dayLabel.text = @"626";
-    _dayLabel.font = LCFont(30);
+    _dayLabel.font = LCFont(24);
     _dayLabel.alpha = 0.8;
     _dayLabel.textColor = [LCColor LCColor_77_92_127];
     [self.contentView addSubview:_dayLabel];

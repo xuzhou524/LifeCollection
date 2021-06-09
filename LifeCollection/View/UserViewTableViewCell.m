@@ -33,7 +33,7 @@
     }];
     
     _titleLabel = [UILabel new];
-    _titleLabel.text = @"那些重要的日子";
+    _titleLabel.text = @"记日子 - 那些重要的日子";
     _titleLabel.font = LCFont(14);
     _titleLabel.textColor = [LCColor LCColor_77_92_127];
     [self.contentView addSubview:_titleLabel];
@@ -114,7 +114,7 @@
     }];
 
     _tuLabel = [UILabel new];
-    _tuLabel.text = @"出个槽";
+    _tuLabel.text = @"吐个槽";
     _tuLabel.font = LCFont(15);
     _tuLabel.textColor = [LCColor LCColor_77_92_127];
     [self.contentView addSubview:_tuLabel];

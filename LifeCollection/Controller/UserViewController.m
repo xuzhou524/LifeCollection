@@ -105,7 +105,7 @@
         if (indexPath.row == 0){
             LCWebViewViewController * webViewVC =[LCWebViewViewController new];
             webViewVC.titleStr = @"服务条款";
-            webViewVC.urlStr = @"http://img.gozap.com/group19/M00/0F/E5/wKgCN1y1mYvZp1H6AAIFAVCycb8814.pdf";
+            webViewVC.urlStr = @"https://www.gezhipu.com/lifeCollection.pdf";
             [self.navigationController pushViewController:webViewVC animated:YES];
         }else if (indexPath.row == 1) {
             NSString * title = @"记日子 - 那些重要的日子";
