@@ -34,6 +34,7 @@
 		539B3A6521C7B01300431B7A /* TitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B3A6421C7B01300431B7A /* TitleTableViewCell.m */; };
 		539B3A6C21C7B57800431B7A /* SelectColorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B3A6B21C7B57800431B7A /* SelectColorTableViewCell.m */; };
 		53A224242678693B0056FCE2 /* LifeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A224232678693B0056FCE2 /* LifeCollection.m */; };
+		53A2242726786A030056FCE2 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2242526786A030056FCE2 /* SettingViewController.m */; };
 		53AC8E2E21D33E5800DD0079 /* LCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AC8E2D21D33E5800DD0079 /* LCSettings.m */; };
 		53B7FC4D223799370052D63C /* UIControl+Block_Handle.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B7FC4C223799370052D63C /* UIControl+Block_Handle.m */; };
 		53C88DC6266E0E9C00EACB58 /* HomeListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53C88DC5266E0E9C00EACB58 /* HomeListCollectionViewCell.m */; };
@@ -112,6 +113,8 @@
 		539B3A6B21C7B57800431B7A /* SelectColorTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectColorTableViewCell.m; sourceTree = "<group>"; };
 		53A224222678693B0056FCE2 /* LifeCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeCollection.h; sourceTree = "<group>"; };
 		53A224232678693B0056FCE2 /* LifeCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifeCollection.m; sourceTree = "<group>"; };
+		53A2242526786A030056FCE2 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		53A2242626786A030056FCE2 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		53AC8E2C21D33E5800DD0079 /* LCSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCSettings.h; sourceTree = "<group>"; };
 		53AC8E2D21D33E5800DD0079 /* LCSettings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCSettings.m; sourceTree = "<group>"; };
 		53B7FC4C223799370052D63C /* UIControl+Block_Handle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Block_Handle.m"; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 				531548442468F30600E8D251 /* TimeDetailViewController.m */,
 				5356ED0721C7474100862FE1 /* UserViewController.h */,
 				5356ED0821C7474100862FE1 /* UserViewController.m */,
+				53A2242626786A030056FCE2 /* SettingViewController.h */,
+				53A2242526786A030056FCE2 /* SettingViewController.m */,
 				53E44F52267064F400FE6B8E /* LCWebViewViewController.h */,
 				53E44F53267064F400FE6B8E /* LCWebViewViewController.m */,
 			);
@@ -454,6 +459,7 @@
 				539B3A6221C7AB1500431B7A /* TextFieldTableViewCell.m in Sources */,
 				539B3A6C21C7B57800431B7A /* SelectColorTableViewCell.m in Sources */,
 				5356ED0921C7474100862FE1 /* UserViewController.m in Sources */,
+				53A2242726786A030056FCE2 /* SettingViewController.m in Sources */,
 				5357B40D21C38B73009D9333 /* HomeViewController.m in Sources */,
 				5357B41321C38B73009D9333 /* LifeCollection.xcdatamodeld in Sources */,
 				53FC593A2473E4D10023CC46 /* UIColor+HZXColor.m in Sources */,

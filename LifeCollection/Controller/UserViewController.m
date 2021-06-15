@@ -11,6 +11,7 @@
 #import "TitleTableViewCell.h"
 #import <StoreKit/StoreKit.h>
 #import "LCWebViewViewController.h"
+#import "SettingViewController.h"
 
 @interface UserViewController ()<UITableViewDelegate,UITableViewDataSource>{
     UIButton *_rightBtn;
@@ -57,7 +58,7 @@
     if (section == 0) {
         return 2;
     }
-    return 3;
+    return 4;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -85,7 +86,7 @@
             return cell;
         }
     }else{
-        if (indexPath.row == 2) {
+        if (indexPath.row == 3) {
             TitleNoRightImageTableViewCell * cell = getCell(TitleNoRightImageTableViewCell);
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.titleLabel.text = @"当前版本";
@@ -94,7 +95,7 @@
         }
         TitleTableViewCell * cell = getCell(TitleTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLabel.text = @[@"服务条款",@"分享记日子"][indexPath.row];
+        cell.titleLabel.text = @[@"设置",@"服务条款",@"分享记日子"][indexPath.row];
         cell.summeryLabel.text = @"";
         return cell;
     }
@@ -103,11 +104,14 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
         if (indexPath.row == 0){
+            SettingViewController * vc = [SettingViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }else if (indexPath.row == 1){
             LCWebViewViewController * webViewVC =[LCWebViewViewController new];
             webViewVC.titleStr = @"服务条款";
             webViewVC.urlStr = @"https://www.gezhipu.com/lifeCollection.pdf";
             [self.navigationController pushViewController:webViewVC animated:YES];
-        }else if (indexPath.row == 1) {
+        }else if (indexPath.row == 2) {
             NSString * title = @"记日子 - 那些重要的日子";
             NSString * url = @"https://itunes.apple.com/us/app//id1447845919?l=zh&ls=1&mt=8";
             NSString * image = @"http://img.gozap.com/group19/M01/B4/0F/wKgCOFwvGqnXXzibAACN7VDmKvQ248.png";
