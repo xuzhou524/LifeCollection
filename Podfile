@@ -8,7 +8,9 @@ def pods
    pod 'FDFullscreenPopGesture'
    pod 'ZObjcStore', '~> 1.0.1'
    
+   pod 'Google-Mobile-Ads-SDK'
    pod 'ReactiveObjC'
+   
 end
 
 

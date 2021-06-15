@@ -13,12 +13,14 @@
 #import "EventModel.h"
 #import "UserViewController.h"
 #import <StoreKit/StoreKit.h>
+@import GoogleMobileAds;
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView * tableView;
 @property (nonatomic, strong) NSMutableArray * eventModelLists;
 @property (nonatomic, strong) EventModel * eventModel;
+@property(nonatomic, strong) GADBannerView *bannerView;
 @end
 
 @implementation HomeViewController
@@ -29,7 +31,8 @@
     _tableView = [UITableView new];
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.bottom.equalTo(self.view);
+        make.left.top.right.equalTo(self.view);
+        make.bottom.equalTo(self.view).offset(-50);
     }];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.backgroundColor = [LCColor clearColor];
@@ -56,7 +59,7 @@
     [self.view addSubview:addImageView];
     [addImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.bottom.equalTo(self.view).offset(-60);
+        make.bottom.equalTo(self.view).offset(-100);
         make.width.height.equalTo(@54);
     }];
     
@@ -67,6 +70,20 @@
     }
 #endif
     
+#ifdef DEBUG
+#else
+    [self createAdView];
+#endif
+    
+}
+
+-(void)createAdView{
+    self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake((ScreenWidth - 320)/2.00, ScreenHeight - 150,320 , 50)];
+    self.bannerView.adSize = kGADAdSizeBanner;
+    [self.view addSubview:self.bannerView];
+    self.bannerView.adUnitID = @"ca-app-pub-9353975206269682/9957610170";
+    self.bannerView.rootViewController = self;
+    [self.bannerView loadRequest:[GADRequest request]];
 }
 
 -(EventModel *)eventModel{
