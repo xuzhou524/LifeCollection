@@ -626,7 +626,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.LifeCollection;
 				PRODUCT_NAME = "记日子";
 				SUPPORTS_MACCATALYST = NO;
@@ -651,7 +651,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.LifeCollection;
 				PRODUCT_NAME = "记日子";
 				SUPPORTS_MACCATALYST = NO;
