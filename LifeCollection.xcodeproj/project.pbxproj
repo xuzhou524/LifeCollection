@@ -33,6 +33,7 @@
 		539B3A6221C7AB1500431B7A /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B3A6121C7AB1500431B7A /* TextFieldTableViewCell.m */; };
 		539B3A6521C7B01300431B7A /* TitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B3A6421C7B01300431B7A /* TitleTableViewCell.m */; };
 		539B3A6C21C7B57800431B7A /* SelectColorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 539B3A6B21C7B57800431B7A /* SelectColorTableViewCell.m */; };
+		53A224242678693B0056FCE2 /* LifeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A224232678693B0056FCE2 /* LifeCollection.m */; };
 		53AC8E2E21D33E5800DD0079 /* LCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AC8E2D21D33E5800DD0079 /* LCSettings.m */; };
 		53B7FC4D223799370052D63C /* UIControl+Block_Handle.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B7FC4C223799370052D63C /* UIControl+Block_Handle.m */; };
 		53C88DC6266E0E9C00EACB58 /* HomeListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53C88DC5266E0E9C00EACB58 /* HomeListCollectionViewCell.m */; };
@@ -109,6 +110,8 @@
 		539B3A6421C7B01300431B7A /* TitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitleTableViewCell.m; sourceTree = "<group>"; };
 		539B3A6A21C7B57800431B7A /* SelectColorTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectColorTableViewCell.h; sourceTree = "<group>"; };
 		539B3A6B21C7B57800431B7A /* SelectColorTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectColorTableViewCell.m; sourceTree = "<group>"; };
+		53A224222678693B0056FCE2 /* LifeCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeCollection.h; sourceTree = "<group>"; };
+		53A224232678693B0056FCE2 /* LifeCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifeCollection.m; sourceTree = "<group>"; };
 		53AC8E2C21D33E5800DD0079 /* LCSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCSettings.h; sourceTree = "<group>"; };
 		53AC8E2D21D33E5800DD0079 /* LCSettings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCSettings.m; sourceTree = "<group>"; };
 		53B7FC4C223799370052D63C /* UIControl+Block_Handle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Block_Handle.m"; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 			children = (
 				5357B40821C38B73009D9333 /* AppDelegate.h */,
 				5357B40921C38B73009D9333 /* AppDelegate.m */,
+				53A224222678693B0056FCE2 /* LifeCollection.h */,
+				53A224232678693B0056FCE2 /* LifeCollection.m */,
 				5356ED1221C7498100862FE1 /* LifeCollectionPrefixHeader.pch */,
 				5356ED1321C749B800862FE1 /* LifeCollectionHeader.h */,
 				5357B40E21C38B73009D9333 /* Main.storyboard */,
@@ -461,6 +466,7 @@
 				5356ED2E21C75F0A00862FE1 /* TimeListTableViewCell.m in Sources */,
 				53AC8E2E21D33E5800DD0079 /* LCSettings.m in Sources */,
 				531AD0A521CB7DAC00A4B2BC /* DateFormatter.m in Sources */,
+				53A224242678693B0056FCE2 /* LifeCollection.m in Sources */,
 				536D0BD721DF4A0400FB0653 /* LCClient.m in Sources */,
 				531548452468F30600E8D251 /* TimeDetailViewController.m in Sources */,
 				539B3A5F21C7A77700431B7A /* PreviewTableViewCell.m in Sources */,

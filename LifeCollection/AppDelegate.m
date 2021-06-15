@@ -14,10 +14,10 @@
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-//#ifdef DEBUG
-//#else
+#ifdef DEBUG
+#else
     [[GADMobileAds sharedInstance] startWithCompletionHandler:nil];
-//#endif
+#endif
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [LCColor backgroudColor];
