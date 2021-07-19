@@ -32,7 +32,7 @@
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.equalTo(self.view);
-        make.bottom.equalTo(self.view).offset(-50);
+        make.bottom.equalTo(self.view).offset(-150);
     }];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.backgroundColor = [LCColor clearColor];
@@ -59,7 +59,7 @@
     [self.view addSubview:addImageView];
     [addImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.bottom.equalTo(self.view).offset(-100);
+        make.bottom.equalTo(self.view).offset(-150);
         make.width.height.equalTo(@54);
     }];
     
