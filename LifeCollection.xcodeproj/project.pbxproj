@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16A5150E26E8B7BE001F0989 /* PrivacyAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5150C26E8B7BC001F0989 /* PrivacyAlert.m */; };
 		531548452468F30600E8D251 /* TimeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 531548442468F30600E8D251 /* TimeDetailViewController.m */; };
 		531AD08521CA286000A4B2BC /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD08421CA286000A4B2BC /* EventModel.m */; };
 		531AD08821CA28C700A4B2BC /* EventModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 531AD08721CA28C700A4B2BC /* EventModelTool.m */; };
@@ -57,6 +58,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		16A5150C26E8B7BC001F0989 /* PrivacyAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyAlert.m; sourceTree = "<group>"; };
+		16A5150D26E8B7BE001F0989 /* PrivacyAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyAlert.h; sourceTree = "<group>"; };
 		531548432468F30600E8D251 /* TimeDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeDetailViewController.h; sourceTree = "<group>"; };
 		531548442468F30600E8D251 /* TimeDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeDetailViewController.m; sourceTree = "<group>"; };
 		531AD08321CA286000A4B2BC /* EventModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 			children = (
 				5357B40821C38B73009D9333 /* AppDelegate.h */,
 				5357B40921C38B73009D9333 /* AppDelegate.m */,
+				16A5150D26E8B7BE001F0989 /* PrivacyAlert.h */,
+				16A5150C26E8B7BC001F0989 /* PrivacyAlert.m */,
 				53A224222678693B0056FCE2 /* LifeCollection.h */,
 				53A224232678693B0056FCE2 /* LifeCollection.m */,
 				5356ED1221C7498100862FE1 /* LifeCollectionPrefixHeader.pch */,
@@ -461,6 +466,7 @@
 				5356ED0921C7474100862FE1 /* UserViewController.m in Sources */,
 				53A2242726786A030056FCE2 /* SettingViewController.m in Sources */,
 				5357B40D21C38B73009D9333 /* HomeViewController.m in Sources */,
+				16A5150E26E8B7BE001F0989 /* PrivacyAlert.m in Sources */,
 				5357B41321C38B73009D9333 /* LifeCollection.xcdatamodeld in Sources */,
 				53FC593A2473E4D10023CC46 /* UIColor+HZXColor.m in Sources */,
 				5357B42921C3911B009D9333 /* LCColor.m in Sources */,
@@ -638,7 +644,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"c++\"",
@@ -734,7 +740,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"c++\"",
