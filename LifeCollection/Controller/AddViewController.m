@@ -12,7 +12,6 @@
 #import "TitleTableViewCell.h"
 #import "SelectColorTableViewCell.h"
 #import "TimeListTableViewCell.h"
-
 #import "LCDatePickerWindow.h"
 #import "DoActionSheet.h"
 
@@ -138,7 +137,12 @@
     }else{
         [self.eventModel insertTime:self.eventModel];
     }
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    if (self.navigationController.viewControllers.count > 1) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }else{
+        [self.homeVc update];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 
 }
 

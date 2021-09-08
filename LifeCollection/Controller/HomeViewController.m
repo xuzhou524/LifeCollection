@@ -32,7 +32,7 @@
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.equalTo(self.view);
-        make.bottom.equalTo(self.view).offset(-150);
+        make.bottom.equalTo(self.view).offset(-100);
     }];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.backgroundColor = [LCColor clearColor];
@@ -59,7 +59,7 @@
     [self.view addSubview:addImageView];
     [addImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.bottom.equalTo(self.view).offset(-150);
+        make.bottom.equalTo(self.view).offset(-100);
         make.width.height.equalTo(@54);
     }];
     
@@ -78,7 +78,7 @@
 }
 
 -(void)createAdView{
-    self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake((ScreenWidth - 320)/2.00, ScreenHeight - 150,320 , 50)];
+    self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake((ScreenWidth - 320)/2.00, ScreenHeight - 100,320 , 70)];
     self.bannerView.adSize = kGADAdSizeBanner;
     [self.view addSubview:self.bannerView];
     self.bannerView.adUnitID = @"ca-app-pub-9353975206269682/9957610170";
@@ -95,7 +95,10 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    
+    [self update];
+}
+
+-(void)update{
     self.eventModelLists = [self.eventModel queryWithTime];
     
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.xuzhou.LifeCollection"];
@@ -119,6 +122,7 @@
 -(void)didiAddClick{
     AddViewController * addVC = [AddViewController new];
     addVC.isEditor = NO;
+    addVC.homeVc = self;
     [self.navigationController presentViewController:addVC animated:true completion:nil];
 }
 

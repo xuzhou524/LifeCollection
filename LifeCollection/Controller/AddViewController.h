@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeViewController.h"
 #import "EventModel.h"
 
 @interface AddViewController : UIViewController
 @property (nonatomic, strong) EventModel * eventModel;
 @property (nonatomic, assign) BOOL isEditor;
+@property(nonatomic,strong)HomeViewController * homeVc;
 @end
