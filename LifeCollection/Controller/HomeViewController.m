@@ -70,10 +70,10 @@
     }
 #endif
     
-//#ifdef DEBUG
-//#else
+#ifdef DEBUG
+#else
     [self createAdView];
-//#endif
+#endif
     
 }
 
