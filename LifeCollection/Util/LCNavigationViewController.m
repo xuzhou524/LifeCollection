@@ -16,14 +16,30 @@
 
 -(void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    [self.navigationBar setBackgroundImage:[LCColor createImageWithColor:[LCColor backgroudColor]]
-                             forBarMetrics:UIBarMetricsDefault];
-    //navigationBar Title 样式
-    [self.navigationBar setTitleTextAttributes:@{
-                                                 NSFontAttributeName : LCFont(18),
-                                                 NSForegroundColorAttributeName : [LCColor LCColor_121_117_245]
-                                                 }];
-    [self.navigationBar setShadowImage:[LCColor createImageWithColor:[LCColor backgroudColor]]];
+    
+    if (@available(iOS 15.0, *)) {
+        UINavigationBarAppearance * appearance = [UINavigationBarAppearance new];
+        [appearance configureWithOpaqueBackground];
+        appearance.backgroundColor = [LCColor backgroudColor];
+        appearance.shadowImage = [LCColor createImageWithColor:[LCColor backgroudColor]];
+        appearance.titleTextAttributes = @{
+            NSFontAttributeName : LCFont(18),
+            NSForegroundColorAttributeName : [LCColor LCColor_121_117_245]
+        };
+        
+        self.navigationBar.scrollEdgeAppearance = appearance;
+        self.navigationBar.standardAppearance = appearance;
+    }else{
+        [self.navigationBar setBackgroundImage:[LCColor createImageWithColor:[LCColor backgroudColor]]
+                                 forBarMetrics:UIBarMetricsDefault];
+        //navigationBar Title 样式
+        [self.navigationBar setTitleTextAttributes:@{
+                                                     NSFontAttributeName : LCFont(18),
+                                                     NSForegroundColorAttributeName : [LCColor LCColor_121_117_245]
+                                                     }];
+        [self.navigationBar setShadowImage:[LCColor createImageWithColor:[LCColor backgroudColor]]];
+    }
+    
 }
 
 - (void)viewDidLoad {

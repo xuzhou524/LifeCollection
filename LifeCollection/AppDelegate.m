@@ -26,6 +26,11 @@
     self.window.rootViewController = rootTabBarVC;
 
     [self.window makeKeyAndVisible];
+    
+    if (@available(iOS 15.0, *)) {
+        [UITableView appearance].sectionHeaderTopPadding = 0;
+    }
+    
     [[UITabBar appearance] setTranslucent:NO];
     
     return YES;
