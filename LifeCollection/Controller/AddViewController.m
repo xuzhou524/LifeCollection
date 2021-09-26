@@ -14,6 +14,7 @@
 #import "TimeListTableViewCell.h"
 #import "LCDatePickerWindow.h"
 #import "DoActionSheet.h"
+@import GoogleMobileAds;
 
 @interface AddViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
@@ -22,7 +23,7 @@
 @property(nonatomic,strong)TextFieldTableViewCell * textFieldCell;
 
 @property (nonatomic, strong) LCDatePickerWindow * pickerWindow;
-
+@property(nonatomic, strong) GADBannerView *bannerView;
 
 @property (nonatomic, strong) NSString * originalDate;
 
@@ -91,7 +92,7 @@
     [self.view addSubview:rightBtn];
     [rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.bottom.equalTo(self.view).offset(-60);
+        make.bottom.equalTo(self.view).offset(-160);
         make.height.equalTo(@56);
         make.width.equalTo(@160);
     }];
@@ -101,10 +102,23 @@
     [self.view addGestureRecognizer:tapGestureRecognizer]; //只需要点击非文字输入区域就会响应
     [tapGestureRecognizer setCancelsTouchesInView:NO];
     
+#ifdef DEBUG
+#else
+    [self createAdView];
+#endif
+    
 }
 
 - (void)backupgroupTap:(id)sender {
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+}
+
+-(void)createAdView{
+    self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(15, ScreenHeight - 90,ScreenWidth - 30 , 80)];
+    [self.view addSubview:self.bannerView];
+    self.bannerView.adUnitID = @"ca-app-pub-9353975206269682/9957610170";
+    self.bannerView.rootViewController = self;
+    [self.bannerView loadRequest:[GADRequest request]];
 }
 
 -(EventModel *)eventModel{
