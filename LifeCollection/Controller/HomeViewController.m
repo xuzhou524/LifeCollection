@@ -70,15 +70,15 @@
     }
 #endif
     
-#ifdef DEBUG
-#else
+//#ifdef DEBUG
+//#else
     [self createAdView];
-#endif
+//#endif
     
 }
 
 -(void)createAdView{
-    self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(15, ScreenHeight - 180,ScreenWidth - 30 , 80)];
+    self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(15, ScreenHeight - 90,ScreenWidth - 30 , 80)];
 //    self.bannerView.adSize = kGADAdSizeBanner;
     [self.view addSubview:self.bannerView];
     self.bannerView.adUnitID = @"ca-app-pub-9353975206269682/9957610170";
