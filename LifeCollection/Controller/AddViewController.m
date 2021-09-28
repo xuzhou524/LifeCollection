@@ -102,10 +102,10 @@
     [self.view addGestureRecognizer:tapGestureRecognizer]; //只需要点击非文字输入区域就会响应
     [tapGestureRecognizer setCancelsTouchesInView:NO];
     
-#ifdef DEBUG
-#else
+//#ifdef DEBUG
+//#else
     [self createAdView];
-#endif
+//#endif
     
 }
 
@@ -114,7 +114,7 @@
 }
 
 -(void)createAdView{
-    self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(15, ScreenHeight - 90,ScreenWidth - 30 , 80)];
+    self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(15, ScreenHeight - 90 - (self.isEditor ? 0 : 60),ScreenWidth - 30 , 85)];
     [self.view addSubview:self.bannerView];
     self.bannerView.adUnitID = @"ca-app-pub-9353975206269682/9957610170";
     self.bannerView.rootViewController = self;
