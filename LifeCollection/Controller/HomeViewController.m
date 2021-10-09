@@ -272,7 +272,7 @@
     }else if ([tempModel.classType isEqualToString:@"累计日"]){
         dayTypeStr = @"已过天数";
         timeStr = @"起始日";
-        NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:tempModel.time] timeIntervalSinceNow];
+        NSTimeInterval  timeInterval = [[DateFormatter dateFromTimeStampString:tempModel.time] timeIntervalSinceNow] + 8 * 60 * 60;
         if (timeInterval < 0) {
             long temp = 0;
             NSString *result;
